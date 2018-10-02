@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".estabelecimento.RegistroEstabelecimentoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/etNomeEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Nome"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+            <EditText
+                android:id="@+id/etTelefoneEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Telefone"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_telefone"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="55sp"
+                    android:drawableLeft="@drawable/ic_endereco"
+                    android:drawableTint="@color/RoxoFoodGuru"
+                    android:paddingLeft="15sp"/>
+                <Spinner
+                    android:id="@+id/spEstadoEstabelecimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="47sp"
+                    android:entries="@array/spinner_estado"
+                    android:layout_marginLeft="45sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="#7E7E7E"
+                    android:layout_below="@id/spEstadoEstabelecimento"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/etCidadeEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Cidade"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_endereco"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+            <EditText
+                android:id="@+id/etRuaEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Rua"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_endereco"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+            <EditText
+                android:id="@+id/etComplementoEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Complemento"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_endereco"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+
+            <EditText
+                android:id="@+id/etEmailEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Email"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+
+            <EditText
+                android:id="@+id/etSenhaEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Senha"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_senha"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"
+
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/etConfirmarSenhaEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:hint="Confirme sua Senha"
+                android:textColorHint="@color/Cinza"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_senha"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"
+                android:inputType="textPassword"
+                />
+
+            <Button
+                android:id="@+id/btConfirmarRegistroEstabelecimento"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="CONFIRMAR CADASTRO"
+                android:textColor="@color/Branco"
+                android:padding="15sp"
+
+                android:background="@drawable/borda_redonda_bt_roxo"
+
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

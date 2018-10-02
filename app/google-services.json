@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "137899002122",
+    "firebase_url": "https://food-guru-d76dc.firebaseio.com",
+    "project_id": "food-guru-d76dc",
+    "storage_bucket": "food-guru-d76dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137899002122:android:a3346ca0e1275e87",
+        "android_client_info": {
+          "package_name": "br.com.ufrpe.foodguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137899002122-h37slu0qdtf86ioe00biq8j6mmagrnok.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ufrpe.foodguru",
+            "certificate_hash": "9d8baccffdd129b29cc6fb3974209799e4f41e76"
+          }
+        },
+        {
+          "client_id": "137899002122-tobi0296ee8ojcoam32vofq5ppsqjnvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ufrpe.foodguru",
+            "certificate_hash": "d2c1c802eb81dadb6b7ca8ed3a6780a0d7c6e1bc"
+          }
+        },
+        {
+          "client_id": "137899002122-2avhggqg72tsqcvtmrc86udk7g0uf4hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8AK3mAWK2klJzgYp_Xu2zDTJdCjduW04"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137899002122-2avhggqg72tsqcvtmrc86udk7g0uf4hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

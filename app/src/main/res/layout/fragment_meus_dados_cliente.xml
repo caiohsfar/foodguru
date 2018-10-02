@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MeusDadosClienteFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="30dp"
+            >
+            <ImageView
+                android:id="@+id/iv_cliente"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/borda_redonda_bt_roxo"
+                />
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_foto"
+                android:backgroundTint="@color/Branco"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="15dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/tvNomeClienteMeusDados"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:text="Nome"
+                android:textSize="18sp"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/RoxoFoodGuru"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"/>
+
+            <TextView
+                android:id="@+id/tvEmailClienteMeusDados"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:singleLine="true"
+
+                android:text="Email"
+                android:textSize="18sp"
+                android:textColor="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/RoxoFoodGuru"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

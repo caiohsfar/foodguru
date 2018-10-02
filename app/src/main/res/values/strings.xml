@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Food Guru</string>
+    <string name="esqueci_minha_senha">Esqueceu a senha?</string>
+    <string name="entrar"><b>ENTRAR</b></string>
+    <string name="alerta_campo_vazio">Preencha o campo vazio.</string>
+    <string name="sp_excecao_email">Informe um email válido.</string>
+    <string name="sp_excecao_senha">Digite uma senha mais forte, contendo no mínimo 6 caracteres.</string>
+    <string name="sp_excecao_senhas_iguais">Digite senhas iguais</string>
+    <string name="sp_excecao_campo_vazio">Preencha o campo vazio</string>
+    <string name="tv_cadastre_se"> <b><u>Cadastre-se!</u></b></string>
+    <string name="tipo_conta"><b>Escolha o tipo de conta para realizar o cadastro.</b></string>
+    <string name="tv_cliente"><b>Cliente</b></string>
+    <string name="tv_estabelecimento"><b>Estabelecimento</b></string>
+    <string name="tv_adicionar_codigo">Escaneie o <b>QR Code</b> que está em sua mesa.</string>
+    <string name="tv_informativo_tipo_cadastro">Precisamos que você selecione o <b>tipo de conta</b> que você quer cadastrar.</string>
+    <string name="erro_combinacao_invalida">"Combinação inválida.</string>
+    <string name="title_activity_perfil_cliente">PerfilCliente</string>
+    <string name="title_activity_menu_lateral_estabelecimento">testemenulateralestabelecimento</string>
+    <string name="title_activity_perfil_estabelecimento">PerfilEstabelecimento</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_email_estabelecimento"><b>email@exemplo.com</b></string>
+    <string name="nav_header_subtitle_email">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_mesas">MesasActivity</string>
+    <string name="title_activity_mesa">MesaActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="title_activity_cardapio">Cardapio</string>
+    <string name="title_activity_codigo_mesa">Código</string>
+    <string name="title_activity_meus_dados_estabelecimento">Meus Dados
+    </string>
+    <string name="title_activity_meus_dados_cliente">Meus Dados</string>
+    <string name="title_activity_ler_codigo">Inserir Código </string>
+    <string name="title_activity_pedidos">Pedidos</string>
+    <string name="mesa_lv"><b>Mesa: </b></string>
+    <string name="title_activity_sugeridos">SugeridosActivity</string>
+    <string name="title_activity_relatorio_vendas">RelatorioVendasActivity</string>
+    <string name="sp_email_enviado_sucesso">Email enviado com sucesso.</string>
+    <string name="title_activity_ler_qr_code">LerQrCodeActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

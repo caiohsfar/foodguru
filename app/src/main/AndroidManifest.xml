@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.ufrpe.foodguru">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".infraestrutura.LoginActivity"
+            android:label="Food Guru"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".cliente.RegistroClienteActivity" />
+        <activity android:name=".infraestrutura.TipoCadastroActivity" />
+        <activity android:name=".estabelecimento.RegistroEstabelecimentoActivity" />
+        <activity android:name=".infraestrutura.RecuperarSenhaActivity" />
+        <activity android:name=".cliente.PerfilClienteActivity" />
+        <activity android:name=".estabelecimento.PerfilEstabelecimentoActivity" />
+        <activity
+            android:name=".infraestrutura.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LerQrCodeActivity"
+            android:label="@string/title_activity_ler_qr_code"></activity>
+    </application>
+
+</manifest>

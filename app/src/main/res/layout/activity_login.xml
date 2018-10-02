@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/LaranjaFoodGuru"
+    tools:context=".infraestrutura.LoginActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_food_guru"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <EditText
+                android:id="@+id/edtLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:singleLine="true"
+                android:hint="Email"
+                android:textColorHint="@color/Branco"
+                android:textColor="@color/Branco"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableTint="@color/Branco"
+                android:drawablePadding="15sp"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/edtLoginSenha"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:singleLine="true"
+                android:hint="Senha"
+                android:textColorHint="@color/Branco"
+                android:textColor="@color/Branco"
+                android:drawableLeft="@drawable/ic_senha"
+                android:drawableTint="@color/Branco"
+                android:drawablePadding="15sp"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/esqueci_minha_senha"
+                android:textColor="@color/Branco"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tv_recuperar_senha"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/borda_redonda_bt_roxo"
+                android:text="ENTRAR"
+                android:textColor="@color/Branco"
+                android:layout_margin="20dp"
+                android:id="@+id/btLogin"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvCadastro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ainda não é cadastrado?"
+                    android:textColor="@color/Branco"/>
+
+                <TextView
+                    android:id="@+id/tvCadastre-se"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_cadastre_se"
+                    android:textColor="@color/Branco"
+                    android:layout_toEndOf="@id/tvCadastro"
+                    android:layout_toRightOf="@id/tvCadastro"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

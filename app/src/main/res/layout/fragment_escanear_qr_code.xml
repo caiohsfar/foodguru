@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EscanearQrCodeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_informativo_tipodeconta"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+
+        android:text="@string/tv_adicionar_codigo"
+        android:textSize="20sp"
+        android:textColor="@color/Cinza"
+        android:paddingRight="15sp"
+        android:paddingLeft="15sp"
+
+        android:background="@color/CinzaClaro"
+
+        android:gravity="center"/>
+
+</FrameLayout>
