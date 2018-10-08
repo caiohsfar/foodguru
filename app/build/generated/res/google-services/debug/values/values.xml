@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">137899002122-2avhggqg72tsqcvtmrc86udk7g0uf4hp.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://food-guru-d76dc.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">137899002122</string>
+    <string name="google_api_key" translatable="false">AIzaSyA8AK3mAWK2klJzgYp_Xu2zDTJdCjduW04</string>
+    <string name="google_app_id" translatable="false">1:137899002122:android:a3346ca0e1275e87</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA8AK3mAWK2klJzgYp_Xu2zDTJdCjduW04</string>
+    <string name="google_storage_bucket" translatable="false">food-guru-d76dc.appspot.com</string>
+    <string name="project_id" translatable="false">food-guru-d76dc</string>
+</resources>

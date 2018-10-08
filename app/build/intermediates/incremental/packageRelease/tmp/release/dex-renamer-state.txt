@@ -1,0 +1,4 @@
+#Mon Oct 08 19:11:31 BRT 2018
+base.0=/home/caio/Desktop/food guru quase pronto (EDITAR MESA FEITO)/app/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex

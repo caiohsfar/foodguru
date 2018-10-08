@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.ufrpe.foodguru">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,17 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".infraestrutura.LoginActivity"
+            android:name=".usuario.GUI.LoginActivity"
+            android:exported="true"
             android:label="Food Guru"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".cliente.RegistroClienteActivity" />
-        <activity android:name=".infraestrutura.TipoCadastroActivity" />
-        <activity android:name=".estabelecimento.RegistroEstabelecimentoActivity" />
-        <activity android:name=".infraestrutura.RecuperarSenhaActivity" />
-        <activity android:name=".cliente.PerfilClienteActivity" />
-        <activity android:name=".estabelecimento.PerfilEstabelecimentoActivity" />
+        <activity android:name=".cliente.GUI.RegistroClienteActivity" />
+        <activity android:name=".usuario.GUI.TipoCadastroActivity" />
+        <activity android:name=".estabelecimento.GUI.RegistroEstabelecimentoActivity" />
+        <activity android:name=".usuario.GUI.RecuperarSenhaActivity" />
+        <activity android:name=".cliente.GUI.PerfilClienteActivity" />
+        <activity android:name=".estabelecimento.GUI.PerfilEstabelecimentoActivity" />
         <activity
-            android:name=".infraestrutura.SplashActivity"
+            android:name=".infraestrutura.utils.SplashActivity"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +35,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LerQrCodeActivity"
-            android:label="@string/title_activity_ler_qr_code"></activity>
+            android:name=".cliente.GUI.HomeClienteActivity"
+            android:icon="@drawable/ic_teste_sair"
+            android:label="Food Guru" />
+        <activity
+            android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
+            android:label="Food Guru" />
+        <activity android:name=".cliente.GUI.EditarDadosClienteActivity" />
+        <activity android:name=".estabelecimento.GUI.AdicionarMesaActivity" />
+        <activity android:name=".estabelecimento.GUI.EditarMesaActivity" />
+        <activity android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity" />
+        <activity android:name=".estabelecimento.GUI.DetalhesMesaActivity"></activity>
     </application>
 
 </manifest>

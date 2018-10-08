@@ -1,0 +1,2 @@
+# Referenced at /home/caio/Desktop/food guru quase pronto (EDITAR MESA FEITO)/app/build/intermediates/merged_manifests/release/processReleaseManifest/merged/AndroidManifest.xml:47
+-keep class android.support.multidex.MultiDexApplication { <init>(...); }

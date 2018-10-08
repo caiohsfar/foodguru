@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EscanearQrCodeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".cliente.GUI.EscanearQrCodeFragment">
     <TextView
         android:id="@+id/tv_informativo_tipodeconta"
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/LaranjaFoodGuru"
-    tools:context=".infraestrutura.LoginActivity">
+    tools:context=".usuario.GUI.LoginActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
