@@ -18,6 +18,7 @@ public class EscanearQrCodeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    //MARSOL É O FRANGO DOS FRANGOS
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
