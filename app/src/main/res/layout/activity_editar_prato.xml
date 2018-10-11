@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".estabelecimento.GUI.EditarPratoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:id="@+id/ivImagemPrato"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/RoxoFoodGuru"
+            android:scaleType="centerCrop"
+            />
+        <Button
+            android:id="@+id/btnEditarImagemPrato"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_foto"
+            android:backgroundTint="@color/Branco"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etEditarNomePrato"
+        android:layout_width="match_parent"
+
+        android:layout_height="55sp"
+        android:drawableLeft="@drawable/ic_prato"
+
+        android:drawablePadding="15sp"
+
+        android:drawableTint="@color/RoxoFoodGuru"
+        android:hint="Nome do Prato"
+
+        android:padding="15sp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/etEditarDescricaoPrato"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:drawableLeft="@drawable/ic_descricao"
+
+        android:drawablePadding="15sp"
+        android:drawableTint="@color/RoxoFoodGuru"
+        android:hint="Descrição do Prato"
+
+        android:padding="15sp" />
+
+    <Button
+        android:id="@+id/btnConfirmarEditarPrato"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+
+        android:layout_marginBottom="20sp"
+
+        android:background="@drawable/borda_redonda_bt_roxo"
+        android:padding="15sp"
+        android:text="Editar Prato"
+        android:onClick="confirmarEdicaoPrato"
+        android:textColor="@color/Branco" />
+
+</LinearLayout>

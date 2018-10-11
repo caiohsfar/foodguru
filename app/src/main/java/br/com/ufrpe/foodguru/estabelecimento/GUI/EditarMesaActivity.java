@@ -70,8 +70,8 @@ public class EditarMesaActivity extends AppCompatActivity {
         }else{
             Helper.criarToast(EditarMesaActivity.this, "Erro ao editar mesa");
         }
-
     }
+
     public Mesa setMesaSelecionada(){
         String id = getIntent().getStringExtra("ID_MESA");
         Mesa mesa = new Mesa();

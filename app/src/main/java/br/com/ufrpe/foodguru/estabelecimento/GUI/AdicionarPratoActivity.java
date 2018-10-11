@@ -32,7 +32,6 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                     return;
                 }
                 adicionarPrato();
-                Helper.criarToast(this, "Chega aqui!");
                 break;
             }
         }

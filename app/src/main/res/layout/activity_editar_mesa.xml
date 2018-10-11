@@ -76,7 +76,7 @@
             android:background="@color/RoxoFoodGuru"
             android:padding="15sp"
             android:text="Editar Mesa"
-            android:onClick="confirmarEdicao"
+            android:onClick="confirmarEdicaoPrato"
             android:textColor="@color/Branco" />
     <RelativeLayout
         android:layout_width="match_parent"

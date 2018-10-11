@@ -94,6 +94,8 @@
         <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.DetalhesMesaActivity" />
         >>>>>>> develop
         <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.AdicionarPratoActivity" />
+        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.DetalhesPratoActivity" />
+        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.EditarPratoActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

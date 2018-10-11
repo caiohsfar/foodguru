@@ -32,12 +32,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_close.png.flat",
         "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable-hdpi\\ic_close.png"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mtrl_snackbar_background.xml.flat",
@@ -48,24 +48,24 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_delete.xml.flat",
         "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable\\ic_delete.xml"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
@@ -100,12 +100,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_stroke_color_selector.xml.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\color\\mtrl_btn_stroke_color_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_stroke_color_selector.xml.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\color\\mtrl_btn_stroke_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -120,12 +120,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\7d42db6f3e551b0fcc60f5fcfa0f6eaf\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\7d42db6f3e551b0fcc60f5fcfa0f6eaf\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -136,12 +136,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_hide_password.xml.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\drawable-v21\\avd_hide_password.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_hide_password.xml.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -152,16 +152,16 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a276c51af73c1b9d7fd45eebaa8ee501\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a276c51af73c1b9d7fd45eebaa8ee501\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a276c51af73c1b9d7fd45eebaa8ee501\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_drawer_shadow.9.png.flat",
         "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable-mdpi\\drawer_shadow.9.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a276c51af73c1b9d7fd45eebaa8ee501\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a276c51af73c1b9d7fd45eebaa8ee501\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
@@ -196,12 +196,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -288,12 +288,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_black_24dp.xml.flat",
-        "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable\\ic_person_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_food_guru.xml.flat",
         "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable\\ic_food_guru.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_black_24dp.xml.flat",
+        "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable\\ic_person_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -410,6 +410,10 @@
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_descricao.xml.flat",
+        "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\drawable\\ic_descricao.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
@@ -684,6 +688,10 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a276c51af73c1b9d7fd45eebaa8ee501\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_detalhes_prato.xml.flat",
+        "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\layout\\activity_detalhes_prato.xml"
+    },
+    {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
@@ -862,6 +870,10 @@
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_fab_background.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\604661832e2752c49c0c904cfcf3b2d0\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_editar_prato.xml.flat",
+        "source": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\src\\main\\res\\layout\\activity_editar_prato.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",

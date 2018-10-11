@@ -1115,6 +1115,7 @@ drawable ic_close
 drawable ic_codigo
 drawable ic_dashboard_black_24dp
 drawable ic_delete
+drawable ic_descricao
 drawable ic_drawer
 drawable ic_edit
 drawable ic_editar
@@ -1207,6 +1208,8 @@ id btnConfirmarAdicionarMesa
 id btnConfirmarAdicionarPrato
 id btnConfirmarEdicao
 id btnConfirmarEdicaoDadosEstabelecimento
+id btnConfirmarEditarPrato
+id btnEditarImagemPrato
 id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
 id btn_log_out
@@ -1259,7 +1262,11 @@ id etComplementoEstabelecimentoed
 id etConfirmarSenhaCliente
 id etConfirmarSenhaEstabelecimento
 id etDescricaoPrato
+id etDetalhesDescricaoPrato
+id etDetalhesNomePrato
 id etEditarCodigoMesa
+id etEditarDescricaoPrato
+id etEditarNomePrato
 id etEditarNumeroMesa
 id etEmailCliente
 id etEmailClienteMeusDados
@@ -1310,6 +1317,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id ivDetalhesImagemPrato
 id ivImagemPrato
 id iv_Estabelecimento
 id iv_cliente
@@ -1366,6 +1374,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerv_view
+id recyclerv_view_pratos
 id right
 id right_icon
 id right_side
@@ -1444,6 +1453,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tvCadastre_se
 id tvCadastro
+id tvDescicaoPrato
 id tvEmailClienteMeusDados
 id tvEmailEstabelecimentoMeusDados
 id tvEnderecoEstabelecimentoMeusDados
@@ -1530,9 +1540,11 @@ layout abc_tooltip
 layout activity_adicionar_mesa
 layout activity_adicionar_prato
 layout activity_detalhes_mesa
+layout activity_detalhes_prato
 layout activity_editar_dados_cliente
 layout activity_editar_dados_estabelecimento
 layout activity_editar_mesa
+layout activity_editar_prato
 layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
