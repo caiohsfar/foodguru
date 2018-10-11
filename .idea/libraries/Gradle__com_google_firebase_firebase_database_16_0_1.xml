@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-database-16.0.1">
     <CLASSES>
@@ -7,4 +8,15 @@
     <JAVADOC />
     <SOURCES />
   </library>
+=======
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-database-16.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.1.aar/3e0107132e4a424f052728dc2563a809/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.1.aar/3e0107132e4a424f052728dc2563a809/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+>>>>>>> develop
 </component>

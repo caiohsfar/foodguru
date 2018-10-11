@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_pratos"
+        android:icon="@drawable/ic_prato"
+        android:title="Meus Pratos" />
+
+    <item
+        android:id="@+id/nav_mesas"
+        android:icon="@drawable/ic_mesa"
+        android:title="Mesas" />
+
+    <item
+        android:id="@+id/nav_pedidos"
+        android:icon="@drawable/ic_pedidos"
+        android:title="Pedidos" />
+
+    <item
+        android:id="@+id/nav_meus_dados_est"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Meus Dados" />
+
+
+</menu>

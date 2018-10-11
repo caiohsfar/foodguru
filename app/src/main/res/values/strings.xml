@@ -28,7 +28,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="title_activity_cardapio">Cardapio</string>
-    <string name="title_activity_codigo_mesa">Código</string>
+    <string name="title_activity_codigo_mesa"><b>Código da Mesa</b></string>
     <string name="title_activity_meus_dados_estabelecimento">Meus Dados
     </string>
     <string name="title_activity_meus_dados_cliente">Meus Dados</string>
@@ -47,7 +47,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="textoMesa"><b>Mesa: </b></string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home_estabelecimento">HomeEstabelecimentoActivity</string>
 </resources>

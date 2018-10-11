@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/numero"
+        android:text="01"
+        android:textSize="30dp"
+        android:textColor="@color/Branco"
+        android:gravity="center"
+        android:background="@drawable/borda_redonda_bt_roxo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@id/numero">
+        <TextView
+            android:id="@+id/txt_codigo_da_mesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_activity_codigo_mesa"
+            android:gravity="center_vertical"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_codigo_mesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kjjsbclkas"
+            android:textColor="@color/RoxoFoodGuru"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

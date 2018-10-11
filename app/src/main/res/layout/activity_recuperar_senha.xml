@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".infraestrutura.RecuperarSenhaActivity">
+    tools:context=".usuario.GUI.RecuperarSenhaActivity">
 
     <EditText
         android:id="@+id/etEmailRecuperar"

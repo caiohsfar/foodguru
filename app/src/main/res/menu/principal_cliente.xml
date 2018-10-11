@@ -1,0 +1,14 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_action_bar_editar_perfil"
+        android:orderInCategory="100"
+        android:title="Editar Dados"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_action_bar_sair"
+        android:orderInCategory="100"
+        android:title="Sair"
+        app:showAsAction="never" />
+</menu>

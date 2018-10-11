@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <component name="libraryTable">
   <library name="Gradle: com.google.android.gms:play-services-base-15.0.1">
     <CLASSES>
@@ -7,4 +8,15 @@
     <JAVADOC />
     <SOURCES />
   </library>
+=======
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-base-15.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/fe99e49913f3013d1c1851ad3d66d98f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/fe99e49913f3013d1c1851ad3d66d98f/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+>>>>>>> develop
 </component>

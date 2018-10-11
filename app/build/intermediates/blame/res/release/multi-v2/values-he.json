@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/caio/Desktop/food guru quase pronto (EDITAR MESA FEITO)/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-he/values-he.xml",
+            "map": [
+                {
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/5d38f26c275ba1d0622ba1ff33f1539e/res/values-he/values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    }
+                }
+            ]
+        }
+    ]
+}

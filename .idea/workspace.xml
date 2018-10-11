@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="1c0615b4-4e30-4e9a-b20d-669eef27d9de" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
@@ -2453,12 +2449,18 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="20" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+>>>>>>> develop
     <option name="width" value="1346" />
     <option name="height" value="720" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -2491,9 +2493,12 @@
       <pane id="Scope" />
     </panes>
   </component>
+=======
+>>>>>>> develop
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
   </component>
   <component name="RecentsManager">
@@ -2512,6 +2517,8 @@
         </RuleState>
       </list>
     </option>
+=======
+>>>>>>> develop
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -2613,6 +2620,7 @@
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
   </component>
+<<<<<<< HEAD
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -2740,6 +2748,8 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> develop
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".estabelecimento.GUI.EditarMesaActivity">
+        <EditText
+            android:id="@+id/etEditarNumeroMesa"
+            android:layout_width="match_parent"
+
+            android:layout_height="55sp"
+            android:background="@color/Branco"
+            android:drawableLeft="@drawable/ic_mesa"
+
+            android:drawablePadding="15sp"
+
+            android:drawableTint="@color/LaranjaFoodGuru"
+            android:hint="Número da mesa"
+            android:inputType="number"
+
+            android:padding="15sp"
+            android:singleLine="true"
+
+            android:textColor="@color/Preto"
+            android:textColorHint="@color/Cinza" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:background="@color/LaranjaFoodGuru" />
+
+
+        <EditText
+            android:id="@+id/etEditarCodigoMesa"
+
+            android:layout_width="match_parent"
+            android:layout_height="55sp"
+            android:background="@color/Branco"
+
+            android:drawableLeft="@drawable/ic_codigo"
+
+            android:drawablePadding="15sp"
+            android:drawableTint="@color/LaranjaFoodGuru"
+            android:hint="Código da mesa"
+
+            android:padding="15sp"
+            android:singleLine="true"
+
+            android:textColor="@color/Preto"
+            android:textColorHint="@color/Cinza" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:background="@color/LaranjaFoodGuru" />
+
+        <Button
+            android:id="@+id/bt_confirmar_edicao_mesa"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginRight="20sp"
+
+            android:layout_marginBottom="20sp"
+
+            android:background="@color/RoxoFoodGuru"
+            android:padding="15sp"
+            android:text="Editar Mesa"
+            android:onClick="confirmarEdicao"
+            android:textColor="@color/Branco" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_qr_code"
+            android:layout_width="331dp"
+            android:layout_height="252dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/ic_codigo"
+            android:foregroundGravity="bottom" />
+    </RelativeLayout>
+
+</LinearLayout>

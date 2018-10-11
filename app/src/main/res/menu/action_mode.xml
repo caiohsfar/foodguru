@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/deletar"
+        android:title="Deletar"
+        android:icon="@drawable/ic_excluir"
+        android:iconTint="@color/Branco"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/acao_editar"
+        android:title="Editar"
+        android:icon="@drawable/ic_edit"
+        android:iconTint="@color/Branco"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+    <item
+        android:titleCondensed="Todos"
+        android:id="@+id/selecionar_todos"
+        android:title="Todos"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+
+</menu>

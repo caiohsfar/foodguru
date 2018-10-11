@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".infraestrutura.TipoCadastroActivity">
+    tools:context=".usuario.GUI.TipoCadastroActivity">
 
     <TextView
         android:id="@+id/tv_informativo_tipodeconta"

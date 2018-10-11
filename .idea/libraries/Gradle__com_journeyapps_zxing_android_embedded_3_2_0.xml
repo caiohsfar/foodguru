@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <component name="libraryTable">
   <library name="Gradle: com.journeyapps:zxing-android-embedded-3.2.0">
     <CLASSES>
@@ -9,4 +10,17 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.journeyapps/zxing-android-embedded/3.2.0/654ff6a321869736de94c3fcd9c9a14184f61a3c/zxing-android-embedded-3.2.0-sources.jar!/" />
     </SOURCES>
   </library>
+=======
+<component name="libraryTable">
+  <library name="Gradle: com.journeyapps:zxing-android-embedded-3.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/5d38f26c275ba1d0622ba1ff33f1539e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/5d38f26c275ba1d0622ba1ff33f1539e/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.journeyapps/zxing-android-embedded/3.2.0/654ff6a321869736de94c3fcd9c9a14184f61a3c/zxing-android-embedded-3.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+>>>>>>> develop
 </component>

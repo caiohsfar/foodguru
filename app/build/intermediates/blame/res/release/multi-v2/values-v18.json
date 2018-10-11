@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/caio/Desktop/food guru quase pronto (EDITAR MESA FEITO)/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d9533b86880bcd382f66e3fa28751149/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}
