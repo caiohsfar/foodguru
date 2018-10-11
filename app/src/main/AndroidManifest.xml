@@ -30,7 +30,8 @@
         </activity>
         <activity
             android:name=".LerQrCodeActivity"
-            android:label="@string/title_activity_ler_qr_code"></activity>
+            android:label="@string/title_activity_ler_qr_code" />
+        <activity android:name=".estabelecimento.SessaoCardapioActvity"></activity>
     </application>
 
 </manifest>
