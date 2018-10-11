@@ -23,13 +23,5 @@ public class EstabelecimentoDAO {
         return sucess;
 
     }
-    public void atualizaEstabelecimento(Estabelecimento estabelecimento){
-        return;
-        //vai mudar o banco
-        //database.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO).child(estabelecimento.getId()).setValue(estabelecimento);
-
-    }
-
-
 
 }

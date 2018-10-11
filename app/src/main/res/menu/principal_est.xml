@@ -3,6 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menu_action_bar_adicionar_prato"
+        android:orderInCategory="100"
+        android:title="Adicionar Prato"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/menu_action_bar_adicionar_mesa"
         android:orderInCategory="100"
         android:title="Adicionar Mesa"

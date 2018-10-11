@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-he/values-he.xml",
+            "outputFile": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
             "map": [
                 {
-                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/5d38f26c275ba1d0622ba1ff33f1539e/res/values-he/values-he.xml",
+                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.2.0.aar\\de2bce9acf7e073c91a4a8fe3bf280b8\\res\\values-he\\values-he.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

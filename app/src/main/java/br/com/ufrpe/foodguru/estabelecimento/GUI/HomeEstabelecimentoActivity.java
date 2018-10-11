@@ -94,19 +94,29 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_action_bar_sair_est) {
-            exibirConfirmacaoSair();
-            return true;
-        }
-        if (id == R.id.menu_action_bar_editar_perfil_est) {
-            telaEditarDadosEstabelecimento();
+
+        if (id == R.id.menu_action_bar_adicionar_prato) {
+            telaAdicionarPrato();
             return true;
         }
         if (id == R.id.menu_action_bar_adicionar_mesa) {
             telaAdicionarMesa();
             return true;
         }
+        if (id == R.id.menu_action_bar_editar_perfil_est) {
+            telaEditarDadosEstabelecimento();
+            return true;
+        }
+        if (id == R.id.menu_action_bar_sair_est) {
+            exibirConfirmacaoSair();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void telaAdicionarPrato() {
+        Intent intent = new Intent(this, AdicionarPratoActivity.class);
+        startActivity(intent);
     }
 
     public void telaAdicionarMesa() {

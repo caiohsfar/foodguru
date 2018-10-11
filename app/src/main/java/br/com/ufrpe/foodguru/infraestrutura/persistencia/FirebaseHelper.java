@@ -8,6 +8,8 @@ public final class FirebaseHelper {
     public static final String REFERENCIA_ESTABELECIMENTO = "Estabelecimentos";
     public static final String REFERENCIA_CLIENTE = "Clientes";
     public static final String REFERENCIA_MESA = "Mesas";
+    public static final String REFERENCIA_PRATO = "Pratos";
+
 
 
     public FirebaseHelper(){

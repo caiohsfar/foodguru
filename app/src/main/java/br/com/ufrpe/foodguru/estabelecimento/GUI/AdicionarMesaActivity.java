@@ -73,6 +73,7 @@ public class AdicionarMesaActivity extends AppCompatActivity implements View.OnC
             }
         }
     }
+
     //Tem que ajeitar essa validação (está verificando em todos os nodos "Mesas" se tem um cósigo igual.
     public void validarCodigo(){
         Query query = FirebaseHelper.getFirebaseReference()

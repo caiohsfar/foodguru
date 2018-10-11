@@ -35,14 +35,13 @@
             </intent-filter>
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".LerQrCodeActivity"
             android:label="@string/title_activity_ler_qr_code" />
-        <activity android:name=".estabelecimento.SessaoCardapioActvity"></activity>
-=======
-            android:name=".cliente.GUI.HomeClienteActivity"
-            android:icon="@drawable/ic_teste_sair"
-            android:label="Food Guru" />
+        <activity android:name=".estabelecimento.SessaoCardapioActvity" />
+        =======
+        android:name=".cliente.GUI.HomeClienteActivity"
+        android:icon="@drawable/ic_teste_sair"
+        android:label="Food Guru" />
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
             android:label="Food Guru" />
@@ -50,8 +49,9 @@
         <activity android:name=".estabelecimento.GUI.AdicionarMesaActivity" />
         <activity android:name=".estabelecimento.GUI.EditarMesaActivity" />
         <activity android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity" />
-        <activity android:name=".estabelecimento.GUI.DetalhesMesaActivity"></activity>
->>>>>>> develop
+        <activity android:name=".estabelecimento.GUI.DetalhesMesaActivity" />
+        >>>>>>> develop
+        <activity android:name=".estabelecimento.GUI.AdicionarPratoActivity"></activity>
     </application>
 
 </manifest>

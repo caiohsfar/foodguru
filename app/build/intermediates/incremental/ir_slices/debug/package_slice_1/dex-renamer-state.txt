@@ -1,0 +1,4 @@
+#Thu Oct 11 12:57:38 GFT 2018
+base.0=C\:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.0=classes.dex
+renamed.0=classes.dex

@@ -39,6 +39,7 @@
                 android:drawableLeft="@drawable/ic_email"
                 android:drawableTint="@color/RoxoFoodGuru"
 
+                android:inputType="number"
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
 

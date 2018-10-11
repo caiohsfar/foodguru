@@ -29,6 +29,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="title_activity_cardapio">Cardapio</string>
     <string name="title_activity_codigo_mesa"><b>Código da Mesa</b></string>
+    <string name="title_activity_nome_prato"><b>Nome do Prato</b></string>
     <string name="title_activity_meus_dados_estabelecimento">Meus Dados
     </string>
     <string name="title_activity_meus_dados_cliente">Meus Dados</string>

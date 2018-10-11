@@ -1204,6 +1204,7 @@ id btConfirmarRegistroEstabelecimento
 id btLogin
 id bt_confirmar_edicao_mesa
 id btnConfirmarAdicionarMesa
+id btnConfirmarAdicionarPrato
 id btnConfirmarEdicao
 id btnConfirmarEdicaoDadosEstabelecimento
 id btn_confirmar_cadastro_cliente
@@ -1257,6 +1258,7 @@ id etComplementoEstabelecimento
 id etComplementoEstabelecimentoed
 id etConfirmarSenhaCliente
 id etConfirmarSenhaEstabelecimento
+id etDescricaoPrato
 id etEditarCodigoMesa
 id etEditarNumeroMesa
 id etEmailCliente
@@ -1268,6 +1270,7 @@ id etNomeCliente
 id etNomeClienteMeusDados
 id etNomeEstabelecimento
 id etNomeEstabelecimentoed
+id etNomePrato
 id etNumeroMesa
 id etRuaEstabelecimento
 id etRuaEstabelecimentoed
@@ -1307,6 +1310,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id ivImagemPrato
 id iv_Estabelecimento
 id iv_cliente
 id labeled
@@ -1320,6 +1324,7 @@ id list_item
 id masked
 id media_actions
 id menu_action_bar_adicionar_mesa
+id menu_action_bar_adicionar_prato
 id menu_action_bar_editar_perfil
 id menu_action_bar_editar_perfil_est
 id menu_action_bar_sair
@@ -1399,6 +1404,7 @@ id spEstadoEstabelecimento
 id spEstadoEstabelecimentoed
 id spacer
 id split_action_bar
+id spnSessaoCardapio
 id spread
 id spread_inside
 id src_atop
@@ -1443,6 +1449,7 @@ id tvEmailEstabelecimentoMeusDados
 id tvEnderecoEstabelecimentoMeusDados
 id tvNomeClienteMeusDados
 id tvNomeEstabelecimentoMeusDados
+id tvNomePrato
 id tvTelefoneEstabelecimentoMeusDados
 id tv_codigo_detalhe
 id tv_codigo_mesa
@@ -1521,6 +1528,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_adicionar_mesa
+layout activity_adicionar_prato
 layout activity_detalhes_mesa
 layout activity_editar_dados_cliente
 layout activity_editar_dados_estabelecimento
@@ -1533,6 +1541,7 @@ layout activity_perfil_estabelecimento
 layout activity_recuperar_senha
 layout activity_registro_cliente
 layout activity_registro_estabelecimento
+layout activity_sessao_cardapio
 layout activity_splash
 layout activity_tipo_cadastro
 layout bottom_sheet_grid_item
@@ -1579,6 +1588,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout prato_list_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1708,6 +1718,7 @@ string title_activity_mesa
 string title_activity_mesas
 string title_activity_meus_dados_cliente
 string title_activity_meus_dados_estabelecimento
+string title_activity_nome_prato
 string title_activity_pedidos
 string title_activity_perfil_cliente
 string title_activity_perfil_estabelecimento
