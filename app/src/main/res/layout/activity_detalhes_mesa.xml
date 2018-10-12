@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:background="@color/Branco"
-    tools:context=".estabelecimento.GUI.DetalhesMesaActivity">
+    tools:context=".Mesa.GUI.DetalhesMesaActivity">
 
     <TextView
         android:id="@+id/tv_numero_mesa_detalhe"

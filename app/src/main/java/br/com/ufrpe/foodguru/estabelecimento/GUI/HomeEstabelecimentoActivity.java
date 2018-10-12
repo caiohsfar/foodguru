@@ -16,6 +16,10 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import br.com.ufrpe.foodguru.Mesa.GUI.AdicionarMesaActivity;
+import br.com.ufrpe.foodguru.Mesa.GUI.MesasFragment;
+import br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity;
+import br.com.ufrpe.foodguru.Prato.GUI.PratosFragment;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;

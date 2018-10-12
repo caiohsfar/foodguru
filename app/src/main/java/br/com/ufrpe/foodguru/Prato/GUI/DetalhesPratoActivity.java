@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.GUI;
+package br.com.ufrpe.foodguru.Prato.GUI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

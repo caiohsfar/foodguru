@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.dominio;
+package br.com.ufrpe.foodguru.Mesa.GUI;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

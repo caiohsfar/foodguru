@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.GUI;
+package br.com.ufrpe.foodguru.Prato.GUI;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,9 +14,8 @@ import java.util.List;
 import br.com.ufrpe.foodguru.R;
 
 
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.PratoHolder;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.PratoView;
+import br.com.ufrpe.foodguru.Prato.dominio.PratoHolder;
+import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
 
 public class PratoAdapter extends RecyclerView.Adapter<PratoHolder>{
     private final Context context;

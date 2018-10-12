@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.dominio;
+package br.com.ufrpe.foodguru.Prato.dominio;
 
 
 import android.os.Parcel;

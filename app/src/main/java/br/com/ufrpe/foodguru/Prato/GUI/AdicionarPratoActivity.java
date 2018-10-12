@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.GUI;
+package br.com.ufrpe.foodguru.Prato.GUI;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -26,112 +26,71 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.kennyc.bottomsheet.BottomSheet;
 import com.kennyc.bottomsheet.BottomSheetListener;
-import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.UUID;
 
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
-import br.com.ufrpe.foodguru.estabelecimento.negocio.PratoServices;
+import br.com.ufrpe.foodguru.Prato.dominio.Prato;
+import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
-public class EditarPratoActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText nomePrato, descricaoPrato, precoPrato;
+public class AdicionarPratoActivity extends AppCompatActivity implements View.OnClickListener {
     private StorageReference  storageReference = FirebaseStorage.getInstance().getReference();
-    private UUID uidImagemPrato = UUID.randomUUID();
+    private EditText etNomePrato, etDescricaoPrato, etPrecoPrato;
+    private ProgressDialog progressDialog;
+    private ImageView imvFoto;
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final int GALERY_REQUEST_CODE = 71;
-    private Prato pratoSelecionado;
-    private ImageView imvPrato;
-    private ProgressDialog progressDialog;
+    private UUID uidImagemPrato = UUID.randomUUID();
+    private String urlImagemAdicionada;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_editar_prato);
-        Helper.verificarPermissaoEscrever(EditarPratoActivity.this,EditarPratoActivity.this);
-        pratoSelecionado = getIntent().getExtras().getParcelable("prato");
+        setContentView(R.layout.activity_adicionar_prato);
+        Helper.verificarPermissaoEscrever(this,AdicionarPratoActivity.this);
         setUpViews();
-    }
-
-    private void setUpViews(){
-        findViewById(R.id.btnConfirmarEditarPrato).setOnClickListener(this);
-        findViewById(R.id.btnEditarImagemPrato).setOnClickListener(this);
-        progressDialog = new ProgressDialog(this);
-        descricaoPrato = findViewById(R.id.etEditarDescricaoPrato);
-        descricaoPrato.setText(pratoSelecionado.getDescricaoPrato());
-        nomePrato = findViewById(R.id.etEditarNomePrato);
-        nomePrato.setText(pratoSelecionado.getNomePrato());
-        precoPrato = findViewById(R.id.etEditarPrecoPrato);
-        precoPrato.setText(pratoSelecionado.getPreco().toString());
-        imvPrato = findViewById(R.id.ivImagemPratoEditar);
-        Picasso.get()
-                .load(pratoSelecionado.getUrlImagem())
-                .resize(500,500)
-                .into(imvPrato);
-    }
-
-    private boolean validarCampos(){
-        boolean validacao = true;
-        if (nomePrato.getText().toString().trim().isEmpty()){
-            nomePrato.setError(getString(R.string.sp_excecao_campo_vazio));
-            validacao = false;
-        }
-        if (descricaoPrato.getText().toString().trim().isEmpty()){
-            descricaoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
-            validacao = false;
-        }
-        if(imvPrato.getBackground() == null){
-            validacao = false;
-            Helper.criarToast(this, "Adicione uma foto");
-        }
-        if (precoPrato.getText().toString().trim().isEmpty()){
-            precoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
-            validacao = false;
-        }
-
-        return validacao;
-    }
-
-    public void confirmarEdicaoPrato(View view) {
-        if (!validarCampos()){
-            return;
-        }
-        editarPrato();
-    }
-
-    public void editarPrato(){
-        setPratoSelecionado();
-        PratoServices pratoServices = new PratoServices();
-        if (pratoServices.editarPrato(pratoSelecionado)){
-            Helper.criarToast(this, "Prato editado com sucesso");
-            finish();
-        }else{
-            Helper.criarToast(this, "Erro ao editar prato");
-        }
-    }
-
-    public void setPratoSelecionado(){
-        pratoSelecionado.setNomePrato(nomePrato.getText().toString());
-        pratoSelecionado.setDescricaoPrato(descricaoPrato.getText().toString());
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.btnConfirmarEditarPrato:{
+            case R.id.btnConfirmarAdicionarPrato:{
                 if(!validarCampos()){
                     return;
                 }
-                editarPrato();
+                adicionarPrato();
                 break;
             }
-            case R.id.btnEditarImagemPrato:{
+            case R.id.editar_foto_adicionar_prato:{
                 showMenuEscolhaEdicao();
                 break;
             }
         }
+    }
+
+    private boolean validarCampos(){
+        boolean validacao = true;
+        if (etNomePrato.getText().toString().trim().isEmpty()){
+            etNomePrato.setError(getString(R.string.sp_excecao_campo_vazio));
+            validacao = false;
+        }
+        if (etDescricaoPrato.getText().toString().trim().isEmpty()){
+            etDescricaoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
+            validacao = false;
+        }
+        if(imvFoto.getBackground() == null){
+            validacao = false;
+            Helper.criarToast(this, "Adicione uma foto");
+        }
+        if (etPrecoPrato.getText().toString().trim().isEmpty()){
+            etPrecoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
+            validacao = false;
+        }
+
+        return validacao;
     }
     public void showMenuEscolhaEdicao() {
         BottomSheet.Builder builder = new BottomSheet.Builder(this);
@@ -147,13 +106,13 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                     public void onSheetItemSelected(@NonNull BottomSheet bottomSheet, MenuItem menuItem, @Nullable Object o) {
                         switch (menuItem.getItemId()) {
                             case R.id.escolher_foto:
-                                if (Helper.verificarPermissoesLeitura(EditarPratoActivity.this,EditarPratoActivity.this)){
+                                if (Helper.verificarPermissoesLeitura(AdicionarPratoActivity.this,AdicionarPratoActivity.this)){
                                     escolherFoto();
                                     break;
                                 }
                                 break;
                             case R.id.tirar_foto:
-                                if (Helper.verificarPermissaoAcessarCamera(EditarPratoActivity.this,EditarPratoActivity.this)){
+                                if (Helper.verificarPermissaoAcessarCamera(AdicionarPratoActivity.this,AdicionarPratoActivity.this)){
                                     tirarFoto();
                                     break;
                                 }
@@ -169,6 +128,40 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                 }).show();
 
     }
+
+    private void setUpViews(){
+        findViewById(R.id.btnConfirmarAdicionarPrato).setOnClickListener(this);
+        findViewById(R.id.editar_foto_adicionar_prato).setOnClickListener(this);
+        etNomePrato = findViewById(R.id.etNomePrato);
+        imvFoto = findViewById(R.id.iv_adicionar_prato);
+        etPrecoPrato = findViewById(R.id.etPrecoPrato);
+        etDescricaoPrato = findViewById(R.id.etDescricaoPrato);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Adicionando...");
+    }
+
+    private Prato criarPrato() {
+        Prato prato = new Prato();
+        prato.setNomePrato(etNomePrato.getText().toString());
+        prato.setDescricaoPrato(etDescricaoPrato.getText().toString());
+        prato.setUrlImagem(urlImagemAdicionada);
+        prato.setPreco(Double.parseDouble(etPrecoPrato.getText().toString()));
+        //spinner
+        prato.setIdCategoria("idCategoria");
+        return prato;
+    }
+
+    private void adicionarPrato() {
+        PratoServices pratoServices = new PratoServices();
+        if (pratoServices.adicionarPrato(criarPrato())){
+            Helper.criarToast(this, "Prato adicionado com sucesso.");
+            finish();
+        }else{
+            Helper.criarToast(this, "Erro ao adicionar prato");
+            finish();
+        }
+    }
+
     private void tirarFoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAMERA_REQUEST_CODE);
@@ -236,7 +229,6 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
     }
     private void inserirFoto(Uri uriFoto){
         iniciarProgressDialog();
-        FirebaseStorage.getInstance().getReferenceFromUrl(pratoSelecionado.getUrlImagem()).delete();
         final StorageReference ref = storageReference
                 .child("images/pratos/" + uidImagemPrato.toString() + ".jpg");
 
@@ -255,7 +247,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
                     System.out.println(imageUri.toString());
-                    pratoSelecionado.setUrlImagem(imageUri.toString());
+                    urlImagemAdicionada = imageUri.toString();
                     fecharProgressDialog();
                 }
             }
@@ -267,13 +259,13 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Helper.criarToast(EditarPratoActivity.this,e.toString());
+                Helper.criarToast(AdicionarPratoActivity.this,e.toString());
                 fecharProgressDialog();
             }
         });
     }
     private void setFotoImageView(Bitmap bitmap) {
-        imvPrato.setImageBitmap(bitmap);
+        imvFoto.setImageBitmap(bitmap);
     }
     private void fecharProgressDialog(){
         progressDialog.setCanceledOnTouchOutside(true);
@@ -285,4 +277,3 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         progressDialog.show();
     }
 }
-

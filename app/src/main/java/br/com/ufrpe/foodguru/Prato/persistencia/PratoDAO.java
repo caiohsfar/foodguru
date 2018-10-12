@@ -1,17 +1,14 @@
-package br.com.ufrpe.foodguru.estabelecimento.persistencia;
+package br.com.ufrpe.foodguru.Prato.persistencia;
 
-import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Mesa;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
+import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_PRATO;

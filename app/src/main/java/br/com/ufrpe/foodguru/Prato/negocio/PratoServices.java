@@ -1,13 +1,12 @@
-package br.com.ufrpe.foodguru.estabelecimento.negocio;
+package br.com.ufrpe.foodguru.Prato.negocio;
 
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.List;
 
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Mesa;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
+import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 
-import br.com.ufrpe.foodguru.estabelecimento.persistencia.PratoDAO;
+import br.com.ufrpe.foodguru.Prato.persistencia.PratoDAO;
 
 public class PratoServices {
     private PratoDAO pratoDAO = new PratoDAO();

@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.GUI;
+package br.com.ufrpe.foodguru.Mesa.GUI;
 
 import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
@@ -13,8 +13,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Mesa;
-import br.com.ufrpe.foodguru.estabelecimento.negocio.MesaServices;
+import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
+import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 

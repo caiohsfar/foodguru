@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.estabelecimento.dominio;
+package br.com.ufrpe.foodguru.Mesa.dominio;
 
 public class MesaView {
     private Mesa mesa;

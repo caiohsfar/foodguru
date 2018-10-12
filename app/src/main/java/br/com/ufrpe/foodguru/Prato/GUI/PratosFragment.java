@@ -1,11 +1,10 @@
-package br.com.ufrpe.foodguru.estabelecimento.GUI;
+package br.com.ufrpe.foodguru.Prato.GUI;
 
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -28,21 +27,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Mesa;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.MesaHolder;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.MesaView;
-import br.com.ufrpe.foodguru.estabelecimento.negocio.MesaServices;
+import br.com.ufrpe.foodguru.Prato.dominio.Prato;
+import br.com.ufrpe.foodguru.Prato.dominio.PratoHolder;
+import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
+import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_PRATO;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MesasFragment extends Fragment{
-    private MesaAdapter adapter;
+public class PratosFragment extends Fragment {
+    private PratoAdapter adapter;
     private RecyclerView mRecyclerView;
-    private MesaServices mesaServices = new MesaServices();
+    private PratoServices pratoServices = new PratoServices();
     private ProgressDialog mProgressDialog;
-    private List<MesaView> mesasViews;
+    private List<PratoView> pratosViews;
     private ActionMode actionMode;
     private View viewInflado;
     private FloatingActionButton button;
@@ -76,7 +77,7 @@ public class MesasFragment extends Fragment{
                     }
                     case R.id.acao_editar:{
                         // quando abrir tem que passar o id da mesa pra poder editar na utra tela
-                        abrirTelaEditarMesa();
+                        abrirTelaEditarPrato();
                         actionMode.finish();
                         break;
                     }
@@ -89,50 +90,52 @@ public class MesasFragment extends Fragment{
             @Override
             public void onDestroyActionMode(ActionMode mode) {
                 actionMode = null;
-                for (MesaView mesa : mesasViews) {
-                    mesa.setSelecionado(false);
+                for (PratoView prato : pratosViews) {
+                    prato.setSelecionado(false);
                 }
                 mRecyclerView.getAdapter().notifyDataSetChanged();
 
             }
         };
     }
-    private void deletarMesas(){
-        for (MesaView mesaView : mesasViews){
-            if (mesaView.isSelecionado()){
-                mesaServices.removerMesa(mesaView.getMesa());
+
+    private void deletarPratos(){
+        for (PratoView pratoView : pratosViews){
+            if (pratoView.isSelecionado()){
+                pratoServices.removerPrato(pratoView.getPrato());
             }
         }
     }
 
     private void selecionarTodos(){
-        for(MesaView mesaView : mesasViews){
-            if (!mesaView.isSelecionado()){
+        for(PratoView pratoView : pratosViews){
+            if (!pratoView.isSelecionado()){
                 updateActionModeTitle();
-                mesaView.setSelecionado(true);
+                pratoView.setSelecionado(true);
                 mRecyclerView.getAdapter().notifyDataSetChanged();
             }
         }
     }
-    public MesasFragment() {
+
+    public PratosFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        viewInflado = inflater.inflate(R.layout.fragment_mesas, container, false);
+        viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
 
         mProgressDialog = new ProgressDialog(viewInflado.getContext());
         iniciarRecyclerView();
-        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_MESA)
-                .orderByChild("uidEstabelecimento").equalTo(FirebaseHelper.getUidUsuario())
+        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
+                .child(REFERENCIA_PRATO)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        mesasViews = mesaToMesaView((ArrayList<Mesa>)mesaServices.loadMesas(dataSnapshot));
-                        adapter = new MesaAdapter(getContext(),mesasViews,onClickMesa());
+                        pratosViews = pratoToPratoView((ArrayList<Prato>)pratoServices.loadPratos(dataSnapshot));
+                        adapter = new PratoAdapter(getContext(),pratosViews,onClickPrato());
                         mRecyclerView.setAdapter(adapter);
                     }
 
@@ -143,51 +146,52 @@ public class MesasFragment extends Fragment{
                 });
 
         return viewInflado;
-
     }
-    private void iniciarActionMode(int indexMesa) {
+
+    private void iniciarActionMode(int indexPrato) {
         actionMode = getActivity().startActionMode(getActionModeCallback());
-        MesaView mesa = mesasViews.get(indexMesa);
-        mesa.setSelecionado(true);
+        PratoView prato = pratosViews.get(indexPrato);
+        prato.setSelecionado(true);
         mRecyclerView.getAdapter().notifyDataSetChanged();
         updateActionModeTitle();
         updateIconeEditar();
     }
-    private MesaAdapter.MesaOnClickListener onClickMesa() {
-        return new MesaAdapter.MesaOnClickListener() {
+
+    private PratoAdapter.PratoOnClickListener onClickPrato() {
+        return new PratoAdapter.PratoOnClickListener() {
             @Override
-            public void onClickMesa(MesaHolder holder, int indexMesa) {
-                Mesa mesa = mesasViews.get(indexMesa).getMesa();
+            public void onClickPrato(PratoHolder holder, int indexPrato) {
+                Prato prato = pratosViews.get(indexPrato).getPrato();
                 if (actionMode == null) {
-                    detalharMesa(mesa);
-                } else if (!mesasViews.get(indexMesa).isSelecionado()){
-                    selecionarItem(indexMesa);
+                    detalharPrato(prato);
+                } else if (!pratosViews.get(indexPrato).isSelecionado()){
+                    selecionarItem(indexPrato);
                 }else{
-                    desSelecionarItem(indexMesa);
+                    desSelecionarItem(indexPrato);
                 }
             }
             @Override
-            public void onLongClickMesa(MesaHolder holder, int indexMesa) {
+            public void onLongClickPrato(PratoHolder holder, int indexPrato) {
                 if (actionMode != null) {
                     return;
                 }
-                iniciarActionMode(indexMesa);
+                iniciarActionMode(indexPrato);
             }
 
-            };
+        };
     }
 
-    private void detalharMesa(Mesa mesa) {
-        Intent intent = new Intent(getContext(),DetalhesMesaActivity.class);
-        intent.putExtra("NUMERO_MESA",mesa.getNumeroMesa());
-        intent.putExtra("CODIGO_MESA", mesa.getCodigoMesa());
+    private void detalharPrato(Prato prato) {
+        Intent intent = new Intent(getContext(),DetalhesPratoActivity.class);
+        intent.putExtra("NOME_PRATO",prato.getNomePrato());
+        intent.putExtra("DESCRICAO_PRATO", prato.getDescricaoPrato());
         startActivity(intent);
     }
 
-    private void desSelecionarItem(int indexMesa) {
-        mesasViews.get(indexMesa).setSelecionado(false);
+    private void desSelecionarItem(int indexPrato) {
+        pratosViews.get(indexPrato).setSelecionado(false);
         mRecyclerView.getAdapter().notifyDataSetChanged();
-        if (mesasViews.size() == 0){
+        if (pratosViews.size() == 0){
             actionMode.finish();
         }else{
             updateIconeEditar();
@@ -197,81 +201,81 @@ public class MesasFragment extends Fragment{
 
     }
 
-    private void selecionarItem(int indexMesa) {
-        mesasViews.get(indexMesa).setSelecionado(true);
+    private void selecionarItem(int indexPrato) {
+        pratosViews.get(indexPrato).setSelecionado(true);
         mRecyclerView.getAdapter().notifyDataSetChanged();
         updateIconeEditar();
         updateActionModeTitle();
         mRecyclerView.getAdapter().notifyDataSetChanged();
     }
     private void updateIconeEditar(){
-        List<MesaView> mesasSelecionadas = getMesasSelecionadas();
-        if (mesasSelecionadas.size() == 1){
+        List<PratoView> pratosSelecionadas = getPratosSelecionados();
+        if (pratosSelecionadas.size() == 1){
             actionMode.getMenu().findItem(R.id.acao_editar).setEnabled(true);
             actionMode.getMenu().findItem(R.id.acao_editar).setVisible(true);
-        }else if (mesasSelecionadas.size() > 1){
+        }else if (pratosSelecionadas.size() > 1){
             actionMode.getMenu().findItem(R.id.acao_editar).setEnabled(false);
             actionMode.getMenu().findItem(R.id.acao_editar).setVisible(false);
         }
     }
+
     private void updateActionModeTitle() {
-        List<MesaView> mesasSelecionadas = getMesasSelecionadas();
+        List<PratoView> pratosSelecionados = getPratosSelecionados();
         if (actionMode != null) {
-            if (mesasSelecionadas.size() == 0){
+            if (pratosSelecionados.size() == 0){
                 actionMode.finish();
             }else{
-                actionMode.setTitle(String.valueOf(mesasSelecionadas.size()));
+                actionMode.setTitle(String.valueOf(pratosSelecionados.size()));
             }
         }
     }
-    private List<MesaView> getMesasSelecionadas() {
-        List<MesaView> list = new ArrayList<MesaView>();
-        for (MesaView mesa : this.mesasViews) {
-            if (mesa.isSelecionado()) {
-                list.add(mesa);
+    private List<PratoView> getPratosSelecionados() {
+        List<PratoView> list = new ArrayList<PratoView>();
+        for (PratoView prato : this.pratosViews) {
+            if (prato.isSelecionado()) {
+                list.add(prato);
             }
         }
         return list;
     }
-    private List<MesaView> mesaToMesaView(ArrayList<Mesa> mesas){
-        ArrayList<MesaView> mesasViews = new ArrayList<>();
-        for (Mesa mesa : mesas) {
-            MesaView mesaView = new MesaView();
-            mesaView.setMesa(mesa);
-            mesasViews.add(mesaView);
+
+    private List<PratoView> pratoToPratoView(ArrayList<Prato> pratos){
+        ArrayList<PratoView> pratosViews = new ArrayList<>();
+        for (Prato prato : pratos) {
+            PratoView pratoView = new PratoView();
+            pratoView.setPrato(prato);
+            pratosViews.add(pratoView);
         }
-        return mesasViews;
+        return pratosViews;
     }
 
 
     public void iniciarRecyclerView(){
-        mRecyclerView = (RecyclerView) viewInflado.findViewById(R.id.recyclerv_view);
+        mRecyclerView = (RecyclerView) viewInflado.findViewById(R.id.recyclerv_view_pratos);
         LinearLayoutManager layoutManager = new LinearLayoutManager(viewInflado.getContext()
                 , LinearLayoutManager.VERTICAL, false);
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
-        adapter = new MesaAdapter(getContext(),mesasViews, onClickMesa());
+        adapter = new PratoAdapter(getContext(),pratosViews, onClickPrato());
         mRecyclerView.setAdapter(adapter);
-
     }
 
-    public void abrirTelaEditarMesa(){
-        Mesa mesaSelecionada = getMesaSelecionada();
-        Intent intent = new Intent(viewInflado.getContext(),EditarMesaActivity.class);
-        intent.putExtra("CODIGO_MESA",mesaSelecionada.getCodigoMesa());
-        intent.putExtra("ID_MESA",mesaSelecionada.getIdMesa());
-        intent.putExtra("NUMERO_MESA", mesaSelecionada.getNumeroMesa());
+    public void abrirTelaEditarPrato(){
+        Prato pratoSelecionado = getPratoSelecionado();
+        Intent intent = new Intent(viewInflado.getContext(),EditarPratoActivity.class);
+        intent.putExtra("prato", pratoSelecionado);
         startActivity(intent);
     }
-    public Mesa getMesaSelecionada() {
-        for (MesaView mesaView : mesasViews) {
-            if (mesaView.isSelecionado()) {
-                return mesaView.getMesa();
+    public Prato getPratoSelecionado() {
+        for (PratoView pratoView : pratosViews) {
+            if (pratoView.isSelecionado()) {
+                return pratoView.getPrato();
             }
         }
         return null;
     }
+
     public void exibirAlertDialog(){
         AlertDialog.Builder builderDeletar = setarMensagemDeletar();
         setarBotaoNegativoDeletar(builderDeletar);
@@ -282,9 +286,10 @@ public class MesasFragment extends Fragment{
     public AlertDialog.Builder setarMensagemDeletar(){
         AlertDialog.Builder  builder = new AlertDialog.Builder(
                 getContext());
-        builder.setMessage("Você deseja mesmo deletar as mesas?");
+        builder.setMessage("Você deseja mesmo deletar os pratos?");
         return builder;
     }
+
     public void setarBotaoNegativoDeletar(AlertDialog.Builder builderDeletar){
         builderDeletar.setNegativeButton("Não", new DialogInterface.OnClickListener() {
             @Override
@@ -302,7 +307,7 @@ public class MesasFragment extends Fragment{
         builderDeletar.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
-                deletarMesas();
+                deletarPratos();
                 actionMode.finish();
             }
         });
