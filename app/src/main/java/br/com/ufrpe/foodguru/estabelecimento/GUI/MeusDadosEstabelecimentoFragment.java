@@ -57,8 +57,6 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
     private TextView tvNome, tvEmail, tvTelefone, tvEndereco;
     private ImageView imvFoto;
     private FirebaseUser currentUser = FirebaseHelper.getFirebaseAuth().getCurrentUser();
-    private static final int PERMISSION_REQUEST_WRITE= 2;
-    private static final int PERMISSION_REQUEST_READ = 0;
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final int GALERY_REQUEST_CODE = 71;
     private ProgressDialog progressDialog;
@@ -70,7 +68,7 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         viewInflado = inflater.inflate(R.layout.fragment_meus_dados_estabelecimento, container, false);
         recuperarDados();
         setClicks();
-        verificarPermissaoEscrever();
+        Helper.verificarPermissaoEscrever(getContext(),getActivity());
         carregarFoto();
         progressDialog = new ProgressDialog(viewInflado.getContext());
         return viewInflado;
@@ -130,11 +128,16 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
                     public void onSheetItemSelected(@NonNull BottomSheet bottomSheet, MenuItem menuItem, @Nullable Object o) {
                         switch (menuItem.getItemId()) {
                             case R.id.escolher_foto:
-                                permissaoLerArquivos();
+                                if (Helper.verificarPermissoesLeitura(getContext(),getActivity())){
+                                    escolherFoto();
+                                    break;
+                                }
                                 break;
                             case R.id.tirar_foto:
-                                permissaoAcessarCamera();
-                                break;
+                                if (Helper.verificarPermissaoAcessarCamera(getContext(),getActivity())){
+                                    tirarFoto();
+                                    break;
+                                }
                             default:
                                 break;
                         }
@@ -164,64 +167,10 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
             if (currentUser.getPhotoUrl() != null) {
                 Picasso.get()
                         .load(currentUser.getPhotoUrl())
-                        .resize(300,imvFoto.getHeight())
+                        .resize(400,250)
                         .placeholder(R.drawable.ic_person_black_24dp)
                         .into(imvFoto);
             }
-        }
-    }
-    private void permissaoLerArquivos(){
-        if (verificarPermissoesLeitura()){
-            escolherFoto();
-        }
-
-    }
-    private boolean verificarPermissoesLeitura(){
-        boolean validacao = true;
-        int permissionCheckRead = ContextCompat.checkSelfPermission(viewInflado.getContext(),
-                Manifest.permission.READ_EXTERNAL_STORAGE);
-        if(permissionCheckRead != PackageManager.PERMISSION_GRANTED){
-            validacao = false;
-            if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                    Manifest.permission.READ_EXTERNAL_STORAGE)){
-                ActivityCompat.requestPermissions(getActivity(), new String[]{
-                        Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_READ);
-            }else{
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_READ);
-            }
-        }
-        return validacao;
-    }
-    private boolean verificarPermissaoEscrever(){
-        boolean validacao = true;
-        int permissionCheckWrite= ContextCompat.checkSelfPermission(viewInflado.getContext(),
-                Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if(permissionCheckWrite != PackageManager.PERMISSION_GRANTED){
-            validacao = false;
-            //Não tem permissão: solicitar
-            if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                ActivityCompat.requestPermissions(getActivity(), new String[]{
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_WRITE);
-            }else{
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_WRITE);
-            }
-        }
-        return validacao;
-    }
-    private void permissaoAcessarCamera() {
-        //Verifica permissão de camera
-        int permissionCheck = ContextCompat.checkSelfPermission(viewInflado.getContext(), Manifest.permission.CAMERA);
-        //Se tiver permissão, então a camêra será aberta
-        if(permissionCheck == PackageManager.PERMISSION_GRANTED && verificarPermissaoEscrever()){
-            tirarFoto();
-        }
-        //Caso contrário solicitará ao usuário
-        else{
-            ActivityCompat.requestPermissions(getActivity(),new String[]{
-                    Manifest.permission.CAMERA},CAMERA_REQUEST_CODE);
         }
     }
     private void tirarFoto() {
@@ -323,7 +272,6 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         }).addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Helper.criarToast(viewInflado.getContext(),"Foto atualizada com sucesso.");
                 fecharProgressDialog();
             }
         }).addOnFailureListener(new OnFailureListener() {

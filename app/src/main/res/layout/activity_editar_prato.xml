@@ -13,7 +13,7 @@
         android:layout_height="250dp">
 
         <ImageView
-            android:id="@+id/ivImagemPrato"
+            android:id="@+id/ivImagemPratoEditar"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="@color/RoxoFoodGuru"
@@ -58,6 +58,20 @@
         android:hint="Descrição do Prato"
 
         android:padding="15sp" />
+    <EditText
+        android:id="@+id/etEditarPrecoPrato"
+        android:layout_width="match_parent"
+
+        android:layout_height="55sp"
+        android:drawableLeft="@drawable/ic_pedidos"
+        android:inputType="numberDecimal"
+        android:drawablePadding="15sp"
+
+        android:drawableTint="@color/RoxoFoodGuru"
+        android:hint="Preço do prato"
+
+        android:padding="15sp"
+        android:singleLine="true" />
 
     <Button
         android:id="@+id/btnConfirmarEditarPrato"

@@ -158,7 +158,6 @@ public class MesasFragment extends Fragment{
             @Override
             public void onClickMesa(MesaHolder holder, int indexMesa) {
                 Mesa mesa = mesasViews.get(indexMesa).getMesa();
-                List<MesaView> mesasSelecionadas = getMesasSelecionadas();
                 if (actionMode == null) {
                     detalharMesa(mesa);
                 } else if (!mesasViews.get(indexMesa).isSelecionado()){

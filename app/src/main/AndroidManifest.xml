@@ -38,10 +38,10 @@
             android:name=".LerQrCodeActivity"
             android:label="@string/title_activity_ler_qr_code" />
         <activity android:name=".estabelecimento.SessaoCardapioActvity" />
-        =======
-        android:name=".cliente.GUI.HomeClienteActivity"
-        android:icon="@drawable/ic_teste_sair"
-        android:label="Food Guru" />
+        <activity
+            android:name=".cliente.GUI.HomeClienteActivity"
+            android:icon="@drawable/ic_teste_sair"
+            android:label="Food Guru" />
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
             android:label="Food Guru" />

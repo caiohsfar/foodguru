@@ -165,7 +165,6 @@ public class PratosFragment extends Fragment {
             @Override
             public void onClickPrato(PratoHolder holder, int indexPrato) {
                 Prato prato = pratosViews.get(indexPrato).getPrato();
-                List<PratoView> pratosSelecionadas = getPratosSelecionados();
                 if (actionMode == null) {
                     detalharPrato(prato);
                 } else if (!pratosViews.get(indexPrato).isSelecionado()){
@@ -268,9 +267,7 @@ public class PratosFragment extends Fragment {
     public void abrirTelaEditarPrato(){
         Prato pratoSelecionado = getPratoSelecionado();
         Intent intent = new Intent(viewInflado.getContext(),EditarPratoActivity.class);
-        intent.putExtra("NOME_PRATO",pratoSelecionado.getNomePrato());
-        intent.putExtra("ID_PRATO",pratoSelecionado.getIdPrato());
-        intent.putExtra("DESCRICAO_PRATO", pratoSelecionado.getDescricaoPrato());
+        intent.putExtra("prato", pratoSelecionado);
         startActivity(intent);
     }
     public Prato getPratoSelecionado() {

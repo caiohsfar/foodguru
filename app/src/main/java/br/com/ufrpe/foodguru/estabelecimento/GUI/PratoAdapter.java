@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import br.com.ufrpe.foodguru.R;
@@ -45,9 +47,16 @@ public class PratoAdapter extends RecyclerView.Adapter<PratoHolder>{
     public void onBindViewHolder(final PratoHolder holder, final int position) {
         String nome = pratos.get(position).getPrato().getNomePrato();
         String descricao = pratos.get(position).getPrato().getDescricaoPrato();
+        String urlImagem = pratos.get(position).getPrato().getUrlImagem();
         holder.nome.setText(nome);
         holder.descricao.setText(descricao);
+        Picasso.get()
+                .load(urlImagem)
+                .resize(300,300)
+                .into(holder.imagem);
+
         holder.nome.setTag(holder);
+
         if (onClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

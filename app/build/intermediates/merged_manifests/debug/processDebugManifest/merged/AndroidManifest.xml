@@ -80,10 +80,10 @@
             android:name="br.com.ufrpe.foodguru.LerQrCodeActivity"
             android:label="@string/title_activity_ler_qr_code" />
         <activity android:name="br.com.ufrpe.foodguru.estabelecimento.SessaoCardapioActvity" />
-        =======
-        android:name=".cliente.GUI.HomeClienteActivity"
-        android:icon="@drawable/ic_teste_sair"
-        android:label="Food Guru" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity"
+            android:icon="@drawable/ic_teste_sair"
+            android:label="Food Guru" />
         <activity
             android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity"
             android:label="Food Guru" />

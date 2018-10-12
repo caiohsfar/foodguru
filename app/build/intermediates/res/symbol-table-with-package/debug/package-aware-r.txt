@@ -1246,6 +1246,7 @@ id direct
 id disableHome
 id edit_query
 id editar_foto
+id editar_foto_adicionar_prato
 id editar_foto_estabelecimento
 id edtLoginEmail
 id edtLoginSenha
@@ -1268,6 +1269,7 @@ id etEditarCodigoMesa
 id etEditarDescricaoPrato
 id etEditarNomePrato
 id etEditarNumeroMesa
+id etEditarPrecoPrato
 id etEmailCliente
 id etEmailClienteMeusDados
 id etEmailEstabelecimento
@@ -1279,6 +1281,7 @@ id etNomeEstabelecimento
 id etNomeEstabelecimentoed
 id etNomePrato
 id etNumeroMesa
+id etPrecoPrato
 id etRuaEstabelecimento
 id etRuaEstabelecimentoed
 id etSenhaCliente
@@ -1319,7 +1322,9 @@ id italic
 id item_touch_helper_previous_elevation
 id ivDetalhesImagemPrato
 id ivImagemPrato
+id ivImagemPratoEditar
 id iv_Estabelecimento
+id iv_adicionar_prato
 id iv_cliente
 id labeled
 id largeLabel
