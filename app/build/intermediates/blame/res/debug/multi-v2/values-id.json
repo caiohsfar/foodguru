@@ -4,7 +4,7 @@
             "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-id/values-id.xml",
             "map": [
                 {
-                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/5d38f26c275ba1d0622ba1ff33f1539e/res/values-id/values-id.xml",
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/res/values-id/values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

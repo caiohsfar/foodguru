@@ -4,7 +4,7 @@
             "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d9533b86880bcd382f66e3fa28751149/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
