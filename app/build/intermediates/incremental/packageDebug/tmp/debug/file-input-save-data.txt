@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Oct 11 20:23:06 BRT 2018
+#Fri Oct 12 15:58:50 BRT 2018
 1.base=/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/transforms/dexMerger/debug/1
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.Continuation;
@@ -35,6 +36,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.kennyc.bottomsheet.BottomSheet;
 import com.kennyc.bottomsheet.BottomSheetListener;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -138,11 +140,22 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
         imvFoto = viewInflado.findViewById(R.id.iv_cliente);
         if (currentUser != null) {
             if (currentUser.getPhotoUrl() != null) {
+                final ProgressBar finalProgressBar = viewInflado.findViewById(R.id.progress_bar);
+                finalProgressBar.setVisibility(View.VISIBLE);
                 Picasso.get()
                         .load(currentUser.getPhotoUrl())
-                        .resize(300,imvFoto.getHeight())
-                        .placeholder(R.drawable.ic_person_black_24dp)
-                        .into(imvFoto);
+                        .into(imvFoto, new Callback() {
+                            @Override
+                            public void onSuccess() {
+                                finalProgressBar.setVisibility(View.GONE);
+
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+
+                            }
+                        });
             }
         }
     }

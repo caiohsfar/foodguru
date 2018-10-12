@@ -81,7 +81,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
             etDescricaoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
             validacao = false;
         }
-        if(imvFoto.getBackground() == null){
+        if(imvFoto.getDrawable() == null){
             validacao = false;
             Helper.criarToast(this, "Adicione uma foto");
         }

@@ -1212,6 +1212,7 @@ id btnConfirmarEditarPrato
 id btnEditarImagemPrato
 id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
+id btn_escanear
 id btn_log_out
 id buttonContainer
 id buttonPanel
@@ -1375,6 +1376,9 @@ id parent_matrix
 id percent
 id pin
 id positive
+id progress_bar
+id progress_bar_editar_prato
+id progress_bar_est
 id progress_circular
 id progress_horizontal
 id radio

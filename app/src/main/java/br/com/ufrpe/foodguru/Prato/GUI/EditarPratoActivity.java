@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.kennyc.bottomsheet.BottomSheet;
 import com.kennyc.bottomsheet.BottomSheetListener;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -55,6 +57,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         setUpViews();
     }
 
+
     private void setUpViews(){
         findViewById(R.id.btnConfirmarEditarPrato).setOnClickListener(this);
         findViewById(R.id.btnEditarImagemPrato).setOnClickListener(this);
@@ -66,10 +69,22 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         precoPrato = findViewById(R.id.etEditarPrecoPrato);
         precoPrato.setText(pratoSelecionado.getPreco().toString());
         imvPrato = findViewById(R.id.ivImagemPratoEditar);
+        final ProgressBar finalProgressBar = findViewById(R.id.progress_bar_editar_prato);
+        finalProgressBar.setVisibility(View.VISIBLE);
         Picasso.get()
                 .load(pratoSelecionado.getUrlImagem())
-                .resize(500,500)
-                .into(imvPrato);
+                .into(imvPrato, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        finalProgressBar.setVisibility(View.GONE);
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+
+                    }
+                });
     }
 
     private boolean validarCampos(){

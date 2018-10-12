@@ -86,6 +86,10 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        exibirConfirmacaoSair();
+    }
 
     //menu da action bar (sair)
     @Override
@@ -149,7 +153,6 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 mAuth.signOut();
                 Helper.criarToast(HomeEstabelecimentoActivity.this,"Até mais");
-                FirebaseAuth.getInstance().signOut();
                 exibirTelaLogin();
                 finish();
             }
@@ -166,6 +169,7 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
 
     public void exibirTelaLogin(){
         Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }

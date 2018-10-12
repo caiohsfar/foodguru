@@ -17,8 +17,6 @@ import android.widget.TextView;
 
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
-import br.com.ufrpe.foodguru.cliente.EscanearQrCodeFragment;
-
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ufrpe.foodguru.R;
@@ -30,7 +28,7 @@ public class HomeClienteActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private BottomNavigationView mNavCliente;
     private FrameLayout mFrameCliente;
-    private br.com.ufrpe.foodguru.cliente.EscanearQrCodeFragment escanearQrCodeFragment;
+    private EscanearQrCodeFragment escanearQrCodeFragment;
     private MeusDadosClienteFragment meusDadosClienteFragment;
 
     @Override
@@ -101,6 +99,11 @@ public class HomeClienteActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        exibirConfirmacaoSair();
+    }
+
     public void telaEditarDadosCliente() {
         Intent intent = new Intent(this, EditarDadosClienteActivity.class);
         startActivity(intent);
@@ -121,9 +124,7 @@ public class HomeClienteActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 mAuth.signOut();
                 Helper.criarToast(HomeClienteActivity.this,"Até mais");
-                FirebaseAuth.getInstance().signOut();
                 exibirTelaLogin();
-                finish();
             }
         });
     }
@@ -136,6 +137,7 @@ public class HomeClienteActivity extends AppCompatActivity {
     }
     public void exibirTelaLogin(){
         Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
