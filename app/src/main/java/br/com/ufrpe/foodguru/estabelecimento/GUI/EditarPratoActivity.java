@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.SessaoCardapio;
+import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.estabelecimento.negocio.PratoServices;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 

@@ -16,13 +16,20 @@
             android:layout_width="match_parent"
             android:layout_height="250dp">
 
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:progressDrawable="@color/Branco" />
+
             <ImageView
                 android:id="@+id/iv_cliente"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:background="@color/RoxoFoodGuru"
-                android:scaleType="centerCrop"
-                />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop" />
             <Button
                 android:id="@+id/editar_foto"
                 android:layout_width="35dp"

@@ -1,13 +1,18 @@
 package br.com.ufrpe.foodguru.infraestrutura.utils;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -23,6 +28,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Helper {
+    private static final int PERMISSION_REQUEST_WRITE= 2;
+    private static final int PERMISSION_REQUEST_READ = 0;
+    private static final int CAMERA_REQUEST_CODE = 1;
 
     public static void criarToast(Context context, String texto){
         Toast.makeText(context, texto, Toast.LENGTH_SHORT).show();
@@ -67,5 +75,52 @@ public class Helper {
             return null;
         }
 
+    }
+    public static boolean verificarPermissaoEscrever(Context context, Activity activity){
+        boolean validacao = true;
+        int permissionCheckWrite = ContextCompat.checkSelfPermission(context,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if(permissionCheckWrite != PackageManager.PERMISSION_GRANTED){
+            validacao = false;
+            if(ActivityCompat.shouldShowRequestPermissionRationale(activity,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                ActivityCompat.requestPermissions(activity, new String[]{
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_WRITE);
+            }else {
+                ActivityCompat.requestPermissions(activity,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_WRITE);
+            }
+        }
+        return validacao;
+
+    }
+    public static boolean verificarPermissoesLeitura(Context context, Activity activity){
+        boolean validacao = true;
+        int permissionCheckRead = ContextCompat.checkSelfPermission(context,
+                Manifest.permission.READ_EXTERNAL_STORAGE);
+        if(permissionCheckRead != PackageManager.PERMISSION_GRANTED){
+            validacao = false;
+            if(ActivityCompat.shouldShowRequestPermissionRationale(activity,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)){
+                ActivityCompat.requestPermissions(activity, new String[]{
+                        Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_READ);
+            }else{
+                ActivityCompat.requestPermissions(activity,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_READ);
+            }
+        }
+        return validacao;
+    }
+    public static boolean verificarPermissaoAcessarCamera(Context context, Activity activity) {
+        boolean validacao = false;
+        int permissionCheck = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA);
+        if(permissionCheck == PackageManager.PERMISSION_GRANTED && verificarPermissaoEscrever(context, activity)){
+            validacao = true;
+        }
+        else{
+            ActivityCompat.requestPermissions(activity,new String[]{
+                    Manifest.permission.CAMERA},CAMERA_REQUEST_CODE);
+        }
+        return validacao;
     }
 }

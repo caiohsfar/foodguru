@@ -1213,6 +1213,7 @@ id btnConfirmarEditarPrato
 id btnEditarImagemPrato
 id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
+id btn_escanear
 id btn_log_out
 id buttonContainer
 id buttonPanel
@@ -1247,6 +1248,7 @@ id direct
 id disableHome
 id edit_query
 id editar_foto
+id editar_foto_adicionar_prato
 id editar_foto_estabelecimento
 id edtLoginEmail
 id edtLoginSenha
@@ -1269,6 +1271,7 @@ id etEditarCodigoMesa
 id etEditarDescricaoPrato
 id etEditarNomePrato
 id etEditarNumeroMesa
+id etEditarPrecoPrato
 id etEmailCliente
 id etEmailClienteMeusDados
 id etEmailEstabelecimento
@@ -1280,7 +1283,9 @@ id etNomeEstabelecimento
 id etNomeEstabelecimentoed
 id etNomePrato
 id etNomeSessao
+id etNomeSessaoedt
 id etNumeroMesa
+id etPrecoPrato
 id etRuaEstabelecimento
 id etRuaEstabelecimentoed
 id etSenhaCliente
@@ -1317,11 +1322,14 @@ id img_qr_code
 id imv_qr_code_detalhe
 id info
 id invisible
+id irSessao
 id italic
 id item_touch_helper_previous_elevation
 id ivDetalhesImagemPrato
 id ivImagemPrato
+id ivImagemPratoEditar
 id iv_Estabelecimento
+id iv_adicionar_prato
 id iv_cliente
 id labeled
 id largeLabel
@@ -1372,9 +1380,14 @@ id parent_matrix
 id percent
 id pin
 id positive
+id progress_bar
+id progress_bar_editar_prato
+id progress_bar_est
+id progress_bar_recycler_prato
 id progress_circular
 id progress_horizontal
 id radio
+id recyclerSessao
 id recyclerv_view
 id recyclerv_view_pratos
 id right
@@ -1415,6 +1428,7 @@ id spEstadoEstabelecimento
 id spEstadoEstabelecimentoed
 id spacer
 id spinnerAdicionaSessao
+id spinnerEditaSessao
 id spinnerSessao
 id split_action_bar
 id spnSessaoCardapio

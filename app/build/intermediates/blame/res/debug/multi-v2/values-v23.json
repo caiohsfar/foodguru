@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\hercu\\Desktop\\foodGuru2\\FoodGuru\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\a61940c89dc0a1ac3202a74e4ba87d6f\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\fa93165e8b57dd59601be6763d76e460\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ebd0cc0cd1880e6a053a311324de2a09\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\619582f2a4e61905a4443522121795b4\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

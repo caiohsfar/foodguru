@@ -151,8 +151,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 telaRecuperarSenha();
                 break;
             case R.id.btLogin:
-                login(edtLoginEmail.getText().toString().trim()
-                        , edtLoginSenha.getText().toString().trim());
+                    login(edtLoginEmail.getText().toString().trim()
+                            , edtLoginSenha.getText().toString().trim());
                 break;
             case R.id.tvCadastre_se:
                 abrirTelaTipoCadastro();

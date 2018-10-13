@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".estabelecimento.GUI.DetalhesPratoActivity">
+    tools:context=".Prato.GUI.DetalhesPratoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

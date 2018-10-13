@@ -6,17 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".estabelecimento.GUI.EditarPratoActivity">
+    tools:context=".Prato.GUI.EditarPratoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="250dp">
+        <ProgressBar
+            android:id="@+id/progress_bar_editar_prato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@color/Branco" />
 
         <ImageView
-            android:id="@+id/ivImagemPrato"
+            android:id="@+id/ivImagemPratoEditar"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@color/RoxoFoodGuru"
             android:scaleType="centerCrop"
             />
         <Button
@@ -58,6 +63,20 @@
         android:hint="Descrição do Prato"
 
         android:padding="15sp" />
+    <EditText
+        android:id="@+id/etEditarPrecoPrato"
+        android:layout_width="match_parent"
+
+        android:layout_height="55sp"
+        android:drawableLeft="@drawable/ic_pedidos"
+        android:inputType="numberDecimal"
+        android:drawablePadding="15sp"
+
+        android:drawableTint="@color/RoxoFoodGuru"
+        android:hint="Preço do prato"
+
+        android:padding="15sp"
+        android:singleLine="true" />
 
     <Spinner
         android:id="@+id/spinnerEditaSessao"

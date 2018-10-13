@@ -37,26 +37,36 @@
         <activity
             android:name=".LerQrCodeActivity"
             android:label="@string/title_activity_ler_qr_code" />
-        <activity android:name=".estabelecimento.SessaoCardapioActvity" />
-        =======
-        android:name=".cliente.GUI.HomeClienteActivity"
-        android:icon="@drawable/ic_teste_sair"
-        android:label="Food Guru" />
+        <activity
+            android:name=".cliente.GUI.HomeClienteActivity"
+            android:icon="@drawable/ic_teste_sair"
+            android:label="Food Guru" />
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
             android:label="Food Guru" />
         <activity android:name=".cliente.GUI.EditarDadosClienteActivity" />
-        <activity android:name=".estabelecimento.GUI.AdicionarMesaActivity" />
-        <activity android:name=".estabelecimento.GUI.EditarMesaActivity" />
+        <activity android:name=".Mesa.GUI.AdicionarMesaActivity" />
+        <activity android:name=".Mesa.GUI.EditarMesaActivity" />
         <activity android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity" />
-        <activity android:name=".estabelecimento.GUI.DetalhesMesaActivity" />
+        <activity android:name=".Mesa.GUI.DetalhesMesaActivity" />
         >>>>>>> develop
         <activity android:name=".estabelecimento.GUI.AdicionarPratoActivity" />
         <activity android:name=".estabelecimento.GUI.DetalhesPratoActivity" />
         <activity android:name=".estabelecimento.GUI.EditarPratoActivity" />
-        <activity android:name=".estabelecimento.GUI.AdicionarSessaoActvity" />
-        <activity android:name=".estabelecimento.GUI.SessaoActvity" />
-        <activity android:name=".estabelecimento.GUI.EditarSessaoActvity"></activity>
+        <activity android:name=".Prato.GUI.AdicionarSessaoActvity" />
+        <activity android:name=".Prato.GUI.SessaoActvity" />
+        <activity android:name=".Prato.GUI.EditarSessaoActvity"></activity>
+=======
+        <activity android:name=".Prato.GUI.AdicionarPratoActivity" />
+        <activity android:name=".Prato.GUI.DetalhesPratoActivity" />
+        <activity android:name=".Prato.GUI.EditarPratoActivity"></activity>
+        <activity
+            android:name=".infraestrutura.utils.OrientacaoQrCodeActivity"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+>>>>>>> develop
     </application>
 
 </manifest>

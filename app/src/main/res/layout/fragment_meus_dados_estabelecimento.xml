@@ -16,12 +16,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp">
+            <ProgressBar
+                android:id="@+id/progress_bar_est"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:progressDrawable="@color/Branco" />
 
             <ImageView
                 android:id="@+id/iv_Estabelecimento"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:background="@color/RoxoFoodGuru"
                 android:scaleType="centerCrop"
                 />
             <Button
