@@ -3,6 +3,11 @@ package br.com.ufrpe.foodguru.estabelecimento.dominio;
 public class SessaoCardapio {
     public String id;
     public String nome;
+    public String idEstabelecimento;
+
+    public String getIdEstabelecimento() { return idEstabelecimento; }
+
+    public void setIdEstabelecimento(String idEstabelecimento) { this.idEstabelecimento = idEstabelecimento; }
 
     public String getId() {
         return id;

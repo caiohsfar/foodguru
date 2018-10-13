@@ -4,11 +4,18 @@ import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.estabelecimento.dominio.Mesa;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
+import br.com.ufrpe.foodguru.estabelecimento.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.estabelecimento.negocio.PratoServices;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
@@ -16,12 +23,18 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
 
     private EditText etNomePrato, etDescricaoPrato;
     private ProgressDialog progressDialog;
+    private Spinner sessao;
+    ArrayList<SessaoCardapio> sessoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_prato);
+        this.sessao = findViewById(R.id.spinnerAdicionaSessao);
+
         setUpViews();
+
+
     }
 
     @Override
@@ -56,10 +69,26 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         etDescricaoPrato = findViewById(R.id.etDescricaoPrato);
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Adicionando...");
-    }
+        setupSpinner();
 
+
+
+
+
+    }
+    private void setupSpinner(){
+        sessoes = new ArrayList();
+
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,sessoes);
+        adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sessao.setAdapter(adapterSessao);
+
+    }
     private Prato criarPrato() {
-        return new Prato(etNomePrato.getText().toString(), etDescricaoPrato.getText().toString());
+        int posicao=  sessao.getSelectedItemPosition();
+        String idSessao = sessoes.get(posicao).getId();
+
+        return new Prato(etNomePrato.getText().toString(), etDescricaoPrato.getText().toString(),idSessao);
     }
 
     private void adicionarPrato() {

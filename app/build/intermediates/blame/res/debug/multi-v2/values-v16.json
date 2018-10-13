@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ibyte\\Desktop\\REP GITKRAKEN FOODGURU\\FoodGuru\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\hercu\\Desktop\\foodGuru2\\FoodGuru\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\BottomSheet-2.4.1.aar\\d926ac174e8b0059259affad674c0708\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\BottomSheet-2.4.1.aar\\66bc6f9d4615ede217fe27a27071b068\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\55604b22f043e0e53e1a882190f7ca61\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ebd0cc0cd1880e6a053a311324de2a09\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\7d42db6f3e551b0fcc60f5fcfa0f6eaf\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\ae4f41aca2303bb7719f4c68f2bfadc3\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

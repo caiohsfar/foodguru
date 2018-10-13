@@ -1204,6 +1204,7 @@ id bottom
 id btConfirmarRegistroEstabelecimento
 id btLogin
 id bt_confirmar_edicao_mesa
+id btnConfirmaAdicionarSessao
 id btnConfirmarAdicionarMesa
 id btnConfirmarAdicionarPrato
 id btnConfirmarEdicao
@@ -1278,6 +1279,7 @@ id etNomeClienteMeusDados
 id etNomeEstabelecimento
 id etNomeEstabelecimentoed
 id etNomePrato
+id etNomeSessao
 id etNumeroMesa
 id etRuaEstabelecimento
 id etRuaEstabelecimentoed
@@ -1412,6 +1414,8 @@ id snapMargins
 id spEstadoEstabelecimento
 id spEstadoEstabelecimentoed
 id spacer
+id spinnerAdicionaSessao
+id spinnerSessao
 id split_action_bar
 id spnSessaoCardapio
 id spread
@@ -1466,6 +1470,7 @@ id tv_codigo_mesa
 id tv_informativo_tipodeconta
 id tv_numero_mesa_detalhe
 id tv_recuperar_senha
+id txtNomeSessao
 id txt_codigo_da_mesa
 id uniform
 id unlabeled
@@ -1539,12 +1544,14 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_adicionar_mesa
 layout activity_adicionar_prato
+layout activity_adicionar_sessao
 layout activity_detalhes_mesa
 layout activity_detalhes_prato
 layout activity_editar_dados_cliente
 layout activity_editar_dados_estabelecimento
 layout activity_editar_mesa
 layout activity_editar_prato
+layout activity_editar_sessao
 layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
@@ -1553,6 +1560,7 @@ layout activity_perfil_estabelecimento
 layout activity_recuperar_senha
 layout activity_registro_cliente
 layout activity_registro_estabelecimento
+layout activity_sessao
 layout activity_sessao_cardapio
 layout activity_splash
 layout activity_tipo_cadastro
@@ -1604,6 +1612,7 @@ layout prato_list_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout sessao_list_item
 layout support_simple_spinner_dropdown_item
 layout zxing_barcode_scanner
 layout zxing_capture

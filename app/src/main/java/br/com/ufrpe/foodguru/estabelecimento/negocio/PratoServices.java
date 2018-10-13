@@ -7,6 +7,7 @@ import java.util.List;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Mesa;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
 
+import br.com.ufrpe.foodguru.estabelecimento.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.estabelecimento.persistencia.PratoDAO;
 
 public class PratoServices {
@@ -24,6 +25,10 @@ public class PratoServices {
     public boolean editarPrato(Prato prato) {
         return pratoDAO.editarPrato(prato);
     }
+
+    public boolean adicionarSessao(SessaoCardapio sessaoCardapio){ return pratoDAO.adicionarSessao(sessaoCardapio); }
+
+    public boolean editarSessao(SessaoCardapio sessaoCardapio){return  pratoDAO.editarSessao(sessaoCardapio);}
 
 
 }

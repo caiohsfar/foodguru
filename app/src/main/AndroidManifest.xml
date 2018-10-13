@@ -53,7 +53,10 @@
         >>>>>>> develop
         <activity android:name=".estabelecimento.GUI.AdicionarPratoActivity" />
         <activity android:name=".estabelecimento.GUI.DetalhesPratoActivity" />
-        <activity android:name=".estabelecimento.GUI.EditarPratoActivity"></activity>
+        <activity android:name=".estabelecimento.GUI.EditarPratoActivity" />
+        <activity android:name=".estabelecimento.GUI.AdicionarSessaoActvity" />
+        <activity android:name=".estabelecimento.GUI.SessaoActvity" />
+        <activity android:name=".estabelecimento.GUI.EditarSessaoActvity"></activity>
     </application>
 
 </manifest>

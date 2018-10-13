@@ -4,13 +4,23 @@ public class Prato {
     private String idPrato;
     private String nomePrato;
     private String descricaoPrato;
+    private String idSessao;
+
+    public String getIdSessao() {
+        return idSessao;
+    }
+
+    public void setIdSessao(String idSessao) {
+        this.idSessao = idSessao;
+    }
 
     public Prato(){
     }
 
-    public Prato(String nomePrato, String descricaoPrato) {
+    public Prato(String nomePrato, String descricaoPrato,String id) {
         this.nomePrato = nomePrato;
         this.descricaoPrato = descricaoPrato;
+        this.idSessao = id;
     }
 
 

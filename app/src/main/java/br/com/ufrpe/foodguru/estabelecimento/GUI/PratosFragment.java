@@ -18,6 +18,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +36,7 @@ import br.com.ufrpe.foodguru.estabelecimento.dominio.MesaView;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Prato;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.PratoHolder;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.PratoView;
+import br.com.ufrpe.foodguru.estabelecimento.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.estabelecimento.negocio.PratoServices;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
@@ -84,6 +88,9 @@ public class PratosFragment extends Fragment {
                         actionMode.finish();
                         break;
                     }
+                    case R.id.irSessao:{
+                        abrirTelaSecao();
+                    }
                 }
 
                 return true;
@@ -130,7 +137,40 @@ public class PratosFragment extends Fragment {
         viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
 
         mProgressDialog = new ProgressDialog(viewInflado.getContext());
-        iniciarRecyclerView();
+
+        final Spinner sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
+
+        ArrayList<SessaoCardapio> sessoes = new ArrayList();
+
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getContext(),android.R.layout.simple_spinner_dropdown_item,sessoes);
+        adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        sessao.setAdapter(adapterSessao);
+
+
+
+        AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int posicao=  sessao.getSelectedItemPosition();
+
+                String item = sessao.getSelectedItem().toString();
+                ArrayList<Mesa> mesaView = new ArrayList();
+
+
+                iniciarRecyclerView();
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        };
+        sessao.setOnItemSelectedListener(escolha);
+
+
         FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                 .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
                 .child(REFERENCIA_PRATO)
@@ -273,6 +313,12 @@ public class PratosFragment extends Fragment {
         intent.putExtra("DESCRICAO_PRATO", pratoSelecionado.getDescricaoPrato());
         startActivity(intent);
     }
+
+    public void abrirTelaSecao(){
+        Intent intent = new Intent(viewInflado.getContext(),SessaoActvity.class);
+        startActivity(intent);
+    }
+
     public Prato getPratoSelecionado() {
         for (PratoView pratoView : pratosViews) {
             if (pratoView.isSelecionado()) {
