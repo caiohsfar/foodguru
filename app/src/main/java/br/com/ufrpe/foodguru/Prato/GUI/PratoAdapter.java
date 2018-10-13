@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -49,11 +51,7 @@ public class PratoAdapter extends RecyclerView.Adapter<PratoHolder>{
         String urlImagem = pratos.get(position).getPrato().getUrlImagem();
         holder.nome.setText(nome);
         holder.descricao.setText(descricao);
-        Picasso.get()
-                .load(urlImagem)
-                .resize(300,300)
-                .into(holder.imagem);
-
+        downloadImage(urlImagem,holder);
         holder.nome.setTag(holder);
 
         if (onClickListener != null) {
@@ -75,6 +73,25 @@ public class PratoAdapter extends RecyclerView.Adapter<PratoHolder>{
         int corFundo = context.getResources().getColor(pratos.get(position).isSelecionado() ? R.color.RoxoFoodGuruTransparente
                 : R.color.zxing_transparent);
         holder.itemView.setBackgroundColor(corFundo);
+    }
+
+    public void downloadImage(String urlImagem, final PratoHolder holder){
+        holder.progressBar.setVisibility(View.VISIBLE);
+        Picasso.get()
+                .load(urlImagem)
+                .resize(300,300)
+                .into(holder.imagem, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        holder.progressBar.setVisibility(View.GONE);
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+
+                    }
+                });
     }
 
     @Override

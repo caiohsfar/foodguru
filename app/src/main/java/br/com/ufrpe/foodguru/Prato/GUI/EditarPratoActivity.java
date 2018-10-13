@@ -69,6 +69,9 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         precoPrato = findViewById(R.id.etEditarPrecoPrato);
         precoPrato.setText(pratoSelecionado.getPreco().toString());
         imvPrato = findViewById(R.id.ivImagemPratoEditar);
+        downloadImage();
+    }
+    public void downloadImage(){
         final ProgressBar finalProgressBar = findViewById(R.id.progress_bar_editar_prato);
         finalProgressBar.setVisibility(View.VISIBLE);
         Picasso.get()
@@ -97,7 +100,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
             descricaoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
             validacao = false;
         }
-        if(imvPrato.getBackground() == null){
+        if(imvPrato.getDrawable() == null){
             validacao = false;
             Helper.criarToast(this, "Adicione uma foto");
         }

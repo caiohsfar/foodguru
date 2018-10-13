@@ -254,7 +254,6 @@ public class PratosFragment extends Fragment {
         mRecyclerView = (RecyclerView) viewInflado.findViewById(R.id.recyclerv_view_pratos);
         LinearLayoutManager layoutManager = new LinearLayoutManager(viewInflado.getContext()
                 , LinearLayoutManager.VERTICAL, false);
-
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         adapter = new PratoAdapter(getContext(),pratosViews, onClickPrato());

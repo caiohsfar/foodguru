@@ -5,15 +5,23 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthSettings;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.OrientacaoQrCodeActivity;
 
@@ -43,6 +51,28 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
         activity = getActivity();
         return inflatedLayout;
     }
+    public void validarCodigo(String codigo){
+        FirebaseHelper.getFirebaseReference()
+                .child(FirebaseHelper.REFERENCIA_MESA)
+                .orderByChild("codigoMesa")
+                .equalTo(codigo)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    //abrirTelaCardapio(codigo)
+                    //finish()
+                }else{
+                    Helper.criarToast(getContext(), "Este código não pertence a uma mesa.");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
     public void escanearCodigo(){
         IntentIntegrator integratorQrCode = new IntentIntegrator(activity);
         setUpIntegratorQrCode(integratorQrCode);
@@ -61,7 +91,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
         if (resultado != null){
             if  (resultado.getContents() != null){
                 String codigoMesa = resultado.getContents();
-                //validarCodigoMesa(codigoMesa);
+                validarCodigo(codigoMesa);
             }else{
                 Helper.criarToast(context,
                         "Cancelado.");

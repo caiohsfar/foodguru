@@ -58,6 +58,7 @@ public class PratoDAO {
     }
 
     public boolean editarPrato(Prato prato){
+        System.out.println("id prato: " + prato.getIdPrato());
         boolean sucess = true;
         try {
             database.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)

@@ -4,11 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ProgressBar
+        android:id="@+id/progress_bar_recycler_prato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:progressDrawable="@color/Branco" />
     <ImageView
         android:id="@+id/ivImagemPrato"
         android:textColor="@color/Branco"
         android:gravity="center"
-        android:background="@drawable/borda_redonda_bt_roxo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="5dp"/>
