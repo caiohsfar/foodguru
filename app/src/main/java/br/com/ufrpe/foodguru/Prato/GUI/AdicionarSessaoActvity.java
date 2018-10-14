@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
-import br.com.ufrpe.foodguru.estabelecimento.negocio.PratoServices;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
@@ -43,11 +43,9 @@ public class AdicionarSessaoActvity extends AppCompatActivity {
             sessaoCardapio.setIdEstabelecimento(FirebaseHelper.getUidUsuario());
             if(pratoServices.adicionarSessao(sessaoCardapio)){
                 Helper.criarToast(getApplicationContext(),"Sessao adicionada com sucesso");
+            }else{
+                Helper.criarToast(this, "Erro ao adicionar sessao.");
             }
-
-        }
-        else{
-            Helper.criarToast(getApplicationContext(),"Dados inválidos");
         }
         etNomeSessao.setText("");
 

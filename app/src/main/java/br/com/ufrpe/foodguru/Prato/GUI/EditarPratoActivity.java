@@ -60,6 +60,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_editar_prato);
         Helper.verificarPermissaoEscrever(EditarPratoActivity.this,EditarPratoActivity.this);
         pratoSelecionado = getIntent().getExtras().getParcelable("prato");
+        //spinnerEditar
         setUpViews();
     }
 

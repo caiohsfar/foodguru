@@ -29,5 +29,11 @@ public class PratoServices {
     public boolean adicionarSessao(SessaoCardapio sessaoCardapio){ return pratoDAO.adicionarSessao(sessaoCardapio); }
 
     public boolean editarSessao(SessaoCardapio sessaoCardapio){return  pratoDAO.editarSessao(sessaoCardapio);}
+    public List<SessaoCardapio> loadSessoes(DataSnapshot dataSnapshot){
+        return pratoDAO.loadSessoes(dataSnapshot);
+    }
+    public boolean removerSessao(SessaoCardapio sessaoCardapio){
+        return pratoDAO.removerSessao(sessaoCardapio);
+    }
 
 }

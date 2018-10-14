@@ -84,7 +84,7 @@
                     android:padding="15sp"/>
 
                 <Spinner
-                    android:id="@+id/spinnerAdicionaSessao"
+                    android:id="@+id/spinnerAdicionaPrato"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 

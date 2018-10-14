@@ -42,7 +42,7 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.R
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PratosFragment extends Fragment {
+public class PratosFragment extends Fragment implements View.OnClickListener{
     private PratoAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
@@ -50,7 +50,8 @@ public class PratosFragment extends Fragment {
     private List<PratoView> pratosViews;
     private ActionMode actionMode;
     private View viewInflado;
-    private FloatingActionButton button;
+    private Spinner sessao;
+    private List<SessaoCardapio> arraySessoes;
 
     private  ActionMode.Callback getActionModeCallback(){
         return new ActionMode.Callback() {
@@ -80,7 +81,6 @@ public class PratosFragment extends Fragment {
                         break;
                     }
                     case R.id.acao_editar:{
-                        // quando abrir tem que passar o id da mesa pra poder editar na utra tela
                         abrirTelaEditarPrato();
                         actionMode.finish();
                         break;
@@ -129,39 +129,32 @@ public class PratosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
-
+        viewInflado.findViewById(R.id.irSessao).setOnClickListener(this);
         mProgressDialog = new ProgressDialog(viewInflado.getContext());
+        sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
+        loadArraySessoes();
+        iniciarRecyclerView();
+        setCliqueAdapterSessoes();
 
 
 
 
 
+        /*
+        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
+                .child(REFERENCIA_PRATO).orderByChild("idSessao").equalTo(idSsessao).addblablabla
+                */
 
-
-        final Spinner sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
-
-        final ArrayList<SessaoCardapio> sessoes = new ArrayList();
-
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getContext(),android.R.layout.simple_spinner_dropdown_item,sessoes);
-        adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        sessao.setAdapter(adapterSessao);
-
+        return viewInflado;
+    }
+    public void setCliqueAdapterSessoes(){
         AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                int posicao=  sessao.getSelectedItemPosition();
-
-                String idSessao = sessoes.get(posicao).getId();
-
-                // BUSCAR DO BANCO A QUERY DE MESA
-
-
-
-
-                iniciarRecyclerView();
-
-
+                int posicao =  sessao.getSelectedItemPosition();
+                String idSessao = arraySessoes.get(posicao).getId();
+                loadPratos(idSessao);
             }
 
             @Override
@@ -171,16 +164,18 @@ public class PratosFragment extends Fragment {
         };
         sessao.setOnItemSelectedListener(escolha);
 
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
-
-
-
-
-        iniciarRecyclerView();
+    public void loadPratos(String idSesao){
         FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                 .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
-                .child(REFERENCIA_PRATO)
+                .child(REFERENCIA_PRATO).orderByChild("idSessao")
+                .equalTo(idSesao)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -188,14 +183,36 @@ public class PratosFragment extends Fragment {
                         adapter = new PratoAdapter(getContext(),pratosViews,onClickPrato());
                         mRecyclerView.setAdapter(adapter);
                     }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+    public void loadArraySessoes(){
+        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(FirebaseHelper.getUidUsuario())
+                .child(FirebaseHelper.REFERENCIA_SESSAO)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        PratoServices pratoServices = new PratoServices();
+                        arraySessoes = pratoServices.loadSessoes(dataSnapshot);
+                        setupSpinner();
+                    }
+
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });
+    }
 
-        return viewInflado;
+    private void setupSpinner() {
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getContext(),android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+        adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sessao.setAdapter(adapterSessao);
     }
 
     private void iniciarActionMode(int indexPrato) {
@@ -362,4 +379,17 @@ public class PratosFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.irSessao:{
+                abrirTelaSessao();
+                break;
+            }
+        }
+    }
+    public void abrirTelaSessao() {
+        Intent intent = new Intent(getContext(), SessaoActvity.class);
+        startActivity(intent);
+    }
 }

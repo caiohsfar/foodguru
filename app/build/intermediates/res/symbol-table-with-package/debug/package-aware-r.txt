@@ -1205,12 +1205,14 @@ id btConfirmarRegistroEstabelecimento
 id btLogin
 id bt_confirmar_edicao_mesa
 id btnConfirmaAdicionarSessao
+id btnConfirmaEditarSessao
 id btnConfirmarAdicionarMesa
 id btnConfirmarAdicionarPrato
 id btnConfirmarEdicao
 id btnConfirmarEdicaoDadosEstabelecimento
 id btnConfirmarEditarPrato
 id btnEditarImagemPrato
+id btn_adicionar_sessao
 id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
 id btn_escanear
@@ -1307,6 +1309,7 @@ id fixed
 id forever
 id frame_cliente
 id frame_estabelecimento
+id gerenciar_sessoes
 id ghost_view
 id gone
 id grid
@@ -1338,6 +1341,7 @@ id light
 id line1
 id line3
 id listMode
+id listViewSessao
 id list_item
 id masked
 id media_actions
@@ -1387,7 +1391,6 @@ id progress_bar_recycler_prato
 id progress_circular
 id progress_horizontal
 id radio
-id recyclerSessao
 id recyclerv_view
 id recyclerv_view_pratos
 id right
@@ -1427,7 +1430,7 @@ id snapMargins
 id spEstadoEstabelecimento
 id spEstadoEstabelecimentoed
 id spacer
-id spinnerAdicionaSessao
+id spinnerAdicionaPrato
 id spinnerEditaSessao
 id spinnerSessao
 id split_action_bar

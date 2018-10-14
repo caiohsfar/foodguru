@@ -1,8 +1,12 @@
 package br.com.ufrpe.foodguru.Prato.persistencia;
 
+import android.support.annotation.NonNull;
+
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
@@ -94,7 +98,7 @@ public class PratoDAO {
         try {
             database.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                     .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
-                    .child(REFERENCIA_SESSAO).setValue(null);
+                    .child(REFERENCIA_SESSAO).child(sessao.getId()).setValue(null);
         }catch(DatabaseException e){
             sucess = false;
         }
@@ -112,7 +116,6 @@ public class PratoDAO {
         }
         return sucess;
     }
-
     public List<SessaoCardapio> loadSessoes(DataSnapshot dataSnapshot){
         List<SessaoCardapio> sessoes = new ArrayList<>();
         for(DataSnapshot ds : dataSnapshot.getChildren())

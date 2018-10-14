@@ -23,6 +23,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -31,12 +34,14 @@ import com.kennyc.bottomsheet.BottomSheetListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class AdicionarPratoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,7 +54,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
     private UUID uidImagemPrato = UUID.randomUUID();
     private String urlImagemAdicionada;
     private Spinner sessao;
-    private ArrayList<SessaoCardapio> sessoes;
+    private List<SessaoCardapio> arraySessoes;
 
 
     @Override
@@ -57,7 +62,26 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_prato);
         Helper.verificarPermissaoEscrever(this,AdicionarPratoActivity.this);
+        loadArraySessoes();
         setUpViews();
+    }
+    public void loadArraySessoes(){
+        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(FirebaseHelper.getUidUsuario())
+                .child(FirebaseHelper.REFERENCIA_SESSAO)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        PratoServices pratoServices = new PratoServices();
+                        arraySessoes = pratoServices.loadSessoes(dataSnapshot);
+                        setupSpinner();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 
     @Override
@@ -112,13 +136,13 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                     public void onSheetItemSelected(@NonNull BottomSheet bottomSheet, MenuItem menuItem, @Nullable Object o) {
                         switch (menuItem.getItemId()) {
                             case R.id.escolher_foto:
-                                if (Helper.verificarPermissoesLeitura(AdicionarPratoActivity.this,AdicionarPratoActivity.this)){
+                                if (Helper.verificarPermissoesLeitura(AdicionarPratoActivity.this, AdicionarPratoActivity.this)) {
                                     escolherFoto();
                                     break;
                                 }
                                 break;
                             case R.id.tirar_foto:
-                                if (Helper.verificarPermissaoAcessarCamera(AdicionarPratoActivity.this,AdicionarPratoActivity.this)){
+                                if (Helper.verificarPermissaoAcessarCamera(AdicionarPratoActivity.this, AdicionarPratoActivity.this)) {
                                     tirarFoto();
                                     break;
                                 }
@@ -144,12 +168,11 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         etDescricaoPrato = findViewById(R.id.etDescricaoPrato);
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Adicionando...");
-        setupSpinner();
     }
 
     private Prato criarPrato() {
-        int posicao=  sessao.getSelectedItemPosition();
-        String idSessao = sessoes.get(posicao).getId();
+        int posicao =  sessao.getSelectedItemPosition();
+        String idSessao = arraySessoes.get(posicao).getId();
         Prato prato = new Prato();
         prato.setNomePrato(etNomePrato.getText().toString());
         prato.setDescricaoPrato(etDescricaoPrato.getText().toString());
@@ -157,14 +180,13 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         prato.setIdSessao(idSessao);
         prato.setPreco(Double.parseDouble(etPrecoPrato.getText().toString()));
         //spinner
-        prato.setIdSessao("idCategoria");
+        prato.setIdSessao(idSessao);
         return prato;
     }
 
     private void setupSpinner(){
-        sessoes = new ArrayList();
-
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,sessoes);
+        sessao = findViewById(R.id.spinnerAdicionaPrato);
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
 

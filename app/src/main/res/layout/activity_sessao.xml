@@ -9,11 +9,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recyclerSessao"
+            android:id="@+id/listViewSessao"
             tools:listitem="@layout/sessao_list_item"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_adicionar_sessao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="54dp"
+            android:layout_marginRight="54dp"
+            android:layout_marginBottom="63dp"
+            android:src="@drawable/ic_adicionar" />
     </RelativeLayout>
 
 </FrameLayout>

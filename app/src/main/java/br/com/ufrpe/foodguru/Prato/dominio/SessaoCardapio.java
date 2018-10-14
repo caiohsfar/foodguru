@@ -1,9 +1,33 @@
 package br.com.ufrpe.foodguru.Prato.dominio;
 
-public class SessaoCardapio {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class SessaoCardapio implements Parcelable {
     public String id;
     public String nome;
     public String idEstabelecimento;
+    public SessaoCardapio(){
+
+    }
+
+    protected SessaoCardapio(Parcel in) {
+        id = in.readString();
+        nome = in.readString();
+        idEstabelecimento = in.readString();
+    }
+
+    public static final Creator<SessaoCardapio> CREATOR = new Creator<SessaoCardapio>() {
+        @Override
+        public SessaoCardapio createFromParcel(Parcel in) {
+            return new SessaoCardapio(in);
+        }
+
+        @Override
+        public SessaoCardapio[] newArray(int size) {
+            return new SessaoCardapio[size];
+        }
+    };
 
     public String getIdEstabelecimento() { return idEstabelecimento; }
 
@@ -28,5 +52,17 @@ public class SessaoCardapio {
     @Override
     public String toString() {
         return getNome();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(nome);
+        dest.writeString(idEstabelecimento);
     }
 }

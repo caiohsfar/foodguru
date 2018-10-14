@@ -24,20 +24,19 @@
                 android:hint="Nome da sessão"
                 android:textColorHint="@color/Cinza"
                 android:textColor="@color/Cinza"
-                android:drawableLeft="@drawable/ic_email"
+                android:drawableLeft="@drawable/ic_descricao"
                 android:drawableTint="@color/RoxoFoodGuru"
 
-                android:inputType="number"
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
 
             <Button
-                android:id="@+id/btnConfirmaAdicionarSessao"
+                android:id="@+id/btnConfirmaEditarSessao"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="Adicionar Sessão"
+                android:text="Editar Sessão"
                 android:textColor="@color/Branco"
                 android:padding="15sp"
 
@@ -47,7 +46,6 @@
                 android:layout_marginRight="20sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginBottom="20sp"
-                android:onClick="editarSessao"
                 />
         </LinearLayout>
     </ScrollView>

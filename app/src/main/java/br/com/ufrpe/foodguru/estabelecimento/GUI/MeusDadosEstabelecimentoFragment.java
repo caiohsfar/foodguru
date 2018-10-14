@@ -62,6 +62,7 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final int GALERY_REQUEST_CODE = 71;
     private ProgressDialog progressDialog;
+    private ProgressBar finalProgressBar;
 
 
     @Override
@@ -73,6 +74,8 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         Helper.verificarPermissaoEscrever(getContext(),getActivity());
         carregarFoto();
         progressDialog = new ProgressDialog(viewInflado.getContext());
+        finalProgressBar = viewInflado.findViewById(R.id.progress_bar_est);
+        finalProgressBar.setVisibility(View.GONE);
         return viewInflado;
     }
 
@@ -167,7 +170,6 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         imvFoto = viewInflado.findViewById(R.id.iv_Estabelecimento);
         if (currentUser != null) {
             if (currentUser.getPhotoUrl() != null) {
-                final ProgressBar finalProgressBar = viewInflado.findViewById(R.id.progress_bar_est);
                 finalProgressBar.setVisibility(View.VISIBLE);
                 Picasso.get()
                         .load(currentUser.getPhotoUrl())

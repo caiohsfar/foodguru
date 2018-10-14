@@ -48,11 +48,10 @@
         <activity android:name=".Mesa.GUI.AdicionarMesaActivity" />
         <activity android:name=".Mesa.GUI.EditarMesaActivity" />
         <activity android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity" />
-        <activity android:name=".Mesa.GUI.DetalhesMesaActivity" />
+        <activity android:name=".Mesa.GUI.DetalhesMesaActivity" /><![CDATA[
         >>>>>>> develop
-        <activity android:name=".estabelecimento.GUI.AdicionarPratoActivity" />
+        ]]>
         <activity android:name=".estabelecimento.GUI.DetalhesPratoActivity" />
-        <activity android:name=".estabelecimento.GUI.EditarPratoActivity" />
         <activity android:name=".Prato.GUI.AdicionarSessaoActvity" />
         <activity android:name=".Prato.GUI.SessaoActvity" />
         <activity android:name=".Prato.GUI.EditarSessaoActvity"></activity>

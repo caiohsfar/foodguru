@@ -20,6 +20,7 @@ import br.com.ufrpe.foodguru.Mesa.GUI.AdicionarMesaActivity;
 import br.com.ufrpe.foodguru.Mesa.GUI.MesasFragment;
 import br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity;
 import br.com.ufrpe.foodguru.Prato.GUI.PratosFragment;
+import br.com.ufrpe.foodguru.Prato.GUI.SessaoActvity;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
@@ -119,7 +120,16 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
             exibirConfirmacaoSair();
             return true;
         }
+        if(id == R.id.gerenciar_sessoes){
+            abrirTelaSessao();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void abrirTelaSessao() {
+        Intent intent = new Intent(this, SessaoActvity.class);
+        startActivity(intent);
     }
 
     public void telaAdicionarPrato() {

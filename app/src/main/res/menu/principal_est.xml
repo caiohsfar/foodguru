@@ -18,6 +18,11 @@
         android:title="Editar Dados"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/gerenciar_sessoes"
+        android:orderInCategory="100"
+        android:title="Gerenciar Sessões"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/menu_action_bar_sair_est"
         android:orderInCategory="100"
         android:title="Sair"
