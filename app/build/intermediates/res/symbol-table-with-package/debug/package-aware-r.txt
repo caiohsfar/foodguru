@@ -1572,6 +1572,7 @@ layout activity_editar_sessao
 layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
+layout activity_pedidos
 layout activity_perfil_cliente
 layout activity_perfil_estabelecimento
 layout activity_recuperar_senha

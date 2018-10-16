@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+            "outputFile": "C:\\Users\\hercu\\Desktop\\foodGuru2\\FoodGuru\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\hercu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\619582f2a4e61905a4443522121795b4\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

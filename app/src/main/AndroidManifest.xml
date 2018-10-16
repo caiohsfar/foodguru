@@ -52,17 +52,18 @@
         <activity android:name=".estabelecimento.GUI.DetalhesPratoActivity" />
         <activity android:name=".Prato.GUI.AdicionarSessaoActvity" />
         <activity android:name=".Prato.GUI.SessaoActvity" />
-        <activity android:name=".Prato.GUI.EditarSessaoActvity"></activity>
-=======
+        <activity android:name=".Prato.GUI.EditarSessaoActvity" />
+        =======
         <activity android:name=".Prato.GUI.AdicionarPratoActivity" />
         <activity android:name=".Prato.GUI.DetalhesPratoActivity" />
-        <activity android:name=".Prato.GUI.EditarPratoActivity"></activity>
+        <activity android:name=".Prato.GUI.EditarPratoActivity" />
         <activity
             android:name=".infraestrutura.utils.OrientacaoQrCodeActivity"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".Consumo.gui.PedidosActvity"></activity>
     </application>
 
 </manifest>
