@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
@@ -33,7 +34,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
     private Context context;
     private Activity activity;
     private View inflatedLayout;
-    private final int CAMERA_TRASEIRA = 0;
+    private final int BARCODE_REQUEST = 0;
 
 
     public EscanearQrCodeFragment() {
@@ -60,8 +61,11 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
-                    //abrirTelaCardapio(codigo)
-                    //finish()
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        Mesa mesa = ds.getValue(Mesa.class);
+                        abrirTelaCardapio(mesa);
+                        break;
+                    }
                 }else{
                     Helper.criarToast(getContext(), "Este código não pertence a uma mesa.");
                 }
@@ -73,31 +77,25 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
             }
         });
     }
-    public void escanearCodigo(){
-        IntentIntegrator integratorQrCode = new IntentIntegrator(activity);
-        setUpIntegratorQrCode(integratorQrCode);
-        integratorQrCode.initiateScan();
+
+    private void abrirTelaCardapio(Mesa mesa) {
+        Intent intent = new Intent(getContext(),CardapioActivity.class);
+        intent.putExtra("mesa", mesa);
+        startActivity(intent);
     }
-    public void setUpIntegratorQrCode(IntentIntegrator integrator){
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-        integrator.setPrompt("Mire no QrCode para conectar-se à mesa.");
-        integrator.setCameraId(CAMERA_TRASEIRA);
-        integrator.setCaptureActivity(OrientacaoQrCodeActivity.class);
-        integrator.setOrientationLocked(false);
+
+    public void escanearCodigo(){
+        Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+        startActivityForResult(intent, BARCODE_REQUEST);
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult resultado = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-        if (resultado != null){
-            if  (resultado.getContents() != null){
-                String codigoMesa = resultado.getContents();
-                validarCodigo(codigoMesa);
-            }else{
-                Helper.criarToast(context,
-                        "Cancelado.");
-            }
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == BARCODE_REQUEST && resultCode == getActivity().RESULT_OK){
+            String codigo = data.getStringExtra("SCAN_RESULT");
+            validarCodigo(codigo);
         }else{
-            super.onActivityResult(requestCode, resultCode, data);
+            Helper.criarToast(getContext(), "Cancelado");
         }
     }
 

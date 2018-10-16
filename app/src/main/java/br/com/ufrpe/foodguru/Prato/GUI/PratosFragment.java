@@ -135,17 +135,6 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
         loadArraySessoes();
         iniciarRecyclerView();
         setCliqueAdapterSessoes();
-
-
-
-
-
-        /*
-        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
-                .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
-                .child(REFERENCIA_PRATO).orderByChild("idSessao").equalTo(idSsessao).addblablabla
-                */
-
         return viewInflado;
     }
     public void setCliqueAdapterSessoes(){

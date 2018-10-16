@@ -106,13 +106,10 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
                             case R.id.escolher_foto:
                                 if (Helper.verificarPermissoesLeitura(getContext(),getActivity())){
                                     escolherFoto();
-                                    break;
                                 }
-                                break;
                             case R.id.tirar_foto:
                                 if (Helper.verificarPermissaoAcessarCamera(getContext(),getActivity())){
                                     tirarFoto();
-                                    break;
                                 }
                             default:
                                 break;
@@ -180,16 +177,12 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
             case CAMERA_REQUEST_CODE:{
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     tirarFoto();
-                    break;
                 }
-                break;
             }
             case GALERY_REQUEST_CODE:{
                 if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     escolherFoto();
-                    break;
                 }
-                break;
             }
             default:
                 break;

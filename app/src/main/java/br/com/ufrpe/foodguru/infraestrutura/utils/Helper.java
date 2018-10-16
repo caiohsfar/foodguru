@@ -114,7 +114,7 @@ public class Helper {
     public static boolean verificarPermissaoAcessarCamera(Context context, Activity activity) {
         boolean validacao = false;
         int permissionCheck = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA);
-        if(permissionCheck == PackageManager.PERMISSION_GRANTED && verificarPermissaoEscrever(context, activity)){
+        if(permissionCheck == PackageManager.PERMISSION_GRANTED && verificarPermissaoEscrever(context,activity)){
             validacao = true;
         }
         else{

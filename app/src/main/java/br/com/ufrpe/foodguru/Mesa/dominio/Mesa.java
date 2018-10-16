@@ -1,6 +1,11 @@
 package br.com.ufrpe.foodguru.Mesa.dominio;
 
-public class Mesa {
+import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+@SuppressLint("ParcelCreator")
+public class Mesa implements Parcelable {
     private String idMesa;
     private String numeroMesa;
     private String codigoMesa;
@@ -14,6 +19,25 @@ public class Mesa {
         this.codigoMesa = codigoMesa;
         this.uidEstabelecimento = uidEstabelecimento;
     }
+
+    protected Mesa(Parcel in) {
+        idMesa = in.readString();
+        numeroMesa = in.readString();
+        codigoMesa = in.readString();
+        uidEstabelecimento = in.readString();
+    }
+
+    public static final Creator<Mesa> CREATOR = new Creator<Mesa>() {
+        @Override
+        public Mesa createFromParcel(Parcel in) {
+            return new Mesa(in);
+        }
+
+        @Override
+        public Mesa[] newArray(int size) {
+            return new Mesa[size];
+        }
+    };
 
     public String getUidEstabelecimento() {
         return uidEstabelecimento;
@@ -44,5 +68,18 @@ public class Mesa {
 
     public void setIdMesa(String idMesa) {
         this.idMesa = idMesa;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(idMesa);
+        dest.writeString(numeroMesa);
+        dest.writeString(codigoMesa);
+        dest.writeString(uidEstabelecimento);
     }
 }
