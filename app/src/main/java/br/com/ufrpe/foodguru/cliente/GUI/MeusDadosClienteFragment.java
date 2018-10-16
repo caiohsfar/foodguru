@@ -60,6 +60,7 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final int GALERY_REQUEST_CODE = 71;
     private ProgressDialog progressDialog;
+    private ProgressBar finalProgressBar;
 
     public MeusDadosClienteFragment() {
         // Required empty public constructor
@@ -70,6 +71,7 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewInflado = inflater.inflate(R.layout.fragment_meus_dados_cliente, container, false);
+        finalProgressBar = viewInflado.findViewById(R.id.progress_bar);
         setTextViews();
         setClicks();
         Helper.verificarPermissaoEscrever(getContext(),getActivity());
@@ -140,7 +142,6 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
         imvFoto = viewInflado.findViewById(R.id.iv_cliente);
         if (currentUser != null) {
             if (currentUser.getPhotoUrl() != null) {
-                final ProgressBar finalProgressBar = viewInflado.findViewById(R.id.progress_bar);
                 finalProgressBar.setVisibility(View.VISIBLE);
                 Picasso.get()
                         .load(currentUser.getPhotoUrl())
@@ -156,6 +157,8 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
 
                             }
                         });
+            }else{
+                finalProgressBar.setVisibility(View.GONE);
             }
         }
     }

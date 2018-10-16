@@ -69,13 +69,12 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewInflado = inflater.inflate(R.layout.fragment_meus_dados_estabelecimento, container, false);
+        finalProgressBar = viewInflado.findViewById(R.id.progress_bar_est);
         recuperarDados();
         setClicks();
         Helper.verificarPermissaoEscrever(getContext(),getActivity());
         carregarFoto();
         progressDialog = new ProgressDialog(viewInflado.getContext());
-        finalProgressBar = viewInflado.findViewById(R.id.progress_bar_est);
-        finalProgressBar.setVisibility(View.GONE);
         return viewInflado;
     }
 
@@ -185,6 +184,8 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
 
                             }
                         });
+            }else{
+                finalProgressBar.setVisibility(View.GONE);
             }
         }
     }

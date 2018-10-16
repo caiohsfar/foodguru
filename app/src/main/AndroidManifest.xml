@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_food_guru"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -40,17 +40,15 @@
         <activity
             android:name=".cliente.GUI.HomeClienteActivity"
             android:icon="@drawable/ic_teste_sair"
-            android:label="Food Guru" />
+            android:label="Home" />
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
-            android:label="Food Guru" />
+            android:label="Home" />
         <activity android:name=".cliente.GUI.EditarDadosClienteActivity" />
         <activity android:name=".Mesa.GUI.AdicionarMesaActivity" />
         <activity android:name=".Mesa.GUI.EditarMesaActivity" />
         <activity android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity" />
-        <activity android:name=".Mesa.GUI.DetalhesMesaActivity" /><![CDATA[
-        >>>>>>> develop
-        ]]>
+        <activity android:name=".Mesa.GUI.DetalhesMesaActivity" />
         <activity android:name=".estabelecimento.GUI.DetalhesPratoActivity" />
         <activity android:name=".Prato.GUI.AdicionarSessaoActvity" />
         <activity android:name=".Prato.GUI.SessaoActvity" />
@@ -65,7 +63,6 @@
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
->>>>>>> develop
     </application>
 
 </manifest>
