@@ -5,42 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".Prato.GUI.PratosFragment">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
     <!-- TODO: Update blank fragment layout -->
 
-    <RelativeLayout
+
+    <Spinner
+        android:id="@+id/spinnerSessao"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_height="42dp" />
 
-            <Spinner
-                android:id="@+id/spinnerSessao"
-                android:layout_width="200sp"
-                android:layout_height="match_parent" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerv_view_pratos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        tools:listitem="@layout/prato_list_item" />
 
-            <Button
-                android:id="@+id/irSessao"
-                android:layout_width="match_parent"
-                android:layout_height="40sp"
-                android:text="Sessão"
-                android:layout_gravity="right" />
-
-
-        </LinearLayout>
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerv_view_pratos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            tools:listitem="@layout/prato_list_item" />
-
-    </RelativeLayout>
-
-</ScrollView>
 </FrameLayout>

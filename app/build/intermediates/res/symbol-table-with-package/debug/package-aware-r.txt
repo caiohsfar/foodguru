@@ -1325,7 +1325,6 @@ id img_qr_code
 id imv_qr_code_detalhe
 id info
 id invisible
-id irSessao
 id italic
 id item_touch_helper_previous_elevation
 id ivDetalhesImagemPrato
@@ -1486,7 +1485,6 @@ id tvTelefoneEstabelecimentoMeusDados
 id tv_codigo_detalhe
 id tv_codigo_mesa
 id tv_informativo_tipodeconta
-id tv_numero_mesa_cardapio
 id tv_numero_mesa_detalhe
 id tv_recuperar_senha
 id txtNomePrato

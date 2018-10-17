@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,7 +41,7 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.R
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PratosFragment extends Fragment implements View.OnClickListener{
+public class PratosFragment extends Fragment{
     private PratoAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
@@ -129,12 +128,12 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
-        viewInflado.findViewById(R.id.irSessao).setOnClickListener(this);
         mProgressDialog = new ProgressDialog(viewInflado.getContext());
         sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
         loadArraySessoes();
         iniciarRecyclerView();
         setCliqueAdapterSessoes();
+
         return viewInflado;
     }
     public void setCliqueAdapterSessoes(){
@@ -142,8 +141,13 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int posicao =  sessao.getSelectedItemPosition();
-                String idSessao = arraySessoes.get(posicao).getId();
-                loadPratos(idSessao);
+                if (posicao == 0){
+                    loadTodosPratos();
+                }else{
+                    String idSessao = arraySessoes.get(posicao).getId();
+                    loadPratosBySessao(idSessao);
+                }
+
             }
 
             @Override
@@ -160,7 +164,7 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
         super.onResume();
     }
 
-    public void loadPratos(String idSesao){
+    public void loadPratosBySessao(String idSesao){
         FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                 .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
                 .child(REFERENCIA_PRATO).orderByChild("idSessao")
@@ -178,6 +182,25 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
                     }
                 });
     }
+
+    public void loadTodosPratos(){
+        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
+                .child(REFERENCIA_PRATO).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                pratosViews = pratoToPratoView((ArrayList<Prato>)pratoServices.loadPratos(dataSnapshot));
+                adapter = new PratoAdapter(getContext(),pratosViews,onClickPrato());
+                mRecyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
     public void loadArraySessoes(){
         FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                 .child(FirebaseHelper.getUidUsuario())
@@ -187,6 +210,7 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         PratoServices pratoServices = new PratoServices();
                         arraySessoes = pratoServices.loadSessoes(dataSnapshot);
+                        arraySessoes.add(0, new SessaoCardapio("Todas as categorias"));
                         setupSpinner();
                     }
 
@@ -366,16 +390,6 @@ public class PratosFragment extends Fragment implements View.OnClickListener{
                 actionMode.finish();
             }
         });
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.irSessao:{
-                abrirTelaSessao();
-                break;
-            }
-        }
     }
     public void abrirTelaSessao() {
         Intent intent = new Intent(getContext(), SessaoActvity.class);

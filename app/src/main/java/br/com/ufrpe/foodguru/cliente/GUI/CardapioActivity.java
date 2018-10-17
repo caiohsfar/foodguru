@@ -15,8 +15,6 @@ public class CardapioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardapio);
         Mesa mesa = getIntent().getExtras().getParcelable("mesa");
-        tvNumeroMesa = findViewById(R.id.tv_numero_mesa_cardapio);
-        tvNumeroMesa.setText(mesa.getNumeroMesa());
 
     }
 }

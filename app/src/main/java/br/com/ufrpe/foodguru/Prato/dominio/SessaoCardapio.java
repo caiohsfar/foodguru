@@ -10,6 +10,9 @@ public class SessaoCardapio implements Parcelable {
     public SessaoCardapio(){
 
     }
+    public SessaoCardapio(String nome){
+        this.nome = nome;
+    }
 
     protected SessaoCardapio(Parcel in) {
         id = in.readString();
