@@ -45,7 +45,6 @@ public class PratosFragment extends Fragment{
     private PratoAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
-    private ProgressDialog mProgressDialog;
     private List<PratoView> pratosViews;
     private ActionMode actionMode;
     private View viewInflado;
@@ -128,7 +127,6 @@ public class PratosFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
-        mProgressDialog = new ProgressDialog(viewInflado.getContext());
         sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
         loadArraySessoes();
         iniciarRecyclerView();
@@ -210,7 +208,7 @@ public class PratosFragment extends Fragment{
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         PratoServices pratoServices = new PratoServices();
                         arraySessoes = pratoServices.loadSessoes(dataSnapshot);
-                        arraySessoes.add(0, new SessaoCardapio("Todas as categorias"));
+                        arraySessoes.add(0, new SessaoCardapio("Todos os pratos"));
                         setupSpinner();
                     }
 

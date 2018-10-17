@@ -10,29 +10,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthSettings;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
-import br.com.ufrpe.foodguru.infraestrutura.utils.OrientacaoQrCodeActivity;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class EscanearQrCodeFragment extends Fragment implements View.OnClickListener{
-    private Context context;
-    private Activity activity;
     private View inflatedLayout;
     private final int BARCODE_REQUEST = 0;
 
@@ -48,8 +39,6 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
         // Inflate the layout for this fragment
         inflatedLayout = inflater.inflate(R.layout.fragment_escanear_qr_code, container, false);
         inflatedLayout.findViewById(R.id.btn_escanear).setOnClickListener(this);
-        context = getContext();
-        activity = getActivity();
         return inflatedLayout;
     }
     public void validarCodigo(String codigo){

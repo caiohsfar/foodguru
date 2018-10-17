@@ -1216,7 +1216,6 @@ id btn_adicionar_sessao
 id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
 id btn_escanear
-id btn_log_out
 id buttonContainer
 id buttonPanel
 id cancel_action
@@ -1391,6 +1390,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
+id recycler_view_cardápio
 id recyclerv_view
 id recyclerv_view_pratos
 id right
@@ -1433,6 +1433,7 @@ id spacer
 id spinnerAdicionaPrato
 id spinnerEditaSessao
 id spinnerSessao
+id spinnerSessaoCardapio
 id split_action_bar
 id spnSessaoCardapio
 id spread
@@ -1496,7 +1497,6 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id user_email
 id view_offset_helper
 id visible
 id wide
@@ -1577,8 +1577,6 @@ layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
 layout activity_pedidos
-layout activity_perfil_cliente
-layout activity_perfil_estabelecimento
 layout activity_recuperar_senha
 layout activity_registro_cliente
 layout activity_registro_estabelecimento

@@ -39,9 +39,9 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int centerCrop = 0x7f09003b;
-        public static final int fitCenter = 0x7f09008d;
-        public static final int fitXY = 0x7f09008e;
+        public static final int centerCrop = 0x7f09003a;
+        public static final int fitCenter = 0x7f09008c;
+        public static final int fitXY = 0x7f09008d;
         public static final int zxing_back_button = 0x7f090155;
         public static final int zxing_barcode_scanner = 0x7f090156;
         public static final int zxing_barcode_surface = 0x7f090157;
@@ -57,8 +57,8 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int zxing_barcode_scanner = 0x7f0c0067;
-        public static final int zxing_capture = 0x7f0c0068;
+        public static final int zxing_barcode_scanner = 0x7f0c0065;
+        public static final int zxing_capture = 0x7f0c0066;
     }
     public static final class raw {
         private raw() {}

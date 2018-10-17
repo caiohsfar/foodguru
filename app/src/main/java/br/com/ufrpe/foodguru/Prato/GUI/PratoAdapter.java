@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.R;
 
 
@@ -32,6 +33,11 @@ public class PratoAdapter extends RecyclerView.Adapter<PratoHolder>{
         this.pratos = pratos;
         this.context = context;
         this.onClickListener = onClickListener;
+    }
+    public PratoAdapter(Context context, List<PratoView> pratos) {
+        this.pratos = pratos;
+        this.context = context;
+        this.onClickListener = null;
     }
 
     @Override

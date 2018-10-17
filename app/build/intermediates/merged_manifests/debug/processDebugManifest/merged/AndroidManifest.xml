@@ -53,19 +53,24 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_food_guru"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="br.com.ufrpe.foodguru.usuario.GUI.LoginActivity"
             android:exported="true"
-            android:label="Food Guru"
+            android:label="Login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.RegistroClienteActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.usuario.GUI.TipoCadastroActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.RegistroEstabelecimentoActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.usuario.GUI.RecuperarSenhaActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.PerfilClienteActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.PerfilEstabelecimentoActivity" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.cliente.GUI.RegistroClienteActivity"
+            android:label="Registre-se" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.usuario.GUI.TipoCadastroActivity"
+            android:label="Tipo de cadastro" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.RegistroEstabelecimentoActivity"
+            android:label="Registre-se" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.usuario.GUI.RecuperarSenhaActivity"
+            android:label="Recuperação de senha" />
         <activity
             android:name="br.com.ufrpe.foodguru.infraestrutura.utils.SplashActivity"
             android:exported="true"
@@ -77,36 +82,51 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.ufrpe.foodguru.LerQrCodeActivity"
-            android:label="@string/title_activity_ler_qr_code" />
-        <activity
             android:name="br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity"
             android:icon="@drawable/ic_teste_sair"
             android:label="Home" />
         <activity
             android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity"
             android:label="Home" />
-        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.EditarDadosClienteActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.Mesa.GUI.AdicionarMesaActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.Mesa.GUI.EditarMesaActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.EditarDadosEstabelecimentoActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.Mesa.GUI.DetalhesMesaActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.DetalhesPratoActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.AdicionarSessaoActvity" />
-        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.SessaoActvity" />
-        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarSessaoActvity" />
-        =======
-        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarPratoActivity" />
         <activity
-            android:name="br.com.ufrpe.foodguru.infraestrutura.utils.OrientacaoQrCodeActivity"
-            android:screenOrientation="fullSensor"
-            android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"
-            android:windowSoftInputMode="stateAlwaysHidden" />
+            android:name="br.com.ufrpe.foodguru.cliente.GUI.EditarDadosClienteActivity"
+            android:label="Edição de dados" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Mesa.GUI.AdicionarMesaActivity"
+            android:label="Adicione uma mesa" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Mesa.GUI.EditarMesaActivity"
+            android:label="Editar mesa" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.EditarDadosEstabelecimentoActivity"
+            android:label="Editar dados" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Mesa.GUI.DetalhesMesaActivity"
+            android:label="Detalhes da mesa" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Prato.GUI.AdicionarSessaoActvity"
+            android:label="Adicione uma sessão" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Prato.GUI.SessaoActvity"
+            android:label="Sessões" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarSessaoActvity"
+            android:label="Editar sessão" />
+        =======
+        <activity
+            android:name="br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity"
+            android:label="Adicionar prato" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoActivity"
+            android:label="Detalhes do prato" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarPratoActivity"
+            android:label="Editar prato" />
         <activity android:name="br.com.ufrpe.foodguru.Consumo.gui.PedidosActvity" />
-        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.CardapioActivity" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.cliente.GUI.CardapioActivity"
+            android:label="Cardápio" >
+        </activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

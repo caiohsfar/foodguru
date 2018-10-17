@@ -7,9 +7,15 @@
     tools:context=".cliente.GUI.CardapioActivity">
 
     <Spinner
-        android:id="@+id/spinnerSessao"
+        android:id="@+id/spinnerSessaoCardapio"
         android:layout_width="match_parent"
         android:layout_height="46dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_cardápio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        tools:listitem="@layout/prato_list_item" />
 
 
 </RelativeLayout>
