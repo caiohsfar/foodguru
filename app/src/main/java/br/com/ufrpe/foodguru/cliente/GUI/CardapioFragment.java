@@ -1,4 +1,4 @@
-package br.com.ufrpe.foodguru.cardapio.GUI;
+package br.com.ufrpe.foodguru.cliente.GUI;
 
 
 import android.os.Bundle;

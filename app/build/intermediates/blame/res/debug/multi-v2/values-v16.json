@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\BottomSheet-2.4.1.aar\\066cde7fabf64f0100a1fcc1d2a6210e\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2,6",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,262",
-                        "endLines": "5,9",
-                        "endColumns": "12,12",
-                        "endOffsets": "257,481"
-                    },
-                    "to": {
-                        "startLines": "3,7",
-                        "startColumns": "4,4",
-                        "startOffsets": "121,328",
-                        "endLines": "6,10",
-                        "endColumns": "12,12",
-                        "endOffsets": "323,547"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\values-v16\\values-v16.xml",
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +23,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\0cb1c54f72fe56343de1e143497d9bc8\\res\\values-v16\\values-v16.xml",
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/BottomSheet-2.4.1.aar/9dfb95541ba429d1df35ceff078e708d/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,262",
+                        "endLines": "5,9",
+                        "endColumns": "12,12",
+                        "endOffsets": "257,481"
+                    },
+                    "to": {
+                        "startLines": "3,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "121,328",
+                        "endLines": "6,10",
+                        "endColumns": "12,12",
+                        "endOffsets": "323,547"
+                    }
+                },
+                {
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/0041f9f13d8cbe0c00f08e93ea186ddf/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

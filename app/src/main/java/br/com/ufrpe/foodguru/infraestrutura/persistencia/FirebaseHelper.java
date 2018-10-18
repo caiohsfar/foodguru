@@ -10,6 +10,7 @@ public final class FirebaseHelper {
     public static final String REFERENCIA_MESA = "Mesas";
     public static final String REFERENCIA_PRATO = "Pratos";
     public static final String REFERENCIA_SESSAO = "Sessoes";
+    public static final String REFERENCIA_ITEM_CONSUMO = "ItemConsumo";
 
 
 

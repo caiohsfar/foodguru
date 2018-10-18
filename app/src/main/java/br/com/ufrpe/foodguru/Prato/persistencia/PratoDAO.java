@@ -1,5 +1,6 @@
 package br.com.ufrpe.foodguru.Prato.persistencia;
 
+
 import android.support.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
@@ -126,5 +127,13 @@ public class PratoDAO {
             sessoes.add(sessaoCardapio);
         }
         return sessoes;
+    }
+    public static Prato getPrato(DataSnapshot dataSnapshot){
+        Prato prato = null;
+        for (DataSnapshot ds : dataSnapshot.getChildren()){
+            prato =  ds.getValue(Prato.class);
+            break;
+        }
+        return prato;
     }
 }

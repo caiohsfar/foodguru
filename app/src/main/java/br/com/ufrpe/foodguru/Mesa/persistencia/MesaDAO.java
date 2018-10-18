@@ -13,9 +13,7 @@ import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 public class MesaDAO {
-    private FirebaseAuth mAuth = FirebaseHelper.getFirebaseAuth();
     private DatabaseReference database = FirebaseHelper.getFirebaseReference();
-    private FirebaseUser currentUser = mAuth.getCurrentUser();
 
     public boolean adicionarMesa(Mesa mesa){
         boolean sucess = true;

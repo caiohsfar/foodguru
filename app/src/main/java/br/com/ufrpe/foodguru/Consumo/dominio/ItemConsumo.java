@@ -1,18 +1,25 @@
 package br.com.ufrpe.foodguru.Consumo.dominio;
 
-import br.com.ufrpe.foodguru.Prato.dominio.Prato;
+
+
+
+import java.util.Date;
+
+
 
 public class ItemConsumo {
-    private String idPrato;
+    private String id;
     private String nomePrato;
+    private String idPrato;
+    private String idMesa;
+    private int numeroMesa;
+    private int quantidade;
+    private double preco;
+    private String idCliente;
+    private String idEstabelecimento;
+    private Date data;
+    private boolean entregue = false;
 
-    public String getIdPrato() {
-        return idPrato;
-    }
-
-    public void setIdPrato(String idPrato) {
-        this.idPrato = idPrato;
-    }
 
     public String getNomePrato() {
         return nomePrato;
@@ -21,12 +28,6 @@ public class ItemConsumo {
     public void setNomePrato(String nomePrato) {
         this.nomePrato = nomePrato;
     }
-
-    private int quantidade;
-    private double preco;
-    private int numeroMesa;
-    private String idCliente;
-    private String idEstabelecimento;
 
     public String getIdEstabelecimento() {
         return idEstabelecimento;
@@ -66,5 +67,44 @@ public class ItemConsumo {
     public void setPrecoQuantidade(int quantidade,double preco) {
         this.preco = quantidade*preco;
         this.quantidade = quantidade;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getIdPrato() {
+        return idPrato;
+    }
+
+    public void setIdPrato(String idPrato) {
+        this.idPrato = idPrato;
+    }
+
+    public String getIdMesa() {
+        return idMesa;
+    }
+
+    public void setIdMesa(String idMesa) {
+        this.idMesa = idMesa;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public boolean isEntregue() {
+        return entregue;
+    }
+
+    public void setEntregue(boolean entregue) {
+        this.entregue = entregue;
     }
 }

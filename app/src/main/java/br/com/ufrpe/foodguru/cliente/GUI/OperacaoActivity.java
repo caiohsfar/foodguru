@@ -1,12 +1,9 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,7 +13,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.cardapio.GUI.CardapioFragment;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 public class OperacaoActivity extends AppCompatActivity {

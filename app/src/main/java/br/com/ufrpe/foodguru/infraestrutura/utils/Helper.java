@@ -17,6 +17,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ServerValue;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -122,5 +123,7 @@ public class Helper {
                     Manifest.permission.CAMERA},CAMERA_REQUEST_CODE);
         }
         return validacao;
+
     }
+
 }

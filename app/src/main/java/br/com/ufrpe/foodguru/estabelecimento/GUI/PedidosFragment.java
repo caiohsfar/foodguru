@@ -13,6 +13,7 @@ import br.com.ufrpe.foodguru.R;
  * A simple {@link Fragment} subclass.
  */
 public class PedidosFragment extends Fragment {
+    private View inflatedLayout;
 
 
     public PedidosFragment() {
@@ -23,8 +24,10 @@ public class PedidosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        inflatedLayout = inflater.inflate(R.layout.fragment_pedidos, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pedidos, container, false);
+        return inflatedLayout;
     }
+
 
 }
