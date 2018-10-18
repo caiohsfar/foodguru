@@ -27,7 +27,6 @@
                 android:id="@+id/iv_cliente"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop" />
             <Button
@@ -45,8 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp">
-            <TextView
+            android:layout_marginTop="5dp">
+            <EditText
                 android:id="@+id/tvNomeClienteMeusDados"
 
                 android:layout_width="match_parent"
@@ -60,16 +59,12 @@
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
+                android:focusable="false"
+                android:cursorVisible="false"  />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1sp"
-                android:background="@color/RoxoFoodGuru"
-                android:layout_marginLeft="15sp"
-                android:layout_marginRight="15sp"/>
 
-            <TextView
+            <EditText
                 android:id="@+id/tvEmailClienteMeusDados"
 
                 android:layout_width="match_parent"
@@ -78,20 +73,16 @@
 
                 android:text="Email"
                 android:textSize="18sp"
-                android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_email"
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1sp"
-                android:background="@color/RoxoFoodGuru"
-                android:layout_marginLeft="15sp"
-                android:layout_marginRight="15sp"/>
+                android:focusable="false"
+                android:cursorVisible="false"  />
+
 
         </LinearLayout>
     </LinearLayout>

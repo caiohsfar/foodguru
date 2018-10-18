@@ -10,48 +10,34 @@
     android:background="@color/Branco"
     tools:context=".Mesa.GUI.DetalhesMesaActivity">
 
-    <TextView
+    <EditText
         android:id="@+id/tv_numero_mesa_detalhe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
         android:paddingLeft="15sp"
-        android:layout_marginTop="15sp"
-        android:layout_marginBottom="10sp"
+        android:layout_marginTop="5dp"
         android:drawableLeft="@drawable/ic_mesa"
         android:drawablePadding="15sp"
         android:drawableTint="@color/RoxoFoodGuru"
         android:text="Número da Mesa: %d"
         android:textSize="20sp"
-        android:textColor="@color/RoxoFoodGuru"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1sp"
-        android:layout_marginLeft="15sp"
-        android:background="@color/RoxoFoodGuru"/>
+        android:focusable="false"
+        android:cursorVisible="false" />
 
-    <TextView
+    <EditText
         android:id="@+id/tv_codigo_detalhe"
-        android:layout_width="wrap_content"
-        android:layout_height="26dp"
-        android:layout_below="@+id/tv_numero_mesa_detalhe"
-        android:layout_marginTop="10sp"
-        android:layout_marginBottom="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
         android:drawableLeft="@drawable/ic_codigo"
         android:drawablePadding="15sp"
-        android:drawableTint="@color/LaranjaFoodGuru"
+        android:drawableTint="@color/RoxoFoodGuru"
         android:paddingLeft="15sp"
         android:text="Código: %s"
-        android:textColor="@color/LaranjaFoodGuru"
-        android:textSize="20sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1sp"
-        android:layout_marginLeft="15sp"
-        android:background="@color/RoxoFoodGuru"/>
+        android:textSize="20sp"
+        android:focusable="false"
+        android:cursorVisible="false" />
 
     <ImageView
-        android:background="@drawable/ic_codigo"
         android:id="@+id/imv_qr_code_detalhe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

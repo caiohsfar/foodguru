@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -52,8 +53,7 @@ import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
  */
 public class MeusDadosClienteFragment extends Fragment implements View.OnClickListener {
     private StorageReference  storageReference = FirebaseStorage.getInstance().getReference();;
-    private TextView tvNome;
-    private TextView tvEmail;
+    private EditText tvNome, tvEmail;
     private View viewInflado;
     private ImageView imvFoto;
     private FirebaseUser currentUser = FirebaseHelper.getFirebaseAuth().getCurrentUser();
@@ -88,6 +88,8 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
         tvNome.setText(currentUser.getDisplayName());
         tvEmail = viewInflado.findViewById(R.id.tvEmailClienteMeusDados);
         tvEmail.setText(currentUser.getEmail());
+        tvNome.setKeyListener( null );
+        tvEmail.setKeyListener( null );
     }
 
     public void showMenuEscolhaEdicao() {

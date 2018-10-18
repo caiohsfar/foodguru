@@ -43,8 +43,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
-            <TextView
+            <EditText
                 android:id="@+id/tvNomeEstabelecimentoMeusDados"
 
                 android:layout_width="match_parent"
@@ -57,16 +58,12 @@
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1sp"
-                android:background="@color/RoxoFoodGuru"
-                android:layout_marginLeft="15sp"
-                android:layout_marginRight="15sp"/>
+                android:focusable="false"
+                android:cursorVisible="false" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tvTelefoneEstabelecimentoMeusDados"
 
                 android:layout_width="match_parent"
@@ -74,22 +71,18 @@
                 android:singleLine="true"
 
                 android:textSize="18sp"
-                android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_telefone"
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1sp"
-                android:background="@color/RoxoFoodGuru"
-                android:layout_marginLeft="15sp"
-                android:layout_marginRight="15sp"/>
+                android:focusable="false"
+                android:cursorVisible="false"                />
 
-            <TextView
+
+            <EditText
                 android:id="@+id/tvEmailEstabelecimentoMeusDados"
 
                 android:layout_width="match_parent"
@@ -97,21 +90,18 @@
                 android:singleLine="true"
 
                 android:textSize="18sp"
-                android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_email"
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1sp"
-                android:background="@color/RoxoFoodGuru"
-                android:layout_marginLeft="15sp"
-                android:layout_marginRight="15sp"/>
-            <TextView
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+
+            <EditText
                 android:id="@+id/tvEnderecoEstabelecimentoMeusDados"
 
                 android:layout_width="match_parent"
@@ -119,13 +109,17 @@
                 android:singleLine="true"
 
                 android:textSize="18sp"
-                android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_endereco"
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
+
+                android:focusable="false"
+                android:cursorVisible="false"
+
+                />
 
         </LinearLayout>
     </LinearLayout>

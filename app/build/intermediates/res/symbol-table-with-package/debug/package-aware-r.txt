@@ -1390,7 +1390,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card√°pio
+id recycler_view_card·pio
 id recyclerv_view
 id recyclerv_view_pratos
 id right

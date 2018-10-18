@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -56,7 +57,7 @@ import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 public class MeusDadosEstabelecimentoFragment extends Fragment implements View.OnClickListener {
     private StorageReference  storageReference = FirebaseStorage.getInstance().getReference();;
     private View viewInflado;
-    private TextView tvNome, tvEmail, tvTelefone, tvEndereco;
+    private EditText tvNome, tvEmail, tvTelefone, tvEndereco;
     private ImageView imvFoto;
     private FirebaseUser currentUser = FirebaseHelper.getFirebaseAuth().getCurrentUser();
     private static final int CAMERA_REQUEST_CODE = 1;
@@ -105,6 +106,10 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         tvEmail.setText(usuario.getEmail());
         tvEndereco.setText(endereco.getCidade() + ", " + endereco.getEstado()
                 + ", " + endereco.getRua() + ", " + endereco.getComplemento() + ".");
+        tvNome.setKeyListener( null );
+        tvTelefone.setKeyListener( null );
+        tvEmail.setKeyListener( null );
+        tvEndereco.setKeyListener( null );
     }
 
     private void setClicks(){

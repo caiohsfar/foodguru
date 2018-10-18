@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.Mesa.GUI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,10 +11,8 @@ import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class DetalhesMesaActivity extends AppCompatActivity {
     private ImageView imvQrCode;
-    private TextView tvCodigoMesa;
-    private TextView tvNumeroMesa;
-    private String codigoMesaIntent;
-    private String numeroMesaIntent;
+    private EditText tvCodigoMesa, tvNumeroMesa;
+    private String codigoMesaIntent, numeroMesaIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +31,10 @@ public class DetalhesMesaActivity extends AppCompatActivity {
         tvNumeroMesa = findViewById(R.id.tv_numero_mesa_detalhe);
     }
     public void setUpViews(){
-        tvCodigoMesa.setText("Código da Mesa: " + codigoMesaIntent);
-        tvNumeroMesa.setText("Número da Mesa: " + numeroMesaIntent);
+        tvCodigoMesa.setText("Código: " + codigoMesaIntent);
+        tvNumeroMesa.setText("Número: " + numeroMesaIntent);
+        tvCodigoMesa.setKeyListener( null );
+        tvNumeroMesa.setKeyListener( null );
     }
 
     public void gerarQrCode(){
