@@ -124,6 +124,7 @@
             android:label="Editar prato" />
         <activity android:name="br.com.ufrpe.foodguru.Consumo.gui.PedidosActvity" />
         <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity" />
+        <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

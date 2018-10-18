@@ -1,6 +1,7 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
+import br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity;
 import br.com.ufrpe.foodguru.Prato.GUI.PratoAdapter;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
@@ -34,11 +36,11 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.R
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CardapioFragment extends Fragment {
-    private PratoAdapter adapter;
+public class CardapioFragment extends Fragment implements CardapioAdapter.OnItemClicked {
+    private CardapioAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
-    private List<PratoView> pratosViews;
+    private List<Prato> pratosViews;
     private Spinner sessao;
     private List<SessaoCardapio> arraySessoes;
     private Mesa mesa;
@@ -61,6 +63,8 @@ public class CardapioFragment extends Fragment {
         loadArraySessoes();
         iniciarRecyclerView();
         setCliqueAdapterSessoes();
+
+
        return viewInflado;
     }
 
@@ -113,8 +117,8 @@ public class CardapioFragment extends Fragment {
                 .child(REFERENCIA_PRATO).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                pratosViews = pratoToPratoView((ArrayList<Prato>)pratoServices.loadPratos(dataSnapshot));
-                adapter = new PratoAdapter(getContext(), pratosViews);
+                pratosViews = pratoServices.loadPratos(dataSnapshot);
+                adapter = new CardapioAdapter(getContext(), pratosViews);
                 mRecyclerView.setAdapter(adapter);
             }
 
@@ -133,8 +137,8 @@ public class CardapioFragment extends Fragment {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        pratosViews = pratoToPratoView((ArrayList<Prato>)pratoServices.loadPratos(dataSnapshot));
-                        adapter = new PratoAdapter(getContext(),pratosViews);
+                        pratosViews =pratoServices.loadPratos(dataSnapshot);
+                        adapter = new CardapioAdapter(getContext(),pratosViews);
                         mRecyclerView.setAdapter(adapter);
                     }
                     @Override
@@ -149,23 +153,25 @@ public class CardapioFragment extends Fragment {
         sessao.setAdapter(adapterSessao);
     }
 
-    public void iniciarRecyclerView(){
+    public void iniciarRecyclerView() {
         mRecyclerView = (RecyclerView) viewInflado.findViewById(R.id.recycler_view_cardápio);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext()
                 , LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
-        adapter = new PratoAdapter(getContext(),pratosViews);
-        mRecyclerView.setAdapter(adapter);
-    }
-    private List<PratoView> pratoToPratoView(ArrayList<Prato> pratos){
-        ArrayList<PratoView> pratosViews = new ArrayList<>();
-        for (Prato prato : pratos) {
-            PratoView pratoView = new PratoView();
-            pratoView.setPrato(prato);
-            pratosViews.add(pratoView);
-        }
-        return pratosViews;
+        adapter = new CardapioAdapter(getContext(), pratosViews);
+
+
     }
 
+
+    @Override
+    public void onItemClick(int position) {
+        Intent abrirTelaDetalhes = new Intent(getContext(),DetalhesPratoClienteActvity.class);
+        abrirTelaDetalhes.putExtra("imagem",adapter.getItem(position).getUrlImagem());
+        abrirTelaDetalhes.putExtra("nome",adapter.getItem(position).getNomePrato());
+        abrirTelaDetalhes.putExtra("descricao",adapter.getItem(position).getDescricaoPrato());
+        startActivity(abrirTelaDetalhes);
+
+    }
 }

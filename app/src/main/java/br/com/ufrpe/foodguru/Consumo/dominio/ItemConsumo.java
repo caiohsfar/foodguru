@@ -20,6 +20,9 @@ public class ItemConsumo {
     private Date data;
     private boolean entregue = false;
 
+    public String getIdPrato() {
+        return idPrato;
+    }
 
     public String getNomePrato() {
         return nomePrato;
@@ -37,12 +40,12 @@ public class ItemConsumo {
         this.idEstabelecimento = idEstabelecimento;
     }
 
-    public int getNumeroMesa() {
-        return numeroMesa;
+    public String getNumeroMesa() {
+        return idMesa;
     }
 
-    public void setNumeroMesa(int numeroMesa) {
-        this.numeroMesa = numeroMesa;
+    public void setNumeroMesa(String idMesa) {
+        this.idMesa =idMesa;
     }
 
     public String getIdCliente() {
