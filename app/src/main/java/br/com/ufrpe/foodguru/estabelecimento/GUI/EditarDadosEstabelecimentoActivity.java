@@ -172,10 +172,22 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
             Helper.criarToast(EditarDadosEstabelecimentoActivity.this, "Database error");
         }
     }
-
-    public boolean editarEstabelecimento(Estabelecimento estabelecimento){
+    private void alterarEndereco(Endereco endereco){
         EstabelecimentoServices estabelecimentoServices = new EstabelecimentoServices();
-        return estabelecimentoServices.adicionarEstabelecimento(estabelecimento);
+        if (!estabelecimentoServices.editarEndereco(endereco)){
+            Helper.criarToast(this, "Erro ao editar endereço");
+        }
+    }
+    private void alterarTelefone(String telefone){
+        EstabelecimentoServices estabelecimentoServices = new EstabelecimentoServices();
+        if (!estabelecimentoServices.editarTelefone(telefone)){
+            Helper.criarToast(this, "Erro ao editar telefone");
+        }
+    }
+
+    public void editarEstabelecimento(Estabelecimento estabelecimento){
+        alterarTelefone(estabelecimento.getTelefone());
+        alterarEndereco(estabelecimento.getEndereco());
     }
 
     public Estabelecimento criarEstabelecimento(){
@@ -190,7 +202,7 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
     }
     public void abrirTelaEstabelecimento(){
         Intent intent = new Intent(EditarDadosEstabelecimentoActivity.this, HomeEstabelecimentoActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        finish();
         startActivity(intent);
     }
 

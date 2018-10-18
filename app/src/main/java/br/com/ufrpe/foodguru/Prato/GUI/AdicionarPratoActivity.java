@@ -62,9 +62,15 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_prato);
         Helper.verificarPermissaoEscrever(this,AdicionarPratoActivity.this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         loadArraySessoes();
         setUpViews();
     }
+
     public void loadArraySessoes(){
         FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                 .child(FirebaseHelper.getUidUsuario())
@@ -186,9 +192,15 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
 
     private void setupSpinner(){
         sessao = findViewById(R.id.spinnerAdicionaPrato);
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, arraySessoes);
-        adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sessao.setAdapter(adapterSessao);
+        if (arraySessoes.size() == 0){
+            Helper.criarToast(this, "Adicione uma sessão antes de criar o prato");
+            finish();
+        }else{
+            ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, arraySessoes);
+            adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            sessao.setAdapter(adapterSessao);
+        }
+
 
     }
     private void adicionarPrato() {
@@ -286,7 +298,6 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
             public void onComplete(@NonNull Task<Uri> task) {
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
-                    System.out.println(imageUri.toString());
                     urlImagemAdicionada = imageUri.toString();
                     fecharProgressDialog();
                 }

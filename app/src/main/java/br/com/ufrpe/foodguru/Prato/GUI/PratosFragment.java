@@ -221,7 +221,7 @@ public class PratosFragment extends Fragment{
     }
 
     private void setupSpinner() {
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getContext(),android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(),android.R.layout.simple_spinner_dropdown_item,arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
     }
