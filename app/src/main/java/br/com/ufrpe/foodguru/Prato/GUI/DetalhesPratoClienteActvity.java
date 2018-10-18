@@ -34,12 +34,10 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity {
         nome = findViewById(R.id.etDetalhesNomePratoC);
 
         String nomePrato = getIntent().getStringExtra("nome");
-        String descricaoPrato = getIntent().getStringExtra("descricao");
-        String imagem = getIntent().getStringExtra("imagem");
+
         pratoSelecionado = new Prato();
-        pratoSelecionado.setDescricaoPrato(descricaoPrato);
-        pratoSelecionado.setUrlImagem(imagem);
-        pratoSelecionado.setNomePrato(nomePrato);
+        pratoSelecionado = getIntent().getExtras().getParcelable("prato");
+
         descricao.setText(pratoSelecionado.getDescricaoPrato());
         nome.setText(pratoSelecionado.getNomePrato());
         downloadImage();
@@ -67,7 +65,7 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity {
     }
 
     public void fazerPedido(View view){
-
+        
     }
 
 

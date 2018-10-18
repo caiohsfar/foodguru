@@ -29,6 +29,7 @@ import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.cardapio.GUI.CardapioAdapter;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_PRATO;
@@ -168,9 +169,10 @@ public class CardapioFragment extends Fragment implements CardapioAdapter.OnItem
     @Override
     public void onItemClick(int position) {
         Intent abrirTelaDetalhes = new Intent(getContext(),DetalhesPratoClienteActvity.class);
-        abrirTelaDetalhes.putExtra("imagem",adapter.getItem(position).getUrlImagem());
-        abrirTelaDetalhes.putExtra("nome",adapter.getItem(position).getNomePrato());
-        abrirTelaDetalhes.putExtra("descricao",adapter.getItem(position).getDescricaoPrato());
+        abrirTelaDetalhes.putExtra("prato",adapter.getItem(position));
+
+
+
         startActivity(abrirTelaDetalhes);
 
     }
