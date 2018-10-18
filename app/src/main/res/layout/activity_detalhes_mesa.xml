@@ -19,7 +19,7 @@
         android:drawableLeft="@drawable/ic_mesa"
         android:drawablePadding="15sp"
         android:drawableTint="@color/RoxoFoodGuru"
-        android:text="Número da Mesa: %d"
+        android:text="Número: %d"
         android:textSize="20sp"
         android:focusable="false"
         android:cursorVisible="false" />

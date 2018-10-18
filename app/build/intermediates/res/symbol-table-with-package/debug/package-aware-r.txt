@@ -1113,6 +1113,7 @@ drawable ic_adicionar
 drawable ic_android
 drawable ic_close
 drawable ic_codigo
+drawable ic_conta
 drawable ic_dashboard_black_24dp
 drawable ic_delete
 drawable ic_descricao
@@ -1124,6 +1125,7 @@ drawable ic_endereco
 drawable ic_excluir
 drawable ic_food_guru
 drawable ic_foto
+drawable ic_historico
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1308,6 +1310,7 @@ id fixed
 id forever
 id frame_cliente
 id frame_estabelecimento
+id frame_operacao
 id gerenciar_sessoes
 id ghost_view
 id gone
@@ -1355,11 +1358,16 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id nav_cardapio
+id nav_carrinho
 id nav_cliente
+id nav_conta
 id nav_estabelecimento
+id nav_historico
 id nav_mesas
 id nav_meus_dados
 id nav_meus_dados_est
+id nav_operacao
 id nav_pedidos
 id nav_pratos
 id nav_qr_code
@@ -1565,7 +1573,6 @@ layout abc_tooltip
 layout activity_adicionar_mesa
 layout activity_adicionar_prato
 layout activity_adicionar_sessao
-layout activity_cardapio
 layout activity_detalhes_mesa
 layout activity_detalhes_prato
 layout activity_editar_dados_cliente
@@ -1576,6 +1583,7 @@ layout activity_editar_sessao
 layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
+layout activity_operacao
 layout activity_pedidos
 layout activity_recuperar_senha
 layout activity_registro_cliente
@@ -1604,6 +1612,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_cardapio
 layout fragment_escanear_qr_code
 layout fragment_mesas
 layout fragment_meus_dados_cliente
@@ -1641,6 +1650,7 @@ menu action_mode
 menu menu_cliente
 menu menu_editar_foto
 menu menu_estabelecimento
+menu menu_operacao
 menu navigation
 menu principal_cliente
 menu principal_est

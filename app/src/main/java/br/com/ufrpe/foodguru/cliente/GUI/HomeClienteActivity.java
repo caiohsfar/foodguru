@@ -36,10 +36,6 @@ public class HomeClienteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_cliente);
 
-        //Toolbar toolbar = findViewById(R.id.toolbarCliente);
-        //setSupportActionBar(toolbar);
-
-
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_cliente);
 

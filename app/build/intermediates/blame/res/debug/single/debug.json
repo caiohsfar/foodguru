@@ -100,6 +100,10 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.0.aar\\fac32f8450608331f335c1f2675173cd\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_conta.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\drawable\\ic_conta.xml"
+    },
+    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_cab_background_top_material.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable\\abc_cab_background_top_material.xml"
     },
@@ -1136,6 +1140,10 @@
         "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer.png"
     },
     {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_cardapio.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\layout\\fragment_cardapio.xml"
+    },
+    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -1852,6 +1860,14 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_operacao.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\layout\\activity_operacao.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_operacao.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\menu\\menu_operacao.xml"
+    },
+    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_dark.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\color\\abc_primary_text_material_dark.xml"
     },
@@ -1976,6 +1992,10 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_historico.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\drawable\\ic_historico.xml"
+    },
+    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\ae8d2bc2727429a64f171b7dcf70a4d2\\res\\interpolator-v21\\mtrl_fast_out_linear_in.xml"
     },
@@ -2082,10 +2102,6 @@
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_item_layout.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cardapio.xml.flat",
-        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\src\\main\\res\\layout\\activity_cardapio.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FoodGuruDev\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home_cliente.xml.flat",

@@ -4,7 +4,12 @@
     <item
         android:id="@+id/nav_qr_code"
         android:icon="@drawable/ic_codigo"
-        android:title="Escanear QrCode" />
+        android:title="Ler QrCode" />
+
+    <item
+        android:id="@+id/nav_historico"
+        android:icon="@drawable/ic_historico"
+        android:title="Histórico"/>
 
     <item
         android:id="@+id/nav_meus_dados"

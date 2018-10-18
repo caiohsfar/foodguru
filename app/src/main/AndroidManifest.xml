@@ -18,14 +18,18 @@
             android:exported="true"
             android:label="Login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".cliente.GUI.RegistroClienteActivity"
-            android:label="Registre-se"/>
-        <activity android:name=".usuario.GUI.TipoCadastroActivity"
-            android:label="Tipo de cadastro"/>
-        <activity android:name=".estabelecimento.GUI.RegistroEstabelecimentoActivity"
-            android:label="Registre-se"/>
-        <activity android:name=".usuario.GUI.RecuperarSenhaActivity"
-            android:label="Recuperação de senha"/>
+        <activity
+            android:name=".cliente.GUI.RegistroClienteActivity"
+            android:label="Registre-se" />
+        <activity
+            android:name=".usuario.GUI.TipoCadastroActivity"
+            android:label="Tipo de cadastro" />
+        <activity
+            android:name=".estabelecimento.GUI.RegistroEstabelecimentoActivity"
+            android:label="Registre-se" />
+        <activity
+            android:name=".usuario.GUI.RecuperarSenhaActivity"
+            android:label="Recuperação de senha" />
         <activity
             android:name=".infraestrutura.utils.SplashActivity"
             android:exported="true"
@@ -43,33 +47,42 @@
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
             android:label="Home" />
-        <activity android:name=".cliente.GUI.EditarDadosClienteActivity"
-            android:label="Edição de dados"/>
-        <activity android:name=".Mesa.GUI.AdicionarMesaActivity"
-            android:label="Adicione uma mesa"/>
-        <activity android:name=".Mesa.GUI.EditarMesaActivity"
-            android:label="Editar mesa"/>
-        <activity android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity"
-            android:label="Editar dados"/>
-        <activity android:name=".Mesa.GUI.DetalhesMesaActivity"
-            android:label="Detalhes da mesa"/>
-        <activity android:name=".Prato.GUI.AdicionarSessaoActvity"
-            android:label="Adicione uma sessão"/>
-        <activity android:name=".Prato.GUI.SessaoActvity"
-            android:label="Sessões"/>
-        <activity android:name=".Prato.GUI.EditarSessaoActvity"
-            android:label="Editar sessão"/>
+        <activity
+            android:name=".cliente.GUI.EditarDadosClienteActivity"
+            android:label="Edição de dados" />
+        <activity
+            android:name=".Mesa.GUI.AdicionarMesaActivity"
+            android:label="Adicione uma mesa" />
+        <activity
+            android:name=".Mesa.GUI.EditarMesaActivity"
+            android:label="Editar mesa" />
+        <activity
+            android:name=".estabelecimento.GUI.EditarDadosEstabelecimentoActivity"
+            android:label="Editar dados" />
+        <activity
+            android:name=".Mesa.GUI.DetalhesMesaActivity"
+            android:label="Detalhes da mesa" />
+        <activity
+            android:name=".Prato.GUI.AdicionarSessaoActvity"
+            android:label="Adicione uma sessão" />
+        <activity
+            android:name=".Prato.GUI.SessaoActvity"
+            android:label="Sessões" />
+        <activity
+            android:name=".Prato.GUI.EditarSessaoActvity"
+            android:label="Editar sessão" />
         =======
-        <activity android:name=".Prato.GUI.AdicionarPratoActivity"
-            android:label="Adicionar prato"/>
-        <activity android:name=".Prato.GUI.DetalhesPratoActivity"
-            android:label="Detalhes do prato"/>
-        <activity android:name=".Prato.GUI.EditarPratoActivity"
-            android:label="Editar prato"/>
+        <activity
+            android:name=".Prato.GUI.AdicionarPratoActivity"
+            android:label="Adicionar prato" />
+        <activity
+            android:name=".Prato.GUI.DetalhesPratoActivity"
+            android:label="Detalhes do prato" />
+        <activity
+            android:name=".Prato.GUI.EditarPratoActivity"
+            android:label="Editar prato" />
         <activity android:name=".Consumo.gui.PedidosActvity" />
-        <activity android:name=".cliente.GUI.CardapioActivity"
-            android:label="Cardápio">
-        </activity>
+        <activity android:name=".cliente.GUI.OperacaoActivity"></activity>
     </application>
 
 </manifest>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\cd395742ac75c6f151df2cc4e9925d4d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.firebaseui:firebase-ui-database:0.5.1] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\firebase-ui-database-0.5.1.aar\89130646234e9a212bcdee10abed9d26\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ae8d2bc2727429a64f171b7dcf70a4d2\AndroidManifest.xml:17:1-24:12
@@ -65,20 +65,20 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ibyte\.gra
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\04972edb784c31ff31e2a3448b6ec6dd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\e1a3424f74a69551f9696a28fbeb6583\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\f1741da5411f5d1e09ce221cd695cd5c\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
 	package
 		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-75:12
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:2:11-69
@@ -95,7 +95,7 @@ ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\A
 	android:name
 		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:7:22-77
 application
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:9:5-73:19
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:9:5-86:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ae8d2bc2727429a64f171b7dcf70a4d2\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ae8d2bc2727429a64f171b7dcf70a4d2\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\ibyte\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\6bac7f6ee37dd809d0e23bf7899dfc79\AndroidManifest.xml:9:5-20
@@ -167,137 +167,135 @@ ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\A
 	android:name
 		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:17:13-54
 activity#br.com.ufrpe.foodguru.cliente.GUI.RegistroClienteActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:21:9-22:42
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:21:9-23:43
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:22:13-40
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:23:13-40
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:21:19-70
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:22:13-64
 activity#br.com.ufrpe.foodguru.usuario.GUI.TipoCadastroActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:23:9-24:47
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:24:9-26:48
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:24:13-45
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:26:13-45
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:23:19-67
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:25:13-61
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.RegistroEstabelecimentoActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:25:9-26:42
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:27:9-29:43
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:26:13-40
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:29:13-40
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:25:19-86
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:28:13-80
 activity#br.com.ufrpe.foodguru.usuario.GUI.RecuperarSenhaActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:27:9-28:51
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:30:9-32:52
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:28:13-49
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:32:13-49
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:27:19-69
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:31:13-63
 activity#br.com.ufrpe.foodguru.infraestrutura.utils.SplashActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:29:9-38:20
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:33:9-42:20
 	android:exported
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:31:13-36
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:35:13-36
 	android:theme
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:32:13-56
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:36:13-56
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:30:13-64
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:34:13-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:33:13-37:29
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:37:13-41:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:34:17-69
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:34:25-66
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:40:17-77
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:40:27-74
 activity#br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:39:9-42:36
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:43:9-46:36
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:42:13-33
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:46:13-33
 	android:icon
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:41:13-51
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:45:13-51
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:40:13-60
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:44:13-60
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:43:9-45:36
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:47:9-49:36
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:45:13-33
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:49:13-33
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:44:13-76
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:48:13-76
 activity#br.com.ufrpe.foodguru.cliente.GUI.EditarDadosClienteActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:46:9-47:46
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:50:9-52:47
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:47:13-44
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:52:13-44
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:46:19-73
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:51:13-67
 activity#br.com.ufrpe.foodguru.Mesa.GUI.AdicionarMesaActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:48:9-49:48
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:53:9-55:49
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:49:13-46
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:55:13-46
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:48:19-65
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:54:13-59
 activity#br.com.ufrpe.foodguru.Mesa.GUI.EditarMesaActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:50:9-51:42
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:56:9-58:43
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:51:13-40
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:58:13-40
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:50:19-62
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:57:13-56
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.EditarDadosEstabelecimentoActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:52:9-53:43
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:59:9-61:44
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:53:13-41
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:61:13-41
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:52:19-89
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:60:13-83
 activity#br.com.ufrpe.foodguru.Mesa.GUI.DetalhesMesaActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:54:9-55:47
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:62:9-64:48
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:55:13-45
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:64:13-45
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:54:19-64
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:63:13-58
 activity#br.com.ufrpe.foodguru.Prato.GUI.AdicionarSessaoActvity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:56:9-57:50
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:65:9-67:51
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:57:13-48
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:67:13-48
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:56:19-67
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:66:13-61
 activity#br.com.ufrpe.foodguru.Prato.GUI.SessaoActvity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:58:9-59:38
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:68:9-70:39
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:59:13-36
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:70:13-36
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:58:19-58
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:69:13-52
 activity#br.com.ufrpe.foodguru.Prato.GUI.EditarSessaoActvity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:60:9-61:44
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:71:9-73:45
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:61:13-42
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:73:13-42
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:60:19-64
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:72:13-58
 activity#br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:63:9-64:46
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:75:9-77:47
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:64:13-44
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:77:13-44
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:63:19-67
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:76:13-61
 activity#br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:65:9-66:48
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:78:9-80:49
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:66:13-46
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:80:13-46
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:65:19-66
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:79:13-60
 activity#br.com.ufrpe.foodguru.Prato.GUI.EditarPratoActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:67:9-68:43
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:81:9-83:44
 	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:68:13-41
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:83:13-41
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:67:19-64
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:82:13-58
 activity#br.com.ufrpe.foodguru.Consumo.gui.PedidosActvity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:69:9-64
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:84:9-64
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:69:19-61
-activity#br.com.ufrpe.foodguru.cliente.GUI.CardapioActivity
-ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:70:9-72:20
-	android:label
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:84:19-61
+activity#br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity
+ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:85:9-75
 	android:name
-		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:70:19-63
+		ADDED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml:85:19-63
 uses-sdk
 INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\AndroidManifest.xml

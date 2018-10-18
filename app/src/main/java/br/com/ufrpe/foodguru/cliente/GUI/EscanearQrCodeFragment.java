@@ -1,8 +1,6 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -68,7 +66,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
     }
 
     private void abrirTelaCardapio(Mesa mesa) {
-        Intent intent = new Intent(getContext(),CardapioActivity.class);
+        Intent intent = new Intent(getContext(),OperacaoActivity.class);
         intent.putExtra("mesa", mesa);
         startActivity(intent);
     }
