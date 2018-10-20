@@ -5,7 +5,12 @@ import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import java.util.LinkedList;
 import java.util.List;
+
+import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
+import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 
 public class ConsumoDAO {
@@ -15,7 +20,9 @@ public class ConsumoDAO {
         boolean sucess = true;
 
         try {
-            database.child(REFERENCIA_ITEM_CONSUMO).push().setValue(itemConsumo);
+            database.child(REFERENCIA_ITEM_CONSUMO)
+                    .push().setValue(itemConsumo);
+
         } catch (DatabaseException e) {
             sucess = false;
         }
@@ -25,7 +32,9 @@ public class ConsumoDAO {
     public boolean setItemComoEntregue(ItemConsumo itemConsumo) {
         boolean sucess = true;
         try {
-            database.child(REFERENCIA_ITEM_CONSUMO).child(itemConsumo.getId()).child("entregue").setValue(true);
+            database.child(REFERENCIA_ITEM_CONSUMO)
+                    .child(itemConsumo.getId())
+                    .child("entregue").setValue(true);
         } catch (DatabaseException e) {
             sucess = false;
         }
@@ -42,9 +51,23 @@ public class ConsumoDAO {
         }
         return itensConsumo;
     }
+    public static String adicionarConsumo(Consumo consumo){
+        String id = null;
+        try {
+            DatabaseReference df = FirebaseHelper.getFirebaseReference().child(REFERENCIA_CONSUMO).push();
+            id = df.getKey();
+            df.setValue(consumo);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return id;
+
+    }
+
     /*
     query para listar os Pedidos na activity
-        getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO).orderByChild("idEstabelecimento")
+        getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO).child("mesa)
+        .orderByChild("uidEstabelecimento")
                 .equalTo(FirebaseHelper.getUidUsuario()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -12,12 +12,18 @@ import android.widget.TextView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
+import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
+import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
+import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
-public class DetalhesPratoClienteActvity extends AppCompatActivity {
+public class DetalhesPratoClienteActvity extends AppCompatActivity implements View.OnClickListener{
     private ImageView imagem;
     private TextView descricao,nome;
+    private EditText etObservacao, etQuantidade;
     private Prato pratoSelecionado;
     private Button btnPedir;
 
@@ -25,28 +31,24 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_prato_cliente);
+        pratoSelecionado = getIntent().getExtras().getParcelable("prato");
         setupViews();
     }
 
     public void setupViews(){
         imagem = findViewById(R.id.ivDetalhesImagemPratoC);
-        descricao= findViewById(R.id.etDetalhesDescricaoPratoC);
+        descricao = findViewById(R.id.etDetalhesDescricaoPratoC);
         nome = findViewById(R.id.etDetalhesNomePratoC);
-
-        String nomePrato = getIntent().getStringExtra("nome");
-
-        pratoSelecionado = new Prato();
-        pratoSelecionado = getIntent().getExtras().getParcelable("prato");
-
         descricao.setText(pratoSelecionado.getDescricaoPrato());
         nome.setText(pratoSelecionado.getNomePrato());
+        etObservacao = findViewById(R.id.etObservacaoPratoC);
+        etQuantidade = findViewById(R.id.etQuantidadePratoC);
+        findViewById(R.id.btnPedir).setOnClickListener(this);
         downloadImage();
-
-
     }
 
     public void downloadImage(){
-        final ImageView finalProgressBar = findViewById(R.id.ivDetalhesImagemPratoC);
+        final ProgressBar finalProgressBar = findViewById(R.id.progress_bar_detalhe_prato_cliente);
         finalProgressBar.setVisibility(View.VISIBLE);
         Picasso.get()
                 .load(pratoSelecionado.getUrlImagem())
@@ -64,9 +66,44 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity {
                 });
     }
 
-    public void fazerPedido(View view){
-        
-    }
 
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnPedir:{
+                fazerPedido();
+                break;
+            }
+        }
+    }
+    public ItemConsumo criarItemConsumo(){
+        ItemConsumo itemConsumo = new ItemConsumo();
+        Mesa mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
+        itemConsumo.setMesa(mesa);
+        itemConsumo.setPrato(pratoSelecionado);
+        itemConsumo.setIdConsumo(SessaoConsumo.getInstance().getConsumo().getId());
+        itemConsumo.setQuantidade(Integer.parseInt(etQuantidade.getText().toString()));
+        itemConsumo.setValor(itemConsumo.getQuantidade(), pratoSelecionado.getPreco());
+        return itemConsumo;
+    }
+    public void fazerPedido(){
+        if (!validarCampos()){
+            return;
+        }
+        ItemConsumo itemConsumo = criarItemConsumo();
+        ConsumoServices consumoServices = new ConsumoServices();
+        consumoServices.adicionarItemConsumo(itemConsumo);
+        SessaoConsumo.getInstance().getConsumo().getListaItens().add(itemConsumo);
+        finish();
+    }
+    public boolean validarCampos() {
+        boolean validacao = true;
+        if (etQuantidade.getText().toString().trim().isEmpty()) {
+            etQuantidade.setError(getString(R.string.sp_excecao_campo_vazio));
+            validacao = false;
+        }
+        return validacao;
+    }
 
 }

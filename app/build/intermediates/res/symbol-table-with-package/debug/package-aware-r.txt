@@ -1214,11 +1214,12 @@ id btnConfirmarEdicao
 id btnConfirmarEdicaoDadosEstabelecimento
 id btnConfirmarEditarPrato
 id btnEditarImagemPrato
-id btnPedido
+id btnPedir
 id btn_adicionar_sessao
 id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
 id btn_escanear
+id btn_finalizar_conta
 id buttonContainer
 id buttonPanel
 id cancel_action
@@ -1291,6 +1292,7 @@ id etNomePrato
 id etNomeSessao
 id etNomeSessaoedt
 id etNumeroMesa
+id etObservacaoPratoC
 id etPrecoPrato
 id etQuantidadePratoC
 id etRuaEstabelecimento
@@ -1396,6 +1398,7 @@ id percent
 id pin
 id positive
 id progress_bar
+id progress_bar_detalhe_prato_cliente
 id progress_bar_editar_prato
 id progress_bar_est
 id progress_bar_recycler_prato
@@ -1403,7 +1406,8 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card·pio
+id recycler_view_card√°pio
+id recycler_view_conta
 id recyclerv_view
 id recyclerv_view_pratos
 id right
@@ -1442,6 +1446,7 @@ id snap
 id snapMargins
 id spEstadoEstabelecimento
 id spEstadoEstabelecimentoed
+id sp_tipo_pagamento
 id spacer
 id spinnerAdicionaPrato
 id spinnerEditaSessao
@@ -1499,7 +1504,10 @@ id tvTelefoneEstabelecimentoMeusDados
 id tv_codigo_detalhe
 id tv_codigo_mesa
 id tv_informativo_tipodeconta
+id tv_nome_item
 id tv_numero_mesa_detalhe
+id tv_preco_item
+id tv_quantidade_item
 id tv_recuperar_senha
 id txtNomePrato
 id txtNomeSessao
@@ -1603,6 +1611,7 @@ layout bottom_sheet_layout
 layout bottom_sheet_list_item
 layout bottom_sheet_message_layout
 layout botton_sheet
+layout conta_item_view
 layout content_main
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1619,6 +1628,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_cardapio
+layout fragment_conta
 layout fragment_escanear_qr_code
 layout fragment_mesas
 layout fragment_meus_dados_cliente

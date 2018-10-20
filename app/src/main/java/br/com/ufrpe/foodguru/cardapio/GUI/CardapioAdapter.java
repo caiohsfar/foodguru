@@ -21,9 +21,10 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
     private Context context;
     private OnItemClicked mListener;
 
-    public CardapioAdapter(Context context,List<Prato> pratos){
+    public CardapioAdapter(Context context, List<Prato> pratos,  CardapioAdapter.OnItemClicked onClickListener){
         this.pratos = pratos;
         this.context = context;
+        this.mListener = onClickListener;
 
     }
     @Override
@@ -39,7 +40,7 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
     }
 
     @Override
-    public void onBindViewHolder(CardapioHolder holder,final int position) {
+    public void onBindViewHolder(final CardapioHolder holder, final int position) {
         String nome = pratos.get(position).getNomePrato();
         String descricao = pratos.get(position).getDescricaoPrato();
         String urlImagem = pratos.get(position).getUrlImagem();
@@ -47,12 +48,16 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
         holder.descricao.setText(descricao);
         downloadImage(urlImagem,holder);
         holder.nome.setTag(holder);
-        holder.urlImagem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.onItemClick(position);
-            }
-        });
+
+        if (mListener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onItemClick(position);
+                }
+            });
+        }
+
 
     }
 

@@ -10,12 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginBottom="5dp">
-
+        <ProgressBar
+            android:id="@+id/progress_bar_detalhe_prato_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@color/Branco" />
         <ImageView
             android:id="@+id/ivDetalhesImagemPratoC"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@color/RoxoFoodGuru"
             android:scaleType="centerCrop"
             />
     </RelativeLayout>
@@ -65,14 +69,26 @@
         android:maxLength="2"
 
         android:padding="15sp" />
+    <EditText
+        android:id="@+id/etObservacaoPratoC"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:drawableLeft="@drawable/ic_descricao"
+
+        android:drawablePadding="15sp"
+        android:drawableTint="@color/RoxoFoodGuru"
+        android:hint="Observação"
+        android:padding="15sp" />
+
     <Button
-        android:id="@+id/btnPedido"
+        android:id="@+id/btnPedir"
         android:layout_marginTop="10dp"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Fazer pedido"
-        android:onClick="fazerPedido"
         android:background="@drawable/borda_redonda_bt_roxo"/>
 
 

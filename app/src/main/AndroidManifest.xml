@@ -83,7 +83,7 @@
             android:label="Editar prato" />
         <activity android:name=".Consumo.gui.PedidosActvity" />
         <activity android:name=".cliente.GUI.OperacaoActivity" />
-        <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity"></activity>
+        <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
     </application>
 
 </manifest>

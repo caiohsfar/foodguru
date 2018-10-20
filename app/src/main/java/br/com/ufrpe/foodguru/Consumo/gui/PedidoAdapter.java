@@ -33,9 +33,9 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoHolder> {
 
     @Override
     public void onBindViewHolder(PedidoHolder holder, int position) {
-        holder.numMesa.setText(itensConsumo.get(position).getNumeroMesa());
+        holder.numMesa.setText(itensConsumo.get(position).getMesa().getNumeroMesa());
         holder.quantidade.setText(itensConsumo.get(position).getQuantidade());
-        holder.nomePrato.setText(itensConsumo.get(position).getNomePrato());
+        holder.nomePrato.setText(itensConsumo.get(position).getPrato().getNomePrato());
 
     }
 

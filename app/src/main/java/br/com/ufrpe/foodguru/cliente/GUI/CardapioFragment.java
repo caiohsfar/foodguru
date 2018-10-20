@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity;
 import br.com.ufrpe.foodguru.Prato.GUI.PratoAdapter;
@@ -37,7 +38,7 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.R
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CardapioFragment extends Fragment implements CardapioAdapter.OnItemClicked {
+public class CardapioFragment extends Fragment{
     private CardapioAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
@@ -119,7 +120,12 @@ public class CardapioFragment extends Fragment implements CardapioAdapter.OnItem
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 pratosViews = pratoServices.loadPratos(dataSnapshot);
-                adapter = new CardapioAdapter(getContext(), pratosViews);
+                adapter = new CardapioAdapter(getContext(), pratosViews, new CardapioAdapter.OnItemClicked() {
+                    @Override
+                    public void onItemClick(int position) {
+                        abrirTelaDetalhes(position);
+                    }
+                });
                 mRecyclerView.setAdapter(adapter);
             }
 
@@ -139,7 +145,12 @@ public class CardapioFragment extends Fragment implements CardapioAdapter.OnItem
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         pratosViews =pratoServices.loadPratos(dataSnapshot);
-                        adapter = new CardapioAdapter(getContext(),pratosViews);
+                        adapter = new CardapioAdapter(getContext(), pratosViews, new CardapioAdapter.OnItemClicked() {
+                            @Override
+                            public void onItemClick(int position) {
+                                abrirTelaDetalhes(position);
+                            }
+                        });
                         mRecyclerView.setAdapter(adapter);
                     }
                     @Override
@@ -149,7 +160,7 @@ public class CardapioFragment extends Fragment implements CardapioAdapter.OnItem
                 });
     }
     private void setupSpinner() {
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getContext(), android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(), android.R.layout.simple_spinner_dropdown_item,arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
     }
@@ -160,20 +171,19 @@ public class CardapioFragment extends Fragment implements CardapioAdapter.OnItem
                 , LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
-        adapter = new CardapioAdapter(getContext(), pratosViews);
+        adapter = new CardapioAdapter(getContext(), pratosViews, new CardapioAdapter.OnItemClicked() {
+            @Override
+            public void onItemClick(int position) {
+                abrirTelaDetalhes(position);
+            }
+        });
 
 
     }
-
-
-    @Override
-    public void onItemClick(int position) {
+    public void abrirTelaDetalhes(int position){
         Intent abrirTelaDetalhes = new Intent(getContext(),DetalhesPratoClienteActvity.class);
         abrirTelaDetalhes.putExtra("prato",adapter.getItem(position));
-
-
-
         startActivity(abrirTelaDetalhes);
-
     }
+
 }

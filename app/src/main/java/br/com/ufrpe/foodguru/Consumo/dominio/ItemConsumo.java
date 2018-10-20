@@ -5,71 +5,33 @@ package br.com.ufrpe.foodguru.Consumo.dominio;
 
 import java.util.Date;
 
+import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
+import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 
 
 public class ItemConsumo {
     private String id;
-    private String nomePrato;
-    private String idPrato;
-    private String idMesa;
-    private int numeroMesa;
+    private String idConsumo;
+    private Prato prato;
+    private Mesa mesa;
     private int quantidade;
-    private double preco;
-    private String idCliente;
-    private String idEstabelecimento;
+    private double valor;
     private Date data;
+    private String observacao;
     private boolean entregue = false;
-
-    public String getIdPrato() {
-        return idPrato;
-    }
-
-    public String getNomePrato() {
-        return nomePrato;
-    }
-
-    public void setNomePrato(String nomePrato) {
-        this.nomePrato = nomePrato;
-    }
-
-    public String getIdEstabelecimento() {
-        return idEstabelecimento;
-    }
-
-    public void setIdEstabelecimento(String idEstabelecimento) {
-        this.idEstabelecimento = idEstabelecimento;
-    }
-
-    public String getNumeroMesa() {
-        return idMesa;
-    }
-
-    public void setNumeroMesa(String idMesa) {
-        this.idMesa =idMesa;
-    }
-
-    public String getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
-
-
 
     public int getQuantidade() {
         return quantidade;
     }
 
 
-    public double getPreco() {
-        return preco;
+    public double getValor() {
+        return valor;
     }
 
-    public void setPrecoQuantidade(int quantidade,double preco) {
-        this.preco = quantidade*preco;
-        this.quantidade = quantidade;
+    public void setValor(int quantidade,double preco) {
+        this.valor = quantidade*preco;
+        this.setQuantidade(quantidade);
     }
     public String getId() {
         return id;
@@ -77,22 +39,6 @@ public class ItemConsumo {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getIdPrato() {
-        return idPrato;
-    }
-
-    public void setIdPrato(String idPrato) {
-        this.idPrato = idPrato;
-    }
-
-    public String getIdMesa() {
-        return idMesa;
-    }
-
-    public void setIdMesa(String idMesa) {
-        this.idMesa = idMesa;
     }
 
     public Date getData() {
@@ -109,5 +55,41 @@ public class ItemConsumo {
 
     public void setEntregue(boolean entregue) {
         this.entregue = entregue;
+    }
+
+    public Prato getPrato() {
+        return prato;
+    }
+
+    public void setPrato(Prato prato) {
+        this.prato = prato;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getIdConsumo() {
+        return idConsumo;
+    }
+
+    public void setIdConsumo(String idConsumo) {
+        this.idConsumo = idConsumo;
     }
 }
