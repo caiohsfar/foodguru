@@ -45,7 +45,8 @@ public class ConsumoDAO {
         List<ItemConsumo> itensConsumo = new LinkedList<>();
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
             ItemConsumo item = ds.getValue(ItemConsumo.class);
-            if (!item.isEntregue()) {
+            if (item.isEntregue() == false) {
+                item.setId(ds.getKey());
                 itensConsumo.add(item);
             }
         }
@@ -62,6 +63,19 @@ public class ConsumoDAO {
         }
         return id;
 
+    }
+    public boolean setFormaPagamento(Consumo consumo) {
+        boolean sucess = true;
+        try {
+            database.child(REFERENCIA_CONSUMO)
+                    .child(consumo.getId())
+                    .child("formaPagamento")
+                    .setValue(consumo.getFormaPagamento());
+        } catch (Exception e) {
+            e.printStackTrace();
+            sucess = false;
+        }
+        return sucess;
     }
 
     /*

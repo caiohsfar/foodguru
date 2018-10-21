@@ -8,6 +8,7 @@ import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 public class Consumo {
     private String id;
     private String idCliente;
+    private String formaPagamento;
     private Mesa mesa;
     private List<ItemConsumo> listaItens = new LinkedList<>();
 
@@ -41,5 +42,13 @@ public class Consumo {
     public void reset(){
         this.listaItens.clear();
         setMesa(null);
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
     }
 }

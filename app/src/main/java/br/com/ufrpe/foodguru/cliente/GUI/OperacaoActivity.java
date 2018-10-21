@@ -11,9 +11,11 @@ import android.widget.FrameLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class OperacaoActivity extends AppCompatActivity {
     private FirebaseAuth mAuth = FirebaseHelper.getFirebaseAuth();
@@ -59,6 +61,15 @@ public class OperacaoActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!SessaoConsumo.getInstance().getConsumo().getListaItens().isEmpty()){
+            Helper.criarToast(this, "Finalize a conta antes de sair.");
+            return;
+        }
+        super.onBackPressed();
     }
 
     private void setFragment(Fragment fragment) {

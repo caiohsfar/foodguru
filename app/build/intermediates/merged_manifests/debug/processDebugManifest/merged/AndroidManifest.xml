@@ -123,7 +123,6 @@
         <activity
             android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarPratoActivity"
             android:label="Editar prato" />
-        <activity android:name="br.com.ufrpe.foodguru.Consumo.gui.PedidosActvity" />
         <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity" />
         <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity" />
         <activity

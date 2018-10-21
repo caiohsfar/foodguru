@@ -23,4 +23,7 @@ public class ConsumoServices {
     public boolean adicionarItemConsumo(ItemConsumo itemConsumo) {
         return consumoDAO.adicionarItemConsumo(itemConsumo);
     }
+    public boolean setFormaPagamento(Consumo consumo){
+        return consumoDAO.setFormaPagamento(consumo);
+    }
 }

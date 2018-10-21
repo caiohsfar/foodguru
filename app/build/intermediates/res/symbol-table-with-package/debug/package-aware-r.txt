@@ -1129,6 +1129,7 @@ drawable ic_historico
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_menu
 drawable ic_mesa
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1351,6 +1352,7 @@ id line3
 id listMode
 id listViewSessao
 id list_item
+id marcar_entregue
 id masked
 id media_actions
 id menu_action_bar_adicionar_mesa
@@ -1359,6 +1361,7 @@ id menu_action_bar_editar_perfil
 id menu_action_bar_editar_perfil_est
 id menu_action_bar_sair
 id menu_action_bar_sair_est
+id menu_item
 id message
 id middle
 id mini
@@ -1408,6 +1411,7 @@ id radio
 id recyclerViewPedidos
 id recycler_view_cardápio
 id recycler_view_conta
+id recycler_view_pedidos
 id recyclerv_view
 id recyclerv_view_pratos
 id right
@@ -1506,6 +1510,7 @@ id tv_codigo_mesa
 id tv_informativo_tipodeconta
 id tv_nome_item
 id tv_numero_mesa_detalhe
+id tv_observacao
 id tv_preco_item
 id tv_quantidade_item
 id tv_recuperar_senha
@@ -1667,6 +1672,7 @@ menu menu_cliente
 menu menu_editar_foto
 menu menu_estabelecimento
 menu menu_operacao
+menu menu_pedidos
 menu navigation
 menu principal_cliente
 menu principal_est

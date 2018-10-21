@@ -82,9 +82,13 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
         Mesa mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
         itemConsumo.setMesa(mesa);
         itemConsumo.setPrato(pratoSelecionado);
+        itemConsumo.setUidEstabelecimento(mesa.getUidEstabelecimento());
         itemConsumo.setIdConsumo(SessaoConsumo.getInstance().getConsumo().getId());
         itemConsumo.setQuantidade(Integer.parseInt(etQuantidade.getText().toString()));
         itemConsumo.setValor(itemConsumo.getQuantidade(), pratoSelecionado.getPreco());
+        if (!etObservacao.getText().toString().isEmpty()){
+            itemConsumo.setObservacao(etObservacao.getText().toString());
+        }
         return itemConsumo;
     }
     public void fazerPedido(){

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     private RecyclerView mRecyclerView;
     private List<ItemConsumo> itemConsumoList;
     private ItemConsumoAdapter adapter;
+    private Spinner formaPagamento;
     private Consumo consumoAtual = SessaoConsumo.getInstance().getConsumo();
 
     public ContaFragment() {
@@ -37,6 +39,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         inflatedLayout = inflater.inflate(R.layout.fragment_conta, container, false);
         // Inflate the layout for this fragment
         inflatedLayout.findViewById(R.id.btn_finalizar_conta).setOnClickListener(this);
+        formaPagamento = inflatedLayout.findViewById(R.id.sp_tipo_pagamento);
         iniciarRecyclerView();
         return inflatedLayout;
     }
@@ -61,6 +64,10 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     }
 
     private void finalizarConta() {
+        if (formaPagamento.getSelectedItemPosition() == 0){
+            Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
+            return;
+        }
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Conta finalizada.");
         abrirTelaLogin();

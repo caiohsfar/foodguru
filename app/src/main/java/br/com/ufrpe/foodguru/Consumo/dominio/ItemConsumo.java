@@ -12,6 +12,7 @@ import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 public class ItemConsumo {
     private String id;
     private String idConsumo;
+    private String uidEstabelecimento;
     private Prato prato;
     private Mesa mesa;
     private int quantidade;
@@ -19,6 +20,7 @@ public class ItemConsumo {
     private Date data;
     private String observacao;
     private boolean entregue = false;
+
 
     public int getQuantidade() {
         return quantidade;
@@ -91,5 +93,13 @@ public class ItemConsumo {
 
     public void setIdConsumo(String idConsumo) {
         this.idConsumo = idConsumo;
+    }
+
+    public String getUidEstabelecimento() {
+        return uidEstabelecimento;
+    }
+
+    public void setUidEstabelecimento(String uidEstabelecimento) {
+        this.uidEstabelecimento = uidEstabelecimento;
     }
 }
