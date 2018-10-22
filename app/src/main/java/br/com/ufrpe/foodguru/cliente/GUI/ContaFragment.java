@@ -1,7 +1,8 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,8 +17,6 @@ import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
-import br.com.ufrpe.foodguru.estabelecimento.GUI.EditarDadosEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
@@ -66,12 +65,12 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     }
 
     private void finalizarConta() {
-        if (formaPagamento.getSelectedItemPosition() == 0){
-            Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
+        if (consumoAtual.getListaItens().isEmpty()){
+            exibirConfirmacaoSair();
             return;
         }
-        if (consumoAtual.getListaItens().isEmpty()){
-            Helper.criarToast(inflatedLayout.getContext(), "Você não pediu nenhum ítem.");
+        if (formaPagamento.getSelectedItemPosition() == 0){
+            Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
             return;
         }
         SessaoConsumo.getInstance().reset();
@@ -84,5 +83,36 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         startActivity(intent);
     }
 
+    public void exibirConfirmacaoSair() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(getContext());
+        msgBox.setIcon(android.R.drawable.ic_menu_delete);
+        msgBox.setTitle("Sair");
+        msgBox.setMessage("Você não pediu nada, deseja mesmo sair?");
+        setBtnPositivoSair(msgBox);
+        setBtnNegativoSair(msgBox);
+        msgBox.show();
+    }
 
+    public void setBtnPositivoSair(AlertDialog.Builder msgBox){
+        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                exibirTelaHomeCliente();
+            }
+        });
+    }
+
+    public void setBtnNegativoSair(AlertDialog.Builder msgBox){
+        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+    }
+
+    public void exibirTelaHomeCliente(){
+        Intent intent = new Intent(getContext(), HomeClienteActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 }

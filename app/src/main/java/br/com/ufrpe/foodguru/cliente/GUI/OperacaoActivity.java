@@ -1,9 +1,12 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -69,12 +72,45 @@ public class OperacaoActivity extends AppCompatActivity {
             Helper.criarToast(this, "Finalize a conta antes de sair.");
             return;
         }
-        super.onBackPressed();
+        exibirConfirmacaoSair();
     }
 
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_operacao, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void exibirConfirmacaoSair() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+        msgBox.setIcon(android.R.drawable.ic_menu_delete);
+        msgBox.setTitle("Sair");
+        msgBox.setMessage("Você não pediu nada, deseja mesmo sair?");
+        setBtnPositivoSair(msgBox);
+        setBtnNegativoSair(msgBox);
+        msgBox.show();
+    }
+
+    public void setBtnPositivoSair(AlertDialog.Builder msgBox){
+        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                exibirTelaHomeCliente();
+            }
+        });
+    }
+
+    public void setBtnNegativoSair(AlertDialog.Builder msgBox){
+        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+    }
+
+    public void exibirTelaHomeCliente(){
+        Intent intent = new Intent(this, HomeClienteActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
