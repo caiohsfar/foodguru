@@ -22,8 +22,7 @@ import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 public class DetalhesPratoClienteActvity extends AppCompatActivity implements View.OnClickListener{
     private ImageView imagem;
-    private TextView descricao,nome;
-    private EditText etObservacao, etQuantidade;
+    private EditText etObservacao, etQuantidade, descricao, nome;
     private Prato pratoSelecionado;
     private Button btnPedir;
 
@@ -41,6 +40,8 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
         nome = findViewById(R.id.etDetalhesNomePratoC);
         descricao.setText(pratoSelecionado.getDescricaoPrato());
         nome.setText(pratoSelecionado.getNomePrato());
+        nome.setKeyListener( null );
+        descricao.setKeyListener( null );
         etObservacao = findViewById(R.id.etObservacaoPratoC);
         etQuantidade = findViewById(R.id.etQuantidadePratoC);
         findViewById(R.id.btnPedir).setOnClickListener(this);

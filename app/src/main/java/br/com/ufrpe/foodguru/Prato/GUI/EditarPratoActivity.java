@@ -83,7 +83,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
     private void setupSpinner(){
 
         sessoes = new ArrayList();
-
+        spinnerEditar = findViewById(R.id.spinnerEditaSessao);
         ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,sessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerEditar.setAdapter(adapterSessao);

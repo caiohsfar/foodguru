@@ -15,35 +15,39 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_conta"
         android:layout_width="match_parent"
-        android:layout_height="367dp"
-        android:layout_marginBottom="212dp"
-        android:divider="@color/RoxoFoodGuru"
-        android:dividerHeight="1sp" />
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_conta"
+        android:layout_alignParentTop="true"/>
 
     <LinearLayout
+        android:id="@+id/ll_conta"
         android:layout_width="match_parent"
-        android:layout_height="177dp"
+        android:layout_height="wrap_content"
+
         android:layout_alignParentBottom="true"
+
         android:background="@color/Branco"
         android:orientation="vertical">
 
         <Spinner
             android:id="@+id/sp_tipo_pagamento"
+
             android:layout_width="match_parent"
             android:layout_height="45sp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="15sp"
-            android:layout_marginBottom="15sp"
+
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:entries="@array/tipo_pagamento"
-            android:padding="6sp" />
+            />
 
         <Button
             android:id="@+id/btn_finalizar_conta"
+
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
-            android:layout_marginBottom="15sp"
+
+            android:layout_margin="15dp"
+
             android:background="@color/RoxoFoodGuru"
             android:text="PEDIR CONTA"
             android:textColor="@color/Branco" />

@@ -24,14 +24,12 @@
             />
     </RelativeLayout>
 
-    <TextView
+    <EditText
         android:id="@+id/etDetalhesNomePratoC"
         android:layout_width="match_parent"
 
         android:layout_height="55sp"
         android:drawableLeft="@drawable/ic_prato"
-
-        android:enabled="false"
 
         android:drawablePadding="15sp"
 
@@ -39,14 +37,16 @@
         android:hint="Nome do Prato"
 
         android:padding="15sp"
-        android:singleLine="true" />
+        android:singleLine="true"
 
-    <TextView
+        android:focusable="false"
+        android:cursorVisible="false"/>
+
+    <EditText
         android:id="@+id/etDetalhesDescricaoPratoC"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
 
         android:drawableLeft="@drawable/ic_descricao"
 
@@ -54,7 +54,10 @@
         android:drawableTint="@color/RoxoFoodGuru"
         android:hint="Descrição do Prato"
 
-        android:padding="15sp" />
+        android:padding="15sp"
+
+        android:focusable="false"
+        android:cursorVisible="false"/>
     <EditText
         android:id="@+id/etQuantidadePratoC"
 
@@ -84,11 +87,13 @@
 
     <Button
         android:id="@+id/btnPedir"
-        android:layout_marginTop="10dp"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        android:layout_margin="15dp"
+
         android:text="Fazer pedido"
+        android:textColor="@color/Branco"
         android:background="@drawable/borda_redonda_bt_roxo"/>
 
 

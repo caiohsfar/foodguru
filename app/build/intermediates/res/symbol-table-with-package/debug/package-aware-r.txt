@@ -1122,6 +1122,7 @@ drawable ic_edit
 drawable ic_editar
 drawable ic_email
 drawable ic_endereco
+drawable ic_entregue
 drawable ic_excluir
 drawable ic_food_guru
 drawable ic_foto
@@ -1352,6 +1353,8 @@ id line3
 id listMode
 id listViewSessao
 id list_item
+id ll_conta
+id ll_pedidos
 id marcar_entregue
 id masked
 id media_actions
@@ -1409,7 +1412,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card√°pio
+id recycler_view_card·pio
 id recycler_view_conta
 id recycler_view_pedidos
 id recyclerv_view
@@ -1524,6 +1527,7 @@ id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id view_pedido
 id visible
 id wide
 id withText

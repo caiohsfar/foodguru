@@ -45,8 +45,8 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoHolder> {
 
     @Override
     public void onBindViewHolder(final PedidoHolder holder, final int position) {
-        holder.numMesa.setText(itensConsumo.get(position).getMesa().getNumeroMesa());
-        holder.quantidade.setText("Quandidade: "+ String.valueOf(itensConsumo.get(position).getQuantidade()));
+        holder.numMesa.setText("Mesa: " + itensConsumo.get(position).getMesa().getNumeroMesa());
+        holder.quantidade.setText("Quantidade: "+ String.valueOf(itensConsumo.get(position).getQuantidade()));
         holder.nomePrato.setText(itensConsumo.get(position).getPrato().getNomePrato());
         holder.observacao.setText(itensConsumo.get(position).getObservacao());
         holder.menu.setOnClickListener(new View.OnClickListener() {
