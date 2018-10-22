@@ -17,6 +17,8 @@ import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.EditarDadosEstabelecimentoActivity;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 
@@ -77,5 +79,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
 
 }
