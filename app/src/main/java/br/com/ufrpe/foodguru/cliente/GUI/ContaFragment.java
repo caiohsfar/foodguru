@@ -70,6 +70,10 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
             return;
         }
+        if (consumoAtual.getListaItens().isEmpty()){
+            Helper.criarToast(inflatedLayout.getContext(), "Você não pediu nenhum ítem.");
+            return;
+        }
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Conta finalizada.");
         abrirTelaLogin();
