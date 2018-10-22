@@ -1,6 +1,7 @@
 package br.com.ufrpe.foodguru.Prato.GUI;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
@@ -43,6 +45,7 @@ public class AdicionarSessaoActvity extends AppCompatActivity {
             sessaoCardapio.setIdEstabelecimento(FirebaseHelper.getUidUsuario());
             if(pratoServices.adicionarSessao(sessaoCardapio)){
                 Helper.criarToast(getApplicationContext(),"Sessao adicionada com sucesso");
+                telaHomeEstabelecimento();
             }else{
                 Helper.criarToast(this, "Erro ao adicionar sessao.");
             }
@@ -57,5 +60,10 @@ public class AdicionarSessaoActvity extends AppCompatActivity {
     public void pararProgressDialog(){
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.dismiss();
+    }
+
+    public void telaHomeEstabelecimento() {
+        Intent intent = new Intent(this, HomeEstabelecimentoActivity.class);
+        startActivity(intent);
     }
 }

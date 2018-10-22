@@ -7,120 +7,124 @@
     tools:context=".estabelecimento.GUI.MeusDadosEstabelecimentoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|top"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp">
-            <ProgressBar
-                android:id="@+id/progress_bar_est"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:progressDrawable="@color/Branco" />
-
-            <ImageView
-                android:id="@+id/iv_Estabelecimento"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                />
-            <Button
-                android:id="@+id/editar_foto_estabelecimento"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/ic_foto"
-                android:backgroundTint="@color/RoxoFoodGuru"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_margin="15dp"/>
-        </RelativeLayout>
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
             android:orientation="vertical">
-            <EditText
-                android:id="@+id/tvNomeEstabelecimentoMeusDados"
 
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:singleLine="true"
+                android:layout_height="250dp">
+                <ProgressBar
+                    android:id="@+id/progress_bar_est"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:progressDrawable="@color/Branco" />
 
-                android:textSize="18sp"
+                <ImageView
+                    android:id="@+id/iv_Estabelecimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    />
+                <Button
+                    android:id="@+id/editar_foto_estabelecimento"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ic_foto"
+                    android:backgroundTint="@color/RoxoFoodGuru"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="15dp"/>
+            </RelativeLayout>
 
-                android:drawableLeft="@drawable/ic_nome"
-                android:drawableTint="@color/RoxoFoodGuru"
-
-                android:drawablePadding="15sp"
-                android:padding="15sp"
-
-                android:focusable="false"
-                android:cursorVisible="false" />
-
-            <EditText
-                android:id="@+id/tvTelefoneEstabelecimentoMeusDados"
-
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/tvNomeEstabelecimentoMeusDados"
 
-                android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:singleLine="true"
 
-                android:drawableLeft="@drawable/ic_telefone"
-                android:drawableTint="@color/RoxoFoodGuru"
+                    android:textSize="18sp"
 
-                android:drawablePadding="15sp"
-                android:padding="15sp"
+                    android:drawableLeft="@drawable/ic_nome"
+                    android:drawableTint="@color/RoxoFoodGuru"
 
-                android:focusable="false"
-                android:cursorVisible="false"                />
+                    android:drawablePadding="15sp"
+                    android:padding="15sp"
+
+                    android:focusable="false"
+                    android:cursorVisible="false" />
+
+                <EditText
+                    android:id="@+id/tvTelefoneEstabelecimentoMeusDados"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:singleLine="true"
+
+                    android:textSize="18sp"
+
+                    android:drawableLeft="@drawable/ic_telefone"
+                    android:drawableTint="@color/RoxoFoodGuru"
+
+                    android:drawablePadding="15sp"
+                    android:padding="15sp"
+
+                    android:focusable="false"
+                    android:cursorVisible="false"                />
 
 
-            <EditText
-                android:id="@+id/tvEmailEstabelecimentoMeusDados"
+                <EditText
+                    android:id="@+id/tvEmailEstabelecimentoMeusDados"
 
-                android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:singleLine="true"
 
-                android:textSize="18sp"
+                    android:textSize="18sp"
 
-                android:drawableLeft="@drawable/ic_email"
-                android:drawableTint="@color/RoxoFoodGuru"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawableTint="@color/RoxoFoodGuru"
 
-                android:drawablePadding="15sp"
-                android:padding="15sp"
+                    android:drawablePadding="15sp"
+                    android:padding="15sp"
 
-                android:focusable="false"
-                android:cursorVisible="false"
-                />
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    />
 
-            <EditText
-                android:id="@+id/tvEnderecoEstabelecimentoMeusDados"
+                <EditText
+                    android:id="@+id/tvEnderecoEstabelecimentoMeusDados"
 
-                android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:singleLine="true"
 
-                android:textSize="18sp"
+                    android:textSize="18sp"
 
-                android:drawableLeft="@drawable/ic_endereco"
-                android:drawableTint="@color/RoxoFoodGuru"
+                    android:drawableLeft="@drawable/ic_endereco"
+                    android:drawableTint="@color/RoxoFoodGuru"
 
-                android:drawablePadding="15sp"
-                android:padding="15sp"
+                    android:drawablePadding="15sp"
+                    android:padding="15sp"
 
-                android:focusable="false"
-                android:cursorVisible="false"
+                    android:focusable="false"
+                    android:cursorVisible="false"
 
-                />
-
+                    />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>

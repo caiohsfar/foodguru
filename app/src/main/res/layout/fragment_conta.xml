@@ -5,52 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/Branco"
-    tools:context=".cliente.GUI.ContaFragment">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_conta"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/ll_conta"
-        android:layout_alignParentTop="true"/>
-
-    <LinearLayout
-        android:id="@+id/ll_conta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentBottom="true"
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@color/Branco"
-        android:orientation="vertical">
+        tools:context=".cliente.GUI.ContaFragment">
 
-        <Spinner
-            android:id="@+id/sp_tipo_pagamento"
-
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_conta"
             android:layout_width="match_parent"
-            android:layout_height="45sp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/ll_conta"
+            android:layout_alignParentTop="true"/>
 
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:entries="@array/tipo_pagamento"
-            />
-
-        <Button
-            android:id="@+id/btn_finalizar_conta"
-
+        <ScrollView
+            android:id="@+id/ll_conta"
             android:layout_width="match_parent"
-            android:layout_height="55sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-            android:layout_margin="15dp"
 
-            android:background="@color/RoxoFoodGuru"
-            android:text="PEDIR CONTA"
-            android:textColor="@color/Branco" />
-    </LinearLayout>
-</RelativeLayout>
+                android:background="@color/Branco"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/sp_tipo_pagamento"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:entries="@array/tipo_pagamento"
+                    />
+
+                <Button
+                    android:id="@+id/btn_finalizar_conta"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+
+                    android:layout_margin="15dp"
+
+                    android:background="@color/RoxoFoodGuru"
+                    android:text="PEDIR CONTA"
+                    android:textColor="@color/Branco" />
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
 </FrameLayout>

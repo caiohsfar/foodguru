@@ -2,7 +2,10 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="Nexus One" />
+        <device id="Nexus S" />
+      </config>
     </shared>
   </component>
   <component name="CMakeSettings">
@@ -11,6 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
     <list default="true" id="53d5d24c-f835-4059-a897-e7987b60e750" name="Default" comment="" />
@@ -25,6 +29,9 @@
 >>>>>>> Stashed changes
 =======
     <list default="true" id="88365d19-0f55-4219-b8d1-3db60114ede1" name="Default" comment="" />
+>>>>>>> develop
+=======
+    <list default="true" id="5db1ecc0-3745-4ab1-919f-75ca36ced57b" name="Default" comment="" />
 >>>>>>> develop
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,9 +55,10 @@
   <component name="FileEditorManager">
 <<<<<<< Updated upstream
     <leaf>
-      <file leaf-file-name="RegistroEstabelecimentoActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/RegistroEstabelecimentoActivity.java">
+      <file leaf-file-name="AdicionarSessaoActvity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/AdicionarSessaoActvity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <state relative-caret-position="306">
               <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
@@ -99,10 +107,15 @@
             <state relative-caret-position="493">
               <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
 >>>>>>> develop
+=======
+            <state relative-caret-position="123">
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+>>>>>>> develop
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="Consumo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Consumo/dominio/Consumo.java">
@@ -123,19 +136,39 @@
             <state relative-caret-position="160">
               <caret line="286" column="52" selection-start-line="286" selection-start-column="52" selection-end-line="286" selection-end-column="52" />
 >>>>>>> develop
+=======
+      <file leaf-file-name="PratosFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/PratosFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="249" column="13" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="13" />
+              <folding>
+                <element signature="e#14295#14528#0" expanded="true" />
+                <element signature="e#14527#14528#0" expanded="true" />
+              </folding>
+>>>>>>> develop
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="DetalhesPratoClienteActvity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/DetalhesPratoClienteActvity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1065">
               <caret line="89" column="73" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
+=======
+      <file leaf-file-name="ContaFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/cliente/GUI/ContaFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+>>>>>>> develop
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="ConsumoServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Consumo/negocio/ConsumoServices.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -144,6 +177,13 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="HomeEstabelecimentoActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/HomeEstabelecimentoActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="144" selection-start-line="144" selection-end-line="147" selection-end-column="5" />
+>>>>>>> develop
             </state>
           </provider>
         </entry>
@@ -198,6 +238,15 @@
       </file>
 >>>>>>> Stashed changes
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>intent</find>
+      <find>Detalhes</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FoodGuruDev\app\src\main\java\br\com\ufrpe\foodguru\Prato</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2481,13 +2530,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_cardapio.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/EditarDadosEstabelecimentoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_dados_estabelecimento.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/RegistroEstabelecimentoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_registro_estabelecimento.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/MeusDadosEstabelecimentoFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_meus_dados_estabelecimento.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_meus_dados_cliente.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_conta.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home_cliente.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home_estabelecimento.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_operacao.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/HomeEstabelecimentoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/cliente/GUI/ContaFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/AdicionarSessaoActvity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/PratosFragment.java" />
       </list>
     </option>
   </component>
@@ -2508,6 +2560,7 @@
     </navigator>
     <panes>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
       <pane id="PackagesPane" />
@@ -2517,6 +2570,8 @@
 >>>>>>> develop
       <pane id="ProjectPane" />
       <pane id="Scope" />
+=======
+>>>>>>> develop
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2548,11 +2603,19 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="foodguru" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="estabelecimento" type="462c0819:PsiDirectoryNode" />
+              <item name="Prato" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FoodGuruDev" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="foodguru" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Prato" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FoodGuruDev" type="1abcf292:AndroidViewProjectNode" />
+<<<<<<< HEAD
 <<<<<<< HEAD
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
@@ -2582,18 +2645,25 @@
 =======
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
 >>>>>>> develop
+=======
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+>>>>>>> develop
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="0040007861" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2712,11 +2782,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="88365d19-0f55-4219-b8d1-3db60114ede1" name="Default" comment="" />
-      <created>1540236126450</created>
+      <changelist id="5db1ecc0-3745-4ab1-919f-75ca36ced57b" name="Default" comment="" />
+      <created>1540241237163</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1540236126450</updated>
+      <updated>1540241237163</updated>
     </task>
     <servers />
   </component>
@@ -2733,7 +2803,7 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Preview" weight="0.32980332" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Logcat" />
@@ -2766,6 +2836,7 @@
 >>>>>>> Stashed changes
 =======
       <window_info anchor="bottom" id="Build" weight="0.30392158" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Gradle" />
 >>>>>>> develop
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2777,7 +2848,6 @@
       <window_info id="Favorites" side_tool="true" />
 >>>>>>> develop
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
 =======
@@ -2801,6 +2871,7 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_pedidos.xml">
 =======
@@ -2816,10 +2887,14 @@
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_cardapio.xml">
 >>>>>>> develop
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_dados_cliente.xml">
+>>>>>>> develop
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state />
       </provider>
@@ -2875,14 +2950,19 @@
         <state relative-caret-position="85">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
 >>>>>>> develop
+=======
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+>>>>>>> develop
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pedidos.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_meus_dados_cliente.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
         <state relative-caret-position="45">
@@ -2897,16 +2977,31 @@
       <provider selected="true" editor-type-id="text-editor">
 >>>>>>> Stashed changes
         <state />
+=======
+        <state relative-caret-position="459">
+          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+>>>>>>> develop
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_dados_cliente.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/MeusDadosEstabelecimentoFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_meus_dados_estabelecimento.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state />
+        <state relative-caret-position="102">
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+        </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
@@ -2922,24 +3017,34 @@
 =======
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
 >>>>>>> develop
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home_cliente.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+>>>>>>> develop
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+        <state relative-caret-position="362">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_dados_estabelecimento.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_conta.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="408">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/EditarDadosEstabelecimentoActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_operacao.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="120">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
@@ -3068,6 +3173,14 @@
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registro_estabelecimento.xml">
 >>>>>>> develop
+=======
+        <state relative-caret-position="357">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home_estabelecimento.xml">
+>>>>>>> develop
       <provider editor-type-id="android-designer2">
         <state />
 =======
@@ -3078,6 +3191,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Consumo/dominio/ItemConsumo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-257">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
@@ -3174,19 +3288,29 @@
 =======
         <state relative-caret-position="646">
           <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/PedidosFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+=======
+        <state relative-caret-position="246">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
 >>>>>>> develop
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/RegistroEstabelecimentoActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/HomeEstabelecimentoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="136">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+>>>>>>> develop
+=======
+        <state relative-caret-position="177">
+          <caret line="144" selection-start-line="144" selection-end-line="147" selection-end-column="5" />
+>>>>>>> develop
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/cliente/GUI/ContaFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
         <state relative-caret-position="-2108">
@@ -3202,13 +3326,28 @@
         <state relative-caret-position="493">
           <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
 >>>>>>> develop
+=======
+        <state relative-caret-position="408">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+>>>>>>> develop
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/estabelecimento/GUI/MeusDadosEstabelecimentoFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/AdicionarSessaoActvity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="286" column="52" selection-start-line="286" selection-start-column="52" selection-end-line="286" selection-end-column="52" />
+        <state relative-caret-position="123">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/ufrpe/foodguru/Prato/GUI/PratosFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="249" column="13" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="13" />
+          <folding>
+            <element signature="e#14295#14528#0" expanded="true" />
+            <element signature="e#14527#14528#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

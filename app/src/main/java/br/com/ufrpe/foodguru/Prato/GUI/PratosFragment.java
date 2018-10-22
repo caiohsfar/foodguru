@@ -241,7 +241,7 @@ public class PratosFragment extends Fragment{
             public void onClickPrato(PratoHolder holder, int indexPrato) {
                 Prato prato = pratosViews.get(indexPrato).getPrato();
                 if (actionMode == null) {
-                    detalharPrato(prato);
+                    //detalharPrato(prato);
                 } else if (!pratosViews.get(indexPrato).isSelecionado()){
                     selecionarItem(indexPrato);
                 }else{
@@ -259,12 +259,14 @@ public class PratosFragment extends Fragment{
         };
     }
 
+    /*
     private void detalharPrato(Prato prato) {
         Intent intent = new Intent(getContext(),DetalhesPratoActivity.class);
         intent.putExtra("NOME_PRATO",prato.getNomePrato());
         intent.putExtra("DESCRICAO_PRATO", prato.getDescricaoPrato());
         startActivity(intent);
     }
+    */
 
     private void desSelecionarItem(int indexPrato) {
         pratosViews.get(indexPrato).setSelecionado(false);
