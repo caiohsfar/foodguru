@@ -285,7 +285,6 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
             public void onComplete(@NonNull Task<Uri> task) {
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
-                    Helper.criarToast(viewInflado.getContext(),imageUri.toString());
                     atualizarFotoUsuario(imageUri);
                     fecharProgressDialog();
                 }

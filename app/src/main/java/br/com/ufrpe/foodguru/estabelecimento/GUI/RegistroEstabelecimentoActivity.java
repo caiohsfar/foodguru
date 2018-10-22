@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -49,6 +51,9 @@ public class RegistroEstabelecimentoActivity extends AppCompatActivity implement
         etComplemento = findViewById(R.id.etComplementoEstabelecimento);
         etRua = findViewById(R.id.etRuaEstabelecimento);
         spEstado = findViewById(R.id.spEstadoEstabelecimento);
+
+        setarMascaraTelefone();
+        
         progressDialog = new ProgressDialog(RegistroEstabelecimentoActivity.this);
         progressDialog.setTitle("Registrando...");
         progressDialog.setCanceledOnTouchOutside(false);
@@ -177,5 +182,11 @@ public class RegistroEstabelecimentoActivity extends AppCompatActivity implement
             default:
                 break;
         }
+    }
+
+    private void setarMascaraTelefone(){
+        SimpleMaskFormatter simpleMaskFormatter = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
+        MaskTextWatcher maskTextWatcher = new MaskTextWatcher(etTelefone, simpleMaskFormatter);
+        etTelefone.addTextChangedListener(maskTextWatcher);
     }
 }

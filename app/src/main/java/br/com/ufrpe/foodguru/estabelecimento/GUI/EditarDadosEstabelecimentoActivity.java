@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -36,6 +38,7 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_dados_estabelecimento);
         recuperarDados();
+
     }
 
     @Override
@@ -79,6 +82,8 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
         etComplemento = findViewById(R.id.etComplementoEstabelecimentoed);
         etEmail = findViewById(R.id.etEmailEstabelecimentoed);
         etSenha = findViewById(R.id.etSenhaEstabelecimentoed);
+
+        setarMascaraTelefone();
 
         etNome.setText(currentUser.getDisplayName());
         etTelefone.setText(telefone);
@@ -204,6 +209,12 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
         Intent intent = new Intent(EditarDadosEstabelecimentoActivity.this, HomeEstabelecimentoActivity.class);
         finish();
         startActivity(intent);
+    }
+
+    private void setarMascaraTelefone(){
+        SimpleMaskFormatter simpleMaskFormatter = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
+        MaskTextWatcher maskTextWatcher = new MaskTextWatcher(etTelefone, simpleMaskFormatter);
+        etTelefone.addTextChangedListener(maskTextWatcher);
     }
 
 }
