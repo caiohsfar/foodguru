@@ -46,7 +46,9 @@
                 android:drawableTint="@color/RoxoFoodGuru"
 
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
+
+                android:inputType="phone"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"

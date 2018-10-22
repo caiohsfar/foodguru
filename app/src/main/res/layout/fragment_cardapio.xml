@@ -12,7 +12,8 @@
         <Spinner
             android:id="@+id/spinnerSessaoCardapio"
             android:layout_width="match_parent"
-            android:layout_height="46dp" />
+            android:layout_height="46dp"
+            android:elevation="6dp"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_cardápio"
             android:layout_width="match_parent"
