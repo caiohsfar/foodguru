@@ -1412,7 +1412,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card·pio
+id recycler_view_card√°pio
 id recycler_view_conta
 id recycler_view_pedidos
 id recyclerv_view
@@ -1456,7 +1456,7 @@ id spEstadoEstabelecimentoed
 id sp_tipo_pagamento
 id spacer
 id spinnerAdicionaPrato
-id spinnerEditaSessao
+id spinnerEditarPrato
 id spinnerSessao
 id spinnerSessaoCardapio
 id split_action_bar

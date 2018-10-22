@@ -24,6 +24,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -40,6 +43,7 @@ import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class EditarPratoActivity extends AppCompatActivity implements View.OnClickListener{
@@ -50,7 +54,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
     private static final int GALERY_REQUEST_CODE = 71;
     private Prato pratoSelecionado;
     private ImageView imvPrato;
-    private ArrayList<SessaoCardapio> sessoes;
+    private ArrayList<SessaoCardapio> sessoes = new ArrayList<>();
     private ProgressDialog progressDialog;
     private Spinner spinnerEditar;
 
@@ -60,8 +64,9 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_editar_prato);
         Helper.verificarPermissaoEscrever(EditarPratoActivity.this,EditarPratoActivity.this);
         pratoSelecionado = getIntent().getExtras().getParcelable("prato");
-        //spinnerEditar
+        spinnerEditar = findViewById(R.id.spinnerEditarPrato);
         setUpViews();
+        loadArraySessoes();
     }
 
 
@@ -77,13 +82,27 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         precoPrato.setText(pratoSelecionado.getPreco().toString());
         imvPrato = findViewById(R.id.ivImagemPratoEditar);
         downloadImage();
-        setupSpinner();
+    }
+    public void loadArraySessoes(){
+        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(FirebaseHelper.getUidUsuario())
+                .child(FirebaseHelper.REFERENCIA_SESSAO)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        PratoServices pratoServices = new PratoServices();
+                        sessoes = (ArrayList<SessaoCardapio>) pratoServices.loadSessoes(dataSnapshot);
+                        setupSpinner();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 
     private void setupSpinner(){
-
-        sessoes = new ArrayList();
-        spinnerEditar = findViewById(R.id.spinnerEditaSessao);
         ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,sessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerEditar.setAdapter(adapterSessao);
@@ -292,7 +311,6 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
             public void onComplete(@NonNull Task<Uri> task) {
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
-                    System.out.println(imageUri.toString());
                     pratoSelecionado.setUrlImagem(imageUri.toString());
                     fecharProgressDialog();
                 }

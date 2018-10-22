@@ -5747,7 +5747,7 @@ public final class R {
     public static final int sp_tipo_pagamento=0x7f09011f;
     public static final int spacer=0x7f090120;
     public static final int spinnerAdicionaPrato=0x7f090121;
-    public static final int spinnerEditaSessao=0x7f090122;
+    public static final int spinnerEditarPrato=0x7f090122;
     public static final int spinnerSessao=0x7f090123;
     public static final int spinnerSessaoCardapio=0x7f090124;
     public static final int split_action_bar=0x7f090125;

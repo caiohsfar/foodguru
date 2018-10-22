@@ -41,7 +41,9 @@ public class PratoDAO {
     public boolean removerPrato(Prato prato){
         boolean sucess = true;
         //deletando a imagem do prato do storage
-        FirebaseStorage.getInstance().getReferenceFromUrl(prato.getUrlImagem()).delete();
+        if (FirebaseStorage.getInstance().getReferenceFromUrl(prato.getUrlImagem()) != null){
+            FirebaseStorage.getInstance().getReferenceFromUrl(prato.getUrlImagem()).delete();
+        }
         try {
             database.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
                     .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())

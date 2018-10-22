@@ -271,6 +271,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                             setFotoImageView(bitmap);
                             uriFoto = Helper.getImageUri(this, bitmap);
                             inserirFoto(uriFoto);
+                            break;
                         }
                     }
                 }
@@ -280,7 +281,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         }
     }
     private void inserirFoto(Uri uriFoto){
-        iniciarProgressDialog();
+        //iniciarProgressDialog();
         final StorageReference ref = storageReference
                 .child("images/pratos/" + uidImagemPrato.toString() + ".jpg");
 
@@ -288,6 +289,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                 if (!task.isSuccessful()) {
+                    //fecharProgressDialog();
                     throw task.getException();
                 }
 
@@ -299,19 +301,20 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
                     urlImagemAdicionada = imageUri.toString();
-                    fecharProgressDialog();
+                    //System.out.println("Fechou on complete");
+                    //fecharProgressDialog();
                 }
             }
         }).addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                fecharProgressDialog();
+                //fecharProgressDialog();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Helper.criarToast(AdicionarPratoActivity.this,e.toString());
-                fecharProgressDialog();
+                //fecharProgressDialog();
             }
         });
     }
@@ -319,8 +322,11 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         imvFoto.setImageBitmap(bitmap);
     }
     private void fecharProgressDialog(){
-        progressDialog.setCanceledOnTouchOutside(true);
-        progressDialog.dismiss();
+        if (progressDialog.isShowing()){
+            progressDialog.setCanceledOnTouchOutside(true);
+            progressDialog.dismiss();
+        }
+
     }
     private void iniciarProgressDialog() {
         progressDialog.setCanceledOnTouchOutside(false);

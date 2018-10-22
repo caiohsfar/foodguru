@@ -79,7 +79,7 @@
         android:singleLine="true" />
 
     <Spinner
-        android:id="@+id/spinnerEditaSessao"
+        android:id="@+id/spinnerEditarPrato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

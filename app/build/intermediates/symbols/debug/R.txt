@@ -1455,7 +1455,7 @@ int id spEstadoEstabelecimentoed 0x7f09011e
 int id sp_tipo_pagamento 0x7f09011f
 int id spacer 0x7f090120
 int id spinnerAdicionaPrato 0x7f090121
-int id spinnerEditaSessao 0x7f090122
+int id spinnerEditarPrato 0x7f090122
 int id spinnerSessao 0x7f090123
 int id spinnerSessaoCardapio 0x7f090124
 int id split_action_bar 0x7f090125
