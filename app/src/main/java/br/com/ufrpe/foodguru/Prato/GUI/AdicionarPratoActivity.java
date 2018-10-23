@@ -54,6 +54,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
     private UUID uidImagemPrato = UUID.randomUUID();
     private String urlImagemAdicionada;
     private Spinner sessao;
+    private Uri uriFoto;
     private List<SessaoCardapio> arraySessoes;
 
 
@@ -97,7 +98,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                 if(!validarCampos()){
                     return;
                 }
-                adicionarPrato();
+                inserirFoto();
                 break;
             }
             case R.id.editar_foto_adicionar_prato:{
@@ -250,13 +251,11 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case GALERY_REQUEST_CODE:
-                Uri uriFoto;
                 if (requestCode == GALERY_REQUEST_CODE && resultCode == RESULT_OK) {
                     uriFoto = data.getData();
                     try{
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriFoto);
                         setFotoImageView(bitmap);
-                        inserirFoto(uriFoto);
                     }catch(IOException e ){
                         Log.d("IOException upload", e.getMessage());
                     }
@@ -270,7 +269,6 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                             Bitmap bitmap = (Bitmap) extras.get("data");
                             setFotoImageView(bitmap);
                             uriFoto = Helper.getImageUri(this, bitmap);
-                            inserirFoto(uriFoto);
                             break;
                         }
                     }
@@ -280,8 +278,8 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                 break;
         }
     }
-    private void inserirFoto(Uri uriFoto){
-        //iniciarProgressDialog();
+    private void inserirFoto(){
+        iniciarProgressDialog();
         final StorageReference ref = storageReference
                 .child("images/pratos/" + uidImagemPrato.toString() + ".jpg");
 
@@ -289,7 +287,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                 if (!task.isSuccessful()) {
-                    //fecharProgressDialog();
+                    fecharProgressDialog();
                     throw task.getException();
                 }
 
@@ -301,20 +299,20 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
                     urlImagemAdicionada = imageUri.toString();
-                    //System.out.println("Fechou on complete");
-                    //fecharProgressDialog();
+                    adicionarPrato();
+                    fecharProgressDialog();
                 }
             }
         }).addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                //fecharProgressDialog();
+                fecharProgressDialog();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Helper.criarToast(AdicionarPratoActivity.this,e.toString());
-                //fecharProgressDialog();
+                fecharProgressDialog();
             }
         });
     }
@@ -330,7 +328,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
     }
     private void iniciarProgressDialog() {
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setTitle("Atualizando...");
+        progressDialog.setTitle("Adicionando...");
         progressDialog.show();
     }
 }

@@ -6,96 +6,104 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Prato.GUI.DetalhesPratoClienteActvity">
-    <RelativeLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginBottom="5dp">
-        <ProgressBar
-            android:id="@+id/progress_bar_detalhe_prato_cliente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:progressDrawable="@color/Branco" />
-        <ImageView
-            android:id="@+id/ivDetalhesImagemPratoC"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            />
-    </RelativeLayout>
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="5dp">
+                <ProgressBar
+                    android:id="@+id/progress_bar_detalhe_prato_cliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:progressDrawable="@color/Branco" />
+                <ImageView
+                    android:id="@+id/ivDetalhesImagemPratoC"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    />
+            </RelativeLayout>
 
-    <EditText
-        android:id="@+id/etDetalhesNomePratoC"
-        android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/etDetalhesNomePratoC"
+                android:layout_width="match_parent"
 
-        android:layout_height="55sp"
-        android:drawableLeft="@drawable/ic_prato"
+                android:layout_height="55sp"
+                android:drawableLeft="@drawable/ic_prato"
 
-        android:drawablePadding="15sp"
+                android:drawablePadding="15sp"
 
-        android:drawableTint="@color/RoxoFoodGuru"
-        android:hint="Nome do Prato"
+                android:drawableTint="@color/RoxoFoodGuru"
+                android:hint="Nome do Prato"
 
-        android:padding="15sp"
-        android:singleLine="true"
+                android:padding="15sp"
+                android:singleLine="true"
 
-        android:focusable="false"
-        android:cursorVisible="false"/>
+                android:focusable="false"
+                android:cursorVisible="false"/>
 
-    <EditText
-        android:id="@+id/etDetalhesDescricaoPratoC"
+            <EditText
+                android:id="@+id/etDetalhesDescricaoPratoC"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-        android:drawableLeft="@drawable/ic_descricao"
+                android:drawableLeft="@drawable/ic_descricao"
 
-        android:drawablePadding="15sp"
-        android:drawableTint="@color/RoxoFoodGuru"
-        android:hint="Descrição do Prato"
+                android:drawablePadding="15sp"
+                android:drawableTint="@color/RoxoFoodGuru"
+                android:hint="Descrição do Prato"
 
-        android:padding="15sp"
+                android:padding="15sp"
 
-        android:focusable="false"
-        android:cursorVisible="false"/>
-    <EditText
-        android:id="@+id/etQuantidadePratoC"
+                android:focusable="false"
+                android:cursorVisible="false"/>
+            <EditText
+                android:id="@+id/etQuantidadePratoC"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:drawableLeft="@drawable/ic_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:drawableLeft="@drawable/ic_descricao"
 
-        android:drawablePadding="15sp"
-        android:drawableTint="@color/RoxoFoodGuru"
-        android:hint="Quantidade"
-        android:maxLength="2"
+                android:drawablePadding="15sp"
+                android:drawableTint="@color/RoxoFoodGuru"
+                android:hint="Quantidade"
+                android:maxLength="2"
 
-        android:padding="15sp" />
-    <EditText
-        android:id="@+id/etObservacaoPratoC"
+                android:padding="15sp" />
+            <EditText
+                android:id="@+id/etObservacaoPratoC"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:drawableLeft="@drawable/ic_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:drawableLeft="@drawable/ic_descricao"
 
-        android:drawablePadding="15sp"
-        android:drawableTint="@color/RoxoFoodGuru"
-        android:hint="Observação"
-        android:padding="15sp" />
+                android:drawablePadding="15sp"
+                android:drawableTint="@color/RoxoFoodGuru"
+                android:hint="Observação"
+                android:padding="15sp" />
 
-    <Button
-        android:id="@+id/btnPedir"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
+            <Button
+                android:id="@+id/btnPedir"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
 
-        android:layout_margin="15dp"
+                android:layout_margin="15dp"
 
-        android:text="Fazer pedido"
-        android:textColor="@color/Branco"
-        android:background="@drawable/borda_redonda_bt_roxo"/>
-
-
-
+                android:text="Fazer pedido"
+                android:textColor="@color/Branco"
+                android:background="@drawable/borda_redonda_bt_roxo"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

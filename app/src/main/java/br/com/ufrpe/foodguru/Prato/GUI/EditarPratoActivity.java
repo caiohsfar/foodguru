@@ -54,6 +54,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
     private static final int GALERY_REQUEST_CODE = 71;
     private Prato pratoSelecionado;
     private ImageView imvPrato;
+    private Uri uriFoto;
     private ArrayList<SessaoCardapio> sessoes = new ArrayList<>();
     private ProgressDialog progressDialog;
     private Spinner spinnerEditar;
@@ -181,7 +182,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                 if(!validarCampos()){
                     return;
                 }
-                editarPrato();
+                inserirFoto();
                 break;
             }
             case R.id.btnEditarImagemPrato:{
@@ -262,13 +263,11 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case GALERY_REQUEST_CODE:
-                Uri uriFoto;
                 if (requestCode == GALERY_REQUEST_CODE && resultCode == RESULT_OK) {
                     uriFoto = data.getData();
                     try{
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriFoto);
                         setFotoImageView(bitmap);
-                        inserirFoto(uriFoto);
                     }catch(IOException e ){
                         Log.d("IOException upload", e.getMessage());
                     }
@@ -282,7 +281,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                             Bitmap bitmap = (Bitmap) extras.get("data");
                             setFotoImageView(bitmap);
                             uriFoto = Helper.getImageUri(this, bitmap);
-                            inserirFoto(uriFoto);
+
                         }
                     }
                 }
@@ -291,7 +290,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                 break;
         }
     }
-    private void inserirFoto(Uri uriFoto){
+    private void inserirFoto(){
         iniciarProgressDialog();
         FirebaseStorage.getInstance().getReferenceFromUrl(pratoSelecionado.getUrlImagem()).delete();
         final StorageReference ref = storageReference
@@ -312,6 +311,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
                 if (task.isSuccessful()) {
                     Uri imageUri = task.getResult();
                     pratoSelecionado.setUrlImagem(imageUri.toString());
+                    editarPrato();
                     fecharProgressDialog();
                 }
             }

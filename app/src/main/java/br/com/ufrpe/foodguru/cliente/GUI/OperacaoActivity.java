@@ -75,6 +75,7 @@ public class OperacaoActivity extends AppCompatActivity {
         exibirConfirmacaoSair();
     }
 
+
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_operacao, fragment);
