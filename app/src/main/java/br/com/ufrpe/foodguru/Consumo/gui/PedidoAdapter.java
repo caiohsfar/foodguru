@@ -64,6 +64,11 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoHolder> {
         popup.setOnMenuItemClickListener(new MyMenuItemClickListener(position));
         popup.show();
     }
+    public void updateData(List<ItemConsumo> lista){
+        this.itensConsumo.clear();
+        this.itensConsumo = lista;
+        notifyDataSetChanged();
+    }
 
 
     @Override

@@ -25,13 +25,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.dominio.MesaView;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_MESA;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getUidUsuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,10 +50,9 @@ public class MesasFragment extends Fragment{
     private RecyclerView mRecyclerView;
     private MesaServices mesaServices = new MesaServices();
     private ProgressDialog mProgressDialog;
-    private List<MesaView> mesasViews;
+    private List<MesaView> mesasViews = new ArrayList<>();
     private ActionMode actionMode;
     private View viewInflado;
-    private FloatingActionButton button;
 
     private  ActionMode.Callback getActionModeCallback(){
         return new ActionMode.Callback() {
@@ -125,7 +133,22 @@ public class MesasFragment extends Fragment{
 
         mProgressDialog = new ProgressDialog(viewInflado.getContext());
         iniciarRecyclerView();
-        FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_MESA)
+        getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(getUidUsuario()).child(REFERENCIA_MESA)
+                .orderByChild("status").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mesasViews = mesaToMesaView((ArrayList<Mesa>)mesaServices.loadMesas(dataSnapshot));
+                adapter = new MesaAdapter(getContext(),mesasViews,onClickMesa());
+                mRecyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        /*
+        getFirebaseReference().child(FirebaseHelper.REFERENCIA_MESA)
                 .orderByChild("uidEstabelecimento").equalTo(FirebaseHelper.getUidUsuario())
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -140,7 +163,7 @@ public class MesasFragment extends Fragment{
 
                     }
                 });
-
+                */
         return viewInflado;
 
     }
@@ -157,8 +180,10 @@ public class MesasFragment extends Fragment{
             @Override
             public void onClickMesa(MesaHolder holder, int indexMesa) {
                 Mesa mesa = mesasViews.get(indexMesa).getMesa();
+                System.out.println("status mFragment" + mesa.getStatus());
                 if (actionMode == null) {
-                    detalharMesa(mesa);
+                    //detalharMesa(mesa);
+                    abrirTelaPedidosMesa(mesa);
                 } else if (!mesasViews.get(indexMesa).isSelecionado()){
                     selecionarItem(indexMesa);
                 }else{
@@ -173,7 +198,20 @@ public class MesasFragment extends Fragment{
                 iniciarActionMode(indexMesa);
             }
 
-            };
+            @Override
+            public void onClickMenuMesa(int indexMesa) {
+                if (actionMode != null) {
+                    return;
+                }
+                detalharMesa(mesasViews.get(indexMesa).getMesa());
+            }
+        };
+    }
+
+    private void abrirTelaPedidosMesa(Mesa mesa) {
+        Intent intent = new Intent(viewInflado.getContext(), PedidosMesaActivity.class);
+        intent.putExtra("MESA_PEDIDOS", mesa);
+        startActivity(intent);
     }
 
     private void detalharMesa(Mesa mesa) {
@@ -259,7 +297,6 @@ public class MesasFragment extends Fragment{
         Mesa mesaSelecionada = getMesaSelecionada();
         Intent intent = new Intent(viewInflado.getContext(),EditarMesaActivity.class);
         intent.putExtra("CODIGO_MESA",mesaSelecionada.getCodigoMesa());
-        intent.putExtra("ID_MESA",mesaSelecionada.getIdMesa());
         intent.putExtra("NUMERO_MESA", mesaSelecionada.getNumeroMesa());
         startActivity(intent);
     }
@@ -306,5 +343,38 @@ public class MesasFragment extends Fragment{
             }
         });
     }
+    /*
+    public void swapMesa(int posicaoMesaTeste){
+        //Se deixou de estar pendente, vá pro fim da fila
+        ListIterator iterator = mesasViews.listIterator();
+        MesaView mesaTeste = mesasViews.get(posicaoMesaTeste);
+        if (!(mesaTeste.getMesa().getStatus().equals("pendente"))){
+            mesasViews.remove(posicaoMesaTeste);
+            mesasViews.add(mesaTeste);
+            adapter.notifyDataSetChanged();
+        }
+        //percorre a lista;
+        while (iterator.hasNext()){
+            //pega o indice do item atual;
+            int iCurrentItem = iterator.nextIndex();
+            //pega o conteudo dele;
+            Mesa mesa = mesasViews.get(iCurrentItem).getMesa();
+            //se for par (característica em comum tipo o status (pendente) da mesa)
+            if (mesa.getStatus().equals("pendente")){
+                //passa pro próximo;
+                iterator.next();
+            }else{
+                //pega o indice que é pra colocar a mesa que mudou;
+                int indexAdicionar = iterator.nextIndex();
+                //4 seria o index da ultima mesa que ficou pendente; "9"
+                Collections.swap(mesasViews, posicaoMesaTeste, indexAdicionar);
+                adapter.updateData(mesasViews);
+                //troca
+                break;
+            }
+        }
+
+    }
+    */
 
 }

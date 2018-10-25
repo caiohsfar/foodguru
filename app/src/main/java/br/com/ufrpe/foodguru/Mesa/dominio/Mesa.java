@@ -4,14 +4,18 @@ import android.annotation.SuppressLint;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
+
+import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.VAZIA;
+
 @SuppressLint("ParcelCreator")
 public class Mesa implements Parcelable {
-    private String idMesa;
     private String numeroMesa;
     private String codigoMesa;
+    private int status = StatusMesaEnum.VAZIA.getTipo();
     private String uidEstabelecimento;
-    public Mesa(){
 
+    public Mesa(){
     }
 
     public Mesa(String numeroMesa, String codigoMesa, String uidEstabelecimento) {
@@ -21,10 +25,10 @@ public class Mesa implements Parcelable {
     }
 
     protected Mesa(Parcel in) {
-        idMesa = in.readString();
         numeroMesa = in.readString();
         codigoMesa = in.readString();
         uidEstabelecimento = in.readString();
+        status = in.readInt();
     }
 
     public static final Creator<Mesa> CREATOR = new Creator<Mesa>() {
@@ -62,14 +66,6 @@ public class Mesa implements Parcelable {
         this.codigoMesa = codigoMesa;
     }
 
-    public String getIdMesa() {
-        return idMesa;
-    }
-
-    public void setIdMesa(String idMesa) {
-        this.idMesa = idMesa;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -77,9 +73,17 @@ public class Mesa implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(idMesa);
         dest.writeString(numeroMesa);
         dest.writeString(codigoMesa);
         dest.writeString(uidEstabelecimento);
+        dest.writeInt(status);
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

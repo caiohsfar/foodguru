@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,10 +21,9 @@ import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class EditarMesaActivity extends AppCompatActivity {
-    private EditText numeroMesa, codigoMesa;
+    private EditText numeroMesa;
+    private TextView codigoMesa;
     private ImageView imageView;
-    private Mesa mesaSelecionada;
-    private MesaServices mesaServices = new MesaServices();
     private ProgressDialog progressDialog;
 
     @Override
@@ -58,7 +58,8 @@ public class EditarMesaActivity extends AppCompatActivity {
         if (!validarCampos()){
             return;
         }
-        validarCodigo();
+        //validarCodigo();
+        editarMesa();
     }
     public void editarMesa(){
         Mesa mesa = setMesaSelecionada();
@@ -72,10 +73,8 @@ public class EditarMesaActivity extends AppCompatActivity {
     }
 
     public Mesa setMesaSelecionada(){
-        String id = getIntent().getStringExtra("ID_MESA");
         Mesa mesa = new Mesa();
-        mesa.setIdMesa(id);
-        mesa.setCodigoMesa(codigoMesa.getText().toString());
+        mesa.setCodigoMesa(getIntent().getStringExtra("CODIGO_MESA"));
         mesa.setNumeroMesa(numeroMesa.getText().toString());
         mesa.setUidEstabelecimento(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid());
         return mesa;

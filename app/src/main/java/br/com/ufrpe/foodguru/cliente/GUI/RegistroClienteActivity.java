@@ -15,14 +15,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
-import com.google.firebase.database.FirebaseDatabase;
 
 import br.com.ufrpe.foodguru.cliente.dominio.Cliente;
 import br.com.ufrpe.foodguru.cliente.negocio.ClienteServices;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.infraestrutura.utils.TipoContaEnum;
 import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
 import br.com.ufrpe.foodguru.usuario.negocio.UsuarioServices;
 

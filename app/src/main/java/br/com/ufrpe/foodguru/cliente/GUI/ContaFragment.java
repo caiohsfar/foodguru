@@ -16,9 +16,11 @@ import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
+import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
 
 public class ContaFragment extends android.support.v4.app.Fragment implements View.OnClickListener{
@@ -28,6 +30,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     private ItemConsumoAdapter adapter;
     private Spinner formaPagamento;
     private Consumo consumoAtual = SessaoConsumo.getInstance().getConsumo();
+    private MesaServices mesaServices = new MesaServices();
 
     public ContaFragment() {
         // Required empty public constructor
@@ -73,14 +76,10 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
             return;
         }
+        mesaServices.mudarStatus(consumoAtual.getMesa(), StatusMesaEnum.VAZIA.getTipo());
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Conta finalizada.");
-        abrirTelaLogin();
-    }
-    public void abrirTelaLogin(){
-        Intent intent = new Intent(inflatedLayout.getContext(), HomeClienteActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        exibirTelaHomeCliente();
     }
 
     public void exibirConfirmacaoSair() {
@@ -97,6 +96,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                SessaoConsumo.getInstance().reset();
                 exibirTelaHomeCliente();
             }
         });
@@ -112,6 +112,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
 
     public void exibirTelaHomeCliente(){
         Intent intent = new Intent(getContext(), HomeClienteActivity.class);
+        mesaServices.mudarStatus(consumoAtual.getMesa(), StatusMesaEnum.VAZIA.getTipo());
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

@@ -26,7 +26,6 @@ public class OperacaoActivity extends AppCompatActivity {
     private FrameLayout mFrameOperacao;
     private CardapioFragment cardapioFragment;
     private ContaFragment contaFragment;
-    private Mesa mesa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +37,6 @@ public class OperacaoActivity extends AppCompatActivity {
         cardapioFragment = new CardapioFragment();
         setFragment(cardapioFragment);
         contaFragment = new ContaFragment();
-
-        mesa = getIntent().getExtras().getParcelable("mesa");
         mFrameOperacao = (FrameLayout) findViewById(R.id.frame_operacao);
         mNavOperacao = (BottomNavigationView) findViewById(R.id.nav_operacao);
 

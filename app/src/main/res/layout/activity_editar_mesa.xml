@@ -35,7 +35,7 @@
             android:background="@color/LaranjaFoodGuru" />
 
 
-        <EditText
+        <TextView
             android:id="@+id/etEditarCodigoMesa"
 
             android:layout_width="match_parent"
@@ -46,8 +46,6 @@
 
             android:drawablePadding="15sp"
             android:drawableTint="@color/LaranjaFoodGuru"
-            android:hint="Código da mesa"
-
             android:padding="15sp"
             android:singleLine="true"
 

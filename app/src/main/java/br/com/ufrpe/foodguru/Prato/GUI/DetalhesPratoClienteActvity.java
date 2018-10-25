@@ -16,9 +16,11 @@ import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
+import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
 public class DetalhesPratoClienteActvity extends AppCompatActivity implements View.OnClickListener{
     private ImageView imagem;
@@ -93,6 +95,7 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
         return itemConsumo;
     }
     public void fazerPedido(){
+        MesaServices mesaServices = new MesaServices();
         if (!validarCampos()){
             return;
         }
@@ -100,6 +103,7 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
         ConsumoServices consumoServices = new ConsumoServices();
         consumoServices.adicionarItemConsumo(itemConsumo);
         SessaoConsumo.getInstance().getConsumo().getListaItens().add(itemConsumo);
+        mesaServices.mudarStatus(itemConsumo.getMesa(), StatusMesaEnum.PENDENTE.getTipo());
         finish();
     }
     public boolean validarCampos() {

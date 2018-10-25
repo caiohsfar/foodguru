@@ -21,5 +21,8 @@ public class MesaServices {
     public boolean editarMesa(Mesa mesa) {
         return mesaDAO.editarMesa(mesa);
     }
+    public boolean mudarStatus(Mesa mesa, int status){
+        return mesaDAO.mudarStatus(mesa, status);
+    }
 
 }

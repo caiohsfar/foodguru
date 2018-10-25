@@ -78,7 +78,7 @@ public class AdicionarMesaActivity extends AppCompatActivity implements View.OnC
     public void validarCodigo(){
         Query query = FirebaseHelper.getFirebaseReference()
                 .child(FirebaseHelper.REFERENCIA_MESA)
-                .orderByChild("codigoMesa")
+                .orderByKey()
                 .equalTo(etCodigoMesa.getText().toString());
         iniciarProgressDialog();
         query.addListenerForSingleValueEvent(new ValueEventListener() {

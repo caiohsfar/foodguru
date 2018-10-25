@@ -12,6 +12,10 @@ import java.util.List;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_MESA;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getUidUsuario;
+
 public class MesaDAO {
     private DatabaseReference database = FirebaseHelper.getFirebaseReference();
 
@@ -19,10 +23,11 @@ public class MesaDAO {
         boolean sucess = true;
 
         try {
-            DatabaseReference df = database.child(FirebaseHelper.REFERENCIA_MESA).push();
-            String id = df.getKey();
-            mesa.setIdMesa(id);
-            df.setValue(mesa);
+            //mudou para teste!!
+            database.child(REFERENCIA_ESTABELECIMENTO).child(getUidUsuario())
+                    .child(REFERENCIA_MESA).child(mesa.getCodigoMesa()).setValue(mesa);
+
+            database.child(REFERENCIA_MESA).child(mesa.getCodigoMesa()).setValue(mesa);
 
         }catch(DatabaseException e){
             sucess = false;
@@ -32,9 +37,11 @@ public class MesaDAO {
     public boolean removerMesa(Mesa mesa){
         boolean sucess = true;
         try {
-            database.child(FirebaseHelper.REFERENCIA_MESA)
-                    .child(mesa.getIdMesa())
+            database.child(REFERENCIA_ESTABELECIMENTO).child(getUidUsuario())
+                    .child(REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
                     .setValue(null);
+            database.child(REFERENCIA_MESA).child(mesa.getCodigoMesa()).setValue(null);
         }catch(DatabaseException e){
             sucess = false;
         }
@@ -43,9 +50,11 @@ public class MesaDAO {
     public boolean editarMesa(Mesa mesa){
         boolean sucess = true;
         try {
-            database.child(FirebaseHelper.REFERENCIA_MESA)
-                    .child(mesa.getIdMesa())
+            database.child(REFERENCIA_ESTABELECIMENTO).child(getUidUsuario())
+                    .child(REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
                     .setValue(mesa);
+            database.child(REFERENCIA_MESA).child(mesa.getCodigoMesa()).setValue(mesa);
         }catch(DatabaseException e){
             sucess = false;
         }
@@ -57,11 +66,22 @@ public class MesaDAO {
         {
 
             Mesa mesa = ds.getValue(Mesa.class);
-            mesa.setIdMesa(ds.getKey());
             mesas.add(mesa);
         }
         return mesas;
 
+    }
+    public boolean mudarStatus(Mesa mesa, int status){
+        boolean sucess = true;
+        try {
+            database.child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
+                    .child(REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
+                    .child("status").setValue(status);
+        }catch(DatabaseException e){
+            sucess = false;
+        }
+        return sucess;
     }
 
 }

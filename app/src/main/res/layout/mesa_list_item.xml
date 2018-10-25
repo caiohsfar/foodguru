@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/numero"
@@ -14,30 +14,71 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="5dp"/>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/numero"
         android:gravity="center_vertical"
-        android:layout_toRightOf="@id/numero">
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/txt_codigo_da_mesa"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_activity_codigo_mesa"
             android:gravity="center_vertical"
+            android:text="@string/title_activity_codigo_mesa"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/tv_codigo_mesa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="kjjsbclkas"
             android:textColor="@color/RoxoFoodGuru"
-            android:textSize="16dp"
-            android:layout_marginTop="5dp" />
+            android:textSize="16dp" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="144dp"
+        android:layout_height="92dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp">
+        //não ficou circular ????
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imv_status_mesa"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:background="@color/LaranjaFoodGuru" />
+
+        <ImageView
+            android:id="@+id/imv_menu_mesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="38dp"
+            android:layout_marginRight="38dp"
+            android:background="@drawable/ic_show_menu" />
+    </RelativeLayout>
 
 
 </RelativeLayout>

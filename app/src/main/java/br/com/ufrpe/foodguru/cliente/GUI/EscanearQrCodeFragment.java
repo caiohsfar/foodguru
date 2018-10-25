@@ -20,13 +20,16 @@ import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
+import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_CONSUMO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getUidUsuario;
+import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.OCUPADA;
 
 
 /**
@@ -51,9 +54,10 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
         return inflatedLayout;
     }
     public void validarCodigo(String codigo){
+        final MesaServices mesaServices = new MesaServices();
         FirebaseHelper.getFirebaseReference()
                 .child(FirebaseHelper.REFERENCIA_MESA)
-                .orderByChild("codigoMesa")
+                .orderByKey()
                 .equalTo(codigo)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -61,6 +65,9 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                 if (dataSnapshot.exists()){
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Mesa mesa = ds.getValue(Mesa.class);
+                        mesa.setStatus(OCUPADA.getTipo());
+                        mesaServices.mudarStatus(mesa,OCUPADA.getTipo());
+
                         //Inicia o consumo do cliente a partir do momento em que ele entra no cardápio.
                         Consumo consumo = new Consumo();
                         consumo.setMesa(mesa);

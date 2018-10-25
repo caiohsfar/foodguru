@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+
     private void setUpViews(){
         edtLoginSenha = findViewById(R.id.edtLoginSenha);
         edtLoginEmail = findViewById(R.id.edtLoginEmail);
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mProgressDialog.setTitle("Entrando...");
 
     }
+
 
     private void login(String email, String senha) {
         if (!validarCampos()){
@@ -74,7 +76,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
     @Override
     protected void onStart() {
+        if (FirebaseHelper.getFirebaseAuth().getCurrentUser()!= null){
+            FirebaseHelper.getFirebaseAuth().signOut();
+        }
         super.onStart();
+
     }
     private void verificarTipoConta(FirebaseUser cUser){
         firebaseReference.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)

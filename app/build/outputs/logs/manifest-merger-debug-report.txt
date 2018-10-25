@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
 MERGED from [com.github.rtoshiro.mflibrary:mflibrary:1.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/mflibrary-1.0.0.aar/b5c7e7a8ba5784f85d7a157856516eb4/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:multidex:1.0.2] /home/caio/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/74cd6056d26fc24b1aef0ce377a4b0f6/AndroidManifest.xml:17:1-22:12
 MERGED from [com.firebaseui:firebase-ui-database:0.5.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-ui-database-0.5.1.aar/59adac03522e097696eeb381c2550cbf/AndroidManifest.xml:2:1-13:12
@@ -14,6 +14,7 @@ MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/caio/.gradle/cach
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/caio/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/1d936b9f7f0cc687b4ed7e2fb7cc170f/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/a15dd4c682326f7ccf3ea20f415d8bd5/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/7bc55f2223ec50a297fed6fe0fe88cce/AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/293f8d504f11e41e74808572e25bd9db/AndroidManifest.xml:2:1-11:12
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/AndroidManifest.xml:17:1-55:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/8290ed4206fe04c06f371b88be8e9be6/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-database:16.0.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.1.aar/dbddbc3cda4b3ae1b67bcb5b386f85d6/AndroidManifest.xml:2:1-8:12
@@ -66,20 +67,20 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/caio/.gradle/
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/88c0ad7652d5bcc1eb3ff7c61ba8ca1e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/387478af9a6de58855d58188785f2c16/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/da9507a301d9849c3a0b05d26a3ab08c/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
 	package
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:3:5-36
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-88:12
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-89:12
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:11-69
@@ -96,13 +97,15 @@ ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/Android
 	android:name
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:7:22-77
 application
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:9:5-86:19
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:9:5-87:19
 MERGED from [com.github.rtoshiro.mflibrary:mflibrary:1.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/mflibrary-1.0.0.aar/b5c7e7a8ba5784f85d7a157856516eb4/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.rtoshiro.mflibrary:mflibrary:1.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/mflibrary-1.0.0.aar/b5c7e7a8ba5784f85d7a157856516eb4/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/caio/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/1d936b9f7f0cc687b4ed7e2fb7cc170f/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/caio/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/1d936b9f7f0cc687b4ed7e2fb7cc170f/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/293f8d504f11e41e74808572e25bd9db/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/293f8d504f11e41e74808572e25bd9db/AndroidManifest.xml:9:5-20
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/AndroidManifest.xml:45:5-53:19
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/AndroidManifest.xml:45:5-53:19
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/8290ed4206fe04c06f371b88be8e9be6/AndroidManifest.xml:7:5-20
@@ -299,6 +302,10 @@ activity#br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity
 ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:85:9-75
 	android:name
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:85:19-72
+activity#br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:86:9-86
+	android:name
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:86:19-74
 uses-sdk
 INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
@@ -323,6 +330,8 @@ MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/caio/.gr
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/a15dd4c682326f7ccf3ea20f415d8bd5/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/7bc55f2223ec50a297fed6fe0fe88cce/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/7bc55f2223ec50a297fed6fe0fe88cce/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/293f8d504f11e41e74808572e25bd9db/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/293f8d504f11e41e74808572e25bd9db/AndroidManifest.xml:5:5-7:41
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/AndroidManifest.xml:19:5-43
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/AndroidManifest.xml:19:5-43
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/8290ed4206fe04c06f371b88be8e9be6/AndroidManifest.xml:5:5-44
