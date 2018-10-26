@@ -9,7 +9,7 @@ import br.com.ufrpe.foodguru.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MesaHolder extends RecyclerView.ViewHolder{
-    public TextView numero, codigo;
+    public TextView numero, codigo, teste;
     public ImageView menuMesa;
     public CircleImageView status;
 
@@ -17,9 +17,8 @@ public class MesaHolder extends RecyclerView.ViewHolder{
     public MesaHolder(View view) {
         super(view);
         numero = (TextView) view.findViewById(R.id.numero);
-        codigo = (TextView) view.findViewById(R.id.tv_codigo_mesa);
+        teste = (TextView) view.findViewById(R.id.txt_codigo_da_mesa);
         menuMesa = view.findViewById(R.id.imv_menu_mesa);
-        status = view.findViewById(R.id.imv_status_mesa);
 
     }
 }

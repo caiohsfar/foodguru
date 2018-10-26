@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.Mesa.GUI;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.PopupMenu;
@@ -55,7 +56,6 @@ public class MesaAdapter extends RecyclerView.Adapter<MesaHolder> {
         String numero = mesas.get(position).getMesa().getNumeroMesa();
         String codigo = mesas.get(position).getMesa().getCodigoMesa();
         holder.numero.setText(numero);
-        holder.codigo.setText(codigo);
         holder.numero.setTag(holder);
         holder.menuMesa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,14 +84,15 @@ public class MesaAdapter extends RecyclerView.Adapter<MesaHolder> {
         holder.itemView.setBackgroundColor(corFundo);
 
         if (mesa.getStatus() == StatusMesaEnum.PENDENTE.getTipo()){
-            holder.status.setBackgroundColor(Color.YELLOW);
+            holder.teste.setText(R.string.mesa_pendente);
+            holder.numero.setBackgroundColor(Color.RED);
         }else if (mesa.getStatus() == StatusMesaEnum.VAZIA.getTipo()){
-            holder.status.setBackgroundColor(Color.GRAY);
+            holder.teste.setText(R.string.mesa_disponivel);
+            holder.numero.setBackgroundColor(Color.GREEN);
         }else{
-            holder.status.setBackgroundColor(Color.RED);
+            holder.teste.setText(R.string.mesa_ocupada);
+            holder.numero.setBackgroundColor(Color.BLUE);
         }
-
-
     }
 
     private void showPopupMenu(View view, int position) {

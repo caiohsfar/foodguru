@@ -1133,6 +1133,7 @@ drawable ic_food_guru
 drawable ic_foto
 drawable ic_historico
 drawable ic_home_black_24dp
+drawable ic_informacao
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_menu
@@ -1341,7 +1342,6 @@ id image
 id img_qr_code
 id imv_menu_mesa
 id imv_qr_code_detalhe
-id imv_status_mesa
 id info
 id invisible
 id italic
@@ -1421,7 +1421,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card√°pio
+id recycler_view_card·pio
 id recycler_view_conta
 id recycler_view_pedido_mesa
 id recycler_view_pedidos
@@ -1519,7 +1519,6 @@ id tvNomeEstabelecimentoMeusDados
 id tvNomePrato
 id tvTelefoneEstabelecimentoMeusDados
 id tv_codigo_detalhe
-id tv_codigo_mesa
 id tv_informativo_tipodeconta
 id tv_nome_item
 id tv_numero_mesa_detalhe
@@ -1774,7 +1773,10 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string mesa_disponivel
 string mesa_lv
+string mesa_ocupada
+string mesa_pendente
 string mtrl_chip_close_icon_content_description
 string nav_header_desc
 string nav_header_email_estabelecimento
