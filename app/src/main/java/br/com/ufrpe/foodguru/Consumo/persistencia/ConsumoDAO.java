@@ -52,6 +52,16 @@ public class ConsumoDAO {
         }
         return itensConsumo;
     }
+    public static List<ItemConsumo> getPedidosMesa(DataSnapshot dataSnapshot) {
+        List<ItemConsumo> itensConsumo = new LinkedList<>();
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            ItemConsumo item = ds.getValue(ItemConsumo.class);
+            item.setId(ds.getKey());
+            itensConsumo.add(item);
+        }
+        return itensConsumo;
+    }
+
     public static String adicionarConsumo(Consumo consumo){
         String id = null;
         try {
@@ -77,24 +87,4 @@ public class ConsumoDAO {
         }
         return sucess;
     }
-
-    /*
-    query para listar os Pedidos na activity
-        getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO).child("mesa)
-        .orderByChild("uidEstabelecimento")
-                .equalTo(FirebaseHelper.getUidUsuario()).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot ds : dataSnapshot.getChildren()){
-                            lista = ConsumoDAO.getPedidos(dataSnapshot);
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-    */
 }

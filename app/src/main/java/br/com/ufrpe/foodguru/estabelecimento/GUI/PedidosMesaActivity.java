@@ -55,12 +55,12 @@ public class PedidosMesaActivity extends AppCompatActivity {
 
 
     private void abrirTelaContaMesa() {
-        Intent intent = new Intent(PedidosMesaActivity.this, ContaMesaActivity.class);
-        /*
-        if (mesa.getStatus() == StatusMesaEnum.OCUPADA.getTipo() || mesa.getStatus() == StatusMesaEnum.PENDENTE.getTipo()){
-            intent.putExtra("ID_CONSUMO",  )
+        if (mesa.getIdConsumoAtual() == null){
+            Helper.criarToast(this, "Mesa vazia");
+            return;
         }
-        */
+        Intent intent = new Intent(PedidosMesaActivity.this, ContaMesaActivity.class);
+        intent.putExtra("ID_CONSUMO", mesa.getIdConsumoAtual());
         startActivity(intent);
     }
 
@@ -72,7 +72,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
                 listaPedidos = ConsumoServices.getPedidos(dataSnapshot);
                 if (listaPedidos.isEmpty()){
                     if (mesa.getStatus() == PENDENTE.getTipo()){
-                        mesaServices.mudarStatus(mesa, OCUPADA.getTipo());
+                        mesaServices.mudarStatus(mesa, VAZIA.getTipo());
                     }
                 }
                 adapter.updateData(listaPedidos);

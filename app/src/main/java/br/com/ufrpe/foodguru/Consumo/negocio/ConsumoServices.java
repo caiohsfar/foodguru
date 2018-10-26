@@ -26,4 +26,7 @@ public class ConsumoServices {
     public boolean setFormaPagamento(Consumo consumo){
         return consumoDAO.setFormaPagamento(consumo);
     }
+    public static List<ItemConsumo> getPedidosMesa(DataSnapshot dataSnapshot) {
+        return ConsumoDAO.getPedidosMesa(dataSnapshot);
+    }
 }

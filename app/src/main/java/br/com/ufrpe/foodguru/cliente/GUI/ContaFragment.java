@@ -13,6 +13,7 @@ import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
@@ -45,6 +46,11 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         // Required empty public constructor
     }
 
+    @Override
+    public void onResume() {
+        setStatusOcupada();
+        super.onResume();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,16 +101,13 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
 
 
     public void addSingleValueEventStatus(){
-        getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(consumoAtual.getMesa().getUidEstabelecimento())
+        final DatabaseReference database = getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(consumoAtual.getMesa().getUidEstabelecimento())
                 .child("Mesas").child(consumoAtual.getMesa().getCodigoMesa())
-                .child("status").addListenerForSingleValueEvent(new ValueEventListener() {
+                .child("status");
+        database.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int statusBanco = dataSnapshot.getValue(Integer.class);
-                System.out.println("status conta" + statusBanco);
-                if (dataSnapshot.exists() && statusBanco != StatusMesaEnum.PENDENTE.getTipo()){
-                    mesaServices.mudarStatus(consumoAtual.getMesa(), StatusMesaEnum.VAZIA.getTipo());
-                }
+                database.setValue(StatusMesaEnum.VAZIA.getTipo());
             }
 
             @Override
@@ -154,4 +157,27 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         MesaServices mesaServices = new MesaServices();
         mesaServices.mudarIdConsumoAtual(mesa, null);
     }
+
+    public static void setStatusOcupada(){
+        Mesa mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
+        final DatabaseReference database = getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
+                .child("Mesas").child(mesa.getCodigoMesa())
+                .child("status");
+
+        database.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int status = dataSnapshot.getValue(Integer.class);
+                if(status != StatusMesaEnum.PENDENTE.getTipo()){
+                    database.setValue(StatusMesaEnum.OCUPADA.getTipo());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }
+

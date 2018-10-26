@@ -16,12 +16,14 @@ import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
+import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity;
 import br.com.ufrpe.foodguru.Prato.GUI.PratoAdapter;
@@ -32,8 +34,11 @@ import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.cardapio.GUI.CardapioAdapter;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_PRATO;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,6 +96,12 @@ public class CardapioFragment extends Fragment{
         };
         sessao.setOnItemSelectedListener(escolha);
 
+    }
+
+    @Override
+    public void onResume() {
+        setStatusOcupada();
+        super.onResume();
     }
 
     public void loadArraySessoes(){
@@ -184,6 +195,28 @@ public class CardapioFragment extends Fragment{
         Intent abrirTelaDetalhes = new Intent(getContext(),DetalhesPratoClienteActvity.class);
         abrirTelaDetalhes.putExtra("prato",adapter.getItem(position));
         startActivity(abrirTelaDetalhes);
+    }
+
+    public static void setStatusOcupada(){
+        Mesa mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
+        final DatabaseReference database = getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
+                .child("Mesas").child(mesa.getCodigoMesa())
+                .child("status");
+
+        database.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int status = dataSnapshot.getValue(Integer.class);
+                if(status != StatusMesaEnum.PENDENTE.getTipo()){
+                    database.setValue(StatusMesaEnum.OCUPADA.getTipo());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 }

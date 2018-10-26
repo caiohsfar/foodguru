@@ -1422,7 +1422,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card·pio
+id recycler_view_card√°pio
 id recycler_view_conta
 id recycler_view_pedido_mesa
 id recycler_view_pedidos
@@ -1431,6 +1431,7 @@ id recyclerv_view_pratos
 id right
 id right_icon
 id right_side
+id rv_conta_mesa
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
