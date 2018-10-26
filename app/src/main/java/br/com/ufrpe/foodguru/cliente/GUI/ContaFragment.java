@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.cliente.GUI;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -19,8 +24,12 @@ import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
+
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
 
 
 public class ContaFragment extends android.support.v4.app.Fragment implements View.OnClickListener{
@@ -76,10 +85,28 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
             return;
         }
-        mesaServices.mudarStatus(consumoAtual.getMesa(), StatusMesaEnum.VAZIA.getTipo());
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Conta finalizada.");
         exibirTelaHomeCliente();
+    }
+    public void addSingleValueEventStatus(){
+        getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(consumoAtual.getMesa().getUidEstabelecimento())
+                .child("Mesas").child(consumoAtual.getMesa().getCodigoMesa())
+                .child("status").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int statusBanco = dataSnapshot.getValue(Integer.class);
+                System.out.println("status conta" + statusBanco);
+                if (dataSnapshot.exists() && statusBanco != StatusMesaEnum.PENDENTE.getTipo()){
+                    mesaServices.mudarStatus(consumoAtual.getMesa(), StatusMesaEnum.VAZIA.getTipo());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void exibirConfirmacaoSair() {
@@ -111,8 +138,8 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     }
 
     public void exibirTelaHomeCliente(){
+        addSingleValueEventStatus();
         Intent intent = new Intent(getContext(), HomeClienteActivity.class);
-        mesaServices.mudarStatus(consumoAtual.getMesa(), StatusMesaEnum.VAZIA.getTipo());
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

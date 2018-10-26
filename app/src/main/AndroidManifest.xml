@@ -83,7 +83,8 @@
             android:label="Editar prato" />
         <activity android:name=".cliente.GUI.OperacaoActivity" />
         <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
-        <activity android:name=".estabelecimento.GUI.PedidosMesaActivity"></activity>
+        <activity android:name=".estabelecimento.GUI.PedidosMesaActivity" />
+        <activity android:name=".estabelecimento.GUI.ContaMesaActivity"></activity>
     </application>
 
 </manifest>

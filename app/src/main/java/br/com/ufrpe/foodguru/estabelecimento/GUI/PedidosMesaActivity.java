@@ -1,10 +1,13 @@
 package br.com.ufrpe.foodguru.estabelecimento.GUI;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +35,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
     private PedidoAdapter adapter;
     private ConsumoServices consumoServices = new ConsumoServices();
     private MesaServices mesaServices = new MesaServices();
+    private FloatingActionButton fabContaMesa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,26 @@ public class PedidosMesaActivity extends AppCompatActivity {
         mesa = getIntent().getExtras().getParcelable("MESA_PEDIDOS");
         iniciarRecyclerView();
         loadPedidos();
+        fabContaMesa = findViewById(R.id.fab_conta_mesa);
+        fabContaMesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaContaMesa();
+            }
+        });
     }
+
+
+    private void abrirTelaContaMesa() {
+        Intent intent = new Intent(PedidosMesaActivity.this, ContaMesaActivity.class);
+        /*
+        if (mesa.getStatus() == StatusMesaEnum.OCUPADA.getTipo() || mesa.getStatus() == StatusMesaEnum.PENDENTE.getTipo()){
+            intent.putExtra("ID_CONSUMO",  )
+        }
+        */
+        startActivity(intent);
+    }
+
     public void loadPedidos(){
         getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO).orderByChild("mesa/codigoMesa")
                 .equalTo(this.mesa.getCodigoMesa()).addValueEventListener(new ValueEventListener() {
@@ -69,6 +92,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
         adapter = new PedidoAdapter(PedidosMesaActivity.this,listaPedidos, onClickMenu());
         recyclerViewPedidos.setAdapter(adapter);
     }
+
     private PedidoAdapter.MenuClickListener onClickMenu(){
         return new PedidoAdapter.MenuClickListener() {
             @Override

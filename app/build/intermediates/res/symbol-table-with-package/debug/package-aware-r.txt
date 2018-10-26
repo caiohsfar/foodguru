@@ -1604,6 +1604,7 @@ layout abc_tooltip
 layout activity_adicionar_mesa
 layout activity_adicionar_prato
 layout activity_adicionar_sessao
+layout activity_conta_mesa
 layout activity_detalhes_mesa
 layout activity_detalhes_prato
 layout activity_detalhes_prato_cliente

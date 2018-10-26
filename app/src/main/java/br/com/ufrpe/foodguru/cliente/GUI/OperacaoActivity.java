@@ -13,15 +13,24 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
+import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
+
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 
 public class OperacaoActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth = FirebaseHelper.getFirebaseAuth();
+    private FirebaseAuth mAuth = getFirebaseAuth();
     private BottomNavigationView mNavOperacao;
     private FrameLayout mFrameOperacao;
     private CardapioFragment cardapioFragment;
@@ -61,6 +70,11 @@ public class OperacaoActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
