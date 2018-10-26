@@ -21,10 +21,9 @@ import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
+import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
@@ -40,6 +39,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     private Spinner formaPagamento;
     private Consumo consumoAtual = SessaoConsumo.getInstance().getConsumo();
     private MesaServices mesaServices = new MesaServices();
+    private Mesa mesa;
 
     public ContaFragment() {
         // Required empty public constructor
@@ -51,6 +51,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
                              Bundle savedInstanceState) {
         inflatedLayout = inflater.inflate(R.layout.fragment_conta, container, false);
         // Inflate the layout for this fragment
+        mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
         inflatedLayout.findViewById(R.id.btn_finalizar_conta).setOnClickListener(this);
         formaPagamento = inflatedLayout.findViewById(R.id.sp_tipo_pagamento);
         iniciarRecyclerView();
@@ -85,10 +86,14 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
             return;
         }
+        idConsumoAtualNull();
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Conta finalizada.");
         exibirTelaHomeCliente();
     }
+
+
+
     public void addSingleValueEventStatus(){
         getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(consumoAtual.getMesa().getUidEstabelecimento())
                 .child("Mesas").child(consumoAtual.getMesa().getCodigoMesa())
@@ -123,6 +128,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                idConsumoAtualNull();
                 SessaoConsumo.getInstance().reset();
                 exibirTelaHomeCliente();
             }
@@ -142,5 +148,10 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         Intent intent = new Intent(getContext(), HomeClienteActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    private void idConsumoAtualNull() {
+        MesaServices mesaServices = new MesaServices();
+        mesaServices.mudarIdConsumoAtual(mesa, null);
     }
 }

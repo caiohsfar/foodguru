@@ -84,4 +84,17 @@ public class MesaDAO {
         return sucess;
     }
 
+    public boolean mudarIdConsumoAtual(Mesa mesa, String idConsumoAtual){
+        boolean sucess = true;
+        try {
+            database.child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
+                    .child(REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
+                    .child("idConsumoAtual").setValue(idConsumoAtual);
+        }catch(DatabaseException e){
+            sucess = false;
+        }
+        return sucess;
+    }
+
 }

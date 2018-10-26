@@ -75,6 +75,9 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                         //adiciona o id ao consumo logo após adiciona-lo ao firebase;
                         consumo.setId(getIdConsumo(consumo));
                         SessaoConsumo.getInstance().setConsumo(consumo);
+                        //adiciona o id consumo ao IdConsumoAtual
+                        mesaServices.mudarIdConsumoAtual(mesa, consumo.getId());
+
                         abrirTelaCardapio(mesa);
                         break;
                     }
