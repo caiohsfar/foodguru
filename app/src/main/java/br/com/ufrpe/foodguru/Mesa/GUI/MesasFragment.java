@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -210,6 +211,7 @@ public class MesasFragment extends Fragment{
 
     private void abrirTelaPedidosMesa(Mesa mesa) {
         Intent intent = new Intent(viewInflado.getContext(), PedidosMesaActivity.class);
+        Log.d("consumo_mesa ", mesa.getIdConsumoAtual());
         intent.putExtra("MESA_PEDIDOS", mesa);
         startActivity(intent);
     }

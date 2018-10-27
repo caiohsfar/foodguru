@@ -36,7 +36,7 @@ public class ContaMesaActivity extends AppCompatActivity {
     }
 
     public void iniciarRecyclerView(){
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_conta);
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_conta_mesa);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);

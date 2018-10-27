@@ -155,7 +155,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
 
     private void idConsumoAtualNull() {
         MesaServices mesaServices = new MesaServices();
-        mesaServices.mudarIdConsumoAtual(mesa, null);
+        mesaServices.mudarIdConsumoAtual(mesa, "ND");
     }
 
     public static void setStatusOcupada(){

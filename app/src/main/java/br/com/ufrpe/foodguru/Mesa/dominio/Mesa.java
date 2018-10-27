@@ -14,7 +14,7 @@ public class Mesa implements Parcelable {
     private String codigoMesa;
     private int status = StatusMesaEnum.VAZIA.getTipo();
     private String uidEstabelecimento;
-    private String idConsumoAtual;
+    private String idConsumoAtual = "ND";
 
     public Mesa(){
     }
@@ -89,6 +89,7 @@ public class Mesa implements Parcelable {
         dest.writeString(codigoMesa);
         dest.writeString(uidEstabelecimento);
         dest.writeInt(status);
+        dest.writeString(idConsumoAtual);
     }
 
     public int getStatus() {

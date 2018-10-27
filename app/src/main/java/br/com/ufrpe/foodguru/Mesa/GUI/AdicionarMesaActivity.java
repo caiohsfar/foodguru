@@ -117,7 +117,7 @@ public class AdicionarMesaActivity extends AppCompatActivity implements View.OnC
         return new Mesa(etNumeroMesa.getText().toString()
                 ,etCodigoMesa.getText().toString()
                 , FirebaseHelper.getUidUsuario()
-                , null);
+                , "ND");
     }
 
 

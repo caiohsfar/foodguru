@@ -65,7 +65,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                 if (dataSnapshot.exists()){
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Mesa mesa = ds.getValue(Mesa.class);
-                        if (mesa.getIdConsumoAtual() != null){
+                        if (mesa.getIdConsumoAtual() != "ND"){
                             Helper.criarToast(inflatedLayout.getContext(), "Esta mesa está ocupada.");
                             break;
                         }

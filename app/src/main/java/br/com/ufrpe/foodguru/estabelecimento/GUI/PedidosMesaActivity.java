@@ -55,7 +55,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
 
 
     private void abrirTelaContaMesa() {
-        if (mesa.getIdConsumoAtual() == null){
+        if (mesa.getIdConsumoAtual().equals("ND")){
             Helper.criarToast(this, "Mesa vazia");
             return;
         }
