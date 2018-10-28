@@ -16,12 +16,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
+import br.com.ufrpe.foodguru.Consumo.gui.PedidoAdapter;
+import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
@@ -29,6 +32,7 @@ import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ITEM_CONSUMO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
 
 
@@ -36,6 +40,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     private View inflatedLayout;
     private RecyclerView mRecyclerView;
     private List<ItemConsumo> itemConsumoList;
+    private List<ItemConsumo> itemList = new LinkedList<>();
     private ItemConsumoAdapter adapter;
     private Spinner formaPagamento;
     private Consumo consumoAtual = SessaoConsumo.getInstance().getConsumo();
@@ -179,5 +184,25 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             }
         });
     }
+
+    /*
+    public void loadPedidos(){
+        getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO)
+                .orderByChild("uidEstabelecimento")
+                .equalTo(SessaoConsumo.getInstance().getConsumo().getMesa().getUidEstabelecimento()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                itemList = ConsumoServices.getPedidos(dataSnapshot);
+                adapter = new ItemConsumoAdapter(getContext(), itemList);
+                recyclerViewPedidos.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+    */
 }
 

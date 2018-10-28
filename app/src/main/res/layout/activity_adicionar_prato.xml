@@ -83,11 +83,26 @@
                     android:drawablePadding="15sp"
                     android:padding="15sp"/>
 
+                <EditText
+                    android:id="@+id/etEstimativaPrato"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:inputType="number"
+                    android:hint="Estimativa de preparo do prato"
+                    android:singleLine="true"
+                    android:maxLength="2"
+                    android:textColorHint="@color/Cinza"
+                    android:textColor="@color/Cinza"
+                    android:drawableLeft="@drawable/ic_pedidos"
+                    android:drawableTint="@color/RoxoFoodGuru"
+                    android:drawablePadding="15sp"
+                    android:padding="15sp"/>
+
                 <Spinner
                     android:id="@+id/spinnerAdicionaPrato"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="50dp" />
 
                 <Button
                     android:id="@+id/btnConfirmarAdicionarPrato"

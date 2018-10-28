@@ -29,6 +29,21 @@ public class ConsumoDAO {
         return sucess;
     }
 
+    public boolean adicionarInicioPreparo(ItemConsumo inicioPreparo) {
+        boolean sucess = true;
+
+        try {
+            database.child(REFERENCIA_ITEM_CONSUMO)
+                    .child(inicioPreparo.getId())
+                    .child("inicioPreparo")
+                    .setValue(inicioPreparo.getInicioPreparo());
+
+        } catch (DatabaseException e) {
+            sucess = false;
+        }
+        return sucess;
+    }
+
     public boolean setItemComoEntregue(ItemConsumo itemConsumo) {
         boolean sucess = true;
         try {
@@ -52,6 +67,7 @@ public class ConsumoDAO {
         }
         return itensConsumo;
     }
+
     public static List<ItemConsumo> getPedidosMesa(DataSnapshot dataSnapshot) {
         List<ItemConsumo> itensConsumo = new LinkedList<>();
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
@@ -72,8 +88,8 @@ public class ConsumoDAO {
             e.printStackTrace();
         }
         return id;
-
     }
+
     public boolean setFormaPagamento(Consumo consumo) {
         boolean sucess = true;
         try {

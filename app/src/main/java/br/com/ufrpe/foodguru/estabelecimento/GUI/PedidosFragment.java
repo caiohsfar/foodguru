@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -90,7 +91,26 @@ public class PedidosFragment extends Fragment {
                 consumoServices.setItemComoEntregue(item);
                 Helper.criarToast(inflatedLayout.getContext(),"Item marcado como entregue");
             }
+            public void iniciarPreparoPrato(int position){
+                ItemConsumo item = itemList.get(position);
+                ConsumoServices consumoServices = new ConsumoServices();
+                item.setInicioPreparo(getHorario());
+                consumoServices.adicionarInicioPrepato(item);
+            }
         };
+    }
+
+    public String  getHorario(){
+        Calendar data = Calendar.getInstance();
+        String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
+        if (hora.length()==1){
+            hora = "0" +hora;
+        }
+        String min = Integer.toString(data.get(Calendar.MINUTE));
+        if(min.length()==1){
+            min = "0" +min;
+        }
+        return hora + ":" + min;
     }
 
 

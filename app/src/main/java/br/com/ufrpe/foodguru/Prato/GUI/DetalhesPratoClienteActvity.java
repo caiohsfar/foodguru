@@ -89,6 +89,7 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
         itemConsumo.setIdConsumo(SessaoConsumo.getInstance().getConsumo().getId());
         itemConsumo.setQuantidade(Integer.parseInt(etQuantidade.getText().toString()));
         itemConsumo.setValor(itemConsumo.getQuantidade(), pratoSelecionado.getPreco());
+        itemConsumo.setIdCliente(FirebaseHelper.getUidUsuario());
         if (!etObservacao.getText().toString().isEmpty()){
             itemConsumo.setObservacao(etObservacao.getText().toString());
         }

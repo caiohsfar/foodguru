@@ -11,6 +11,15 @@ public class Prato implements Parcelable {
     private String idSessao;
     private String urlImagem;
     private Double preco;
+    private int estimativa;
+
+    public int getEstimativa() {
+        return estimativa;
+    }
+
+    public void setEstimativa(int estimativa) {
+        this.estimativa = estimativa;
+    }
 
     public Prato(){
     }
