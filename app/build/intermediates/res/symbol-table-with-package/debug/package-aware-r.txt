@@ -1294,6 +1294,7 @@ id etEmailClienteMeusDados
 id etEmailEstabelecimento
 id etEmailEstabelecimentoed
 id etEmailRecuperar
+id etEstimativaPrato
 id etNomeCliente
 id etNomeClienteMeusDados
 id etNomeEstabelecimento
@@ -1344,6 +1345,7 @@ id img_qr_code
 id imv_menu_mesa
 id imv_qr_code_detalhe
 id info
+id inicio_preparo_prato
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1422,7 +1424,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card·pio
+id recycler_view_card√°pio
 id recycler_view_conta
 id recycler_view_pedido_mesa
 id recycler_view_pedidos
@@ -1521,6 +1523,7 @@ id tvNomeEstabelecimentoMeusDados
 id tvNomePrato
 id tvTelefoneEstabelecimentoMeusDados
 id tv_codigo_detalhe
+id tv_cronometro
 id tv_informativo_tipodeconta
 id tv_nome_item
 id tv_numero_mesa_detalhe

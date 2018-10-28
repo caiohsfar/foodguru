@@ -75,7 +75,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
                 listaPedidos = ConsumoServices.getPedidos(dataSnapshot);
                 if (listaPedidos.isEmpty()){
                     if (mesa.getStatus() == PENDENTE.getTipo()){
-                        mesaServices.mudarStatus(mesa, VAZIA.getTipo());
+                        mesaServices.mudarStatus(mesa, OCUPADA.getTipo());
                     }
                 }
                 adapter.updateData(listaPedidos);

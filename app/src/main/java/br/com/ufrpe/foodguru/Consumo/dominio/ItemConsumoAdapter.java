@@ -8,31 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.LinkedList;
 import java.util.List;
 
-import br.com.ufrpe.foodguru.Consumo.gui.PedidoAdapter;
-import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
-import br.com.ufrpe.foodguru.Mesa.GUI.MesaHolder;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.MyCountDownTimer;
-
-import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ITEM_CONSUMO;
-import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
 
 public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.ItemConsumoHolder> {
     private List<ItemConsumo> itemConsumoList;
     private MyCountDownTimer timer;
     private Context context;
+    private List<ItemConsumo> listaPedidosEst;
 
     public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList) {
         this.context = context;
@@ -58,20 +47,20 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
         holder.quantidade.setText("Quantidade: " + quantidade);
         holder.nome.setText(nome);
         holder.preco.setText("Preço: "+ preco);
-        timer = new MyCountDownTimer(context, 1000, percorrer(itemConsumoList, FirebaseHelper.getUidUsuario()), holder);
+        timer = new MyCountDownTimer(context, 1000, percorrer(), holder);
+        timer.start();
     }
 
-    public Long percorrer(List<ItemConsumo> itensConsumo, String idCliente) {
+    public Long percorrer() {
         Long estimativa = Long.valueOf(0);
 
-        for(ItemConsumo itemConsumo:itensConsumo) {
-            if(itemConsumo.getInicioPreparo()!=null) {
-                estimativa+=itemConsumo.getPrato().getEstimativa()-(diferencaData(itemConsumo.getInicioPreparo(), getHorario()));
+        for(ItemConsumo itemConsumo : listaPedidosEst) {
+            if(itemConsumo.getInicioPreparo() != null) {
+                estimativa += itemConsumo.getPrato().getEstimativa() - (diferencaData(itemConsumo.getInicioPreparo(), getHorario()));
+            }else {
+                estimativa += itemConsumo.getPrato().getEstimativa();
             }
-            else {
-                estimativa+=itemConsumo.getPrato().getEstimativa();
-            }
-            if(itemConsumo.getIdCliente()== idCliente){
+            if(itemConsumo.getIdCliente() == FirebaseHelper.getUidUsuario()){
                 break;
             }
         }
@@ -81,12 +70,12 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
     public String  getHorario(){
         Calendar data = Calendar.getInstance();
         String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
-        if (hora.length()==1){
-            hora = "0" +hora;
+        if (hora.length() == 1){
+            hora = "0" + hora;
         }
         String min = Integer.toString(data.get(Calendar.MINUTE));
-        if(min.length()==1){
-            min = "0" +min;
+        if(min.length() == 1){
+            min = "0" + min;
         }
         return hora + ":" + min;
     }
@@ -110,6 +99,11 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
     public int getItemCount() {
         return itemConsumoList.size();
     }
+
+    public void setListaPedidosEst(List<ItemConsumo> listaPedidosEst) {
+        this.listaPedidosEst = listaPedidosEst;
+    }
+
     public class ItemConsumoHolder extends RecyclerView.ViewHolder{
         public TextView nome, preco, quantidade, cronometro, fila;
 
@@ -120,7 +114,7 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
             preco = (TextView) view.findViewById(R.id.tv_preco_item);
             quantidade = (TextView) view.findViewById(R.id.tv_quantidade_item);
             cronometro = (TextView) view.findViewById(R.id.tv_cronometro);
-            //fila = (TextView) view.findViewById(R.id.tv_fila);
+            //fila = (TextView) view.findViewById(R.id.);
         }
 
 

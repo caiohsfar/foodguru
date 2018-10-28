@@ -41,7 +41,7 @@ public class ContaMesaActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         //itemConsumoList = consumoAtual.getListaItens();
-        adapter = new ItemConsumoAdapter(itemConsumoList);
+        adapter = new ItemConsumoAdapter(ContaMesaActivity.this, itemConsumoList);
         mRecyclerView.setAdapter(adapter);
     }
     public void listarItensPedidos(){
@@ -51,7 +51,7 @@ public class ContaMesaActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         itemConsumoList = ConsumoServices.getPedidosMesa(dataSnapshot);
-                        adapter = new ItemConsumoAdapter(itemConsumoList);
+                        adapter = new ItemConsumoAdapter(ContaMesaActivity.this, itemConsumoList);
                         mRecyclerView.setAdapter(adapter);
                     }
 

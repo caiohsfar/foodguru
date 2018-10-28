@@ -28,9 +28,11 @@ import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ITEM_CONSUMO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
@@ -40,7 +42,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     private View inflatedLayout;
     private RecyclerView mRecyclerView;
     private List<ItemConsumo> itemConsumoList;
-    private List<ItemConsumo> itemList = new LinkedList<>();
+    private List<ItemConsumo> pedidosTotaisList = new LinkedList<>();
     private ItemConsumoAdapter adapter;
     private Spinner formaPagamento;
     private Consumo consumoAtual = SessaoConsumo.getInstance().getConsumo();
@@ -65,6 +67,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
         inflatedLayout.findViewById(R.id.btn_finalizar_conta).setOnClickListener(this);
         formaPagamento = inflatedLayout.findViewById(R.id.sp_tipo_pagamento);
+        loadPedidosEst();
         iniciarRecyclerView();
         return inflatedLayout;
     }
@@ -75,7 +78,8 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         itemConsumoList = consumoAtual.getListaItens();
-        adapter = new ItemConsumoAdapter(itemConsumoList);
+        adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList);
+        adapter.setListaPedidosEst(pedidosTotaisList);
         mRecyclerView.setAdapter(adapter);
     }
     @Override
@@ -184,25 +188,23 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             }
         });
     }
-
-    /*
-    public void loadPedidos(){
+    public void loadPedidosEst(){
         getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO)
                 .orderByChild("uidEstabelecimento")
-                .equalTo(SessaoConsumo.getInstance().getConsumo().getMesa().getUidEstabelecimento()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                itemList = ConsumoServices.getPedidos(dataSnapshot);
-                adapter = new ItemConsumoAdapter(getContext(), itemList);
-                recyclerViewPedidos.setAdapter(adapter);
-            }
+                .equalTo(SessaoConsumo.getInstance().getConsumo().getMesa().getUidEstabelecimento())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        adapter.setListaPedidosEst(ConsumoServices.getPedidos(dataSnapshot));
+                    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+                    }
+                });
     }
-    */
+
+
 }
 
