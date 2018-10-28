@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
+import java.util.UUID;
+
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
@@ -82,8 +85,10 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
     }
     public ItemConsumo criarItemConsumo(){
         ItemConsumo itemConsumo = new ItemConsumo();
+        itemConsumo.setId(UUID.randomUUID().toString());
         Mesa mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
         itemConsumo.setMesa(mesa);
+        itemConsumo.setHoraPedido(getHorario());
         itemConsumo.setPrato(pratoSelecionado);
         itemConsumo.setUidEstabelecimento(mesa.getUidEstabelecimento());
         itemConsumo.setIdConsumo(SessaoConsumo.getInstance().getConsumo().getId());
@@ -114,6 +119,19 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
             validacao = false;
         }
         return validacao;
+    }
+
+    public String  getHorario(){
+        Calendar data = Calendar.getInstance();
+        String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
+        if (hora.length() == 1){
+            hora = "0" + hora;
+        }
+        String min = Integer.toString(data.get(Calendar.MINUTE));
+        if(min.length() == 1){
+            min = "0" + min;
+        }
+        return hora + ":" + min;
     }
 
 }

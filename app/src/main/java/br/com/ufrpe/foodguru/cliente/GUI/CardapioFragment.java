@@ -155,7 +155,7 @@ public class CardapioFragment extends Fragment{
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        pratosViews =pratoServices.loadPratos(dataSnapshot);
+                        pratosViews = pratoServices.loadPratos(dataSnapshot);
                         adapter = new CardapioAdapter(getContext(), pratosViews, new CardapioAdapter.OnItemClicked() {
                             @Override
                             public void onItemClick(int position) {

@@ -3,6 +3,7 @@ package br.com.ufrpe.foodguru.cliente.GUI;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,11 +32,13 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.g
 public class CronometroActivity extends AppCompatActivity {
     private TextView cronometro;
     private MyCountDownTimer timer;
+    private String idItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
+        idItem = getIntent().getStringExtra("ID_ITEM");
 
     }
 
@@ -50,19 +53,30 @@ public class CronometroActivity extends AppCompatActivity {
 
     public Long percorrer(LinkedList<ItemConsumo> itensConsumoEst) {
         Long estimativa = Long.valueOf(0);
-
-        for(ItemConsumo itemConsumo : itensConsumoEst) {
-            //if(itemConsumo.getInicioPreparo() != null) {
-            //    estimativa += itemConsumo.getPrato().getEstimativa() - (diferencaData(itemConsumo.getInicioPreparo(), getHorario()));
-            //}else {
-            estimativa += itemConsumo.getPrato().getEstimativa();
-            //}
+        /*
+        for (ItemConsumo itemConsumo : itensConsumoEst) {
+            if(itemConsumo.getInicioPreparo() != null) {
+            estimativa += itemConsumo.getPrato().getEstimativa()*1000 - (diferencaData(itemConsumo.getInicioPreparo(), getHorario()));
+            }else {
+            estimativa += itemConsumo.getPrato().getEstimativa()*1000;
+            }
             if(itemConsumo.getIdCliente().equals(FirebaseHelper.getUidUsuario())){
                 break;
             }
         }
-        Toast.makeText(this, estimativa.toString(), Toast.LENGTH_SHORT).show();
-        return estimativa;
+        */
+        for (ItemConsumo itemConsumo : itensConsumoEst){
+            estimativa += itemConsumo.getPrato().getEstimativa();
+            Log.d("IdItem ", idItem);
+            if (itemConsumo.getId().equals(idItem)){
+                break;
+            }
+        }
+        Long desconto = diferencaData(itensConsumoEst.get(0).getHoraPedido(), getHorario());
+
+
+        Log.d("Estimativa geral", String.valueOf(estimativa*60000 - desconto));
+        return estimativa*60000 - desconto;
 
     }
 
@@ -99,19 +113,12 @@ public class CronometroActivity extends AppCompatActivity {
                 .orderByChild("uidEstabelecimento")
                 .equalTo(SessaoConsumo.getInstance().getConsumo().getMesa().getUidEstabelecimento())
                 .addValueEventListener(new ValueEventListener() {
-
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                         LinkedList<ItemConsumo> itensConsumoEst = (LinkedList<ItemConsumo>) ConsumoServices.getPedidos(dataSnapshot);
-                        System.out.println(itensConsumoEst.toString());
-                        System.out.println(itensConsumoEst.toString());
-                        System.out.println(itensConsumoEst.toString());
-                        System.out.println(itensConsumoEst.toString());
                         timer = new MyCountDownTimer(CronometroActivity.this, cronometro, percorrer(itensConsumoEst), 1000);
                         timer.start();
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -119,9 +126,17 @@ public class CronometroActivity extends AppCompatActivity {
                 });
     }
 
-    /*
-    public void setListaPedidosEst(List<ItemConsumo> listaPedidosEst) {
-        this.listaPedidosEst = listaPedidosEst;
+    public static String somaHora(String horaInicial,int contador) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(sdf.parse(horaInicial));
+            cal.add(Calendar.MINUTE, contador);
+            String x = sdf.format(cal.getTime());
+            return x;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-    */
 }

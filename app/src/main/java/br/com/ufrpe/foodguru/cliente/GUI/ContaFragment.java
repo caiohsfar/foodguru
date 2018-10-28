@@ -17,6 +17,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,19 +27,13 @@ import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
-import br.com.ufrpe.foodguru.Consumo.gui.PedidoAdapter;
-import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
-import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
-import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ITEM_CONSUMO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
 
 
@@ -80,14 +77,15 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         return new ItemConsumoAdapter.ItemConsumoOnClickListener() {
             @Override
             public void onClickCronometro(ItemConsumoAdapter.ItemConsumoHolder itemConsumoHolder, int indexPedido) {
-                abrirTelaPedidosMesa();
+                abrirTelaCronometro(itemConsumoList.get(indexPedido).getId());
             }
         };
     }
 
-    private void abrirTelaPedidosMesa() {
+    private void abrirTelaCronometro(String id) {
         Intent intent = new Intent(getContext(), CronometroActivity.class);
-        intent.putExtra("NUMERO_MESA",mesa.getNumeroMesa());
+        Log.d("ID", id);
+        intent.putExtra("ID_ITEM",id);
         startActivity(intent);
     }
 
@@ -101,6 +99,38 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList, onClickListener());
         mRecyclerView.setAdapter(adapter);
     }
+
+    /*
+    public void bubbleSort(LinkedList<ItemConsumo> v) {
+        for (int i = v.size(); i >= 1; i--) {
+            for (int j = 1; j < i; j++) {
+                Long horaLong = getHoraLong(v.get(j-1).getHoraPedido());
+                Long hora2 = getHoraLong(v.get(j).getHoraPedido());
+
+                if (horaLong > hora2) {
+                    ItemConsumo aux = v.get(j);
+                    v.get(j) = v.get(j-1);
+                    v[j - 1] = aux;
+                }
+            }
+        }
+    }
+    */
+    public static long getHoraLong(String horaInicial) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            Calendar cal = Calendar.getInstance();
+            Calendar calFinal = Calendar.getInstance();
+            cal.setTime(sdf.parse(horaInicial));
+            long diferenca = calFinal.getTimeInMillis();
+            return diferenca;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
 
 
     @Override

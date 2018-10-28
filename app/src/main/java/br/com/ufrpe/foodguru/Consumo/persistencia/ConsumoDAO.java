@@ -18,10 +18,10 @@ public class ConsumoDAO {
 
     public boolean adicionarItemConsumo(ItemConsumo itemConsumo) {
         boolean sucess = true;
-
         try {
+
             database.child(REFERENCIA_ITEM_CONSUMO)
-                    .push().setValue(itemConsumo);
+                    .child(itemConsumo.getId()).setValue(itemConsumo);
 
         } catch (DatabaseException e) {
             sucess = false;

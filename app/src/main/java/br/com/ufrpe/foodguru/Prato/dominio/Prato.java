@@ -36,6 +36,7 @@ public class Prato implements Parcelable {
         descricaoPrato = in.readString();
         idSessao = in.readString();
         urlImagem = in.readString();
+        estimativa = in.readInt();
         if (in.readByte() == 0) {
             preco = null;
         } else {
@@ -110,6 +111,7 @@ public class Prato implements Parcelable {
         dest.writeString(descricaoPrato);
         dest.writeString(idSessao);
         dest.writeString(urlImagem);
+        dest.writeInt(estimativa);
         if (preco == null) {
             dest.writeByte((byte) 0);
         } else {

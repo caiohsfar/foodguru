@@ -24,12 +24,12 @@ public class MyCountDownTimer extends CountDownTimer {
     @Override
     public void onTick(long millisUntilFinished) {
         timeInFuture = millisUntilFinished;
-        cronometro.setText(getCorrectTimer(true,millisUntilFinished)+":"+getCorrectTimer(false,millisUntilFinished));
+        cronometro.setText(getCorrectTimer(true,millisUntilFinished));
     }
 
     @Override
     public void onFinish() {
-        timeInFuture -=1000;
+        timeInFuture -= 1000;
         cronometro.setText("00:00");
         Toast.makeText(context,"Finish",Toast.LENGTH_LONG).show();
     }

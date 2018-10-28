@@ -20,7 +20,7 @@ public class ItemConsumo {
     private Mesa mesa;
     private int quantidade;
     private double valor;
-    private Date data;
+    private String horaPedido;
     private String observacao;
     private boolean entregue = false;
 
@@ -45,12 +45,12 @@ public class ItemConsumo {
         this.id = id;
     }
 
-    public Date getData() {
-        return data;
+    public String getHoraPedido() {
+        return horaPedido;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setHoraPedido(String horaPedido) {
+        this.horaPedido = horaPedido;
     }
 
     public boolean isEntregue() {
