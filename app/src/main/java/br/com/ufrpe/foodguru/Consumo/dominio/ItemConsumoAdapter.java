@@ -13,19 +13,31 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import br.com.ufrpe.foodguru.Mesa.GUI.MesaAdapter;
+import br.com.ufrpe.foodguru.Mesa.GUI.MesaHolder;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.MyCountDownTimer;
 
 public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.ItemConsumoHolder> {
     private List<ItemConsumo> itemConsumoList;
-    private MyCountDownTimer timer;
     private Context context;
-    private List<ItemConsumo> listaPedidosEst;
+    private ItemConsumoAdapter.ItemConsumoOnClickListener onClickListener = null;
+
+    public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList, ItemConsumoOnClickListener onClickListener) {
+        this.context = context;
+        this.itemConsumoList = itemConsumoList;
+        this.onClickListener = onClickListener;
+    }
 
     public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList) {
         this.context = context;
         this.itemConsumoList = itemConsumoList;
+
+    }
+
+    public interface ItemConsumoOnClickListener {
+        void onClickCronometro(ItemConsumoHolder itemConsumoHolder, int indexPedido);
     }
 
     @NonNull
@@ -40,58 +52,22 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemConsumoHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ItemConsumoHolder holder, final int position) {
         String nome = itemConsumoList.get(position).getPrato().getNomePrato();
         String preco = String.valueOf(itemConsumoList.get(position).getPrato().getPreco());
         String quantidade = String.valueOf(itemConsumoList.get(position).getQuantidade());
         holder.quantidade.setText("Quantidade: " + quantidade);
         holder.nome.setText(nome);
         holder.preco.setText("Preço: "+ preco);
-        timer = new MyCountDownTimer(context, 1000, percorrer(), holder);
-        timer.start();
-    }
 
-    public Long percorrer() {
-        Long estimativa = Long.valueOf(0);
+        if (onClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickListener.onClickCronometro(holder, position);
 
-        for(ItemConsumo itemConsumo : listaPedidosEst) {
-            if(itemConsumo.getInicioPreparo() != null) {
-                estimativa += itemConsumo.getPrato().getEstimativa() - (diferencaData(itemConsumo.getInicioPreparo(), getHorario()));
-            }else {
-                estimativa += itemConsumo.getPrato().getEstimativa();
-            }
-            if(itemConsumo.getIdCliente() == FirebaseHelper.getUidUsuario()){
-                break;
-            }
-        }
-        return estimativa;
-    }
-
-    public String  getHorario(){
-        Calendar data = Calendar.getInstance();
-        String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
-        if (hora.length() == 1){
-            hora = "0" + hora;
-        }
-        String min = Integer.toString(data.get(Calendar.MINUTE));
-        if(min.length() == 1){
-            min = "0" + min;
-        }
-        return hora + ":" + min;
-    }
-
-    public static long diferencaData(String horaInicial, String horaFinal) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-            Calendar cal = Calendar.getInstance();
-            Calendar calFinal = Calendar.getInstance();
-            cal.setTime(sdf.parse(horaInicial));
-            calFinal.setTime(sdf.parse(horaFinal));
-            long diferenca = (calFinal.getTimeInMillis() - cal.getTimeInMillis());
-            return diferenca;
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return 0;
+                }
+            });
         }
     }
 
@@ -100,9 +76,6 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
         return itemConsumoList.size();
     }
 
-    public void setListaPedidosEst(List<ItemConsumo> listaPedidosEst) {
-        this.listaPedidosEst = listaPedidosEst;
-    }
 
     public class ItemConsumoHolder extends RecyclerView.ViewHolder{
         public TextView nome, preco, quantidade, cronometro, fila;
@@ -113,7 +86,7 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
             nome = (TextView) view.findViewById(R.id.tv_nome_item);
             preco = (TextView) view.findViewById(R.id.tv_preco_item);
             quantidade = (TextView) view.findViewById(R.id.tv_quantidade_item);
-            cronometro = (TextView) view.findViewById(R.id.tv_cronometro);
+            //cronometro = (TextView) view.findViewById(R.id.tv_cronometro);
             //fila = (TextView) view.findViewById(R.id.);
         }
 

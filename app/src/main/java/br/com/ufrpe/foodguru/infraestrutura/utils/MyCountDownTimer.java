@@ -13,18 +13,18 @@ public class MyCountDownTimer extends CountDownTimer {
     private Context context;
     private TextView cronometro;
     private long timeInFuture;
-    private ItemConsumoAdapter.ItemConsumoHolder holder;
 
-    public MyCountDownTimer(Context context, long timeInFuture, long interval, ItemConsumoAdapter.ItemConsumoHolder holder){
+
+    public MyCountDownTimer(Context context, TextView cronometro, long timeInFuture, long interval){
         super(timeInFuture, interval);
         this.context = context;
-        this.holder = holder;
+        this.cronometro = cronometro;
     }
 
     @Override
     public void onTick(long millisUntilFinished) {
         timeInFuture = millisUntilFinished;
-        holder.cronometro.setText(getCorrectTimer(true,millisUntilFinished)+":"+getCorrectTimer(false,millisUntilFinished));
+        cronometro.setText(getCorrectTimer(true,millisUntilFinished)+":"+getCorrectTimer(false,millisUntilFinished));
     }
 
     @Override

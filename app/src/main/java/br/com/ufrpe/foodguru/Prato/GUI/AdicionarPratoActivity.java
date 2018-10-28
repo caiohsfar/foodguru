@@ -46,7 +46,7 @@ import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class AdicionarPratoActivity extends AppCompatActivity implements View.OnClickListener {
     private StorageReference  storageReference = FirebaseStorage.getInstance().getReference();
-    private EditText etNomePrato, etDescricaoPrato, etPrecoPrato;
+    private EditText etNomePrato, etDescricaoPrato, etPrecoPrato, etEstimativa;
     private ProgressDialog progressDialog;
     private ImageView imvFoto;
     private static final int CAMERA_REQUEST_CODE = 1;
@@ -172,6 +172,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         etNomePrato = findViewById(R.id.etNomePrato);
         imvFoto = findViewById(R.id.iv_adicionar_prato);
         etPrecoPrato = findViewById(R.id.etPrecoPrato);
+        etEstimativa = findViewById(R.id.etEstimativaPrato);
         etDescricaoPrato = findViewById(R.id.etDescricaoPrato);
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Adicionando...");
@@ -186,6 +187,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         prato.setUrlImagem(urlImagemAdicionada);
         prato.setIdSessao(idSessao);
         prato.setPreco(Double.parseDouble(etPrecoPrato.getText().toString()));
+        prato.setEstimativa(Integer.parseInt(etEstimativa.getText().toString()));
         //spinner
         prato.setIdSessao(idSessao);
         return prato;

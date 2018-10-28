@@ -84,7 +84,8 @@
         <activity android:name=".cliente.GUI.OperacaoActivity" />
         <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
         <activity android:name=".estabelecimento.GUI.PedidosMesaActivity" />
-        <activity android:name=".estabelecimento.GUI.ContaMesaActivity"></activity>
+        <activity android:name=".estabelecimento.GUI.ContaMesaActivity" />
+        <activity android:name=".cliente.GUI.CronometroActivity"></activity>
     </application>
 
 </manifest>

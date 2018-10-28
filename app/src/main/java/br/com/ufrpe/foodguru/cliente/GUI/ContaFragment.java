@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
@@ -67,10 +69,28 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
         inflatedLayout.findViewById(R.id.btn_finalizar_conta).setOnClickListener(this);
         formaPagamento = inflatedLayout.findViewById(R.id.sp_tipo_pagamento);
-        loadPedidosEst();
+
+
+
         iniciarRecyclerView();
         return inflatedLayout;
     }
+
+    private ItemConsumoAdapter.ItemConsumoOnClickListener onClickListener() {
+        return new ItemConsumoAdapter.ItemConsumoOnClickListener() {
+            @Override
+            public void onClickCronometro(ItemConsumoAdapter.ItemConsumoHolder itemConsumoHolder, int indexPedido) {
+                abrirTelaPedidosMesa();
+            }
+        };
+    }
+
+    private void abrirTelaPedidosMesa() {
+        Intent intent = new Intent(getContext(), CronometroActivity.class);
+        intent.putExtra("NUMERO_MESA",mesa.getNumeroMesa());
+        startActivity(intent);
+    }
+
     public void iniciarRecyclerView(){
         mRecyclerView = (RecyclerView) inflatedLayout.findViewById(R.id.recycler_view_conta);
         LinearLayoutManager layoutManager = new LinearLayoutManager(inflatedLayout.getContext()
@@ -78,10 +98,11 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         itemConsumoList = consumoAtual.getListaItens();
-        adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList);
-        adapter.setListaPedidosEst(pedidosTotaisList);
+        adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList, onClickListener());
         mRecyclerView.setAdapter(adapter);
     }
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -188,22 +209,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             }
         });
     }
-    public void loadPedidosEst(){
-        getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO)
-                .orderByChild("uidEstabelecimento")
-                .equalTo(SessaoConsumo.getInstance().getConsumo().getMesa().getUidEstabelecimento())
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        adapter.setListaPedidosEst(ConsumoServices.getPedidos(dataSnapshot));
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-    }
 
 
 }

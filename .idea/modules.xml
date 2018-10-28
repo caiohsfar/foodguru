@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FoodGuru.iml" filepath="$PROJECT_DIR$/FoodGuru.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/food-guru-inova-ufrpe.iml" filepath="$PROJECT_DIR$/food-guru-inova-ufrpe.iml" />
     </modules>
   </component>
 </project>

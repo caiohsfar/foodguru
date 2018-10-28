@@ -1246,6 +1246,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id cronometro_novo
 id custom
 id customPanel
 id dark
@@ -1424,7 +1425,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card√°pio
+id recycler_view_card·pio
 id recycler_view_conta
 id recycler_view_pedido_mesa
 id recycler_view_pedidos
@@ -1610,6 +1611,7 @@ layout activity_adicionar_mesa
 layout activity_adicionar_prato
 layout activity_adicionar_sessao
 layout activity_conta_mesa
+layout activity_cronometro
 layout activity_detalhes_mesa
 layout activity_detalhes_prato
 layout activity_detalhes_prato_cliente
