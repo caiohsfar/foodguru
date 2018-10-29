@@ -24,7 +24,7 @@ public class MyCountDownTimer extends CountDownTimer {
     @Override
     public void onTick(long millisUntilFinished) {
         timeInFuture = millisUntilFinished;
-        cronometro.setText(getCorrectTimer(true,millisUntilFinished));
+        cronometro.setText(getCorrectTimer(true,millisUntilFinished) + "minuto(s)");
     }
 
     @Override

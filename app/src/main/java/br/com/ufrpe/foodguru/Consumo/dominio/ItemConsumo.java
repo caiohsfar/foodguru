@@ -3,13 +3,18 @@ package br.com.ufrpe.foodguru.Consumo.dominio;
 
 
 
+import android.support.annotation.NonNull;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 
 
-public class ItemConsumo {
+public class ItemConsumo implements Comparable<ItemConsumo>{
 
     private String id;
     private String inicioPreparo;
@@ -119,5 +124,34 @@ public class ItemConsumo {
 
     public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
+    }
+
+    @Override
+    public int compareTo(@NonNull ItemConsumo outroItemConsumo) {
+
+        long diferencaObjeto1 = stringToLong(this.getHoraPedido());
+        long diferencaObjeto2 = stringToLong(outroItemConsumo.getHoraPedido());
+
+        if(diferencaObjeto1>diferencaObjeto2){
+            return 1;
+        }
+        if(diferencaObjeto1<diferencaObjeto2){
+            return -1;
+        }
+
+        return 0;
+    }
+
+    public static long stringToLong(String horaInicial) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(sdf.parse(horaInicial));
+            long diferenca = cal.getTimeInMillis();
+            return diferenca;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 }

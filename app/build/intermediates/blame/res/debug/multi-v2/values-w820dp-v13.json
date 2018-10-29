@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "C:\\Users\\hercu\\Desktop\\foodGuruCrono\\FoodGuru\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/values-w820dp/dimens.xml",
+                    "source": "C:\\Users\\hercu\\Desktop\\foodGuruCrono\\FoodGuru\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "4",

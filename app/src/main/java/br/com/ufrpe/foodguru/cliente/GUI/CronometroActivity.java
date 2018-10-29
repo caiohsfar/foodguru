@@ -14,6 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,18 +54,6 @@ public class CronometroActivity extends AppCompatActivity {
 
     public Long percorrer(LinkedList<ItemConsumo> itensConsumoEst) {
         Long estimativa = Long.valueOf(0);
-        /*
-        for (ItemConsumo itemConsumo : itensConsumoEst) {
-            if(itemConsumo.getInicioPreparo() != null) {
-            estimativa += itemConsumo.getPrato().getEstimativa()*1000 - (diferencaData(itemConsumo.getInicioPreparo(), getHorario()));
-            }else {
-            estimativa += itemConsumo.getPrato().getEstimativa()*1000;
-            }
-            if(itemConsumo.getIdCliente().equals(FirebaseHelper.getUidUsuario())){
-                break;
-            }
-        }
-        */
         for (ItemConsumo itemConsumo : itensConsumoEst){
             estimativa += itemConsumo.getPrato().getEstimativa();
             Log.d("IdItem ", idItem);
@@ -116,6 +105,7 @@ public class CronometroActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         LinkedList<ItemConsumo> itensConsumoEst = (LinkedList<ItemConsumo>) ConsumoServices.getPedidos(dataSnapshot);
+                        Collections.sort(itensConsumoEst);
                         timer = new MyCountDownTimer(CronometroActivity.this, cronometro, percorrer(itensConsumoEst), 1000);
                         timer.start();
                     }
