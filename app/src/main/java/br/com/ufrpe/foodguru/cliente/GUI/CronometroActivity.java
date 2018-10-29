@@ -31,16 +31,20 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.R
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
 
 public class CronometroActivity extends AppCompatActivity {
-    private TextView cronometro;
+    private TextView cronometro, nomePrato, fila;
     private MyCountDownTimer timer;
+    private String nomePratoIntent;
     private String idItem;
+    private int contador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
         idItem = getIntent().getStringExtra("ID_ITEM");
-
+        nomePratoIntent = getIntent().getStringExtra("NOME_PRATO");
+        nomePrato = findViewById(R.id.nome_prato_cro);
+        nomePrato.setText(nomePratoIntent);
     }
 
     @Override
@@ -55,9 +59,11 @@ public class CronometroActivity extends AppCompatActivity {
     public Long percorrer(LinkedList<ItemConsumo> itensConsumoEst) {
         Long estimativa = Long.valueOf(0);
         for (ItemConsumo itemConsumo : itensConsumoEst){
+            contador += 1;
             estimativa += itemConsumo.getPrato().getEstimativa();
             Log.d("IdItem ", idItem);
             if (itemConsumo.getId().equals(idItem)){
+                contador -= 1;
                 break;
             }
         }
@@ -72,19 +78,23 @@ public class CronometroActivity extends AppCompatActivity {
     public String  getHorario(){
         Calendar data = Calendar.getInstance();
         String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
-        if (hora.length() == 1){
-            hora = "0" + hora;
+        if (hora.length()==1){
+            hora = "0" +hora;
         }
         String min = Integer.toString(data.get(Calendar.MINUTE));
-        if(min.length() == 1){
-            min = "0" + min;
+        if(min.length()==1){
+            min = "0" +min;
         }
-        return hora + ":" + min;
+        String seg = Integer.toString(data.get(Calendar.SECOND));
+        if(seg.length()==1){
+            seg = "0" +seg;
+        }
+        return hora + ":" + min + ":" + seg;
     }
 
     public static long diferencaData(String horaInicial, String horaFinal) {
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             Calendar cal = Calendar.getInstance();
             Calendar calFinal = Calendar.getInstance();
             cal.setTime(sdf.parse(horaInicial));
@@ -106,19 +116,23 @@ public class CronometroActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         LinkedList<ItemConsumo> itensConsumoEst = (LinkedList<ItemConsumo>) ConsumoServices.getPedidos(dataSnapshot);
                         Collections.sort(itensConsumoEst);
+                        contador = 0;
+                        fila = findViewById(R.id.fila_cro);
                         timer = new MyCountDownTimer(CronometroActivity.this, cronometro, percorrer(itensConsumoEst), 1000);
+                        fila.setText("Existem " + String.valueOf(contador) + " pedidos na frente do seu");
+
                         timer.start();
                     }
+
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
     }
 
     public static String somaHora(String horaInicial,int contador) {
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             Calendar cal = Calendar.getInstance();
             cal.setTime(sdf.parse(horaInicial));
             cal.add(Calendar.MINUTE, contador);

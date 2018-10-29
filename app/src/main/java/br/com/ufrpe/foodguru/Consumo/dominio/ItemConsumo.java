@@ -144,7 +144,7 @@ public class ItemConsumo implements Comparable<ItemConsumo>{
 
     public static long stringToLong(String horaInicial) {
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             Calendar cal = Calendar.getInstance();
             cal.setTime(sdf.parse(horaInicial));
             long diferenca = cal.getTimeInMillis();

@@ -110,7 +110,11 @@ public class PedidosFragment extends Fragment {
         if(min.length()==1){
             min = "0" +min;
         }
-        return hora + ":" + min;
+        String seg = Integer.toString(data.get(Calendar.SECOND));
+        if(seg.length()==1){
+            seg = "0" +seg;
+        }
+        return hora + ":" + min + ":" + seg;
     }
 
 

@@ -77,15 +77,16 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         return new ItemConsumoAdapter.ItemConsumoOnClickListener() {
             @Override
             public void onClickCronometro(ItemConsumoAdapter.ItemConsumoHolder itemConsumoHolder, int indexPedido) {
-                abrirTelaCronometro(itemConsumoList.get(indexPedido).getId());
+                abrirTelaCronometro(itemConsumoList.get(indexPedido).getId(), itemConsumoList.get(indexPedido).getPrato().getNomePrato());
             }
         };
     }
 
-    private void abrirTelaCronometro(String id) {
+    private void abrirTelaCronometro(String id, String nome) {
         Intent intent = new Intent(getContext(), CronometroActivity.class);
         Log.d("ID", id);
         intent.putExtra("ID_ITEM",id);
+        intent.putExtra("NOME_PRATO", nome);
         startActivity(intent);
     }
 
@@ -118,7 +119,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     */
     public static long getHoraLong(String horaInicial) {
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             Calendar cal = Calendar.getInstance();
             Calendar calFinal = Calendar.getInstance();
             cal.setTime(sdf.parse(horaInicial));

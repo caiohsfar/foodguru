@@ -124,14 +124,17 @@ public class DetalhesPratoClienteActvity extends AppCompatActivity implements Vi
     public String  getHorario(){
         Calendar data = Calendar.getInstance();
         String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
-        if (hora.length() == 1){
-            hora = "0" + hora;
+        if (hora.length()==1){
+            hora = "0" +hora;
         }
         String min = Integer.toString(data.get(Calendar.MINUTE));
-        if(min.length() == 1){
-            min = "0" + min;
+        if(min.length()==1){
+            min = "0" +min;
         }
-        return hora + ":" + min;
+        String seg = Integer.toString(data.get(Calendar.SECOND));
+        if(seg.length()==1){
+            seg = "0" +seg;
+        }
+        return hora + ":" + min + ":" + seg;
     }
-
 }

@@ -87,6 +87,9 @@ public class MesaDAO {
     public boolean mudarIdConsumoAtual(Mesa mesa, String idConsumoAtual){
         boolean sucess = true;
         try {
+            database.child(FirebaseHelper.REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
+                    .child("idConsumoAtual").setValue(idConsumoAtual);
             database.child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
                     .child(REFERENCIA_MESA)
                     .child(mesa.getCodigoMesa())

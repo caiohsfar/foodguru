@@ -4,16 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="top|center"
+    android:orientation="vertical"
     tools:context=".cliente.GUI.CronometroActivity">
+
+    <TextView
+        android:id="@+id/nome_prato_cro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Hércules Lindao"
+
+        android:textSize="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/RoxoFoodGuru"/>
 
     <TextView
         android:id="@+id/cronometro_novo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="00:00"
+        android:text="Seu prato está chegando!"
         android:textSize="40dp"
         android:gravity="center"
         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/RoxoFoodGuru"/>
+
+    <TextView
+        android:id="@+id/fila_cro"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Tem 5 pedidos na frente do seu"
+        android:textSize="15dp"/>
+
+
 </LinearLayout>

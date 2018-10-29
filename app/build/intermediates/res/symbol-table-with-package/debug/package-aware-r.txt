@@ -1319,6 +1319,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab_conta_mesa
+id fila_cro
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1401,6 +1402,7 @@ id navigation_header_container
 id negative
 id neutral
 id never
+id nome_prato_cro
 id none
 id normal
 id notification_background
@@ -1524,7 +1526,6 @@ id tvNomeEstabelecimentoMeusDados
 id tvNomePrato
 id tvTelefoneEstabelecimentoMeusDados
 id tv_codigo_detalhe
-id tv_cronometro
 id tv_informativo_tipodeconta
 id tv_nome_item
 id tv_numero_mesa_detalhe
