@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item><layer-list>
+        <item><shape>
+            <padding
+                android:bottom="3dp"
+                android:left="15dp"
+                android:right="3dp"
+                android:top="3dp" />
+        </shape></item>
+        <item >
+            <bitmap
+                android:gravity="left|center"
+                android:src="@drawable/ic_nova_seta_baixo"
+                android:tint="@color/RoxoFoodGuru"/>
+        </item>
+    </layer-list></item>
+
+</selector>
