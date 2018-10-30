@@ -99,17 +99,24 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         });
     }
 
-    private void setInformacoesPerfil(FirebaseUser usuario, Endereco endereco, String telefone){
+    private void setInformacoesPerfil(FirebaseUser usuario, Endereco endereco, String telefone) {
         findViews();
         tvNome.setText(usuario.getDisplayName());
         tvTelefone.setText(telefone);
         tvEmail.setText(usuario.getEmail());
-        tvEndereco.setText(endereco.getCidade() + ", " + endereco.getEstado()
-                + ", " + endereco.getRua() + ", " + endereco.getComplemento() + ".");
-        tvNome.setKeyListener( null );
-        tvTelefone.setKeyListener( null );
-        tvEmail.setKeyListener( null );
-        tvEndereco.setKeyListener( null );
+        tvNome.setKeyListener(null);
+        tvTelefone.setKeyListener(null);
+        tvEmail.setKeyListener(null);
+        if (endereco.getCidade().equals(String.valueOf(""))
+                || endereco.getRua().equals(String.valueOf(""))
+                || endereco.getEstado().equals(String.valueOf(""))) {
+            tvEndereco.setText("Edite suas informações e complete seu endereço!");
+            tvEndereco.setKeyListener(null);
+        } else {
+            tvEndereco.setText(endereco.getCidade() + ", " + endereco.getEstado()
+                    + ", " + endereco.getRua() + ", " + endereco.getComplemento() + ".");
+            tvEndereco.setKeyListener( null );
+        }
     }
 
     private void setClicks(){

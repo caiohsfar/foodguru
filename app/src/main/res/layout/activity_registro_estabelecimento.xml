@@ -60,6 +60,7 @@
                     android:drawableLeft="@drawable/ic_endereco"
                     android:drawableTint="@color/RoxoFoodGuru"
                     android:paddingLeft="15sp"/>
+
                 <Spinner
                     android:id="@+id/spEstadoEstabelecimento"
                     android:layout_width="match_parent"

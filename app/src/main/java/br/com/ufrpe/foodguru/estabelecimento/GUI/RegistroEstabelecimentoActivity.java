@@ -70,10 +70,6 @@ public class RegistroEstabelecimentoActivity extends AppCompatActivity implement
             etEmail.setError(getString(R.string.sp_excecao_email));
             validacao = false;
         }
-        if (etCidade.getText().toString().isEmpty()) {
-            etCidade.setError(getString(R.string.sp_excecao_senha));
-            validacao = false;
-        }
         if (etTelefone.getText().toString().isEmpty()) {
             etTelefone.setError(getString(R.string.alerta_campo_vazio));
             validacao = false;
@@ -84,20 +80,17 @@ public class RegistroEstabelecimentoActivity extends AppCompatActivity implement
             etConfirmarSenha.setError(getString(R.string.sp_excecao_senhas_iguais));
             validacao = false;
         }
-        if (etRua.getText().toString().isEmpty()) {
-            etRua.setError(getString(R.string.alerta_campo_vazio));
-            validacao = false;
-        }
         if (etTelefone.getText().toString().isEmpty()) {
             etRua.setError(getString(R.string.alerta_campo_vazio));
             validacao = false;
         }
+        /*
         if (spEstado.getSelectedItemPosition() == 0){
             validacao = false;
             Helper.criarToast(RegistroEstabelecimentoActivity.this, "Selecione seu estado.");
-        }
-
+        }*/
         return validacao;
+
     }
     public void confirmarCadastro(String email, String senha){
         if (!validarCampos()){
@@ -164,11 +157,20 @@ public class RegistroEstabelecimentoActivity extends AppCompatActivity implement
     public Estabelecimento criarEstabelecimento(){
         Estabelecimento estabelecimento = new Estabelecimento();
         estabelecimento.setTelefone(etTelefone.getText().toString());
-        estabelecimento.setEndereco(new Endereco(
-                 etCidade.getText().toString()
-                ,etRua.getText().toString()
-                ,spEstado.getSelectedItem().toString()
-                ,etComplemento.getText().toString()));
+        if (spEstado.getSelectedItemPosition() == 0){
+            estabelecimento.setEndereco(new Endereco(
+                    etCidade.getText().toString()
+                    ,etRua.getText().toString()
+                    ,""
+                    ,etComplemento.getText().toString()));
+        }
+        else {
+            estabelecimento.setEndereco(new Endereco(
+                    etCidade.getText().toString()
+                    , etRua.getText().toString()
+                    , spEstado.getSelectedItem().toString()
+                    , etComplemento.getText().toString()));
+        }
         return estabelecimento;
     }
 
