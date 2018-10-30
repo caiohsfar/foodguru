@@ -30,6 +30,7 @@
         <item>SE - Sergipe</item>
         <item>TO - Tocantins</item>
     </string-array>
+
     <string-array name="tipo_pagamento">
         <item>Selecione a forma de pagamento</item>
         <item>Cartão</item>

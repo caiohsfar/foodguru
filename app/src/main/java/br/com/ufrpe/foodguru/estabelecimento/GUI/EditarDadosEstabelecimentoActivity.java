@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -17,6 +18,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
@@ -38,6 +41,7 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_dados_estabelecimento);
         recuperarDados();
+
 
     }
 
@@ -91,6 +95,7 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
         etRua.setText(endereco.getRua());
         etComplemento.setText(endereco.getComplemento());
         etEmail.setText(currentUser.getEmail());
+        setarSpinner(endereco);
     }
 
     private void confirmarEdicao() {
@@ -114,27 +119,12 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
             etEmail.setError(getString(R.string.sp_excecao_email));
             validacao = false;
         }
-        if (etCidade.getText().toString().isEmpty()) {
-            etCidade.setError(getString(R.string.sp_excecao_senha));
-            validacao = false;
-        }
+
         if (etTelefone.getText().toString().isEmpty()) {
-            etTelefone.setError(getString(R.string.alerta_campo_vazio));
+            etRua.setError(getString(R.string.alerta_campo_vazio));
             validacao = false;
         }
 
-        if (etRua.getText().toString().isEmpty()) {
-            etRua.setError(getString(R.string.alerta_campo_vazio));
-            validacao = false;
-        }
-        if (etTelefone.getText().toString().isEmpty()) {
-            etRua.setError(getString(R.string.alerta_campo_vazio));
-            validacao = false;
-        }
-        if (spEstado.getSelectedItemPosition() == 0){
-            validacao = false;
-            Helper.criarToast(EditarDadosEstabelecimentoActivity.this, "Selecione seu estado.");
-        }
         if (etSenha.getText().toString().trim().isEmpty()){
             etSenha.setError("Preencha o campo vazio");
             validacao = false;
@@ -198,11 +188,20 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
     public Estabelecimento criarEstabelecimento(){
         Estabelecimento estabelecimento = new Estabelecimento();
         estabelecimento.setTelefone(etTelefone.getText().toString());
-        estabelecimento.setEndereco(new Endereco(
-                etCidade.getText().toString()
-                ,etRua.getText().toString()
-                ,spEstado.getSelectedItem().toString()
-                ,etComplemento.getText().toString()));
+        if (spEstado.getSelectedItemPosition() == 0){
+            estabelecimento.setEndereco(new Endereco(
+                    etCidade.getText().toString()
+                    ,etRua.getText().toString()
+                    ,""
+                    ,etComplemento.getText().toString()));
+        }
+        else {
+            estabelecimento.setEndereco(new Endereco(
+                    etCidade.getText().toString()
+                    , etRua.getText().toString()
+                    , spEstado.getSelectedItem().toString()
+                    , etComplemento.getText().toString()));
+        }
         return estabelecimento;
     }
     public void abrirTelaEstabelecimento(){
@@ -215,6 +214,20 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
         SimpleMaskFormatter simpleMaskFormatter = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
         MaskTextWatcher maskTextWatcher = new MaskTextWatcher(etTelefone, simpleMaskFormatter);
         etTelefone.addTextChangedListener(maskTextWatcher);
+    }
+
+    private void setarSpinner(Endereco endereco){
+        String compareValue = endereco.getEstado();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_estado, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spEstado.setAdapter(adapter);
+        if (compareValue != null) {
+            int spinnerPosition = adapter.getPosition(compareValue);
+            spEstado.setSelection(spinnerPosition);
+        }
+        if (compareValue.equals(String.valueOf(""))){
+            spEstado.setSelection(0);
+        }
     }
 
 }

@@ -128,6 +128,10 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
             etPrecoPrato.setError(getString(R.string.sp_excecao_campo_vazio));
             validacao = false;
         }
+        if (etEstimativa.getText().toString().trim().isEmpty()){
+            etEstimativa.setError(getString(R.string.sp_excecao_campo_vazio));
+            validacao = false;
+        }
 
         return validacao;
     }
