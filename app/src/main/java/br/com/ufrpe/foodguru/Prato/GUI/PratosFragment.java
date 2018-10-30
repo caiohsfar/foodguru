@@ -112,8 +112,9 @@ public class PratosFragment extends Fragment{
     private void selecionarTodos(){
         for(PratoView pratoView : pratosViews){
             if (!pratoView.isSelecionado()){
-                updateActionModeTitle();
                 pratoView.setSelecionado(true);
+                updateActionModeTitle();
+                updateIconeEditar();
                 mRecyclerView.getAdapter().notifyDataSetChanged();
             }
         }

@@ -31,16 +31,18 @@
                     android:layout_height="250dp"
                     android:scaleType="centerCrop"
                     />
-                <Button
+                <android.support.design.widget.FloatingActionButton
                     android:id="@+id/btnEditarImagemPrato"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/ic_foto"
-                    android:backgroundTint="@color/Branco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_foto"
+                    android:tint="@color/Branco"
+                    android:background="@drawable/borda_redonda_bt_roxo"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_margin="15dp"/>
             </RelativeLayout>
+
             <EditText
                 android:id="@+id/etEditarNomePrato"
                 android:layout_width="match_parent"
@@ -53,6 +55,8 @@
                 android:drawableTint="@color/RoxoFoodGuru"
                 android:hint="Nome do Prato"
 
+                android:inputType="textCapWords|textAutoComplete"
+
                 android:padding="15sp"
                 android:singleLine="true" />
             <EditText
@@ -60,6 +64,8 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:inputType="textAutoComplete"
 
                 android:drawableLeft="@drawable/ic_descricao"
 
@@ -73,7 +79,7 @@
                 android:layout_width="match_parent"
 
                 android:layout_height="55sp"
-                android:drawableLeft="@drawable/ic_pedidos"
+                android:drawableLeft="@drawable/ic_conta"
                 android:inputType="numberDecimal"
                 android:drawablePadding="15sp"
 
@@ -83,10 +89,30 @@
                 android:padding="15sp"
                 android:singleLine="true" />
 
+            <EditText
+                android:id="@+id/editarEstimativaPrato"
+
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+
+                android:inputType="number"
+                android:hint="Tempo de preparo do prato"
+                android:singleLine="true"
+                android:maxLength="2"
+                android:textColorHint="@color/Cinza"
+
+                android:drawableLeft="@drawable/ic_relogio"
+                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawablePadding="15sp"
+                android:padding="15sp"/>
+
             <Spinner
                 android:id="@+id/spinnerEditarPrato"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="55dp"
+                android:paddingLeft="45dp"
+                android:foreground="@drawable/gradient_spinner"
+                style="@style/Widget.AppCompat.Spinner.Underlined"/>
 
             <Button
                 android:id="@+id/btnConfirmarEditarPrato"
@@ -103,7 +129,6 @@
                 android:background="@drawable/borda_redonda_bt_roxo"
                 android:padding="15sp"
                 android:text="Editar Prato"
-                android:onClick="confirmarEdicaoPrato"
                 android:textColor="@color/Branco" />
 
         </LinearLayout>

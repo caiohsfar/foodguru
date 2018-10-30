@@ -116,8 +116,9 @@ public class MesasFragment extends Fragment{
     private void selecionarTodos(){
         for(MesaView mesaView : mesasViews){
             if (!mesaView.isSelecionado()){
-                updateActionModeTitle();
                 mesaView.setSelecionado(true);
+                updateActionModeTitle();
+                updateIconeEditar();
                 mRecyclerView.getAdapter().notifyDataSetChanged();
             }
         }

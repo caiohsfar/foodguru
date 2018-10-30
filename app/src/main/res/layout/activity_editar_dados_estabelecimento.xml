@@ -50,32 +50,15 @@
 
                 android:inputType="phone"/>
 
-            <RelativeLayout
+            <Spinner
+                android:id="@+id/spEstadoEstabelecimentoed"
                 android:layout_width="match_parent"
-                android:layout_height="55sp">
+                android:layout_height="55dp"
+                android:paddingLeft="45dp"
+                android:foreground="@drawable/gradient_spinner"
+                android:entries="@array/spinner_estado"
+                style="@style/Widget.AppCompat.Spinner.Underlined"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="55sp"
-                    android:drawableLeft="@drawable/ic_endereco"
-                    android:drawableTint="@color/RoxoFoodGuru"
-                    android:paddingLeft="15sp"/>
-                <Spinner
-                    android:id="@+id/spEstadoEstabelecimentoed"
-                    android:layout_width="match_parent"
-                    android:layout_height="47sp"
-                    android:entries="@array/spinner_estado"
-                    android:layout_marginLeft="45sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1sp"
-                    android:background="#7E7E7E"
-                    android:layout_below="@id/spEstadoEstabelecimentoed"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"/>
-            </RelativeLayout>
 
             <EditText
                 android:id="@+id/etCidadeEstabelecimentoed"

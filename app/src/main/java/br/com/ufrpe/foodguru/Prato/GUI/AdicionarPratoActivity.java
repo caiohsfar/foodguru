@@ -35,6 +35,7 @@ import com.kennyc.bottomsheet.BottomSheetListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 import br.com.ufrpe.foodguru.R;
@@ -43,6 +44,7 @@ import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.MoneyTextWatcher;
 
 public class AdicionarPratoActivity extends AppCompatActivity implements View.OnClickListener {
     private StorageReference  storageReference = FirebaseStorage.getInstance().getReference();
@@ -174,6 +176,10 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         etPrecoPrato = findViewById(R.id.etPrecoPrato);
         etEstimativa = findViewById(R.id.etEstimativaPrato);
         etDescricaoPrato = findViewById(R.id.etDescricaoPrato);
+
+        Locale mLocale = new Locale("pt", "BR");
+        etPrecoPrato.addTextChangedListener(new MoneyTextWatcher(etPrecoPrato,mLocale));
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Adicionando...");
     }
@@ -186,7 +192,8 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
         prato.setDescricaoPrato(etDescricaoPrato.getText().toString());
         prato.setUrlImagem(urlImagemAdicionada);
         prato.setIdSessao(idSessao);
-        prato.setPreco(Double.parseDouble(etPrecoPrato.getText().toString()));
+        prato.setPreco(MoneyTextWatcher.convertToBigDecimal(etPrecoPrato.getText().toString()).doubleValue());
+        //prato.setPreco(Double.parseDouble(etPrecoPrato.getText().toString()));
         prato.setEstimativa(Integer.parseInt(etEstimativa.getText().toString()));
         //spinner
         prato.setIdSessao(idSessao);

@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
@@ -55,8 +56,10 @@ public class PratoAdapter extends RecyclerView.Adapter<PratoHolder>{
         String nome = pratos.get(position).getPrato().getNomePrato();
         String descricao = pratos.get(position).getPrato().getDescricaoPrato();
         String urlImagem = pratos.get(position).getPrato().getUrlImagem();
+        String preco = NumberFormat.getCurrencyInstance().format(pratos.get(position).getPrato().getPreco());
         holder.nome.setText(nome);
         holder.descricao.setText(descricao);
+        holder.preco.setText(preco);
         downloadImage(urlImagem,holder);
         holder.nome.setTag(holder);
 

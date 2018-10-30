@@ -697,6 +697,8 @@ color grey_55
 color grey_85
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
+color ic_seta_para_baixo_novalauncher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1114,6 +1116,7 @@ drawable design_snackbar_background
 drawable drawer_shadow
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_spinner
 drawable ic_adicionar
 drawable ic_android
 drawable ic_close
@@ -1143,13 +1146,16 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_nome
 drawable ic_notifications_black_24dp
+drawable ic_nova_seta_baixo
 drawable ic_pedidos
 drawable ic_person_black_24dp
 drawable ic_photo_camera_black_24dp
 drawable ic_photo_library_black_24dp
 drawable ic_prato
+drawable ic_relogio
 drawable ic_sair
 drawable ic_senha
+drawable ic_seta_baixo
 drawable ic_show_menu
 drawable ic_telefone
 drawable ic_teste_sair
@@ -1263,6 +1269,7 @@ id dimensions
 id direct
 id disableHome
 id edit_query
+id editarEstimativaPrato
 id editar_foto
 id editar_foto_adicionar_prato
 id editar_foto_estabelecimento
@@ -1531,6 +1538,7 @@ id tv_nome_item
 id tv_numero_mesa_detalhe
 id tv_observacao
 id tv_preco_item
+id tv_preco_prato
 id tv_quantidade_item
 id tv_recuperar_senha
 id txtNomePrato
@@ -1702,6 +1710,10 @@ menu principal_cliente
 menu principal_est
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_seta_para_baixo
+mipmap ic_seta_para_baixo_mais_nova
+mipmap ic_seta_para_baixo_mais_nova_round
+mipmap ic_seta_para_baixo_nova
 raw zxing_beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description

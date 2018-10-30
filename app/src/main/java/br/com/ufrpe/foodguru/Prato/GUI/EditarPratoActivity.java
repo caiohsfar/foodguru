@@ -36,7 +36,9 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.UUID;
 
 import br.com.ufrpe.foodguru.R;
@@ -45,9 +47,10 @@ import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.MoneyTextWatcher;
 
 public class EditarPratoActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText nomePrato, descricaoPrato, precoPrato;
+    private EditText nomePrato, descricaoPrato, precoPrato, estimativaPrato;
     private StorageReference  storageReference = FirebaseStorage.getInstance().getReference();
     private UUID uidImagemPrato = UUID.randomUUID();
     private static final int CAMERA_REQUEST_CODE = 1;
@@ -79,8 +82,19 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         descricaoPrato.setText(pratoSelecionado.getDescricaoPrato());
         nomePrato = findViewById(R.id.etEditarNomePrato);
         nomePrato.setText(pratoSelecionado.getNomePrato());
+
         precoPrato = findViewById(R.id.etEditarPrecoPrato);
-        precoPrato.setText(pratoSelecionado.getPreco().toString());
+
+        //MASCARA CAMPO NO CAMPO PRECO
+        Locale mLocale = new Locale("pt", "BR");
+        precoPrato.addTextChangedListener(new MoneyTextWatcher(precoPrato,mLocale));
+
+        precoPrato.setText(NumberFormat.getCurrencyInstance().format(pratoSelecionado.getPreco()));
+        //precoPrato.setText(pratoSelecionado.getPreco().toString());
+
+        estimativaPrato = findViewById(R.id.editarEstimativaPrato);
+        estimativaPrato.setText(String.valueOf(pratoSelecionado.getEstimativa()));
+
         imvPrato = findViewById(R.id.ivImagemPratoEditar);
         downloadImage();
     }
@@ -149,12 +163,13 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         return validacao;
     }
 
+    /*
     public void confirmarEdicaoPrato(View view) {
         if (!validarCampos()){
             return;
         }
         editarPrato();
-    }
+    }*/
 
     public void editarPrato(){
         setPratoSelecionado();
@@ -172,6 +187,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         String idSessao = sessoes.get(posicao).getId();
         pratoSelecionado.setNomePrato(nomePrato.getText().toString());
         pratoSelecionado.setDescricaoPrato(descricaoPrato.getText().toString());
+        pratoSelecionado.setPreco(MoneyTextWatcher.convertToBigDecimal(precoPrato.getText().toString()).doubleValue());
         pratoSelecionado.setIdSessao(idSessao);
     }
 
@@ -291,6 +307,10 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
         }
     }
     private void inserirFoto(){
+        if(uriFoto == null){
+            editarPrato();
+            return;
+        }
         iniciarProgressDialog();
         FirebaseStorage.getInstance().getReferenceFromUrl(pratoSelecionado.getUrlImagem()).delete();
         final StorageReference ref = storageReference

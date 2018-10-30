@@ -32,15 +32,16 @@
                     android:layout_height="250dp"
                     android:scaleType="centerCrop"
                     />
-                <Button
+                <android.support.design.widget.FloatingActionButton
                     android:id="@+id/editar_foto_estabelecimento"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/ic_foto"
-                    android:backgroundTint="@color/RoxoFoodGuru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_foto"
+                    android:tint="@color/Branco"
+                    android:background="@color/RoxoFoodGuru"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="15dp"/>
+                    android:layout_margin="15dp" />
             </RelativeLayout>
 
             <LinearLayout
