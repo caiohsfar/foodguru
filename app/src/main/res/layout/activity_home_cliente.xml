@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
@@ -7,12 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".cliente.GUI.HomeClienteActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarHomeCliente"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/LaranjaFoodGuru"
+        android:gravity="center"
+        android:elevation="4dp"
+        android:foregroundTint="@color/Branco"
+        >
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            app:srcCompat="@drawable/ic_food_guru"
+            android:scaleType="centerCrop"/>
+    </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_below="@id/toolbarHomeCliente">
 
         <FrameLayout
             android:id="@+id/frame_cliente"
@@ -33,4 +49,4 @@
     </RelativeLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

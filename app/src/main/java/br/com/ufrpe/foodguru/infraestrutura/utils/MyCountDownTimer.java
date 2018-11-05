@@ -24,14 +24,13 @@ public class MyCountDownTimer extends CountDownTimer {
     @Override
     public void onTick(long millisUntilFinished) {
         timeInFuture = millisUntilFinished;
-        cronometro.setText(getCorrectTimer(true,millisUntilFinished) + "minuto(s)");
+        cronometro.setText("Faltam " + getCorrectTimer(true,millisUntilFinished) + " minuto(s) para chegar.");
     }
 
     @Override
     public void onFinish() {
         timeInFuture -= 1000;
-        cronometro.setText("00:00");
-        Toast.makeText(context,"Finish",Toast.LENGTH_LONG).show();
+        cronometro.setText("Seu pedido já está chegando!");
     }
 
     private String getCorrectTimer(boolean isMinute, long millisUntilFinished){

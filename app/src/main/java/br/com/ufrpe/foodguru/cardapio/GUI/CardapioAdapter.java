@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.R;
@@ -44,8 +45,10 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
         String nome = pratos.get(position).getNomePrato();
         String descricao = pratos.get(position).getDescricaoPrato();
         String urlImagem = pratos.get(position).getUrlImagem();
+        String preco = NumberFormat.getCurrencyInstance().format(pratos.get(position).getPreco());
         holder.nome.setText(nome);
         holder.descricao.setText(descricao);
+        holder.preco.setText(preco);
         downloadImage(urlImagem,holder);
         holder.nome.setTag(holder);
 

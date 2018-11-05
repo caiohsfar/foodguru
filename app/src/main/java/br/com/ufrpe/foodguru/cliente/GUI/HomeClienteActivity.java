@@ -1,5 +1,8 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +12,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -30,11 +34,16 @@ public class HomeClienteActivity extends AppCompatActivity {
     private FrameLayout mFrameCliente;
     private EscanearQrCodeFragment escanearQrCodeFragment;
     private MeusDadosClienteFragment meusDadosClienteFragment;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_cliente);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbarHomeCliente);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_cliente);
@@ -76,6 +85,12 @@ public class HomeClienteActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.principal_cliente, menu);
+
+        MenuItem pratoItem = menu.findItem(R.id.configuracoes_cliente);
+        Drawable newIconPrato = (Drawable)pratoItem.getIcon();
+        newIconPrato.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        pratoItem.setIcon(newIconPrato);
+
         return true;
     }
 
@@ -91,7 +106,6 @@ public class HomeClienteActivity extends AppCompatActivity {
             telaEditarDadosCliente();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -119,7 +133,7 @@ public class HomeClienteActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mAuth.signOut();
-                Helper.criarToast(HomeClienteActivity.this,"Até mais");
+                Helper.criarToast(HomeClienteActivity.this,"Até mais.");
                 exibirTelaLogin();
             }
         });

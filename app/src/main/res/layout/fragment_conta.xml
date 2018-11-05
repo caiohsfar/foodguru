@@ -52,7 +52,7 @@
 
                     android:layout_margin="15dp"
 
-                    android:background="@color/RoxoFoodGuru"
+                    android:background="@drawable/borda_redonda_bt_roxo"
                     android:text="PEDIR CONTA"
                     android:textColor="@color/Branco" />
             </LinearLayout>

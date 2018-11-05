@@ -1,5 +1,8 @@
 package br.com.ufrpe.foodguru.estabelecimento.GUI;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +12,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -35,11 +39,18 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
     private MesasFragment mesasFragment;
     private PedidosFragment pedidosFragment;
     private MeusDadosEstabelecimentoFragment administracaoFragment;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_estabelecimento);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbarHomeEstabelecimento);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
 
         mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.nav_estabelecimento);
@@ -66,10 +77,6 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
                         setFragment(mesasFragment);
                         return true;
 
-                    case R.id.nav_pedidos:
-                        setFragment(pedidosFragment);
-                        return true;
-
                     case R.id.nav_meus_dados_est:
                         setFragment(administracaoFragment);
                         return true;
@@ -79,6 +86,8 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     private void setFragment(Fragment fragment) {
@@ -96,6 +105,27 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.principal_est, menu);
+
+        MenuItem pratoItem = menu.findItem(R.id.menu_action_bar_adicionar_prato);
+        Drawable newIconPrato = (Drawable)pratoItem.getIcon();
+        newIconPrato.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        pratoItem.setIcon(newIconPrato);
+
+        MenuItem mesaItem = menu.findItem(R.id.menu_action_bar_adicionar_mesa);
+        Drawable newIconMesa = (Drawable)mesaItem.getIcon();
+        newIconMesa.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        mesaItem.setIcon(newIconMesa);
+
+        MenuItem sessaoItem = menu.findItem(R.id.gerenciar_sessoes);
+        Drawable newIconSessao = (Drawable)sessaoItem.getIcon();
+        newIconSessao.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        sessaoItem.setIcon(newIconSessao);
+
+        MenuItem configuracoesItem = menu.findItem(R.id.configuracoes_est);
+        Drawable newIconConfiguracoes = (Drawable)configuracoesItem.getIcon();
+        newIconConfiguracoes.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        configuracoesItem.setIcon(newIconConfiguracoes);
+
         return true;
     }
 

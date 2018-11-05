@@ -21,6 +21,8 @@
         android:titleCondensed="Todos"
         android:id="@+id/selecionar_todos"
         android:title="Todos"
+        android:icon="@drawable/ic_todos"
+        android:iconTint="@color/Branco"
         android:orderInCategory="100"
         app:showAsAction="always"/>
 

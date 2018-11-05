@@ -36,17 +36,17 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".cliente.GUI.HomeClienteActivity"
             android:icon="@drawable/ic_teste_sair"
-            android:label="Home" />
+            android:label="Home"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
-            android:label="Home" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".cliente.GUI.EditarDadosClienteActivity"
             android:label="Edição de dados" />
@@ -71,7 +71,6 @@
         <activity
             android:name=".Prato.GUI.EditarSessaoActvity"
             android:label="Editar sessão" />
-        =======
         <activity
             android:name=".Prato.GUI.AdicionarPratoActivity"
             android:label="Adicionar prato" />
@@ -81,11 +80,18 @@
         <activity
             android:name=".Prato.GUI.EditarPratoActivity"
             android:label="Editar prato" />
-        <activity android:name=".cliente.GUI.OperacaoActivity" />
-        <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
-        <activity android:name=".estabelecimento.GUI.PedidosMesaActivity" />
-        <activity android:name=".estabelecimento.GUI.ContaMesaActivity" />
-        <activity android:name=".cliente.GUI.CronometroActivity"></activity>
+        <activity
+            android:name=".cliente.GUI.OperacaoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
+        <activity
+            android:name=".estabelecimento.GUI.PedidosMesaActivity" />
+        <activity
+            android:name=".estabelecimento.GUI.ContaMesaActivity" />
+        <activity
+            android:name=".cliente.GUI.CronometroActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -35,11 +36,16 @@ public class OperacaoActivity extends AppCompatActivity {
     private FrameLayout mFrameOperacao;
     private CardapioFragment cardapioFragment;
     private ContaFragment contaFragment;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operacao);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbarOperacao);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_operacao);
 
@@ -55,10 +61,6 @@ public class OperacaoActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_cardapio:
                         setFragment(cardapioFragment);
-                        return true;
-
-                    case R.id.nav_carrinho:
-                        //setFragment(contaFragment);
                         return true;
 
                     case R.id.nav_conta:

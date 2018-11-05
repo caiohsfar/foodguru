@@ -5,12 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:layout_marginBottom="4dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    card_view:cardCornerRadius="8dp"
-    card_view:cardElevation="8dp">
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +26,9 @@
             android:layout_marginLeft="10dp"
 
             android:text="Nome do prato"
-            android:textColor="@color/RoxoFoodGuru"
+            android:textColor="@color/LaranjaFoodGuru"
+            android:textStyle="bold"
+            android:textAllCaps="true"
             android:textSize="20dp" />
 
         <LinearLayout
@@ -36,9 +37,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_below="@id/txtNomePrato"
-            android:layout_marginLeft="10dp"
-
-            >
+            android:layout_marginLeft="10dp">
 
             <TextView
                 android:id="@+id/txtQuantidade"
@@ -46,7 +45,7 @@
                 android:layout_height="wrap_content"
 
                 android:text="Quantidade: 50"
-                android:textColor="@color/Cinza"
+                android:textColor="@color/RoxoFoodGuru"
                 android:textSize="15dp" />
 
             <TextView
@@ -58,10 +57,8 @@
                 android:layout_marginLeft="5dp"
 
                 android:text="Mesa: 35"
-                android:textColor="@color/Cinza"
                 android:textSize="15dp" />
         </LinearLayout>
-
 
         <ImageView
             android:id="@+id/menu_item"
@@ -84,18 +81,20 @@
 
             android:layout_below="@+id/ll_pedidos"
             android:layout_marginTop="5dp"
-            android:background="@color/RoxoFoodGuru"/>
+            android:background="@color/CinzaClaro"/>
 
         <TextView
             android:id="@+id/tv_observacao"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
 
+            android:minLines="2"
+            android:maxLines="2"
             android:text="Sem verduras, por favor"
-            android:textColor="@color/Cinza"
             android:layout_below="@id/view_pedido" />
 
     </RelativeLayout>

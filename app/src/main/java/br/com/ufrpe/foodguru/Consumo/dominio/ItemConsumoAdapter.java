@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,11 +55,12 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
     @Override
     public void onBindViewHolder(@NonNull final ItemConsumoHolder holder, final int position) {
         String nome = itemConsumoList.get(position).getPrato().getNomePrato();
-        String preco = String.valueOf(itemConsumoList.get(position).getPrato().getPreco());
+        //String preco = String.valueOf(itemConsumoList.get(position).getPrato().getPreco());
+        String preco = NumberFormat.getCurrencyInstance().format(itemConsumoList.get(position).getPrato().getPreco());
         String quantidade = String.valueOf(itemConsumoList.get(position).getQuantidade());
         holder.quantidade.setText("Quantidade: " + quantidade);
         holder.nome.setText(nome);
-        holder.preco.setText("Preço: "+ preco);
+        holder.preco.setText(preco);
 
         if (onClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
