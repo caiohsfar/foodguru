@@ -19,16 +19,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Endereco;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
 import br.com.ufrpe.foodguru.estabelecimento.negocio.EstabelecimentoServices;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
-import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
 import br.com.ufrpe.foodguru.usuario.negocio.UsuarioServices;
 
 public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -218,7 +214,7 @@ public class EditarDadosEstabelecimentoActivity extends AppCompatActivity implem
 
     private void setarSpinner(Endereco endereco){
         String compareValue = endereco.getEstado();
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_estado, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_estado, R.layout.spinner_edit_estado);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spEstado.setAdapter(adapter);
         if (compareValue != null) {

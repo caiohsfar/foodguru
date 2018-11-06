@@ -19,16 +19,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity;
-import br.com.ufrpe.foodguru.Prato.GUI.PratoAdapter;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
-import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.R;
@@ -170,7 +166,7 @@ public class CardapioFragment extends Fragment{
                 });
     }
     private void setupSpinner() {
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(), android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(), R.layout.spinner_edit_sessao,arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
     }

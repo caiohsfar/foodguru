@@ -11,4 +11,6 @@
     <color name="CinzaClaro">#D6D6D6</color>
     <color name="Cinza">#606060</color>
     <color name="Transparente">#15ffffff</color>
+    <color name="Azul">#4682B4</color>
+    <color name="Vermelho">#B22222</color>
 </resources>

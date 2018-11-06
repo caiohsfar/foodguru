@@ -1,13 +1,13 @@
 package br.com.ufrpe.foodguru.Prato.GUI;
 
 
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ActionMode;
@@ -28,12 +28,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ufrpe.foodguru.Consumo.gui.PedidoAdapter;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
 import br.com.ufrpe.foodguru.Prato.dominio.PratoHolder;
 import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_PRATO;
@@ -222,7 +224,8 @@ public class PratosFragment extends Fragment{
     }
 
     private void setupSpinner() {
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(),android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(),R.layout.spinner_edit_sessao,arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
     }
@@ -333,12 +336,15 @@ public class PratosFragment extends Fragment{
 
     public void iniciarRecyclerView(){
         mRecyclerView = (RecyclerView) viewInflado.findViewById(R.id.recyclerv_view_pratos);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(viewInflado.getContext()
-                , LinearLayoutManager.VERTICAL, false);
-        mRecyclerView.setHasFixedSize(true);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext()
+                , 1);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(viewInflado.getContext(), LinearLayoutManager.VERTICAL, false);
+        //mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         adapter = new PratoAdapter(getContext(),pratosViews, onClickPrato());
         mRecyclerView.setAdapter(adapter);
+
+
     }
 
     public void abrirTelaEditarPrato(){

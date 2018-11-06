@@ -22,9 +22,8 @@
                 android:layout_height="55sp"
                 android:singleLine="true"
                 android:hint="Nome da sessão"
-                android:textColorHint="@color/Cinza"
-                android:textColor="@color/Cinza"
-                android:drawableLeft="@drawable/ic_email"
+
+                android:drawableLeft="@drawable/ic_sessao_action"
                 android:drawableTint="@color/EscuroFoodGuru"
 
                 android:inputType="text"

@@ -81,13 +81,13 @@ public class MesaAdapter extends RecyclerView.Adapter<MesaHolder> {
 
         if (mesa.getStatus() == StatusMesaEnum.PENDENTE.getTipo()){
             holder.teste.setText(R.string.mesa_pendente);
-            holder.numero.setBackgroundColor(Color.RED);
+            holder.numero.setBackgroundResource(R.color.Vermelho);
         }else if (mesa.getStatus() == StatusMesaEnum.VAZIA.getTipo()){
             holder.teste.setText(R.string.mesa_disponivel);
-            holder.numero.setBackgroundColor(Color.GREEN);
+            holder.numero.setBackgroundResource(R.color.VerdeFoodGuru);
         }else{
             holder.teste.setText(R.string.mesa_ocupada);
-            holder.numero.setBackgroundColor(Color.BLUE);
+            holder.numero.setBackgroundResource(R.color.Azul);
         }
     }
 

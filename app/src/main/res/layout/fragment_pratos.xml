@@ -7,7 +7,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-
     <Spinner
         android:id="@+id/spinnerSessao"
         android:layout_width="match_parent"
@@ -16,11 +15,16 @@
         android:foreground="@drawable/gradient_spinner"
         style="@style/Widget.AppCompat.Spinner.Underlined"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerv_view_pratos"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        tools:listitem="@layout/prato_list_item" />
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerv_view_pratos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            tools:listitem="@layout/prato_list_item" />
+    </RelativeLayout>
+
 
 </FrameLayout>

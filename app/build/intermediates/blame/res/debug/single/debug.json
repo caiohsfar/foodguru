@@ -4,12 +4,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\ae8d2bc2727429a64f171b7dcf70a4d2\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_tipo_cliente.xml.flat",
         "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\src\\main\\res\\drawable\\ic_tipo_cliente.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\ae8d2bc2727429a64f171b7dcf70a4d2\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -20,12 +20,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_focused.xml.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87f439b6ac878e6ea416e3e425d01865\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_conf.png.flat",
         "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_conf.png"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_focused.xml.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87f439b6ac878e6ea416e3e425d01865\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_adicionar_prato.xml.flat",
@@ -40,12 +40,12 @@
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -1400,6 +1400,10 @@
         "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\src\\main\\res\\drawable-mdpi\\ic_sessao_action.png"
     },
     {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinner_edit_estado.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\src\\main\\res\\layout\\spinner_edit_estado.xml"
+    },
+    {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -2562,6 +2566,10 @@
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "C:\\Users\\ibyte\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c898b619321835af9abbb4af642eff2\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinner_edit_sessao.xml.flat",
+        "source": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\src\\main\\res\\layout\\spinner_edit_sessao.xml"
     },
     {
         "merged": "C:\\Users\\ibyte\\Documents\\PROJETOS\\FOODGURU\\FOODGURUNOVO\\FOODGURUNOVO\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
