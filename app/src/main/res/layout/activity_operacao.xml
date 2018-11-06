@@ -10,16 +10,11 @@
         android:id="@+id/toolbarOperacao"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/LaranjaFoodGuru"
+        android:background="@color/VerdeFoodGuru"
         android:gravity="center"
-        android:elevation="4dp"
-        android:foregroundTint="@color/Branco"
+        app:logo="@drawable/ic_food_guru_logo_toolbar"
+        app:logoDescription="Food Guru - O seu garçom Digital!"
         >
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="56dp"
-            app:srcCompat="@drawable/ic_food_guru"
-            android:scaleType="centerCrop"/>
     </android.support.v7.widget.Toolbar>
 
     <RelativeLayout

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/LaranjaFoodGuru"
+    android:background="@color/VerdeFoodGuru"
     tools:context=".usuario.GUI.LoginActivity">
     <ScrollView
         android:layout_width="match_parent"
@@ -17,12 +17,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical">
-            <Button
-                android:layout_width="209dp"
-                android:layout_height="209dp"
-                android:background="@drawable/ic_food_guru"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"/>
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                app:srcCompat="@drawable/ic_food_guru_new_logo"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/edtLoginEmail"
@@ -67,9 +67,9 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/borda_redonda_bt_roxo"
+                android:background="@drawable/borda_redonda_bt_branco"
                 android:text="ENTRAR"
-                android:textColor="@color/Branco"
+                android:textColor="@color/EscuroFoodGuru"
                 android:layout_margin="20dp"
                 android:id="@+id/btLogin"/>
 

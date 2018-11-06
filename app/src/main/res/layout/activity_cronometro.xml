@@ -12,7 +12,7 @@
         android:id="@+id/toolbarCronometro"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/LaranjaFoodGuru"
+        android:background="@color/VerdeFoodGuru"
         android:gravity="center"
         android:elevation="4dp"
         android:foregroundTint="@color/Branco"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NOME DO PRATO"
-            android:textColor="@color/LaranjaFoodGuru"
+            android:textColor="@color/VerdeFoodGuru"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textSize="20dp"/>
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Tem 5 pedidos na frente do seu"
             android:textSize="18dp"
-            android:textColor="@color/RoxoFoodGuru"/>
+            android:textColor="@color/EscuroFoodGuru"/>
     </LinearLayout>
 
 

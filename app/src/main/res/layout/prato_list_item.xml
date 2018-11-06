@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="@string/title_activity_nome_prato"
             android:textAllCaps="true"
-            android:textColor="@color/LaranjaFoodGuru"
+            android:textColor="@color/VerdeFoodGuru"
             android:textStyle="bold"
             android:gravity="center_vertical"
             android:textSize="20dp" />
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="R$0,00"
             android:textSize="18dp"
-            android:textColor="@color/RoxoFoodGuru"
+            android:textColor="@color/EscuroFoodGuru"
             android:singleLine="true"/>
     </LinearLayout>
 </RelativeLayout>

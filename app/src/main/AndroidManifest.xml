@@ -10,7 +10,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_food_guru"
+        android:roundIcon="@mipmap/ic_novo_food_guru_new"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

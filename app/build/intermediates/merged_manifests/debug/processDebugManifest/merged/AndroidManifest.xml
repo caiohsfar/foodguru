@@ -51,8 +51,9 @@
         android:debuggable="true"
         android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_food_guru"
+        android:roundIcon="@mipmap/ic_novo_food_guru_new"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="br.com.ufrpe.foodguru.usuario.GUI.LoginActivity"

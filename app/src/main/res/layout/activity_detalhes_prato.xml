@@ -16,7 +16,7 @@
             android:id="@+id/ivDetalhesImagemPrato"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@color/RoxoFoodGuru"
+            android:background="@color/EscuroFoodGuru"
             android:scaleType="centerCrop"
             />
     </RelativeLayout>
@@ -32,7 +32,7 @@
 
         android:drawablePadding="15sp"
 
-        android:drawableTint="@color/RoxoFoodGuru"
+        android:drawableTint="@color/EscuroFoodGuru"
         android:hint="Nome do Prato"
 
         android:padding="15sp"
@@ -48,7 +48,7 @@
         android:drawableLeft="@drawable/ic_descricao"
 
         android:drawablePadding="15sp"
-        android:drawableTint="@color/RoxoFoodGuru"
+        android:drawableTint="@color/EscuroFoodGuru"
         android:hint="Descrição do Prato"
 
         android:padding="15sp" />

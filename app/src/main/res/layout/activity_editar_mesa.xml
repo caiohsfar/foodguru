@@ -17,7 +17,7 @@
 
             android:drawablePadding="15sp"
 
-            android:drawableTint="@color/LaranjaFoodGuru"
+            android:drawableTint="@color/VerdeFoodGuru"
             android:hint="Número da mesa"
             android:inputType="number"
 
@@ -32,7 +32,7 @@
             android:layout_height="1sp"
             android:layout_marginLeft="15sp"
             android:layout_marginRight="15sp"
-            android:background="@color/LaranjaFoodGuru" />
+            android:background="@color/VerdeFoodGuru" />
 
 
         <TextView
@@ -45,7 +45,7 @@
             android:drawableLeft="@drawable/ic_codigo"
 
             android:drawablePadding="15sp"
-            android:drawableTint="@color/LaranjaFoodGuru"
+            android:drawableTint="@color/VerdeFoodGuru"
             android:padding="15sp"
             android:singleLine="true"
 
@@ -57,7 +57,7 @@
             android:layout_height="1sp"
             android:layout_marginLeft="15sp"
             android:layout_marginRight="15sp"
-            android:background="@color/LaranjaFoodGuru" />
+            android:background="@color/VerdeFoodGuru" />
 
         <Button
             android:id="@+id/bt_confirmar_edicao_mesa"
@@ -71,7 +71,7 @@
 
             android:layout_marginBottom="20sp"
 
-            android:background="@color/RoxoFoodGuru"
+            android:background="@color/EscuroFoodGuru"
             android:padding="15sp"
             android:text="Editar Mesa"
             android:onClick="confirmarEdicao"

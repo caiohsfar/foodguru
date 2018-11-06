@@ -26,7 +26,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_nome"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
@@ -43,7 +43,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_telefone"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"
@@ -72,7 +72,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_endereco"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
@@ -89,7 +89,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_endereco"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
@@ -106,7 +106,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_endereco"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
@@ -124,7 +124,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_email"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
@@ -142,7 +142,7 @@
                 android:textColor="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_senha"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"

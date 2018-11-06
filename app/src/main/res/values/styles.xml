@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionModeBackground">@color/RoxoFoodGuru</item>
+        <item name="actionModeBackground">@color/EscuroFoodGuru</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -15,7 +15,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionModeBackground">@color/LaranjaFoodGuru</item>
+        <item name="actionModeBackground">@color/VerdeFoodGuru</item>
         <item name="windowActionModeOverlay">true</item>
     </style>
 

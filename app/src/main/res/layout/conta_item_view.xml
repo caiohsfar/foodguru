@@ -23,7 +23,7 @@
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
-            android:textColor="@color/LaranjaFoodGuru"
+            android:textColor="@color/VerdeFoodGuru"
             android:textSize="20dp" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_below="@id/tv_quantidade_item"
             android:layout_marginLeft="15dp"
             android:paddingBottom="5dp"
-            android:textColor="@color/RoxoFoodGuru"
+            android:textColor="@color/EscuroFoodGuru"
             android:textSize="18dp"
             android:gravity="right"/>
 

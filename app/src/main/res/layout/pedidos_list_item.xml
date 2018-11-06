@@ -26,7 +26,7 @@
             android:layout_marginLeft="10dp"
 
             android:text="Nome do prato"
-            android:textColor="@color/LaranjaFoodGuru"
+            android:textColor="@color/VerdeFoodGuru"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textSize="20dp" />
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
 
                 android:text="Quantidade: 50"
-                android:textColor="@color/RoxoFoodGuru"
+                android:textColor="@color/EscuroFoodGuru"
                 android:textSize="15dp" />
 
             <TextView
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
 
             android:background="@drawable/ic_entregue"
-            android:backgroundTint="@color/RoxoFoodGuru"
+            android:backgroundTint="@color/EscuroFoodGuru"
             android:scaleType="centerCrop"
 
             android:layout_alignParentTop="true"
