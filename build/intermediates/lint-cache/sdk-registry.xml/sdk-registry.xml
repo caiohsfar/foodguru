@@ -29,12 +29,12 @@
     <versions from="9.3.1" status="recommended" version-literal="!SDK-VERSION-STRING!:com.urbanairship.android:urbanairship-adm:9.3.1" />
   </library>
   <library  groupId="com.tune" artifactId="tune-marketing-console-sdk" recommended-version="5.3.0" >
-    <versions from="5.3.0" version-literal="com.tune.BuildConfig.5.3.0" description="Bug affecting SDK horaPedido quality" />
+    <versions from="5.3.0" version-literal="com.tune.BuildConfig.5.3.0" description="Bug affecting SDK data quality" />
     <versions from="5.2.1" version-literal="com.tune.BuildConfig.5.2.1" />
     <versions from="5.2.0" version-literal="com.tune.BuildConfig.5.2.0" />
     <versions from="5.1.1" status="deprecated" version-literal="com.tune.BuildConfig.5.1.1" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
-    <versions from="5.0.0" to="5.0.2" status="deprecated" version-literal="com.tune.BuildConfig.5.0.0" description="Bug affecting SDK horaPedido quality" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
-    <versions from="4.15.2" to="4.16.0" status="deprecated" version-literal="com.tune.BuildConfig.4.15.2" description="Bug affecting SDK horaPedido quality" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
+    <versions from="5.0.0" to="5.0.2" status="deprecated" version-literal="com.tune.BuildConfig.5.0.0" description="Bug affecting SDK data quality" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
+    <versions from="4.15.2" to="4.16.0" status="deprecated" version-literal="com.tune.BuildConfig.4.15.2" description="Bug affecting SDK data quality" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
     <versions from="4.15.1" version-literal="com.tune.BuildConfig.4.15.1" description="Bug affecting SDK performance" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
     <versions from="4.15.0" version-literal="com.tune.BuildConfig.4.15.0" description="Bug affecting SDK performance" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />
     <versions from="4.14.0" version-literal="com.tune.BuildConfig.4.14.0" description="Bug affecting SDK performance" url="https://developers.tune.com/sdk/migrating-to-android-4-8-0-and-above/" />

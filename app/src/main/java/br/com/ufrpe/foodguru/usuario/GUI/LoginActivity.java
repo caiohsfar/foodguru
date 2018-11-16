@@ -21,8 +21,10 @@ import com.google.firebase.database.ValueEventListener;
 import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
+import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigPagSeguroActivity;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
@@ -83,14 +85,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
     private void verificarTipoConta(FirebaseUser cUser){
-        firebaseReference.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
-                .child(cUser.getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
+        final DatabaseReference databaseReference = firebaseReference.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(cUser.getUid());
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()){
-                            abrirTelaEstabelecimento();
-                            finish();
+                            Estabelecimento estabelecimento = dataSnapshot.getValue(Estabelecimento.class);
+                            if (estabelecimento.getPagSeguroAuthCode().equals("ND")){
+                                abrirTelaPagSeguro();
+                            }else{
+                                abrirTelaEstabelecimento();
+                                finish();
+                            }
                         }else{
                             abrirTelaCliente();
                             finish();
@@ -102,6 +109,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
     }
+
+    private void abrirTelaPagSeguro() {
+        Intent intent = new Intent(LoginActivity.this, ConfigPagSeguroActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private boolean validarCampos(){
         boolean validacao = true;
 

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.ufrpe.foodguru">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -11,7 +12,6 @@
         android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_novo_food_guru_new"
-
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -37,6 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -44,10 +45,10 @@
             android:name=".cliente.GUI.HomeClienteActivity"
             android:icon="@drawable/ic_teste_sair"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".cliente.GUI.EditarDadosClienteActivity"
             android:label="Edição de dados" />
@@ -83,16 +84,24 @@
             android:label="Editar prato" />
         <activity
             android:name=".cliente.GUI.OperacaoActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
-        <activity
-            android:name=".estabelecimento.GUI.PedidosMesaActivity" />
-        <activity
-            android:name=".estabelecimento.GUI.ContaMesaActivity" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
+        <activity android:name=".estabelecimento.GUI.PedidosMesaActivity" />
+        <activity android:name=".estabelecimento.GUI.ContaMesaActivity" />
         <activity
             android:name=".cliente.GUI.CronometroActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".cliente.GUI.PagSeguroCheckoutActivity" />
+        <activity android:name=".estabelecimento.GUI.ConfigPagSeguroActivity">
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".estabelecimento.GUI.PagRequestActivity"></activity>
     </application>
 
 </manifest>

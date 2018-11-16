@@ -45,7 +45,12 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
         String nome = pratos.get(position).getNomePrato();
         String descricao = pratos.get(position).getDescricaoPrato();
         String urlImagem = pratos.get(position).getUrlImagem();
-        String preco = NumberFormat.getCurrencyInstance().format(pratos.get(position).getPreco());
+        String preco = "R" + getPrecoFormatado(position);
+        /**
+         * Se aparecer dois "R" antes do preco, tem que usar a função de baixo
+         * String preco = getPrecoFormatado(position).contains("R") ? getPrecoFormatado(position) : "R" + getPrecoFormatado(position);
+         *
+         **/
         holder.nome.setText(nome);
         holder.descricao.setText(descricao);
         holder.preco.setText(preco);
@@ -61,6 +66,12 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
             });
         }
 
+
+    }
+    public String getPrecoFormatado(int position){
+        return NumberFormat.getCurrencyInstance()
+                .format(pratos.get(position).getPreco())
+                .replace(".",",");
 
     }
 

@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.estabelecimento.dominio;
 
 public class Estabelecimento {
     private String telefone;
+    private String pagSeguroAuthCode = "ND";
     private Endereco endereco;
 
     public Endereco getEndereco() {
@@ -19,4 +20,9 @@ public class Estabelecimento {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public String getPagSeguroAuthCode() {
+        return pagSeguroAuthCode;
+    }
+
 }

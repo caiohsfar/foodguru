@@ -56,7 +56,12 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
     public void onBindViewHolder(@NonNull final ItemConsumoHolder holder, final int position) {
         String nome = itemConsumoList.get(position).getPrato().getNomePrato();
         //String preco = String.valueOf(itemConsumoList.get(position).getPrato().getPreco());
-        String preco = NumberFormat.getCurrencyInstance().format(itemConsumoList.get(position).getPrato().getPreco());
+        String preco = "R" + getPrecoFormatado(position);
+        /**
+         * Se aparecer dois "R" antes do preco, tem que usar a função de baixo
+         * String preco = getPrecoFormatado(position).contains("R") ? getPrecoFormatado(position) : "R" + getPrecoFormatado(position);
+         *
+         **/
         String quantidade = String.valueOf(itemConsumoList.get(position).getQuantidade());
         holder.quantidade.setText("Quantidade: " + quantidade);
         holder.nome.setText(nome);
@@ -72,6 +77,12 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
             });
         }
     }
+    public String getPrecoFormatado(int position){
+        return NumberFormat.getCurrencyInstance()
+                .format(itemConsumoList.get(position).getValor())
+                .replace(".",",");
+    }
+
 
     @Override
     public int getItemCount() {

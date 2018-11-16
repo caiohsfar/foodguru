@@ -1,4 +1,5 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,9 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -30,8 +30,15 @@ import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
+import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
+import br.com.ufrpe.foodguru.pagseguro.PagSeguroCheckout;
+import br.com.ufrpe.foodguru.pagseguro.PagSeguroFactory;
+import br.com.ufrpe.foodguru.pagseguro.PagSeguroItem;
+import br.com.ufrpe.foodguru.pagseguro.PagSeguroPayment;
+import br.com.ufrpe.foodguru.pagseguro.util.PagSeguroUtil;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseReference;
@@ -47,6 +54,10 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     private Consumo consumoAtual = SessaoConsumo.getInstance().getConsumo();
     private MesaServices mesaServices = new MesaServices();
     private Mesa mesa;
+    private Context mContext;
+    private String checkoutAuthCode;
+    private final int PAG_SEGURO_OPTION = 1;
+    private final int SPINNER_DEFAULT_OPTION = 0;
 
     public ContaFragment() {
         // Required empty public constructor
@@ -54,7 +65,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
 
     @Override
     public void onResume() {
-        setStatusOcupada();
         super.onResume();
     }
 
@@ -66,10 +76,9 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
         inflatedLayout.findViewById(R.id.btn_finalizar_conta).setOnClickListener(this);
         formaPagamento = inflatedLayout.findViewById(R.id.sp_tipo_pagamento);
-
-
-
+        mContext = inflatedLayout.getContext();
         iniciarRecyclerView();
+        getCheckoutAuthCode();
         return inflatedLayout;
     }
 
@@ -100,40 +109,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList, onClickListener());
         mRecyclerView.setAdapter(adapter);
     }
-
-    /*
-    public void bubbleSort(LinkedList<ItemConsumo> v) {
-        for (int i = v.size(); i >= 1; i--) {
-            for (int j = 1; j < i; j++) {
-                Long horaLong = getHoraLong(v.get(j-1).getHoraPedido());
-                Long hora2 = getHoraLong(v.get(j).getHoraPedido());
-
-                if (horaLong > hora2) {
-                    ItemConsumo aux = v.get(j);
-                    v.get(j) = v.get(j-1);
-                    v[j - 1] = aux;
-                }
-            }
-        }
-    }
-    */
-    public static long getHoraLong(String horaInicial) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-            Calendar cal = Calendar.getInstance();
-            Calendar calFinal = Calendar.getInstance();
-            cal.setTime(sdf.parse(horaInicial));
-            long diferenca = calFinal.getTimeInMillis();
-            return diferenca;
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
-
-
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -149,8 +124,12 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             exibirConfirmacaoSair();
             return;
         }
-        if (formaPagamento.getSelectedItemPosition() == 0){
+        if (formaPagamento.getSelectedItemPosition() == SPINNER_DEFAULT_OPTION){
             Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
+            return;
+        }else if (formaPagamento.getSelectedItemPosition() == PAG_SEGURO_OPTION){
+            //Deixar o codigo de altorização setado para quando ele resolva fechar a conta com pag seguro;
+            iniciarPagSeguro();
             return;
         }
         idConsumoAtualNull();
@@ -162,7 +141,8 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
 
 
     public void addSingleValueEventStatus(){
-        final DatabaseReference database = getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(consumoAtual.getMesa().getUidEstabelecimento())
+        final DatabaseReference database = getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO)
+                .child(consumoAtual.getMesa().getUidEstabelecimento())
                 .child("Mesas").child(consumoAtual.getMesa().getCodigoMesa())
                 .child("status");
         database.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -218,19 +198,29 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         MesaServices mesaServices = new MesaServices();
         mesaServices.mudarIdConsumoAtual(mesa, "ND");
     }
-
-    public static void setStatusOcupada(){
-        Mesa mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
-        final DatabaseReference database = getFirebaseReference().child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
-                .child("Mesas").child(mesa.getCodigoMesa())
-                .child("status");
-
-        database.addListenerForSingleValueEvent(new ValueEventListener() {
+    public void iniciarPagSeguro(){
+        final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
+        List<PagSeguroItem> shoppingCart = itemConsListToPagSegList(consumoAtual.getListaItens());
+        //shoppingCart.add(pagseguro.item("123", "PlayStation", BigDecimal.valueOf(3.50), 1, 300));
+        //PagSeguroPhone buyerPhone = pagseguro.phone(PagSeguroAreaCode.DDD81, "998187427");
+        //PagSeguroBuyer buyer = pagseguro.buyer("Ricardo Ferreira", "14/02/1978", "15061112000", "test@email.com.br", buyerPhone);
+        //PagSeguroAddress buyerAddress = pagseguro.address("Av. Boa Viagem", "51", "Apt201", "Boa Viagem", "51030330", "Recife", PagSeguroBrazilianStates.PERNAMBUCO);
+        //PagSeguroShipping buyerShippingOption = pagseguro.shipping(PagSeguroShippingType.PAC, buyerAddress);
+        PagSeguroCheckout checkout = pagseguro.checkout("Ref0001", shoppingCart);
+        // starting payment process
+        PagSeguroPayment payment= new PagSeguroPayment(getActivity());
+        payment.pay(checkout.buildCheckoutXml(), checkoutAuthCode);
+    }
+    private void getCheckoutAuthCode(){
+        final DatabaseReference databaseReference = FirebaseHelper.getFirebaseReference().child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(SessaoConsumo.getInstance().getConsumo().getMesa().getUidEstabelecimento());
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int status = dataSnapshot.getValue(Integer.class);
-                if(status != StatusMesaEnum.PENDENTE.getTipo()){
-                    database.setValue(StatusMesaEnum.OCUPADA.getTipo());
+                if (dataSnapshot.exists()){
+                    Estabelecimento estabelecimento = dataSnapshot.getValue(Estabelecimento.class);
+                    Log.d("PAG", "ESTABELECIMENTO" + estabelecimento.getEndereco().getCidade() + ", " + estabelecimento.getPagSeguroAuthCode());
+                    checkoutAuthCode = estabelecimento.getPagSeguroAuthCode();
                 }
             }
 
@@ -241,7 +231,65 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         });
     }
 
+    public List<PagSeguroItem> itemConsListToPagSegList(List<ItemConsumo> itemConsumoList){
+        List<PagSeguroItem> pagSegList = new ArrayList<>();
+        for (ItemConsumo itemConsumo : itemConsumoList){
+            PagSeguroItem pagItem =
+                    new PagSeguroItem(itemConsumo.getId()
+                            ,itemConsumo.getPrato().getNomePrato()
+                            ,BigDecimal.valueOf(itemConsumo.getPrato().getPreco())
+                            ,itemConsumo.getQuantidade());
 
+            pagSegList.add(pagItem);
+        }
+        return pagSegList;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == getActivity().RESULT_CANCELED) {
+            // se foi uma tentativa de pagamento
+            if(requestCode==PagSeguroPayment.PAG_SEGURO_REQUEST_CODE){
+                // exibir confirmação de cancelamento
+                final String msg = getString(R.string.transaction_cancelled);
+                PagSeguroUtil.showConfirmDialog(mContext, msg, null);
+            }
+        } else if (resultCode == getActivity().RESULT_OK) {
+            // se foi uma tentativa de pagamento
+            if(requestCode==PagSeguroPayment.PAG_SEGURO_REQUEST_CODE){
+                // exibir confirmação de sucesso
+                final String msg = getString(R.string.transaction_succeded);
+                PagSeguroUtil.showConfirmDialog(this.mContext, msg, null);
+            }
+        }
+        else if(resultCode == PagSeguroPayment.PAG_SEGURO_REQUEST_CODE){
+            switch (data.getIntExtra(PagSeguroPayment.PAG_SEGURO_EXTRA, 0)){
+                case PagSeguroPayment.PAG_SEGURO_REQUEST_SUCCESS_CODE:{
+                    final String msg =getString(R.string.transaction_succeded);
+                    PagSeguroUtil.showConfirmDialog(this.mContext,msg,null);
+                    zerarSessao();
+                    break;
+                }
+                case PagSeguroPayment.PAG_SEGURO_REQUEST_FAILURE_CODE:{
+                    final String msg = getString(R.string.transaction_error);
+                    PagSeguroUtil.showConfirmDialog(this.mContext,msg,null);
+                    break;
+                }
+                case PagSeguroPayment.PAG_SEGURO_REQUEST_CANCELLED_CODE:{
+                    final String msg = getString(R.string.transaction_cancelled);
+                    PagSeguroUtil.showConfirmDialog(this.mContext,msg,null);
+                    break;
+                }
+            }
+        }
+    }
+    public void zerarSessao(){
+        idConsumoAtualNull();
+        SessaoConsumo.getInstance().reset();
+        Helper.criarToast(inflatedLayout.getContext(),"Transação concluída com sucesso. Conta finalizada.");
+        exibirTelaHomeCliente();
+    }
 
 }
+
 

@@ -1248,6 +1248,8 @@ id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
 id btn_escanear
 id btn_finalizar_conta
+id btn_pag_seg
+id button
 id buttonContainer
 id buttonPanel
 id cancel_action
@@ -1263,6 +1265,7 @@ id clip_vertical
 id collapseActionView
 id configuracoes_cliente
 id configuracoes_est
+id conta_lay
 id container
 id content
 id contentPanel
@@ -1430,6 +1433,8 @@ id notification_main_column_container
 id numero
 id outline
 id packed
+id pagRequestView
+id pagSeguroView
 id parallax
 id parent
 id parentPanel
@@ -1446,7 +1451,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerViewPedidos
-id recycler_view_card·pio
+id recycler_view_card√°pio
 id recycler_view_conta
 id recycler_view_pedido_mesa
 id recycler_view_pedidos
@@ -1649,6 +1654,9 @@ layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
 layout activity_operacao
+layout activity_pag_request
+layout activity_pag_seguro
+layout activity_pag_teste
 layout activity_pedidos
 layout activity_pedidos_mesa
 layout activity_recuperar_senha
@@ -1774,6 +1782,7 @@ string alerta_campo_vazio
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string cancel_pagseguro
 string character_counter_content_description
 string character_counter_pattern
 string common_google_play_services_enable_button
@@ -1807,7 +1816,11 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
+string hello_world
 string hide_bottom_view_on_scroll_behavior
+string loading_1
+string loading_2
+string loading_3
 string mesa_disponivel
 string mesa_lv
 string mesa_ocupada
@@ -1820,6 +1833,16 @@ string nav_header_subtitle_email
 string nav_header_title
 string navigation_drawer_close
 string navigation_drawer_open
+string pagseguro
+string pagseguro_app_id
+string pagseguro_app_key
+string pagseguro_autorization_page
+string pagseguro_payment_page
+string pagseguro_vendor_email
+string pagseguro_vendor_token
+string pagseguro_webservice_auth_request_address
+string pagseguro_webservice_checkout_address
+string pagseguro_webservice_request_address
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1846,6 +1869,7 @@ string title_activity_mesas
 string title_activity_meus_dados_cliente
 string title_activity_meus_dados_estabelecimento
 string title_activity_nome_prato
+string title_activity_pag_seguro
 string title_activity_pedidos
 string title_activity_perfil_cliente
 string title_activity_perfil_estabelecimento
@@ -1857,11 +1881,15 @@ string title_notifications
 string title_section1
 string title_section2
 string title_section3
+string transaction_cancelled
+string transaction_error
+string transaction_succeded
 string tv_adicionar_codigo
 string tv_cadastre_se
 string tv_cliente
 string tv_estabelecimento
 string tv_informativo_tipo_cadastro
+string waiting_for_answer
 string zxing_app_name
 string zxing_button_ok
 string zxing_msg_camera_framework_bug

@@ -85,7 +85,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                         abrirTelaCardapio(mesa);
                         break;
                     }
-                }else{
+                } else{
                     Helper.criarToast(getContext(), "Este código não pertence a uma mesa.");
                 }
             }

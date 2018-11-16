@@ -49,5 +49,16 @@ public class EstabelecimentoDAO {
         }
         return sucess;
     }
+    public boolean addPagAuthCode(String authCode){
+        boolean sucess = true;
+        try {
+            database.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                    .child(FirebaseHelper.getFirebaseAuth().getCurrentUser().getUid())
+                    .child("pagSeguroAuthCode").setValue(authCode);
+        }catch(DatabaseException e){
+            sucess = false;
+        }
+        return sucess;
+    }
 
 }

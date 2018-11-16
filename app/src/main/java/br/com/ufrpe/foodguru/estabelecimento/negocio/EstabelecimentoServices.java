@@ -16,4 +16,9 @@ public class EstabelecimentoServices {
     public boolean editarEndereco(Endereco endereco){
         return estDAO.updateEndereco(endereco);
     }
+    public boolean addPagAuthCode(String authCode){
+        return estDAO.addPagAuthCode(authCode);
+    }
+
+
 }

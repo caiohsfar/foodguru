@@ -94,6 +94,9 @@ public class MesaDAO {
                     .child(REFERENCIA_MESA)
                     .child(mesa.getCodigoMesa())
                     .child("idConsumoAtual").setValue(idConsumoAtual);
+            database.child(FirebaseHelper.REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
+                    .child("idConsumoAtual").setValue(idConsumoAtual);
         }catch(DatabaseException e){
             sucess = false;
         }
