@@ -1,8 +1,10 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,12 +21,14 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 
+import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
 import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
 
 public class HomeClienteActivity extends AppCompatActivity {
@@ -109,9 +113,25 @@ public class HomeClienteActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     public void onBackPressed() {
-        exibirConfirmacaoSair();
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Helper.criarToast(this, "Pressione VOLTAR denovo para sair");
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+        //exibirConfirmacaoSair();
     }
 
     public void telaEditarDadosCliente() {
@@ -133,6 +153,8 @@ public class HomeClienteActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mAuth.signOut();
+                SharedPreferences preferences = SPUtil.getSharedPreferences(HomeClienteActivity.this);
+                SPUtil.putString(preferences,getString(R.string.acc_type_key), "");
                 Helper.criarToast(HomeClienteActivity.this,"Até mais.");
                 exibirTelaLogin();
             }
@@ -148,11 +170,6 @@ public class HomeClienteActivity extends AppCompatActivity {
     public void exibirTelaLogin(){
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-
-    public void exibirTelaLerQrCode(){
-        Intent intent = new Intent(this, HomeClienteActivity.class);
         startActivity(intent);
     }
 }

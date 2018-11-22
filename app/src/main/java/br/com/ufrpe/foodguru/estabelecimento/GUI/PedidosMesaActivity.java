@@ -1,6 +1,5 @@
 package br.com.ufrpe.foodguru.estabelecimento.GUI;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -12,7 +11,6 @@ import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
@@ -26,7 +24,6 @@ import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
-import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.*;

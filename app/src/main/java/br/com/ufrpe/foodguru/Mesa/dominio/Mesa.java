@@ -6,8 +6,6 @@ import android.os.Parcelable;
 
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
-import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.VAZIA;
-
 @SuppressLint("ParcelCreator")
 public class Mesa implements Parcelable {
     private String numeroMesa;

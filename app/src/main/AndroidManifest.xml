@@ -3,11 +3,14 @@
     package="br.com.ufrpe.foodguru">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".infraestrutura.utils.FoodGuru"
         android:allowBackup="true"
         android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
@@ -91,8 +94,8 @@
         <activity
             android:name=".cliente.GUI.CronometroActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".cliente.GUI.PagSeguroCheckoutActivity" />
-        <activity android:name=".estabelecimento.GUI.ConfigPagSeguroActivity">
+        <activity android:name=".cliente.GUI.PSCheckoutActivity" />
+        <activity android:name=".estabelecimento.GUI.ConfigSeuPGActivity">
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -101,7 +104,7 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".estabelecimento.GUI.PagRequestActivity"></activity>
+        <activity android:name=".estabelecimento.GUI.RequestPGAuthActivity"></activity>
     </application>
 
 </manifest>

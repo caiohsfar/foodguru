@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.cliente.GUI;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -16,6 +17,7 @@ import android.widget.FrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
+import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
@@ -69,7 +71,6 @@ public class OperacaoActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
     }
-
     @Override
     public void onBackPressed() {
         if (!SessaoConsumo.getInstance().getConsumo().getListaItens().isEmpty()){
@@ -100,9 +101,14 @@ public class OperacaoActivity extends AppCompatActivity {
         msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                idConsumoAtualNull();
                 exibirTelaHomeCliente();
             }
         });
+    }
+    private void idConsumoAtualNull() {
+        MesaServices mesaServices = new MesaServices();
+        mesaServices.mudarIdConsumoAtual(SessaoConsumo.getInstance().getConsumo().getMesa(), "ND");
     }
 
     public void setBtnNegativoSair(AlertDialog.Builder msgBox){

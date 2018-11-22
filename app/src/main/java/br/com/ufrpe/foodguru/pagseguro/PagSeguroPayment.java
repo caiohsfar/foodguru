@@ -22,7 +22,7 @@ import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.cliente.GUI.PagSeguroCheckoutActivity;
+import br.com.ufrpe.foodguru.cliente.GUI.PSCheckoutActivity;
 
 /**
  * Use this class to pay over pagseguro<br/>
@@ -107,7 +107,7 @@ public class PagSeguroPayment {
                     final String paymentAddress = activity.getString(R.string.pagseguro_payment_page);
                     final String paymentPage = String.format(paymentAddress, checkoutCode);
 
-                    final Intent pagseguro = new Intent(activity, PagSeguroCheckoutActivity.class);
+                    final Intent pagseguro = new Intent(activity, PSCheckoutActivity.class);
                     pagseguro.putExtra("uri", paymentPage);
                     activity.startActivityForResult(pagseguro, PAG_SEGURO_REQUEST_CODE);
                     progressDialog.hide();

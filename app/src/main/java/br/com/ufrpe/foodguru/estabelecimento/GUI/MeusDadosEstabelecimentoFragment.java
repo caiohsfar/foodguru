@@ -146,14 +146,13 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
                             case R.id.escolher_foto:
                                 if (Helper.verificarPermissoesLeitura(getContext(),getActivity())){
                                     escolherFoto();
-                                    break;
                                 }
                                 break;
                             case R.id.tirar_foto:
                                 if (Helper.verificarPermissaoAcessarCamera(getContext(),getActivity())){
                                     tirarFoto();
-                                    break;
                                 }
+                                break;
                             default:
                                 break;
                         }

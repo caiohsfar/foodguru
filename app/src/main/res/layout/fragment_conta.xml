@@ -55,14 +55,6 @@
                     android:background="@drawable/borda_redonda_bt_roxo"
                     android:text="PEDIR CONTA"
                     android:textColor="@color/Branco" />
-
-                <Button
-                    android:id="@+id/btn_pag_seg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="Pay with PagSeguro" />
             </LinearLayout>
         </ScrollView>
 

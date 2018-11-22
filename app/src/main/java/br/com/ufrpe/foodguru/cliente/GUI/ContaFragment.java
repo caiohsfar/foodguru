@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 
+import com.blankj.utilcode.util.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -128,6 +129,10 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             Helper.criarToast(inflatedLayout.getContext(), "Informe uma forma de pagamento.");
             return;
         }else if (formaPagamento.getSelectedItemPosition() == PAG_SEGURO_OPTION){
+            if (!NetworkUtils.isConnected()){
+                Helper.criarToast(getActivity(), "Sem conexão com a internet");
+                return;
+            }
             //Deixar o codigo de altorização setado para quando ele resolva fechar a conta com pag seguro;
             iniciarPagSeguro();
             return;
@@ -208,7 +213,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         //PagSeguroShipping buyerShippingOption = pagseguro.shipping(PagSeguroShippingType.PAC, buyerAddress);
         PagSeguroCheckout checkout = pagseguro.checkout("Ref0001", shoppingCart);
         // starting payment process
-        PagSeguroPayment payment= new PagSeguroPayment(getActivity());
+        PagSeguroPayment payment = new PagSeguroPayment(getActivity());
         payment.pay(checkout.buildCheckoutXml(), checkoutAuthCode);
     }
     private void getCheckoutAuthCode(){

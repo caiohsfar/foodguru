@@ -109,10 +109,12 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
                                 if (Helper.verificarPermissoesLeitura(getContext(),getActivity())){
                                     escolherFoto();
                                 }
+                                break;
                             case R.id.tirar_foto:
                                 if (Helper.verificarPermissaoAcessarCamera(getContext(),getActivity())){
                                     tirarFoto();
                                 }
+                                break;
                             default:
                                 break;
                         }
@@ -148,7 +150,6 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
                             @Override
                             public void onSuccess() {
                                 finalProgressBar.setVisibility(View.GONE);
-
                             }
 
                             @Override
@@ -180,19 +181,22 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     tirarFoto();
                 }
+                break;
             }
             case GALERY_REQUEST_CODE:{
                 if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     escolherFoto();
                 }
+                break;
             }
             default:
+                super.onRequestPermissionsResult(requestCode,permissions,grantResults);
                 break;
         }
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        //super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case GALERY_REQUEST_CODE:
                 Uri uriFoto;
@@ -222,6 +226,7 @@ public class MeusDadosClienteFragment extends Fragment implements View.OnClickLi
                 }
                 break;
                 default:
+                    super.onActivityResult(requestCode, resultCode, data);
                     break;
         }
     }

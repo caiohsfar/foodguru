@@ -57,5 +57,6 @@ dependencies {
     implementation 'commons-lang:commons-lang:2.6'
     //implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
     api 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
+    implementation 'com.blankj:utilcode:1.22.0'
 }
 apply plugin: 'com.google.gms.google-services'

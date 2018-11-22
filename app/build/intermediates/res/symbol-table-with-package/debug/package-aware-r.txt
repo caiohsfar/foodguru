@@ -1248,7 +1248,6 @@ id btn_confirmar_cadastro_cliente
 id btn_enviar_email_recuperar
 id btn_escanear
 id btn_finalizar_conta
-id btn_pag_seg
 id button
 id buttonContainer
 id buttonPanel
@@ -1776,6 +1775,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string acc_type_key
 string action_example
 string action_settings
 string alerta_campo_vazio
@@ -1894,6 +1894,7 @@ string zxing_app_name
 string zxing_button_ok
 string zxing_msg_camera_framework_bug
 string zxing_msg_default_status
+style ActivityTranslucent
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2503,3 +2504,4 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable zxing_camera_preview zxing_framing_rect_height zxing_framing_rect_width zxing_preview_scaling_strategy zxing_use_texture_view
 styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_viewfinder_laser zxing_viewfinder_mask
 styleable zxing_view zxing_scanner_layout
+xml util_code_provider_paths

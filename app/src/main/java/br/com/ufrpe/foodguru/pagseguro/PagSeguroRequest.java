@@ -25,7 +25,7 @@ import java.io.UnsupportedEncodingException;
 
 
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.estabelecimento.GUI.PagRequestActivity;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.RequestPGAuthActivity;
 
 /**
  * código para acessar a api de requisição do pag seguro
@@ -169,7 +169,7 @@ public class PagSeguroRequest {
                     final String autorizationAdress = activity.getString(R.string.pagseguro_autorization_page);
                     final String autorizationPage = String.format(autorizationAdress, requestCode);
 
-                    final Intent pagseguro = new Intent(activity, PagRequestActivity.class);
+                    final Intent pagseguro = new Intent(activity, RequestPGAuthActivity.class);
                     pagseguro.putExtra("uri", autorizationPage);
                     pagseguro.putExtra("reference", reference);
                     activity.startActivityForResult(pagseguro, PAG_SEGURO_REQUEST_CODE);

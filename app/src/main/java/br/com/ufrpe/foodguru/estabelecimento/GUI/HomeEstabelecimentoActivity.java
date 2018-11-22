@@ -1,8 +1,10 @@
 package br.com.ufrpe.foodguru.estabelecimento.GUI;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,6 +30,7 @@ import br.com.ufrpe.foodguru.Prato.GUI.SessaoActvity;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
 import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
 
 public class HomeEstabelecimentoActivity extends AppCompatActivity {
@@ -96,9 +99,22 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     public void onBackPressed() {
-        exibirConfirmacaoSair();
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Helper.criarToast (this, "Pressione VOLTAR denovo para sair");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+        //exibirConfirmacaoSair();
     }
 
     //menu da action bar (sair)
@@ -192,6 +208,9 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mAuth.signOut();
+                SharedPreferences preferences = SPUtil.getSharedPreferences(HomeEstabelecimentoActivity.this);
+                //ZERANDO
+                SPUtil.putString(preferences,getString(R.string.acc_type_key), "");
                 Helper.criarToast(HomeEstabelecimentoActivity.this,"Até mais");
                 exibirTelaLogin();
                 finish();
