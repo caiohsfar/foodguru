@@ -4,23 +4,6 @@
             "outputFile": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml",
             "map": [
                 {
-                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/res/values-da/values-da.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,114,161,307",
-                        "endColumns": "58,46,145,109",
-                        "endOffsets": "109,156,302,412"
-                    },
-                    "to": {
-                        "startLines": "49,50,51,52",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "5636,5695,5742,5888",
-                        "endColumns": "58,46,145,109",
-                        "endOffsets": "5690,5737,5883,5993"
-                    }
-                },
-                {
                     "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/5d87e81eabdab8cdb03b6c3e9ade142a/res/values-da/values.xml",
                     "from": {
                         "startLines": "4",
@@ -86,6 +69,23 @@
                         "startOffsets": "5535",
                         "endColumns": "100",
                         "endOffsets": "5631"
+                    }
+                },
+                {
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/res/values-da/values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,307",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "109,156,302,412"
+                    },
+                    "to": {
+                        "startLines": "49,50,51,52",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5636,5695,5742,5888",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "5690,5737,5883,5993"
                     }
                 }
             ]

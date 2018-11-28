@@ -72,5 +72,7 @@
     <string name="loading_3">Carregando...</string>
 
     <string name="acc_type_key">acc_type</string>
+    <string name="consumo_atual">consumo_atual</string>
+
 
 </resources>

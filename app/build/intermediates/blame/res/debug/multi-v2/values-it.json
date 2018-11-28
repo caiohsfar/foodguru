@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.2.0.aar/39f4f95f818d2f5238d7f696aa89d339/res/values-it/values-it.xml",
+                    "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/res/values-it/values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

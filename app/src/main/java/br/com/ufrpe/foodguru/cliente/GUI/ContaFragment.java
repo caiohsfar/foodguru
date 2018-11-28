@@ -74,7 +74,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
                              Bundle savedInstanceState) {
         inflatedLayout = inflater.inflate(R.layout.fragment_conta, container, false);
         // Inflate the layout for this fragment
-        mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
+        mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
         inflatedLayout.findViewById(R.id.btn_finalizar_conta).setOnClickListener(this);
         formaPagamento = inflatedLayout.findViewById(R.id.sp_tipo_pagamento);
         mContext = inflatedLayout.getContext();

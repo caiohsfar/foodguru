@@ -59,7 +59,7 @@ public class CardapioFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         viewInflado = inflater.inflate(R.layout.fragment_cardapio, container, false);
-        mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
+        mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
         sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessaoCardapio);
 
         loadArraySessoes();

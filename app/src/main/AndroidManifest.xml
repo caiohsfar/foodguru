@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.ufrpe.foodguru">
+    package="br.com.ufrpe.foodguru"
+    xmlns:tools="http://schemas.android.com/tools">
+
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,6 +19,11 @@
         android:roundIcon="@mipmap/ic_novo_food_guru_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name=".infraestrutura.utils.ContaService"></service>
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
         <activity
             android:name=".usuario.GUI.LoginActivity"
             android:exported="true"

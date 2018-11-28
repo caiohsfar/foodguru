@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.infraestrutura.utils.ContaService;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
@@ -35,6 +36,8 @@ public class OperacaoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operacao);
+        Intent serviceIntent = new Intent(this, ContaService.class);
+        startService(serviceIntent);
 
         toolbar = (Toolbar)findViewById(R.id.toolbarOperacao);
         setSupportActionBar(toolbar);

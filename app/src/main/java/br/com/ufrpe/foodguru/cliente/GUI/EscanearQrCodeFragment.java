@@ -1,9 +1,11 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.view.ViewGroup;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
@@ -102,17 +106,20 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
     }
 
     public void escanearCodigo(){
-        Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-        startActivityForResult(intent, BARCODE_REQUEST);
+        IntentIntegrator.forSupportFragment(EscanearQrCodeFragment.this)
+                .setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+                .setBeepEnabled(false)
+                .setOrientationLocked(false)
+                .initiateScan();
     }
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == BARCODE_REQUEST && resultCode == getActivity().RESULT_OK){
-            String codigo = data.getStringExtra("SCAN_RESULT");
-            validarCodigo(codigo);
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        IntentResult resultData = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (resultData != null && resultCode == Activity.RESULT_OK) {
+            validarCodigo(resultData.getContents());
         }else{
             Helper.criarToast(getContext(), "Cancelado");
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 

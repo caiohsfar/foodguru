@@ -5,8 +5,16 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.google.gson.Gson;
+
+import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
+import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.R;
+import br.com.ufrpe.foodguru.cliente.GUI.CardapioFragment;
 import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
+import br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
@@ -47,9 +55,27 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void abrirTelaCliente(){
+        String json = preferences.getString(getString(R.string.consumo_atual), null);
+        Log.d("CONSUMO", "jsonAbrirTelaCliente:" + json);
+        if (json != null){
+            SessaoConsumo.getInstance().setConsumo(jsonToConsumo(json));
+            abrirTelaCardapio();
+            return;
+        }
         Intent intentAbrirTelaCliente = new Intent(SplashActivity.this, HomeClienteActivity.class);
         startActivity(intentAbrirTelaCliente);
         finish();
+    }
+
+    public Consumo jsonToConsumo(String json){
+        Gson gson = new Gson();
+        return gson.fromJson(json, Consumo.class);
+    }
+    private void abrirTelaCardapio(){
+        Intent abrirTelaCardapio = new Intent(SplashActivity.this, OperacaoActivity.class);
+        startActivity(abrirTelaCardapio);
+        finish();
+
     }
 
     private void abrirTelaEstabelecimento() {
