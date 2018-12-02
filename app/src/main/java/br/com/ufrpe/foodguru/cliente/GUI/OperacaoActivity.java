@@ -104,15 +104,17 @@ public class OperacaoActivity extends AppCompatActivity {
         msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                idConsumoAtualNull();
+                //idConsumoAtualNull();
                 exibirTelaHomeCliente();
             }
         });
     }
+    /*
     private void idConsumoAtualNull() {
         MesaServices mesaServices = new MesaServices();
         mesaServices.mudarIdConsumoAtual(SessaoConsumo.getInstance().getConsumo().getMesa(), "ND");
     }
+    */
 
     public void setBtnNegativoSair(AlertDialog.Builder msgBox){
         msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {

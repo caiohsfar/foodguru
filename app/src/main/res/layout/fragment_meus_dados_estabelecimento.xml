@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".estabelecimento.GUI.MeusDadosEstabelecimentoFragment">
-
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
@@ -30,8 +29,9 @@
                     android:id="@+id/iv_Estabelecimento"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:scaleType="centerCrop"
-                    />
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:scaleType="centerCrop" />
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/editar_foto_estabelecimento"
                     android:layout_width="wrap_content"
@@ -119,13 +119,12 @@
 
                     android:drawablePadding="15sp"
                     android:padding="15sp"
-
                     android:focusable="false"
-                    android:cursorVisible="false"
-
-                    />
+                    android:cursorVisible="false" />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
-</FrameLayout>
+
+</RelativeLayout>

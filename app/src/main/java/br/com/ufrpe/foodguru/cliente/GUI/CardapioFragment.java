@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -40,6 +42,7 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.g
  * A simple {@link Fragment} subclass.
  */
 public class CardapioFragment extends Fragment{
+
     private CardapioAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
@@ -48,6 +51,7 @@ public class CardapioFragment extends Fragment{
     private List<SessaoCardapio> arraySessoes;
     private Mesa mesa;
     private View viewInflado;
+    private ProgressBar progressBar;
 
 
     public CardapioFragment() {
@@ -59,9 +63,9 @@ public class CardapioFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         viewInflado = inflater.inflate(R.layout.fragment_cardapio, container, false);
+        progressBar = viewInflado.findViewById(R.id.progress_bar_cardapio);
         mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
         sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessaoCardapio);
-
         loadArraySessoes();
         iniciarRecyclerView();
         setCliqueAdapterSessoes();
@@ -69,7 +73,6 @@ public class CardapioFragment extends Fragment{
 
        return viewInflado;
     }
-
     public void setCliqueAdapterSessoes(){
         AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
             @Override
@@ -125,6 +128,7 @@ public class CardapioFragment extends Fragment{
                 .child(REFERENCIA_PRATO).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                progressBar.setVisibility(View.VISIBLE);
                 pratosViews = pratoServices.loadPratos(dataSnapshot);
                 adapter = new CardapioAdapter(getContext(), pratosViews, new CardapioAdapter.OnItemClicked() {
                     @Override
@@ -133,6 +137,7 @@ public class CardapioFragment extends Fragment{
                     }
                 });
                 mRecyclerView.setAdapter(adapter);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override

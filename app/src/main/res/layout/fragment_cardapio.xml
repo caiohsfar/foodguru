@@ -15,7 +15,6 @@
             android:layout_height="55dp"
             android:paddingLeft="45dp"
             android:foreground="@drawable/gradient_spinner"
-            android:entries="@array/spinner_estado"
             style="@style/Widget.AppCompat.Spinner.Underlined"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_cardápio"
@@ -23,6 +22,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"
             tools:listitem="@layout/prato_list_item" />
+        <ProgressBar
+            android:id="@+id/progress_bar_cardapio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@color/VerdeFoodGuru"/>
     </RelativeLayout>
 
 </FrameLayout>

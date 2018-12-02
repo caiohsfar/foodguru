@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.cliente.GUI;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -34,6 +35,7 @@ import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 import br.com.ufrpe.foodguru.pagseguro.PagSeguroCheckout;
 import br.com.ufrpe.foodguru.pagseguro.PagSeguroFactory;
@@ -137,8 +139,9 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
             iniciarPagSeguro();
             return;
         }
-        idConsumoAtualNull();
+        //idConsumoAtualNull();
         SessaoConsumo.getInstance().reset();
+        //se a conta estiver vazia ou tiver sido finalizada, o consumo atual será setado como nulo.. sem itens na conta.
         Helper.criarToast(inflatedLayout.getContext(),"Conta finalizada.");
         exibirTelaHomeCliente();
     }
@@ -177,7 +180,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                idConsumoAtualNull();
+                //idConsumoAtualNull();
                 SessaoConsumo.getInstance().reset();
                 exibirTelaHomeCliente();
             }
@@ -194,15 +197,19 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
 
     public void exibirTelaHomeCliente(){
         addSingleValueEventStatus();
+        SharedPreferences sharedPreferences = SPUtil.getSharedPreferences(inflatedLayout.getContext());
+        SPUtil.putString(sharedPreferences, getString(R.string.consumo_atual), null);
         Intent intent = new Intent(getContext(), HomeClienteActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
+    /*
     private void idConsumoAtualNull() {
         MesaServices mesaServices = new MesaServices();
         mesaServices.mudarIdConsumoAtual(mesa, "ND");
     }
+    */
     public void iniciarPagSeguro(){
         final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
         List<PagSeguroItem> shoppingCart = itemConsListToPagSegList(consumoAtual.getListaItens());
@@ -289,7 +296,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         }
     }
     public void zerarSessao(){
-        idConsumoAtualNull();
+        //idConsumoAtualNull();
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Transação concluída com sucesso. Conta finalizada.");
         exibirTelaHomeCliente();

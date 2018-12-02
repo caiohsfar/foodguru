@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -52,6 +53,20 @@ public class PratosFragment extends Fragment{
     private View viewInflado;
     private Spinner sessao;
     private List<SessaoCardapio> arraySessoes;
+    private ProgressBar progressBar;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
+        progressBar = viewInflado.findViewById(R.id.progress_bar_pratos);
+        sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
+        loadArraySessoes();
+        iniciarRecyclerView();
+        setCliqueAdapterSessoes();
+
+        return viewInflado;
+    }
 
     private  ActionMode.Callback getActionModeCallback(){
         return new ActionMode.Callback() {
@@ -126,17 +141,6 @@ public class PratosFragment extends Fragment{
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
-        sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
-        loadArraySessoes();
-        iniciarRecyclerView();
-        setCliqueAdapterSessoes();
-
-        return viewInflado;
-    }
     public void setCliqueAdapterSessoes(){
         AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
             @Override
@@ -190,9 +194,11 @@ public class PratosFragment extends Fragment{
                 .child(REFERENCIA_PRATO).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                progressBar.setVisibility(View.VISIBLE);
                 pratosViews = pratoToPratoView((ArrayList<Prato>)pratoServices.loadPratos(dataSnapshot));
                 adapter = new PratoAdapter(getContext(),pratosViews,onClickPrato());
                 mRecyclerView.setAdapter(adapter);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override

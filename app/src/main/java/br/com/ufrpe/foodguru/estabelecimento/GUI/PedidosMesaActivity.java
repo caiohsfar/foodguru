@@ -44,6 +44,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
         mesa = getIntent().getExtras().getParcelable("MESA_PEDIDOS");
         iniciarRecyclerView();
         loadPedidos();
+        /*
         fabContaMesa = findViewById(R.id.fab_conta_mesa);
         fabContaMesa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +52,10 @@ public class PedidosMesaActivity extends AppCompatActivity {
                 abrirTelaContaMesa();
             }
         });
+        */
     }
 
-
+    /*
     private void abrirTelaContaMesa() {
         if (mesa.getIdConsumoAtual().equals("ND")){
             Helper.criarToast(this, "Mesa vazia");
@@ -63,6 +65,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
         intent.putExtra("ID_CONSUMO", mesa.getIdConsumoAtual());
         startActivity(intent);
     }
+    */
 
     public void loadPedidos(){
         getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO).orderByChild("mesa/codigoMesa")

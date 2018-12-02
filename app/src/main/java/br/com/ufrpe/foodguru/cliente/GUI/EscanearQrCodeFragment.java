@@ -63,10 +63,12 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                 if (dataSnapshot.exists()){
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Mesa mesa = ds.getValue(Mesa.class);
+                        /*
                         if (!mesa.getIdConsumoAtual().equals("ND")){
                             Helper.criarToast(inflatedLayout.getContext(), "Esta mesa está ocupada.");
                             break;
                         }
+                        */
                         mesa.setStatus(OCUPADA.getTipo());
                         mesaServices.mudarStatus(mesa,OCUPADA.getTipo());
 
@@ -78,7 +80,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                         consumo.setId(getIdConsumo(consumo));
                         SessaoConsumo.getInstance().setConsumo(consumo);
                         //adiciona o id consumo ao IdConsumoAtual
-                        mesaServices.mudarIdConsumoAtual(mesa, consumo.getId());
+                        //mesaServices.mudarIdConsumoAtual(mesa, consumo.getId());
 
                         abrirTelaCardapio(mesa);
                         break;

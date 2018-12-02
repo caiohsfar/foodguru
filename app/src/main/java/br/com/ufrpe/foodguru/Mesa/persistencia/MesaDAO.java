@@ -83,7 +83,7 @@ public class MesaDAO {
         }
         return sucess;
     }
-
+    /*
     public boolean mudarIdConsumoAtual(Mesa mesa, String idConsumoAtual){
         boolean sucess = true;
         try {
@@ -102,5 +102,6 @@ public class MesaDAO {
         }
         return sucess;
     }
+    */
 
 }

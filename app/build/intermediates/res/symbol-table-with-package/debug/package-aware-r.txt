@@ -1442,9 +1442,11 @@ id percent
 id pin
 id positive
 id progress_bar
+id progress_bar_cardapio
 id progress_bar_detalhe_prato_cliente
 id progress_bar_editar_prato
 id progress_bar_est
+id progress_bar_pratos
 id progress_bar_recycler_prato
 id progress_circular
 id progress_horizontal

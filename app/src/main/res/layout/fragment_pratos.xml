@@ -25,6 +25,13 @@
             android:layout_marginTop="50dp"
             tools:listitem="@layout/prato_list_item" />
     </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progress_bar_pratos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:progressDrawable="@color/VerdeFoodGuru" />
 
 
 </FrameLayout>

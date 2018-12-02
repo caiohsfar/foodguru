@@ -1,7 +1,6 @@
 package br.com.ufrpe.foodguru.estabelecimento.GUI;
 
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,9 +11,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -23,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -63,14 +59,15 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final int GALERY_REQUEST_CODE = 71;
     private ProgressDialog progressDialog;
-    private ProgressBar finalProgressBar;
+    private ProgressBar finalProgressBarImagem;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewInflado = inflater.inflate(R.layout.fragment_meus_dados_estabelecimento, container, false);
-        finalProgressBar = viewInflado.findViewById(R.id.progress_bar_est);
+        finalProgressBarImagem = viewInflado.findViewById(R.id.progress_bar_est);
+        findViews();
         recuperarDados();
         setClicks();
         Helper.verificarPermissaoEscrever(getContext(),getActivity());
@@ -100,7 +97,6 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
     }
 
     private void setInformacoesPerfil(FirebaseUser usuario, Endereco endereco, String telefone) {
-        findViews();
         tvNome.setText(usuario.getDisplayName());
         tvTelefone.setText(telefone);
         tvEmail.setText(usuario.getEmail());
@@ -180,13 +176,13 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
         imvFoto = viewInflado.findViewById(R.id.iv_Estabelecimento);
         if (currentUser != null) {
             if (currentUser.getPhotoUrl() != null) {
-                finalProgressBar.setVisibility(View.VISIBLE);
+                finalProgressBarImagem.setVisibility(View.VISIBLE);
                 Picasso.get()
                         .load(currentUser.getPhotoUrl())
                         .into(imvFoto, new Callback() {
                             @Override
                             public void onSuccess() {
-                                finalProgressBar.setVisibility(View.GONE);
+                                finalProgressBarImagem.setVisibility(View.GONE);
 
                             }
 
@@ -196,7 +192,7 @@ public class MeusDadosEstabelecimentoFragment extends Fragment implements View.O
                             }
                         });
             }else{
-                finalProgressBar.setVisibility(View.GONE);
+                finalProgressBarImagem.setVisibility(View.GONE);
             }
         }
     }
