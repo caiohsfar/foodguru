@@ -9,38 +9,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
-import br.com.ufrpe.foodguru.Mesa.GUI.MesaAdapter;
-import br.com.ufrpe.foodguru.Mesa.GUI.MesaHolder;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
-import br.com.ufrpe.foodguru.infraestrutura.utils.MyCountDownTimer;
 
 public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.ItemConsumoHolder> {
     private List<ItemConsumo> itemConsumoList;
     private Context context;
-    private ItemConsumoAdapter.ItemConsumoOnClickListener onClickListener = null;
-
-    public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList, ItemConsumoOnClickListener onClickListener) {
-        this.context = context;
-        this.itemConsumoList = itemConsumoList;
-        this.onClickListener = onClickListener;
-    }
 
     public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList) {
         this.context = context;
         this.itemConsumoList = itemConsumoList;
 
     }
-
-    public interface ItemConsumoOnClickListener {
-        void onClickCronometro(ItemConsumoHolder itemConsumoHolder, int indexPedido);
-    }
-
     @NonNull
     @Override
     public ItemConsumoHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
@@ -66,16 +47,6 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
         holder.quantidade.setText("Quantidade: " + quantidade);
         holder.nome.setText(nome);
         holder.preco.setText(preco);
-
-        if (onClickListener != null) {
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onClickListener.onClickCronometro(holder, position);
-
-                }
-            });
-        }
     }
     public String getPrecoFormatado(int position){
         return NumberFormat.getCurrencyInstance()

@@ -12,16 +12,13 @@ public class Mesa implements Parcelable {
     private String codigoMesa;
     private int status = StatusMesaEnum.VAZIA.getTipo();
     private String uidEstabelecimento;
-    private String idConsumoAtual = "ND";
-
     public Mesa(){
     }
 
-    public Mesa(String numeroMesa, String codigoMesa, String uidEstabelecimento, String idConsumoAtual) {
+    public Mesa(String numeroMesa, String codigoMesa, String uidEstabelecimento) {
         this.numeroMesa = numeroMesa;
         this.codigoMesa = codigoMesa;
         this.uidEstabelecimento = uidEstabelecimento;
-        this.idConsumoAtual = idConsumoAtual;
     }
 
     protected Mesa(Parcel in) {
@@ -29,7 +26,6 @@ public class Mesa implements Parcelable {
         codigoMesa = in.readString();
         uidEstabelecimento = in.readString();
         status = in.readInt();
-        idConsumoAtual = in.readString();
     }
 
     public static final Creator<Mesa> CREATOR = new Creator<Mesa>() {
@@ -68,14 +64,6 @@ public class Mesa implements Parcelable {
         this.codigoMesa = codigoMesa;
     }
 
-    public String getIdConsumoAtual() {
-        return idConsumoAtual;
-    }
-
-    public void setIdConsumoAtual(String idConsumoAtual) {
-        this.idConsumoAtual = idConsumoAtual;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -87,7 +75,6 @@ public class Mesa implements Parcelable {
         dest.writeString(codigoMesa);
         dest.writeString(uidEstabelecimento);
         dest.writeInt(status);
-        dest.writeString(idConsumoAtual);
     }
 
     public int getStatus() {

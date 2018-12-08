@@ -12,11 +12,9 @@ import com.google.gson.Gson;
 import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.cliente.GUI.CardapioFragment;
 import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
 import br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getFirebaseAuth;

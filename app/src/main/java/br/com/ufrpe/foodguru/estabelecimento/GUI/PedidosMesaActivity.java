@@ -1,13 +1,11 @@
 package br.com.ufrpe.foodguru.estabelecimento.GUI;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,8 +33,6 @@ public class PedidosMesaActivity extends AppCompatActivity {
     private PedidoAdapter adapter;
     private ConsumoServices consumoServices = new ConsumoServices();
     private MesaServices mesaServices = new MesaServices();
-    private FloatingActionButton fabContaMesa;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,29 +40,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
         mesa = getIntent().getExtras().getParcelable("MESA_PEDIDOS");
         iniciarRecyclerView();
         loadPedidos();
-        /*
-        fabContaMesa = findViewById(R.id.fab_conta_mesa);
-        fabContaMesa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirTelaContaMesa();
-            }
-        });
-        */
     }
-
-    /*
-    private void abrirTelaContaMesa() {
-        if (mesa.getIdConsumoAtual().equals("ND")){
-            Helper.criarToast(this, "Mesa vazia");
-            return;
-        }
-        Intent intent = new Intent(PedidosMesaActivity.this, ContaMesaActivity.class);
-        intent.putExtra("ID_CONSUMO", mesa.getIdConsumoAtual());
-        startActivity(intent);
-    }
-    */
-
     public void loadPedidos(){
         getFirebaseReference().child(REFERENCIA_ITEM_CONSUMO).orderByChild("mesa/codigoMesa")
                 .equalTo(this.mesa.getCodigoMesa()).addValueEventListener(new ValueEventListener() {
@@ -104,29 +78,6 @@ public class PedidosMesaActivity extends AppCompatActivity {
                 consumoServices.setItemComoEntregue(item);
                 Helper.criarToast(PedidosMesaActivity.this,"Item marcado como entregue");
             }
-            public void iniciarPreparoPrato(int position){
-                ItemConsumo item = listaPedidos.get(position);
-                ConsumoServices consumoServices = new ConsumoServices();
-                item.setInicioPreparo(getHorario());
-                consumoServices.adicionarInicioPrepato(item);
-            }
         };
-    }
-
-    public String  getHorario(){
-        Calendar data = Calendar.getInstance();
-        String hora = Integer.toString(data.get(Calendar.HOUR_OF_DAY));
-        if (hora.length()==1){
-            hora = "0" +hora;
-        }
-        String min = Integer.toString(data.get(Calendar.MINUTE));
-        if(min.length()==1){
-            min = "0" +min;
-        }
-        String seg = Integer.toString(data.get(Calendar.SECOND));
-        if(seg.length()==1){
-            seg = "0" +seg;
-        }
-        return hora + ":" + min + ":" + seg;
     }
 }

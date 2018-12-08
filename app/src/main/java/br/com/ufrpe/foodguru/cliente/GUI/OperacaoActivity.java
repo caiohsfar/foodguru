@@ -2,7 +2,6 @@ package br.com.ufrpe.foodguru.cliente.GUI;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -17,7 +16,6 @@ import android.widget.FrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
-import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.utils.ContaService;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;

@@ -12,15 +12,4 @@
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_conta_mesa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        app:srcCompat="@drawable/ic_conta"
-        android:tint="@color/Branco"/>
-
-
 </RelativeLayout>

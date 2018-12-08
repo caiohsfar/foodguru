@@ -1342,7 +1342,6 @@ id etTelefoneEstabelecimentoed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab_conta_mesa
 id fila_cro
 id fill
 id fill_horizontal
@@ -1371,7 +1370,6 @@ id img_qr_code
 id imv_menu_mesa
 id imv_qr_code_detalhe
 id info
-id inicio_preparo_prato
 id invisible
 id italic
 id item_touch_helper_previous_elevation

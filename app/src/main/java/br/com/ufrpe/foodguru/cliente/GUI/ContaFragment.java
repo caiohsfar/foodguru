@@ -84,24 +84,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         getCheckoutAuthCode();
         return inflatedLayout;
     }
-
-    private ItemConsumoAdapter.ItemConsumoOnClickListener onClickListener() {
-        return new ItemConsumoAdapter.ItemConsumoOnClickListener() {
-            @Override
-            public void onClickCronometro(ItemConsumoAdapter.ItemConsumoHolder itemConsumoHolder, int indexPedido) {
-                abrirTelaCronometro(itemConsumoList.get(indexPedido).getId(), itemConsumoList.get(indexPedido).getPrato().getNomePrato());
-            }
-        };
-    }
-
-    private void abrirTelaCronometro(String id, String nome) {
-        Intent intent = new Intent(getContext(), CronometroActivity.class);
-        Log.d("ID", id);
-        intent.putExtra("ID_ITEM",id);
-        intent.putExtra("NOME_PRATO", nome);
-        startActivity(intent);
-    }
-
     public void iniciarRecyclerView(){
         mRecyclerView = (RecyclerView) inflatedLayout.findViewById(R.id.recycler_view_conta);
         LinearLayoutManager layoutManager = new LinearLayoutManager(inflatedLayout.getContext()
@@ -109,7 +91,7 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         itemConsumoList = consumoAtual.getListaItens();
-        adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList, onClickListener());
+        adapter = new ItemConsumoAdapter(inflatedLayout.getContext(), itemConsumoList);
         mRecyclerView.setAdapter(adapter);
     }
     @Override
@@ -213,11 +195,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     public void iniciarPagSeguro(){
         final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
         List<PagSeguroItem> shoppingCart = itemConsListToPagSegList(consumoAtual.getListaItens());
-        //shoppingCart.add(pagseguro.item("123", "PlayStation", BigDecimal.valueOf(3.50), 1, 300));
-        //PagSeguroPhone buyerPhone = pagseguro.phone(PagSeguroAreaCode.DDD81, "998187427");
-        //PagSeguroBuyer buyer = pagseguro.buyer("Ricardo Ferreira", "14/02/1978", "15061112000", "test@email.com.br", buyerPhone);
-        //PagSeguroAddress buyerAddress = pagseguro.address("Av. Boa Viagem", "51", "Apt201", "Boa Viagem", "51030330", "Recife", PagSeguroBrazilianStates.PERNAMBUCO);
-        //PagSeguroShipping buyerShippingOption = pagseguro.shipping(PagSeguroShippingType.PAC, buyerAddress);
         PagSeguroCheckout checkout = pagseguro.checkout("Ref0001", shoppingCart);
         // starting payment process
         PagSeguroPayment payment = new PagSeguroPayment(getActivity());

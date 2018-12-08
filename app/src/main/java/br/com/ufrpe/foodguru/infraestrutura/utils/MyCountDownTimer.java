@@ -3,11 +3,8 @@ package br.com.ufrpe.foodguru.infraestrutura.utils;
 import android.content.Context;
 import android.os.CountDownTimer;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
-
-import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 
 public class MyCountDownTimer extends CountDownTimer {
     private Context context;
