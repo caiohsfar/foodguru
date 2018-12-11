@@ -1121,6 +1121,8 @@ drawable drawer_shadow
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_spinner
+drawable ic_add_black_24dp
+drawable ic_add_white_24dp
 drawable ic_adicionar
 drawable ic_android
 drawable ic_codigo
@@ -1189,6 +1191,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable psfg
 drawable recado_alto
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1366,6 +1369,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView2
 id img_qr_code
 id imv_menu_mesa
 id imv_qr_code_detalhe
@@ -1641,6 +1645,7 @@ layout abc_tooltip
 layout activity_adicionar_mesa
 layout activity_adicionar_prato
 layout activity_adicionar_sessao
+layout activity_config_seu_ps
 layout activity_conta_mesa
 layout activity_cronometro
 layout activity_detalhes_mesa
@@ -1655,9 +1660,8 @@ layout activity_home_cliente
 layout activity_home_estabelecimento
 layout activity_login
 layout activity_operacao
+layout activity_pag_checkout
 layout activity_pag_request
-layout activity_pag_seguro
-layout activity_pag_teste
 layout activity_pedidos
 layout activity_pedidos_mesa
 layout activity_recuperar_senha

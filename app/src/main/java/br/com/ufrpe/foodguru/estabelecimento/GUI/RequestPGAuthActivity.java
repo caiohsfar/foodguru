@@ -96,8 +96,8 @@ public class RequestPGAuthActivity extends AppCompatActivity {
     public void onBackPressed() {
         if(actualPage.contains("conclusion")){
             Intent data = new Intent();
-            data.putExtra(PagSeguroPayment.PAG_SEGURO_EXTRA, PagSeguroPayment.PAG_SEGURO_REQUEST_SUCCESS_CODE);
-            setResult(PagSeguroPayment.PAG_SEGURO_REQUEST_CODE, data);
+            data.putExtra(PagSeguroRequest.PAG_SEGURO_EXTRA, PagSeguroRequest.PAG_SEGURO_REQUEST_SUCCESS_CODE);
+            setResult(PagSeguroRequest.PAG_SEGURO_REQUEST_CODE, data);
             finish();
         }
         else if (pagSeguroWebView.canGoBack()) {
@@ -108,8 +108,8 @@ public class RequestPGAuthActivity extends AppCompatActivity {
                 public void perform() {
                     // go back to app
                     Intent data = new Intent();
-                    data.putExtra(PagSeguroPayment.PAG_SEGURO_EXTRA, PagSeguroPayment.PAG_SEGURO_REQUEST_CANCELLED_CODE);
-                    setResult(PagSeguroPayment.PAG_SEGURO_REQUEST_CODE, data);
+                    data.putExtra(PagSeguroRequest.PAG_SEGURO_EXTRA, PagSeguroRequest.PAG_SEGURO_REQUEST_CANCELLED_CODE);
+                    setResult(PagSeguroRequest.PAG_SEGURO_REQUEST_CODE, data);
                     finish();
                 }
             }, new PagSeguroUtil.AlertAction() {

@@ -390,7 +390,7 @@ activity#br.com.ufrpe.foodguru.cliente.GUI.PSCheckoutActivity
 ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:104:9-68
 	android:name
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:104:19-65
-activity#br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPGActivity
+activity#br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPSActivity
 ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:105:9-113:20
 	android:name
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:105:19-74

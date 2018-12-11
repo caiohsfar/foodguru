@@ -24,7 +24,7 @@ public class PSCheckoutActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_PROGRESS);
         this.setProgressBarVisibility(true);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pag_seguro);
+        setContentView(R.layout.activity_config_seu_ps);
         pagSeguroWebView = (WebView)findViewById(R.id.pagSeguroView);
         pagSeguroWebView.setWebViewClient(new PagSeguroWebViewClient());
         pagSeguroWebView .getSettings().setJavaScriptEnabled(true);

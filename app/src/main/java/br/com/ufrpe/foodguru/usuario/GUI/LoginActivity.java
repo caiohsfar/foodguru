@@ -25,7 +25,7 @@ import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
 import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
-import br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPGActivity;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPSActivity;
 import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
 
 import static br.com.ufrpe.foodguru.infraestrutura.utils.TipoContaEnum.*;
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void abrirTelaPagSeguro() {
-        Intent intent = new Intent(LoginActivity.this, ConfigSeuPGActivity.class);
+        Intent intent = new Intent(LoginActivity.this, ConfigSeuPSActivity.class);
         startActivity(intent);
         finish();
     }

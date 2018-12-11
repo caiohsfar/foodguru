@@ -12,12 +12,12 @@
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/anim_bottom_sheet_show.xml.flat",
-        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/BottomSheet-2.4.1.aar/9dfb95541ba429d1df35ceff078e708d/res/anim/bottom_sheet_show.xml"
-    },
-    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-mdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/anim_bottom_sheet_show.xml.flat",
+        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/BottomSheet-2.4.1.aar/9dfb95541ba429d1df35ceff078e708d/res/anim/bottom_sheet_show.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -48,12 +48,12 @@
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/res/anim-v21/design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",
-        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/cec450546f7707563ea3afbd58a2fef9/res/drawable/common_google_signin_btn_icon_dark.xml"
-    },
-    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_mtrl_snackbar_background.xml.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/res/drawable/mtrl_snackbar_background.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/cec450546f7707563ea3afbd58a2fef9/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
@@ -80,12 +80,12 @@
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
-        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/0041f9f13d8cbe0c00f08e93ea186ddf/res/drawable-v21/notification_action_background.xml"
-    },
-    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_sessao.xml.flat",
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_sessao.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
+        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/0041f9f13d8cbe0c00f08e93ea186ddf/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_design_navigation_item.xml.flat",
@@ -104,12 +104,12 @@
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_recado_alto.xml.flat",
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable/recado_alto.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -148,32 +148,32 @@
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_adicionar_mesa.xml"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_pedidos_mesa.xml.flat",
-        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_pedidos_mesa.xml"
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
+        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
-        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable/abc_ratingbar_indicator_material.xml"
-    },
-    {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
-        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_pedidos_mesa.xml.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_pedidos_mesa.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/cec450546f7707563ea3afbd58a2fef9/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_edit.png.flat",
-        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable-xhdpi/ic_edit.png"
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/animator_mtrl_btn_state_list_anim.xml.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/res/animator/mtrl_btn_state_list_anim.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_edit.png.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable-xhdpi/ic_edit.png"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_mtrl_layout_snackbar_include.xml.flat",
@@ -196,16 +196,20 @@
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable-xxxhdpi/ic_nova_seta_baixo.png"
     },
     {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_excluir.png.flat",
-        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable-xxxhdpi/ic_excluir.png"
-    },
-    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_todos.png.flat",
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable-xxhdpi/ic_todos.png"
     },
     {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_excluir.png.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable-xxxhdpi/ic_excluir.png"
+    },
+    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-v21_abc_list_divider_material.xml.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_config_seu_ps.xml.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_config_seu_ps.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/color-v23_abc_color_highlight_material.xml.flat",
@@ -474,6 +478,10 @@
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_ic_codigo.xml.flat",
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable/ic_codigo.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_psfg.jpg.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable/psfg.jpg"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_estouro.png.flat",
@@ -828,6 +836,10 @@
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/layout/select_dialog_multichoice_material.xml"
     },
     {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_pag_checkout.xml.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_pag_checkout.xml"
+    },
+    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_editar_dados_estabelecimento.xml.flat",
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_editar_dados_estabelecimento.xml"
     },
@@ -962,6 +974,10 @@
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_mesa_list_item.xml.flat",
         "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/mesa_list_item.xml"
+    },
+    {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_ic_add_black_24dp.xml.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable/ic_add_black_24dp.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
@@ -1638,10 +1654,6 @@
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_icon.xml.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_pag_seguro.xml.flat",
-        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_pag_seguro.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_prato_action.png.flat",
@@ -2700,6 +2712,10 @@
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable_ic_add_white_24dp.xml.flat",
+        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/drawable/ic_add_white_24dp.xml"
+    },
+    {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
@@ -2758,10 +2774,6 @@
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "/home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/layout_activity_pag_teste.xml.flat",
-        "source": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/res/layout/activity_pag_teste.xml"
     },
     {
         "merged": "/home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",

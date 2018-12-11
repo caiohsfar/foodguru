@@ -102,7 +102,7 @@
             android:name=".cliente.GUI.CronometroActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".cliente.GUI.PSCheckoutActivity" />
-        <activity android:name=".estabelecimento.GUI.ConfigSeuPGActivity">
+        <activity android:name=".estabelecimento.GUI.ConfigSeuPSActivity">
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
