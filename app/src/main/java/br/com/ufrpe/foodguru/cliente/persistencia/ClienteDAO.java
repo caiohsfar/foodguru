@@ -4,7 +4,6 @@ import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 
 import br.com.ufrpe.foodguru.cliente.dominio.Cliente;
-import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 
 public class ClienteDAO {

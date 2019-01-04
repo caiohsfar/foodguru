@@ -19,51 +19,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:text="Arroz"
-
+            android:textAllCaps="true"
+            android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
-            android:textColor="@color/RoxoFoodGuru"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_preco_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:text="99.00"
-            android:layout_below="@id/tv_nome_item"
-            android:layout_marginLeft="15dp"
-            android:textColor="@color/Cinza"
-            android:textSize="15sp"
-            android:gravity="right"/>
+            android:textColor="@color/VerdeFoodGuru"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/tv_quantidade_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quantidade: 2"
-            android:textColor="@color/Cinza"
-            android:layout_below="@id/tv_preco_item"
+            android:layout_below="@id/tv_nome_item"
             android:paddingLeft="15sp"
-            android:paddingBottom="5dp"
-            android:textSize="15sp" />
-
-        <!--
+            android:textSize="16dp" />
         <TextView
-            android:id="@+id/tv_fila"
+            android:id="@+id/tv_preco_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Existem 10 pratos na sua frente"
-            android:layout_below="@id/tv_cronometro"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"/>
-            -->
+            android:layout_gravity="top"
+            android:text="R$0,00"
+            android:layout_below="@id/tv_quantidade_item"
+            android:layout_marginLeft="15dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/EscuroFoodGuru"
+            android:textSize="18dp"
+            android:gravity="right"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/RoxoFoodGuru"
-            android:layout_below="@id/tv_quantidade_item"
+            android:background="@color/CinzaClaro"
+            android:layout_below="@id/tv_preco_item"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"/>
 

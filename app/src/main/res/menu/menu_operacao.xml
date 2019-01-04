@@ -7,11 +7,6 @@
         android:title="Cardápio" />
 
     <item
-        android:id="@+id/nav_carrinho"
-        android:icon="@drawable/ic_pedidos"
-        android:title="Carrinho"/>
-
-    <item
         android:id="@+id/nav_conta"
         android:icon="@drawable/ic_conta"
         android:title="Conta" />

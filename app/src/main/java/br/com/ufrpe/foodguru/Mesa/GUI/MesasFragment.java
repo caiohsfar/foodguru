@@ -7,12 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,17 +24,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.dominio.MesaView;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
-import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_MESA;
@@ -149,23 +143,6 @@ public class MesasFragment extends Fragment{
 
             }
         });
-        /*
-        getFirebaseReference().child(FirebaseHelper.REFERENCIA_MESA)
-                .orderByChild("uidEstabelecimento").equalTo(FirebaseHelper.getUidUsuario())
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        mesasViews = mesaToMesaView((ArrayList<Mesa>)mesaServices.loadMesas(dataSnapshot));
-                        adapter = new MesaAdapter(getContext(),mesasViews,onClickMesa());
-                        mRecyclerView.setAdapter(adapter);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-                */
         return viewInflado;
 
     }
@@ -212,7 +189,6 @@ public class MesasFragment extends Fragment{
 
     private void abrirTelaPedidosMesa(Mesa mesa) {
         Intent intent = new Intent(viewInflado.getContext(), PedidosMesaActivity.class);
-        Log.d("consumo_mesa ", mesa.getIdConsumoAtual());
         intent.putExtra("MESA_PEDIDOS", mesa);
         startActivity(intent);
     }

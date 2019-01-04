@@ -12,7 +12,7 @@
             <bitmap
                 android:gravity="left|center"
                 android:src="@drawable/ic_nova_seta_baixo"
-                android:tint="@color/RoxoFoodGuru"/>
+                android:tint="@color/EscuroFoodGuru"/>
         </item>
     </layer-list></item>
 

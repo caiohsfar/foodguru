@@ -1,7 +1,5 @@
 package br.com.ufrpe.foodguru.Mesa.persistencia;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
@@ -83,7 +81,7 @@ public class MesaDAO {
         }
         return sucess;
     }
-
+    /*
     public boolean mudarIdConsumoAtual(Mesa mesa, String idConsumoAtual){
         boolean sucess = true;
         try {
@@ -94,10 +92,14 @@ public class MesaDAO {
                     .child(REFERENCIA_MESA)
                     .child(mesa.getCodigoMesa())
                     .child("idConsumoAtual").setValue(idConsumoAtual);
+            database.child(FirebaseHelper.REFERENCIA_MESA)
+                    .child(mesa.getCodigoMesa())
+                    .child("idConsumoAtual").setValue(idConsumoAtual);
         }catch(DatabaseException e){
             sucess = false;
         }
         return sucess;
     }
+    */
 
 }

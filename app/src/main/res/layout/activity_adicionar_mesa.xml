@@ -20,12 +20,13 @@
                 android:layout_height="55sp"
                 android:singleLine="true"
                 android:hint="Número da Mesa"
-                android:textColorHint="@color/Cinza"
-                android:textColor="@color/Cinza"
-                android:drawableLeft="@drawable/ic_nome"
-                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawableLeft="@drawable/ic_mesa"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:drawablePadding="15sp"
-                android:padding="15sp"/>
+                android:padding="15sp"
+
+                android:inputType="number"/>
 
             <EditText
                 android:id="@+id/etCodigoMesa"
@@ -34,10 +35,9 @@
                 android:layout_height="55sp"
                 android:singleLine="true"
                 android:hint="Código"
-                android:textColorHint="@color/Cinza"
-                android:textColor="@color/Cinza"
-                android:drawableLeft="@drawable/ic_email"
-                android:drawableTint="@color/RoxoFoodGuru"
+
+                android:drawableLeft="@drawable/ic_codigo"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:inputType="number"
                 android:drawablePadding="15sp"

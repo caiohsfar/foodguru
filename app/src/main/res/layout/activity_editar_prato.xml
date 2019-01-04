@@ -52,7 +52,7 @@
 
                 android:drawablePadding="15sp"
 
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Nome do Prato"
 
                 android:inputType="textCapWords|textAutoComplete"
@@ -70,7 +70,7 @@
                 android:drawableLeft="@drawable/ic_descricao"
 
                 android:drawablePadding="15sp"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Descrição do Prato"
 
                 android:padding="15sp" />
@@ -83,7 +83,7 @@
                 android:inputType="numberDecimal"
                 android:drawablePadding="15sp"
 
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Preço do prato"
 
                 android:padding="15sp"
@@ -102,7 +102,7 @@
                 android:textColorHint="@color/Cinza"
 
                 android:drawableLeft="@drawable/ic_relogio"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>
 

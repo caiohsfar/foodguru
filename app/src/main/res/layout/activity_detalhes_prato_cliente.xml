@@ -42,7 +42,7 @@
 
                 android:drawablePadding="15sp"
 
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Nome do Prato"
 
                 android:padding="15sp"
@@ -60,7 +60,7 @@
                 android:drawableLeft="@drawable/ic_descricao"
 
                 android:drawablePadding="15sp"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Descrição do Prato"
 
                 android:padding="15sp"
@@ -76,7 +76,7 @@
                 android:drawableLeft="@drawable/ic_descricao"
 
                 android:drawablePadding="15sp"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Quantidade"
                 android:maxLength="2"
 
@@ -90,7 +90,7 @@
                 android:drawableLeft="@drawable/ic_descricao"
 
                 android:drawablePadding="15sp"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
                 android:hint="Observação"
                 android:padding="15sp" />
 

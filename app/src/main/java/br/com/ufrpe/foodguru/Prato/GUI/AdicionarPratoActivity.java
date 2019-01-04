@@ -33,7 +33,6 @@ import com.kennyc.bottomsheet.BottomSheet;
 import com.kennyc.bottomsheet.BottomSheetListener;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
@@ -210,7 +209,7 @@ public class AdicionarPratoActivity extends AppCompatActivity implements View.On
             Helper.criarToast(this, "Adicione uma sessão antes de criar o prato");
             finish();
         }else{
-            ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, arraySessoes);
+            ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(getApplicationContext(),R.layout.spinner_edit_estado, arraySessoes);
             adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             sessao.setAdapter(adapterSessao);
         }

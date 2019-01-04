@@ -57,4 +57,22 @@
     <string name="mesa_disponivel">Mesa Disponível</string>
     <string name="mesa_ocupada">Mesa Ocupada</string>
     <string name="mesa_pendente">Mesa com Pendências</string>
+
+    <!-- pag seguro strings -->
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_pag_seguro">PagSeguro Demo</string>
+    <string name="pagseguro">PagSeguro</string>
+    <string name="waiting_for_answer">Aguardando resposta...</string>
+    <string name="transaction_cancelled">A transação foi cancelada com sucesso!</string>
+    <string name="transaction_succeded">A transação foi efetuada sucesso!</string>
+    <string name="transaction_error">A tentativa de compra falhou! Tente novamente!</string>
+    <string name="cancel_pagseguro">Deseja realmente cancelar?</string>
+    <string name="loading_1">Carregando.</string>
+    <string name="loading_2">Carregando..</string>
+    <string name="loading_3">Carregando...</string>
+
+    <string name="acc_type_key">acc_type</string>
+    <string name="consumo_atual">consumo_atual</string>
+
+
 </resources>

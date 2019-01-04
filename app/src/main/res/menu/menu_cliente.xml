@@ -7,11 +7,6 @@
         android:title="Ler QrCode" />
 
     <item
-        android:id="@+id/nav_historico"
-        android:icon="@drawable/ic_historico"
-        android:title="Histórico"/>
-
-    <item
         android:id="@+id/nav_meus_dados"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Meus Dados" />

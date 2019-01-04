@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_foto"
                     android:tint="@color/Branco"
-                    android:background="@color/RoxoFoodGuru"
+                    android:background="@color/EscuroFoodGuru"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_margin="15dp" />
@@ -60,7 +60,7 @@
                     android:textSize="18sp"
 
                     android:drawableLeft="@drawable/ic_nome"
-                    android:drawableTint="@color/RoxoFoodGuru"
+                    android:drawableTint="@color/EscuroFoodGuru"
 
                     android:drawablePadding="15sp"
                     android:padding="15sp"
@@ -79,7 +79,7 @@
                     android:textSize="18sp"
 
                     android:drawableLeft="@drawable/ic_email"
-                    android:drawableTint="@color/RoxoFoodGuru"
+                    android:drawableTint="@color/EscuroFoodGuru"
 
                     android:drawablePadding="15sp"
                     android:padding="15sp"

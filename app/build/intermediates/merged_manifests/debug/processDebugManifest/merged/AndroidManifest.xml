@@ -8,10 +8,12 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="28" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
     <uses-feature
         android:name="android.hardware.camera"
@@ -33,7 +35,6 @@
         android:name="android.hardware.wifi"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -45,16 +46,25 @@
     <uses-permission android:name="br.com.ufrpe.foodguru.permission.C2D_MESSAGE" />
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name="br.com.ufrpe.foodguru.infraestrutura.utils.FoodGuru"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_food_guru"
+        android:roundIcon="@mipmap/ic_novo_food_guru_new"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <service android:name="br.com.ufrpe.foodguru.infraestrutura.utils.ContaService" />
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name="br.com.ufrpe.foodguru.usuario.GUI.LoginActivity"
             android:exported="true"
@@ -85,10 +95,11 @@
         <activity
             android:name="br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity"
             android:icon="@drawable/ic_teste_sair"
-            android:label="Home" />
+            android:label="Home"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity"
-            android:label="Home" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="br.com.ufrpe.foodguru.cliente.GUI.EditarDadosClienteActivity"
             android:label="Edição de dados" />
@@ -113,7 +124,6 @@
         <activity
             android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarSessaoActvity"
             android:label="Editar sessão" />
-        =======
         <activity
             android:name="br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity"
             android:label="Adicionar prato" />
@@ -123,18 +133,27 @@
         <activity
             android:name="br.com.ufrpe.foodguru.Prato.GUI.EditarPratoActivity"
             android:label="Editar prato" />
-        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity" />
+        <activity
+            android:name="br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity" />
         <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity" />
         <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.ContaMesaActivity" />
-        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.CronometroActivity" />
         <activity
-            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-            android:clearTaskOnLaunch="true"
-            android:screenOrientation="sensorLandscape"
-            android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"
-            android:windowSoftInputMode="stateAlwaysHidden" />
+            android:name="br.com.ufrpe.foodguru.cliente.GUI.CronometroActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="br.com.ufrpe.foodguru.cliente.GUI.PSCheckoutActivity" />
+        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPSActivity" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="br.com.ufrpe.foodguru.estabelecimento.GUI.RequestPGAuthActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
@@ -221,6 +240,24 @@
             android:name="com.squareup.picasso.PicassoProvider"
             android:authorities="br.com.ufrpe.foodguru.com.squareup.picasso"
             android:exported="false" />
+
+        <activity
+            android:name="com.blankj.utilcode.util.PermissionUtils$PermissionActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:multiprocess="true"
+            android:theme="@style/ActivityTranslucent"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <provider
+            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
+            android:authorities="br.com.ufrpe.foodguru.utilcode.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:multiprocess="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/util_code_provider_paths" />
+        </provider>
     </application>
 
 </manifest>

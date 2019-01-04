@@ -25,8 +25,10 @@ public class MesaServices {
     public boolean mudarStatus(Mesa mesa, int status){
         return mesaDAO.mudarStatus(mesa, status);
     }
+    /*
     public boolean mudarIdConsumoAtual(Mesa mesa, String consumoAtual){
         return mesaDAO.mudarIdConsumoAtual(mesa, consumoAtual);
     }
+    */
 
 }

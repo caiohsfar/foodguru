@@ -16,7 +16,7 @@
         android:textColor="@color/Branco"
         android:paddingRight="15sp"
         android:paddingLeft="15sp"
-        android:background="@color/RoxoFoodGuru"
+        android:background="@color/EscuroFoodGuru"
         android:gravity="center"/>
     <ScrollView
         android:layout_width="match_parent"

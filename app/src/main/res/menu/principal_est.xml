@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/menu_action_bar_adicionar_prato"
         android:orderInCategory="100"
         android:title="Adicionar Prato"
-        app:showAsAction="never"/>
+        android:icon="@drawable/ic_prato_action"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/menu_action_bar_adicionar_mesa"
         android:orderInCategory="100"
         android:title="Adicionar Mesa"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/menu_action_bar_editar_perfil_est"
-        android:orderInCategory="100"
-        android:title="Editar Dados"
-        app:showAsAction="never"/>
+        android:icon="@drawable/ic_mesa_action"
+        android:iconTintMode="screen"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/gerenciar_sessoes"
         android:orderInCategory="100"
         android:title="Gerenciar Sessões"
-        app:showAsAction="never"/>
+        android:icon="@drawable/ic_sessao_action"
+        app:showAsAction="always"/>
     <item
-        android:id="@+id/menu_action_bar_sair_est"
+        android:id="@+id/configuracoes_est"
         android:orderInCategory="100"
-        android:title="Sair"
-        app:showAsAction="never" />
+        android:title="configurações"
+        android:icon="@drawable/ic_conf"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/menu_action_bar_editar_perfil_est"
+                android:orderInCategory="100"
+                android:title="Editar Dados"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/menu_action_bar_sair_est"
+                android:orderInCategory="100"
+                android:title="Sair"
+                app:showAsAction="never" />
+        </menu>
+    </item>
 </menu>

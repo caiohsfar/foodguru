@@ -1,14 +1,13 @@
 package br.com.ufrpe.foodguru.Prato.GUI;
 
 
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
@@ -19,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -50,6 +50,20 @@ public class PratosFragment extends Fragment{
     private View viewInflado;
     private Spinner sessao;
     private List<SessaoCardapio> arraySessoes;
+    private ProgressBar progressBar;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
+        progressBar = viewInflado.findViewById(R.id.progress_bar_pratos);
+        sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
+        loadArraySessoes();
+        iniciarRecyclerView();
+        setCliqueAdapterSessoes();
+
+        return viewInflado;
+    }
 
     private  ActionMode.Callback getActionModeCallback(){
         return new ActionMode.Callback() {
@@ -124,17 +138,6 @@ public class PratosFragment extends Fragment{
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        viewInflado = inflater.inflate(R.layout.fragment_pratos, container, false);
-        sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessao);
-        loadArraySessoes();
-        iniciarRecyclerView();
-        setCliqueAdapterSessoes();
-
-        return viewInflado;
-    }
     public void setCliqueAdapterSessoes(){
         AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
             @Override
@@ -188,9 +191,11 @@ public class PratosFragment extends Fragment{
                 .child(REFERENCIA_PRATO).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                progressBar.setVisibility(View.VISIBLE);
                 pratosViews = pratoToPratoView((ArrayList<Prato>)pratoServices.loadPratos(dataSnapshot));
                 adapter = new PratoAdapter(getContext(),pratosViews,onClickPrato());
                 mRecyclerView.setAdapter(adapter);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -222,7 +227,8 @@ public class PratosFragment extends Fragment{
     }
 
     private void setupSpinner() {
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(),android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(),R.layout.spinner_edit_sessao,arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
     }
@@ -333,12 +339,15 @@ public class PratosFragment extends Fragment{
 
     public void iniciarRecyclerView(){
         mRecyclerView = (RecyclerView) viewInflado.findViewById(R.id.recyclerv_view_pratos);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(viewInflado.getContext()
-                , LinearLayoutManager.VERTICAL, false);
-        mRecyclerView.setHasFixedSize(true);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext()
+                , 1);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(viewInflado.getContext(), LinearLayoutManager.VERTICAL, false);
+        //mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(layoutManager);
         adapter = new PratoAdapter(getContext(),pratosViews, onClickPrato());
         mRecyclerView.setAdapter(adapter);
+
+
     }
 
     public void abrirTelaEditarPrato(){

@@ -2,6 +2,7 @@ package br.com.ufrpe.foodguru.usuario.GUI;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -21,14 +22,20 @@ import com.google.firebase.database.ValueEventListener;
 import br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity;
+import br.com.ufrpe.foodguru.estabelecimento.dominio.Estabelecimento;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPSActivity;
+import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
+
+import static br.com.ufrpe.foodguru.infraestrutura.utils.TipoContaEnum.*;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     private final FirebaseAuth mAuth = FirebaseHelper.getFirebaseAuth();;
     private EditText edtLoginEmail, edtLoginSenha;
     private ProgressDialog mProgressDialog;
+    private SharedPreferences preferences;
     private final DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference();
 
 
@@ -36,6 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        preferences = SPUtil.getSharedPreferences(LoginActivity.this);
         setUpViews();
 
     }
@@ -83,14 +91,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
     private void verificarTipoConta(FirebaseUser cUser){
-        firebaseReference.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
-                .child(cUser.getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
+        final DatabaseReference databaseReference = firebaseReference.child(FirebaseHelper.REFERENCIA_ESTABELECIMENTO)
+                .child(cUser.getUid());
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()){
-                            abrirTelaEstabelecimento();
-                            finish();
+                            Estabelecimento estabelecimento = dataSnapshot.getValue(Estabelecimento.class);
+                            if (estabelecimento.getPagSeguroAuthCode().equals("ND")){
+                                abrirTelaPagSeguro();
+                            }else{
+                                abrirTelaEstabelecimento();
+                                finish();
+                            }
                         }else{
                             abrirTelaCliente();
                             finish();
@@ -102,6 +115,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
     }
+
+    private void abrirTelaPagSeguro() {
+        Intent intent = new Intent(LoginActivity.this, ConfigSeuPSActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private boolean validarCampos(){
         boolean validacao = true;
 
@@ -125,6 +145,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void abrirTelaCliente(){
         Intent intentAbrirTelaCliente = new Intent(LoginActivity.this, HomeClienteActivity.class);
+        SPUtil.putString(preferences, getString(R.string.acc_type_key), CLIENTE.getTipo());
         startActivity(intentAbrirTelaCliente);
         finish();
         cleanViews();
@@ -132,6 +153,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void abrirTelaEstabelecimento() {
         Intent intentAbrirTelaEstabelecimento = new Intent(LoginActivity.this, HomeEstabelecimentoActivity.class);
+        SPUtil.putString(preferences, getString(R.string.acc_type_key), ESTABELECIMENTO.getTipo());
         startActivity(intentAbrirTelaEstabelecimento);
         finish();
         cleanViews();

@@ -33,8 +33,7 @@
 
     <string-array name="tipo_pagamento">
         <item>Selecione a forma de pagamento</item>
-        <item>Cartão</item>
+        <item>PagSeguro</item>
         <item>Dinheiro</item>
-        <item>Outra</item>
     </string-array>
 </resources>

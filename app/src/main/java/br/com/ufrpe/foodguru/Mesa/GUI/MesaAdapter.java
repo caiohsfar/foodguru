@@ -1,9 +1,6 @@
 package br.com.ufrpe.foodguru.Mesa.GUI;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -12,11 +9,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import java.util.List;
 
-import br.com.ufrpe.foodguru.Consumo.gui.PedidoAdapter;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.Mesa.dominio.MesaView;
@@ -79,19 +74,19 @@ public class MesaAdapter extends RecyclerView.Adapter<MesaHolder> {
                 }
             });
         }
-        int corFundo = context.getResources().getColor(mesas.get(position).isSelecionado() ? R.color.RoxoFoodGuruTransparente
+        int corFundo = context.getResources().getColor(mesas.get(position).isSelecionado() ? R.color.EscuroFoodGuruTransparente
                 : R.color.zxing_transparent);
         holder.itemView.setBackgroundColor(corFundo);
 
         if (mesa.getStatus() == StatusMesaEnum.PENDENTE.getTipo()){
             holder.teste.setText(R.string.mesa_pendente);
-            holder.numero.setBackgroundColor(Color.RED);
+            holder.numero.setBackgroundResource(R.color.Vermelho);
         }else if (mesa.getStatus() == StatusMesaEnum.VAZIA.getTipo()){
             holder.teste.setText(R.string.mesa_disponivel);
-            holder.numero.setBackgroundColor(Color.GREEN);
+            holder.numero.setBackgroundResource(R.color.VerdeFoodGuru);
         }else{
             holder.teste.setText(R.string.mesa_ocupada);
-            holder.numero.setBackgroundColor(Color.BLUE);
+            holder.numero.setBackgroundResource(R.color.Azul);
         }
     }
 

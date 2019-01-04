@@ -4,16 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
-
         <TextView
             android:id="@+id/txtNomeSessao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="nome da sessao"
-            android:textSize="20dp" />
-
-
-
+            android:textSize="20dp"
+            android:paddingLeft="15dp" />
 
 </RelativeLayout>

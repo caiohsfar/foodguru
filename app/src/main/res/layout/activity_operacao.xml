@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".cliente.GUI.OperacaoActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarOperacao"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/VerdeFoodGuru"
+        android:gravity="center"
+        app:logo="@drawable/ic_food_guru_logo_toolbar"
+        app:logoDescription="Food Guru - O seu garçom Digital!"
+        >
+    </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_below="@id/toolbarOperacao">
 
         <FrameLayout
             android:id="@+id/frame_operacao"
@@ -31,4 +42,4 @@
             app:menu="@menu/menu_operacao" />
     </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -14,7 +14,6 @@ import java.util.List;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 public class PedidoAdapter extends RecyclerView.Adapter<PedidoHolder> {
 
@@ -24,7 +23,6 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoHolder> {
 
     public interface MenuClickListener{
         void marcarComoEntregue(int position);
-        void iniciarPreparoPrato(int position);
     }
     public PedidoAdapter(Context context, List<ItemConsumo> itensConsumo, MenuClickListener listener){
         this.itensConsumo = itensConsumo;
@@ -89,9 +87,6 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoHolder> {
             switch (menuItem.getItemId()) {
                 case R.id.marcar_entregue:
                     menuClickListener.marcarComoEntregue(position);
-                    return true;
-                case R.id.inicio_preparo_prato:
-                    menuClickListener.iniciarPreparoPrato(position);
                     return true;
                 default:
             }

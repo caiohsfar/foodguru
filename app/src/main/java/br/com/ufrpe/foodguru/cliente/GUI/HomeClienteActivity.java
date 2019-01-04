@@ -1,5 +1,10 @@
 package br.com.ufrpe.foodguru.cliente.GUI;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +14,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -21,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
 import br.com.ufrpe.foodguru.usuario.GUI.LoginActivity;
 
 public class HomeClienteActivity extends AppCompatActivity {
@@ -30,11 +37,16 @@ public class HomeClienteActivity extends AppCompatActivity {
     private FrameLayout mFrameCliente;
     private EscanearQrCodeFragment escanearQrCodeFragment;
     private MeusDadosClienteFragment meusDadosClienteFragment;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_cliente);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbarHomeCliente);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_cliente);
@@ -76,6 +88,12 @@ public class HomeClienteActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.principal_cliente, menu);
+
+        MenuItem pratoItem = menu.findItem(R.id.configuracoes_cliente);
+        Drawable newIconPrato = (Drawable)pratoItem.getIcon();
+        newIconPrato.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        pratoItem.setIcon(newIconPrato);
+
         return true;
     }
 
@@ -91,13 +109,28 @@ public class HomeClienteActivity extends AppCompatActivity {
             telaEditarDadosCliente();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     public void onBackPressed() {
-        exibirConfirmacaoSair();
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Helper.criarToast(this, "Pressione VOLTAR denovo para sair");
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+        //exibirConfirmacaoSair();
     }
 
     public void telaEditarDadosCliente() {
@@ -119,7 +152,9 @@ public class HomeClienteActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mAuth.signOut();
-                Helper.criarToast(HomeClienteActivity.this,"Até mais");
+                SharedPreferences preferences = SPUtil.getSharedPreferences(HomeClienteActivity.this);
+                SPUtil.putString(preferences,getString(R.string.acc_type_key), "");
+                Helper.criarToast(HomeClienteActivity.this,"Até mais.");
                 exibirTelaLogin();
             }
         });
@@ -134,11 +169,6 @@ public class HomeClienteActivity extends AppCompatActivity {
     public void exibirTelaLogin(){
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-
-    public void exibirTelaLerQrCode(){
-        Intent intent = new Intent(this, HomeClienteActivity.class);
         startActivity(intent);
     }
 }

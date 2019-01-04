@@ -2,7 +2,6 @@ package br.com.ufrpe.foodguru.infraestrutura.utils;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -13,11 +12,8 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.firebase.database.ServerValue;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;

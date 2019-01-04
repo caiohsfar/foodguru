@@ -1,2 +1,2 @@
-# Referenced at C:\Users\ibyte\Documents\PROJETOS\FOODGURU\FOODGURUNOVO\FOODGURUNOVO\app\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:47
--keep class android.support.multidex.MultiDexApplication { <init>(...); }
+# Referenced at /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:48
+-keep class br.com.ufrpe.foodguru.infraestrutura.utils.FoodGuru { <init>(...); }

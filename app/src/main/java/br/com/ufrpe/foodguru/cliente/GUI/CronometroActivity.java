@@ -3,9 +3,9 @@ package br.com.ufrpe.foodguru.cliente.GUI;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,15 +16,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.List;
 
 import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumo;
-import br.com.ufrpe.foodguru.Consumo.dominio.ItemConsumoAdapter;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Consumo.negocio.ConsumoServices;
-import br.com.ufrpe.foodguru.Mesa.GUI.MesaAdapter;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.MyCountDownTimer;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ITEM_CONSUMO;
@@ -36,11 +32,16 @@ public class CronometroActivity extends AppCompatActivity {
     private String nomePratoIntent;
     private String idItem;
     private int contador;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbarHomeCliente);
+        setSupportActionBar(toolbar);
+
         idItem = getIntent().getStringExtra("ID_ITEM");
         nomePratoIntent = getIntent().getStringExtra("NOME_PRATO");
         nomePrato = findViewById(R.id.nome_prato_cro);
@@ -119,7 +120,7 @@ public class CronometroActivity extends AppCompatActivity {
                         contador = 0;
                         fila = findViewById(R.id.fila_cro);
                         timer = new MyCountDownTimer(CronometroActivity.this, cronometro, percorrer(itensConsumoEst), 1000);
-                        fila.setText("Existem " + String.valueOf(contador) + " pedidos na frente do seu");
+                        fila.setText("Há " + String.valueOf(contador) + " pedido(s) na frente do seu.");
 
                         timer.start();
                     }

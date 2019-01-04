@@ -8,38 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.text.NumberFormat;
 import java.util.List;
 
-import br.com.ufrpe.foodguru.Mesa.GUI.MesaAdapter;
-import br.com.ufrpe.foodguru.Mesa.GUI.MesaHolder;
 import br.com.ufrpe.foodguru.R;
-import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
-import br.com.ufrpe.foodguru.infraestrutura.utils.MyCountDownTimer;
 
 public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.ItemConsumoHolder> {
     private List<ItemConsumo> itemConsumoList;
     private Context context;
-    private ItemConsumoAdapter.ItemConsumoOnClickListener onClickListener = null;
-
-    public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList, ItemConsumoOnClickListener onClickListener) {
-        this.context = context;
-        this.itemConsumoList = itemConsumoList;
-        this.onClickListener = onClickListener;
-    }
 
     public ItemConsumoAdapter(Context context, List<ItemConsumo> itemConsumoList) {
         this.context = context;
         this.itemConsumoList = itemConsumoList;
 
     }
-
-    public interface ItemConsumoOnClickListener {
-        void onClickCronometro(ItemConsumoHolder itemConsumoHolder, int indexPedido);
-    }
-
     @NonNull
     @Override
     public ItemConsumoHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
@@ -54,22 +36,24 @@ public class ItemConsumoAdapter extends RecyclerView.Adapter<ItemConsumoAdapter.
     @Override
     public void onBindViewHolder(@NonNull final ItemConsumoHolder holder, final int position) {
         String nome = itemConsumoList.get(position).getPrato().getNomePrato();
-        String preco = String.valueOf(itemConsumoList.get(position).getPrato().getPreco());
+        //String preco = String.valueOf(itemConsumoList.get(position).getPrato().getPreco());
+        String preco = "R" + getPrecoFormatado(position);
+        /**
+         * Se aparecer dois "R" antes do preco, tem que usar a função de baixo
+         * String preco = getPrecoFormatado(position).contains("R") ? getPrecoFormatado(position) : "R" + getPrecoFormatado(position);
+         *
+         **/
         String quantidade = String.valueOf(itemConsumoList.get(position).getQuantidade());
         holder.quantidade.setText("Quantidade: " + quantidade);
         holder.nome.setText(nome);
-        holder.preco.setText("Preço: "+ preco);
-
-        if (onClickListener != null) {
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onClickListener.onClickCronometro(holder, position);
-
-                }
-            });
-        }
+        holder.preco.setText(preco);
     }
+    public String getPrecoFormatado(int position){
+        return NumberFormat.getCurrencyInstance()
+                .format(itemConsumoList.get(position).getValor())
+                .replace(".",",");
+    }
+
 
     @Override
     public int getItemCount() {

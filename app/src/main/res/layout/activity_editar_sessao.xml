@@ -25,7 +25,7 @@
                 android:textColorHint="@color/Cinza"
                 android:textColor="@color/Cinza"
                 android:drawableLeft="@drawable/ic_descricao"
-                android:drawableTint="@color/RoxoFoodGuru"
+                android:drawableTint="@color/EscuroFoodGuru"
 
                 android:drawablePadding="15sp"
                 android:padding="15sp"/>

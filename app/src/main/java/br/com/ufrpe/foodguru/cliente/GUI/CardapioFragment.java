@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,16 +20,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ufrpe.foodguru.Consumo.dominio.Consumo;
 import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity;
-import br.com.ufrpe.foodguru.Prato.GUI.PratoAdapter;
 import br.com.ufrpe.foodguru.Prato.dominio.Prato;
-import br.com.ufrpe.foodguru.Prato.dominio.PratoView;
 import br.com.ufrpe.foodguru.Prato.dominio.SessaoCardapio;
 import br.com.ufrpe.foodguru.Prato.negocio.PratoServices;
 import br.com.ufrpe.foodguru.R;
@@ -44,6 +41,7 @@ import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.g
  * A simple {@link Fragment} subclass.
  */
 public class CardapioFragment extends Fragment{
+
     private CardapioAdapter adapter;
     private RecyclerView mRecyclerView;
     private PratoServices pratoServices = new PratoServices();
@@ -52,6 +50,7 @@ public class CardapioFragment extends Fragment{
     private List<SessaoCardapio> arraySessoes;
     private Mesa mesa;
     private View viewInflado;
+    private ProgressBar progressBar;
 
 
     public CardapioFragment() {
@@ -63,9 +62,9 @@ public class CardapioFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         viewInflado = inflater.inflate(R.layout.fragment_cardapio, container, false);
-        mesa = getActivity().getIntent().getExtras().getParcelable("mesa");
+        progressBar = viewInflado.findViewById(R.id.progress_bar_cardapio);
+        mesa = SessaoConsumo.getInstance().getConsumo().getMesa();
         sessao = (Spinner) viewInflado.findViewById(R.id.spinnerSessaoCardapio);
-
         loadArraySessoes();
         iniciarRecyclerView();
         setCliqueAdapterSessoes();
@@ -73,7 +72,6 @@ public class CardapioFragment extends Fragment{
 
        return viewInflado;
     }
-
     public void setCliqueAdapterSessoes(){
         AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
             @Override
@@ -129,6 +127,7 @@ public class CardapioFragment extends Fragment{
                 .child(REFERENCIA_PRATO).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                progressBar.setVisibility(View.VISIBLE);
                 pratosViews = pratoServices.loadPratos(dataSnapshot);
                 adapter = new CardapioAdapter(getContext(), pratosViews, new CardapioAdapter.OnItemClicked() {
                     @Override
@@ -137,6 +136,7 @@ public class CardapioFragment extends Fragment{
                     }
                 });
                 mRecyclerView.setAdapter(adapter);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -170,7 +170,7 @@ public class CardapioFragment extends Fragment{
                 });
     }
     private void setupSpinner() {
-        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(), android.R.layout.simple_spinner_dropdown_item,arraySessoes);
+        ArrayAdapter<SessaoCardapio> adapterSessao = new ArrayAdapter<SessaoCardapio>(viewInflado.getContext(), R.layout.spinner_edit_sessao,arraySessoes);
         adapterSessao.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sessao.setAdapter(adapterSessao);
     }

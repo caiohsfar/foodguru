@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import br.com.ufrpe.foodguru.R;
@@ -44,8 +45,15 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
         String nome = pratos.get(position).getNomePrato();
         String descricao = pratos.get(position).getDescricaoPrato();
         String urlImagem = pratos.get(position).getUrlImagem();
+        String preco = "R" + getPrecoFormatado(position);
+        /**
+         * Se aparecer dois "R" antes do preco, tem que usar a função de baixo
+         * String preco = getPrecoFormatado(position).contains("R") ? getPrecoFormatado(position) : "R" + getPrecoFormatado(position);
+         *
+         **/
         holder.nome.setText(nome);
         holder.descricao.setText(descricao);
+        holder.preco.setText(preco);
         downloadImage(urlImagem,holder);
         holder.nome.setTag(holder);
 
@@ -58,6 +66,12 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioHolder>  {
             });
         }
 
+
+    }
+    public String getPrecoFormatado(int position){
+        return NumberFormat.getCurrencyInstance()
+                .format(pratos.get(position).getPreco())
+                .replace(".",",");
 
     }
 

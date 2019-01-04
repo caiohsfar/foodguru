@@ -4,10 +4,4 @@
         android:id="@+id/marcar_entregue"
         android:title="Marcar como entregue">
     </item>
-    <item
-        android:id="@+id/inicio_preparo_prato"
-        android:title="Iniciar preparo do prato">
-    </item>
-
-
 </menu>

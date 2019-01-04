@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.ufrpe.foodguru">
+    package="br.com.ufrpe.foodguru"
+    xmlns:tools="http://schemas.android.com/tools">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".infraestrutura.utils.FoodGuru"
         android:allowBackup="true"
         android:icon="@drawable/ic_food_guru"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_food_guru"
+        android:roundIcon="@mipmap/ic_novo_food_guru_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name=".infraestrutura.utils.ContaService"></service>
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
         <activity
             android:name=".usuario.GUI.LoginActivity"
             android:exported="true"
@@ -43,10 +54,11 @@
         <activity
             android:name=".cliente.GUI.HomeClienteActivity"
             android:icon="@drawable/ic_teste_sair"
-            android:label="Home" />
+            android:label="Home"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".estabelecimento.GUI.HomeEstabelecimentoActivity"
-            android:label="Home" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".cliente.GUI.EditarDadosClienteActivity"
             android:label="Edição de dados" />
@@ -71,7 +83,6 @@
         <activity
             android:name=".Prato.GUI.EditarSessaoActvity"
             android:label="Editar sessão" />
-        =======
         <activity
             android:name=".Prato.GUI.AdicionarPratoActivity"
             android:label="Adicionar prato" />
@@ -81,11 +92,26 @@
         <activity
             android:name=".Prato.GUI.EditarPratoActivity"
             android:label="Editar prato" />
-        <activity android:name=".cliente.GUI.OperacaoActivity" />
+        <activity
+            android:name=".cliente.GUI.OperacaoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Prato.GUI.DetalhesPratoClienteActvity" />
         <activity android:name=".estabelecimento.GUI.PedidosMesaActivity" />
         <activity android:name=".estabelecimento.GUI.ContaMesaActivity" />
-        <activity android:name=".cliente.GUI.CronometroActivity"></activity>
+        <activity
+            android:name=".cliente.GUI.CronometroActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".cliente.GUI.PSCheckoutActivity" />
+        <activity android:name=".estabelecimento.GUI.ConfigSeuPSActivity">
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".estabelecimento.GUI.RequestPGAuthActivity"></activity>
     </application>
 
 </manifest>

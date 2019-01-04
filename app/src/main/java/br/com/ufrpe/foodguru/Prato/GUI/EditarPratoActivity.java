@@ -178,6 +178,7 @@ public class EditarPratoActivity extends AppCompatActivity implements View.OnCli
 
     public void editarPrato(){
         setPratoSelecionado();
+        Log.d("urlImagem", pratoSelecionado.getUrlImagem());
         PratoServices pratoServices = new PratoServices();
         if (pratoServices.editarPrato(pratoSelecionado)){
             Helper.criarToast(this, "Prato editado com sucesso");
