@@ -105,7 +105,7 @@ public class PagSeguroRequest {
     public static final int PAG_SEGURO_REQUEST_CANCELLED_CODE = 888;
 
     public PagSeguroRequest(Activity activity) {
-        this.reference = RandomStringUtils.randomAlphabetic(7);
+        this.reference = activity.getString(R.string.pagseguro_reference_code);
         this.activity = activity;
         this.progressDialog =  new ProgressDialog(activity);
     }
@@ -234,7 +234,7 @@ public class PagSeguroRequest {
                 "    <redirectURL>http://www.google.com</redirectURL>\n" +
                 "</authorizationRequest>";
 
-        return String.format(xml, reference );
+        return String.format(xml, this.reference );
     }
 
 }

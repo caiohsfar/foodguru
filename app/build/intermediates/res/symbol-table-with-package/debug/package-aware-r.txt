@@ -1845,6 +1845,7 @@ string pagseguro_app_id
 string pagseguro_app_key
 string pagseguro_autorization_page
 string pagseguro_payment_page
+string pagseguro_reference_code
 string pagseguro_vendor_email
 string pagseguro_vendor_token
 string pagseguro_webservice_auth_request_address

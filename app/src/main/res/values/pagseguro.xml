@@ -5,14 +5,14 @@
     <!-- you can use your onw values and after tests, use the real values -->
     <string name="pagseguro_vendor_email">caiohenriquefarias16@gmail.com</string>
     <string name="pagseguro_vendor_token">CED7023EB4EC4A8489844E40E1B94E0A</string>
-    <string name="pagseguro_app_id">app0443621580</string>
-    <string name="pagseguro_app_key">E2ECABC8ABAB5A5334107F92D8E5B379</string>
-    <string name="pagseguro_webservice_checkout_address" formatted="false">"https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?appId=%s&amp;appKey=%s&amp;authorizationCode=%s"</string>
-    <string name="pagseguro_webservice_request_address" formatted="false">"https://ws.sandbox.pagseguro.uol.com.br/v2/authorizations/request/?appId=%s&amp;appKey=%s"</string>
-    <string name="pagseguro_webservice_auth_request_address" formatted="false">"https://ws.sandbox.pagseguro.uol.com.br/v2/authorizations?appId=%s&amp;appKey=%s&amp;reference=%s"</string>
+    <string name="pagseguro_app_id">food_guru</string>
+    <string name="pagseguro_app_key">F8AB8BD4858577C22446EFA1AA153389</string>
+    <string name="pagseguro_webservice_checkout_address" formatted="false">"https://ws.pagseguro.uol.com.br/v2/checkout?appId=%s&amp;appKey=%s&amp;authorizationCode=%s"</string>
+    <string name="pagseguro_webservice_request_address" formatted="false">"https://ws.pagseguro.uol.com.br/v2/authorizations/request/?appId=%s&amp;appKey=%s"</string>
+    <string name="pagseguro_webservice_auth_request_address" formatted="false">"https://ws.pagseguro.uol.com.br/v2/authorizations?appId=%s&amp;appKey=%s&amp;reference=%s"</string>
 
-    <string name="pagseguro_payment_page">"https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=%s"</string>
-    <string name="pagseguro_autorization_page">"https://sandbox.pagseguro.uol.com.br/v2/authorization/request.jhtml?code=%s"</string>
+    <string name="pagseguro_payment_page">"https://pagseguro.uol.com.br/v2/checkout/payment.html?code=%s"</string>
+    <string name="pagseguro_autorization_page">"https://pagseguro.uol.com.br/v2/authorization/request.jhtml?code=%s"</string>
 
-
+    <string name="pagseguro_reference_code">"REFFOODGURU123"</string>
 </resources>

@@ -66,13 +66,7 @@ public class RequestPGAuthActivity extends AppCompatActivity {
             if(url.contains("www.google.com")) {
                 PagSeguroAuthorization authorization = new PagSeguroAuthorization(RequestPGAuthActivity.this);
                 // confirmation
-                //Uri uri = Uri.parse(actualPage);
-                String authReference = getIntent().getStringExtra("reference");
-                //notificationCode = uri.getQueryParameter("notificationCode");
-                if (authReference != null){
-                    authorization.setAuthCodeByRefCode(authReference);
-                }
-                Log.d("PAG", "authReference:" + authReference);
+                authorization.setAuthCodeByRefCode();
                 Intent data = new Intent();
                 data.putExtra(PagSeguroRequest.PAG_SEGURO_EXTRA, PagSeguroRequest.PAG_SEGURO_REQUEST_SUCCESS_CODE);
                 setResult(PagSeguroRequest.PAG_SEGURO_REQUEST_CODE, data);

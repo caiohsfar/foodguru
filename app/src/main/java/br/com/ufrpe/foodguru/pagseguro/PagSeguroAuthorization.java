@@ -27,8 +27,9 @@ public class PagSeguroAuthorization {
     }
 
 
-     public void setAuthCodeByRefCode(String referenceCode){
+     public void setAuthCodeByRefCode(){
          AsyncHttpClient client = new AsyncHttpClient();
+         final String referenceCode = activity.getString(R.string.pagseguro_reference_code);
          final String appId = activity.getString(R.string.pagseguro_app_id);
          final String appKey = activity.getString(R.string.pagseguro_app_key);
          final String webService = activity.getString(R.string.pagseguro_webservice_auth_request_address);
