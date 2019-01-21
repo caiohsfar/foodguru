@@ -21,9 +21,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 
+import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
@@ -121,7 +125,7 @@ public class HomeClienteActivity extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Helper.criarToast(this, "Pressione VOLTAR denovo para sair");
+        Helper.criarToast(this, "Pressione VOLTAR de novo para sair");
 
         new Handler().postDelayed(new Runnable() {
 
@@ -130,7 +134,7 @@ public class HomeClienteActivity extends AppCompatActivity {
                 doubleBackToExitPressedOnce = false;
             }
         }, 2000);
-        //exibirConfirmacaoSair();
+
     }
 
     public void telaEditarDadosCliente() {

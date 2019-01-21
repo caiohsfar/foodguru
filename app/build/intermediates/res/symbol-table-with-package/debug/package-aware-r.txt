@@ -449,9 +449,15 @@ attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
 attr scrimVisibleHeightTrigger
+attr searchBackIcon
+attr searchBackground
+attr searchCloseIcon
 attr searchHintIcon
 attr searchIcon
+attr searchSuggestionBackground
+attr searchSuggestionIcon
 attr searchViewStyle
+attr searchVoiceIcon
 attr seekBarStyle
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
@@ -753,6 +759,7 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color ripple_material_dark
 color ripple_material_light
+color search_layover_bg
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -995,6 +1002,8 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen search_icon_padding
+dimen search_view_text_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1092,6 +1101,7 @@ drawable avd_show_password
 drawable borda_redonda_bt_branco
 drawable borda_redonda_bt_roxo
 drawable bs_list_selector
+drawable color_cursor_white
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1121,6 +1131,13 @@ drawable drawer_shadow
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_spinner
+drawable ic_action_action_search
+drawable ic_action_navigation_arrow_back
+drawable ic_action_navigation_arrow_back_inverted
+drawable ic_action_navigation_close
+drawable ic_action_navigation_close_inverted
+drawable ic_action_voice_search
+drawable ic_action_voice_search_inverted
 drawable ic_add_black_24dp
 drawable ic_add_white_24dp
 drawable ic_adicionar
@@ -1171,6 +1188,7 @@ drawable ic_senha
 drawable ic_sessao_action
 drawable ic_seta_baixo
 drawable ic_show_menu
+drawable ic_suggestion
 drawable ic_telefone
 drawable ic_teste_sair
 drawable ic_tipo_cliente
@@ -1213,6 +1231,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_empty_btn
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1220,6 +1239,8 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
+id action_up_btn
+id action_voice_btn
 id actions
 id activity_chooser_view_content
 id add
@@ -1449,6 +1470,7 @@ id progress_bar_detalhe_prato_cliente
 id progress_bar_editar_prato
 id progress_bar_est
 id progress_bar_pratos
+id progress_bar_qrcode
 id progress_bar_recycler_prato
 id progress_circular
 id progress_horizontal
@@ -1473,15 +1495,18 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchTextView
 id search_badge
 id search_bar
 id search_button
 id search_close_btn
 id search_edit_frame
 id search_go_btn
+id search_layout
 id search_mag_icon
 id search_plate
 id search_src_text
+id search_top_bar
 id search_voice_btn
 id selecionar_todos
 id select_dialog_listview
@@ -1516,6 +1541,9 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id suggestion_icon
+id suggestion_list
+id suggestion_text
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1546,6 +1574,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id transparent_view
 id tvCadastre_se
 id tvCadastro
 id tvDescicaoPrato
@@ -1720,12 +1749,14 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout pedidos_list_item
 layout prato_list_item
+layout search_view
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout sessao_list_item
 layout spinner_edit_estado
 layout spinner_edit_sessao
+layout suggest_item
 layout support_simple_spinner_dropdown_item
 layout zxing_barcode_scanner
 layout zxing_capture
@@ -1857,6 +1888,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
+string search_hint
 string search_menu_title
 string sp_email_enviado_sucesso
 string sp_excecao_campo_vazio
@@ -2125,6 +2157,7 @@ style BottomSheetActionButton
 style CardView
 style CardView_Dark
 style CardView_Light
+style MSV_ImageButton
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -2482,6 +2515,7 @@ styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
 styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
 styleable MaterialCardView strokeColor strokeWidth
 styleable MaterialComponentsTheme bottomSheetDialogTheme bottomSheetStyle chipGroupStyle chipStandaloneStyle chipStyle colorAccent colorBackgroundFloating colorPrimary colorPrimaryDark colorSecondary editTextStyle floatingActionButtonStyle materialButtonStyle materialCardViewStyle navigationViewStyle scrimBackground snackbarButtonStyle tabStyle textAppearanceBody1 textAppearanceBody2 textAppearanceButton textAppearanceCaption textAppearanceHeadline1 textAppearanceHeadline2 textAppearanceHeadline3 textAppearanceHeadline4 textAppearanceHeadline5 textAppearanceHeadline6 textAppearanceOverline textAppearanceSubtitle1 textAppearanceSubtitle2 textInputStyle
+styleable MaterialSearchView android_textColor android_textColorHint android_hint searchBackIcon searchBackground searchCloseIcon searchSuggestionBackground searchSuggestionIcon searchVoiceIcon
 styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
 styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow

@@ -10,9 +10,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -25,7 +27,10 @@ import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_ESTABELECIMENTO;
+import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.REFERENCIA_MESA;
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.getUidUsuario;
 import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.OCUPADA;
 
@@ -36,6 +41,7 @@ import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.OCUPADA;
 public class EscanearQrCodeFragment extends Fragment implements View.OnClickListener{
     private View inflatedLayout;
     private final int BARCODE_REQUEST = 0;
+    private ProgressBar progressBar;
 
 
     public EscanearQrCodeFragment() {
@@ -49,10 +55,34 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
         // Inflate the layout for this fragment
         inflatedLayout = inflater.inflate(R.layout.fragment_escanear_qr_code, container, false);
         inflatedLayout.findViewById(R.id.btn_escanear).setOnClickListener(this);
+        progressBar = inflatedLayout.findViewById(R.id.progress_bar_qrcode);
+        progressBar.setVisibility(View.INVISIBLE);
+
         return inflatedLayout;
     }
+    public void mudarStatusParaOcupada(Mesa mesa){
+        final DatabaseReference databaseReference = FirebaseHelper.getFirebaseReference()
+                .child(REFERENCIA_ESTABELECIMENTO).child(mesa.getUidEstabelecimento())
+                .child(REFERENCIA_MESA)
+                .child(mesa.getCodigoMesa())
+                .child("status");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.getValue().toString().equals(String.valueOf(StatusMesaEnum.PENDENTE.getTipo()))){
+                    databaseReference.setValue(StatusMesaEnum.OCUPADA.getTipo());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
     public void validarCodigo(String codigo){
-        final MesaServices mesaServices = new MesaServices();
+        progressBar.setVisibility(View.VISIBLE);
         FirebaseHelper.getFirebaseReference()
                 .child(FirebaseHelper.REFERENCIA_MESA)
                 .orderByKey()
@@ -63,14 +93,7 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                 if (dataSnapshot.exists()){
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Mesa mesa = ds.getValue(Mesa.class);
-                        /*
-                        if (!mesa.getIdConsumoAtual().equals("ND")){
-                            Helper.criarToast(inflatedLayout.getContext(), "Esta mesa está ocupada.");
-                            break;
-                        }
-                        */
-                        mesa.setStatus(OCUPADA.getTipo());
-                        mesaServices.mudarStatus(mesa,OCUPADA.getTipo());
+                        mudarStatusParaOcupada(mesa);
 
                         //Inicia o consumo do cliente a partir do momento em que ele entra no cardápio.
                         Consumo consumo = new Consumo();
@@ -79,14 +102,13 @@ public class EscanearQrCodeFragment extends Fragment implements View.OnClickList
                         //adiciona o id ao consumo logo após adiciona-lo ao firebase;
                         consumo.setId(getIdConsumo(consumo));
                         SessaoConsumo.getInstance().setConsumo(consumo);
-                        //adiciona o id consumo ao IdConsumoAtual
-                        //mesaServices.mudarIdConsumoAtual(mesa, consumo.getId());
-
                         abrirTelaCardapio(mesa);
+                        progressBar.setVisibility(View.INVISIBLE);
                         break;
                     }
                 } else{
                     Helper.criarToast(getContext(), "Este código não pertence a uma mesa.");
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
             }
 

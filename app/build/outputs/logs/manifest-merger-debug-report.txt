@@ -1,12 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
 MERGED from [com.github.rtoshiro.mflibrary:mflibrary:1.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/mflibrary-1.0.0.aar/b5c7e7a8ba5784f85d7a157856516eb4/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:multidex:1.0.2] /home/caio/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/74cd6056d26fc24b1aef0ce377a4b0f6/AndroidManifest.xml:17:1-22:12
 MERGED from [com.firebaseui:firebase-ui-database:0.5.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-ui-database-0.5.1.aar/59adac03522e097696eeb381c2550cbf/AndroidManifest.xml:2:1-13:12
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/caio/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/9f623d86a941dfbb6cb8f1f12554153a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/67a1b0b728642c908ca765392162eba3/AndroidManifest.xml:17:1-22:12
@@ -68,22 +69,22 @@ MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/caio/.gradle/caches/tra
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/32c385d3fe1701b9103d109f6c25d6e8/AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/88c0ad7652d5bcc1eb3ff7c61ba8ca1e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/da9507a301d9849c3a0b05d26a3ab08c/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
-INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
+INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
 	package
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:3:5-36
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:4:5-51
 	android:versionCode
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-117:12
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:1-118:12
 		INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:2:11-69
@@ -136,9 +137,11 @@ ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/Android
 	android:name
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:12:22-77
 application
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:14:5-115:19
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:14:5-116:19
 MERGED from [com.github.rtoshiro.mflibrary:mflibrary:1.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/mflibrary-1.0.0.aar/b5c7e7a8ba5784f85d7a157856516eb4/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.rtoshiro.mflibrary:mflibrary:1.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/mflibrary-1.0.0.aar/b5c7e7a8ba5784f85d7a157856516eb4/AndroidManifest.xml:11:5-15:19
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/caio/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/9f623d86a941dfbb6cb8f1f12554153a/AndroidManifest.xml:11:5-20
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/caio/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/9f623d86a941dfbb6cb8f1f12554153a/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:22:5-20
 MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:46:5-54:19
@@ -209,14 +212,18 @@ service#br.com.ufrpe.foodguru.infraestrutura.utils.ContaService
 ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:22:9-78
 	android:name
 		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:22:18-67
+service#br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaService
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:23:9-83
+	android:name
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:23:18-72
 activity#com.journeyapps.barcodescanner.CaptureActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:23:9-26:49
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:24:9-27:49
 MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:47:9-53:63
 MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:47:9-53:63
 	android:clearTaskOnLaunch
 		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:49:13-45
 	android:screenOrientation
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:25:13-51
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:26:13-51
 		REJECTED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:50:13-56
 	android:stateNotNeeded
 		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:51:13-42
@@ -225,179 +232,179 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/ca
 	android:theme
 		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /home/caio/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.6.0.aar/18347e059f4f0419f22c6913c803ac32/AndroidManifest.xml:52:13-54
 	tools:replace
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:26:13-46
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:27:13-46
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:24:13-74
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:25:13-74
 activity#br.com.ufrpe.foodguru.usuario.GUI.LoginActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:27:9-31:59
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:28:9-32:59
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:30:13-34
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:31:13-34
 	android:exported
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:29:13-36
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:30:13-36
 	android:theme
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:31:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:32:13-56
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:28:13-54
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:29:13-54
 activity#br.com.ufrpe.foodguru.cliente.GUI.RegistroClienteActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:32:9-34:43
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:33:9-35:43
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:34:13-40
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:35:13-40
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:33:13-64
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:34:13-64
 activity#br.com.ufrpe.foodguru.usuario.GUI.TipoCadastroActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:35:9-37:48
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:36:9-38:48
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:37:13-45
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:38:13-45
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:36:13-61
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:37:13-61
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.RegistroEstabelecimentoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:38:9-40:43
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:39:9-41:43
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:40:13-40
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:41:13-40
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:39:13-80
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:40:13-80
 activity#br.com.ufrpe.foodguru.usuario.GUI.RecuperarSenhaActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:41:9-43:52
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:42:9-44:52
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:43:13-49
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:44:13-49
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:42:13-63
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:43:13-63
 activity#br.com.ufrpe.foodguru.infraestrutura.utils.SplashActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:44:9-53:20
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:45:9-54:20
 	android:exported
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:46:13-36
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:47:13-36
 	android:theme
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:47:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:48:13-56
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:45:13-64
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:46:13-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:48:13-52:29
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:49:17-69
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:49:25-66
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:51:17-77
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:51:27-74
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:52:27-74
 activity#br.com.ufrpe.foodguru.cliente.GUI.HomeClienteActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:54:9-58:59
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:55:9-59:59
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:57:13-33
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:58:13-33
 	android:icon
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:56:13-51
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:57:13-51
 	android:theme
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:58:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:59:13-56
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:55:13-60
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:56:13-60
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.HomeEstabelecimentoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:59:9-61:59
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:60:9-62:59
 	android:theme
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:61:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:62:13-56
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:60:13-76
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:61:13-76
 activity#br.com.ufrpe.foodguru.cliente.GUI.EditarDadosClienteActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:62:9-64:47
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:63:9-65:47
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:64:13-44
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:65:13-44
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:63:13-67
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:64:13-67
 activity#br.com.ufrpe.foodguru.Mesa.GUI.AdicionarMesaActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:65:9-67:49
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:66:9-68:49
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:67:13-46
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:68:13-46
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:66:13-59
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:67:13-59
 activity#br.com.ufrpe.foodguru.Mesa.GUI.EditarMesaActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:68:9-70:43
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:69:9-71:43
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:70:13-40
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:71:13-40
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:69:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:70:13-56
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.EditarDadosEstabelecimentoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:71:9-73:44
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:72:9-74:44
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:73:13-41
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:74:13-41
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:72:13-83
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:73:13-83
 activity#br.com.ufrpe.foodguru.Mesa.GUI.DetalhesMesaActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:74:9-76:48
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:75:9-77:48
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:76:13-45
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:77:13-45
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:75:13-58
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:76:13-58
 activity#br.com.ufrpe.foodguru.Prato.GUI.AdicionarSessaoActvity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:77:9-79:51
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:78:9-80:51
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:79:13-48
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:80:13-48
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:78:13-61
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:79:13-61
 activity#br.com.ufrpe.foodguru.Prato.GUI.SessaoActvity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:80:9-82:39
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:81:9-83:39
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:82:13-36
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:83:13-36
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:81:13-52
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:82:13-52
 activity#br.com.ufrpe.foodguru.Prato.GUI.EditarSessaoActvity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:83:9-85:45
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:84:9-86:45
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:85:13-42
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:86:13-42
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:84:13-58
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:85:13-58
 activity#br.com.ufrpe.foodguru.Prato.GUI.AdicionarPratoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:86:9-88:47
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:87:9-89:47
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:88:13-44
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:89:13-44
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:87:13-61
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:88:13-61
 activity#br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:89:9-91:49
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:90:9-92:49
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:91:13-46
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:92:13-46
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:90:13-60
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:91:13-60
 activity#br.com.ufrpe.foodguru.Prato.GUI.EditarPratoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:92:9-94:44
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:93:9-95:44
 	android:label
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:94:13-41
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:95:13-41
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:93:13-58
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:94:13-58
 activity#br.com.ufrpe.foodguru.cliente.GUI.OperacaoActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:95:9-97:59
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:96:9-98:59
 	android:theme
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:97:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:98:13-56
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:96:13-57
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:97:13-57
 activity#br.com.ufrpe.foodguru.Prato.GUI.DetalhesPratoClienteActvity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:98:9-75
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:99:9-75
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:98:19-72
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:99:19-72
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.PedidosMesaActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:99:9-77
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:100:9-77
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:99:19-74
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:100:19-74
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.ContaMesaActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:100:9-75
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:101:9-75
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:100:19-72
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:101:19-72
 activity#br.com.ufrpe.foodguru.cliente.GUI.CronometroActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:101:9-103:59
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:102:9-104:59
 	android:theme
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:103:13-56
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:104:13-56
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:102:13-59
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:103:13-59
 activity#br.com.ufrpe.foodguru.cliente.GUI.PSCheckoutActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:104:9-68
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:105:9-68
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:104:19-65
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:105:19-65
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.ConfigSeuPSActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:105:9-113:20
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:106:9-114:20
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:105:19-74
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:106:19-74
 activity#br.com.ufrpe.foodguru.estabelecimento.GUI.RequestPGAuthActivity
-ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:114:9-88
+ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:115:9-88
 	android:name
-		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:114:19-76
+		ADDED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml:115:19-76
 uses-sdk
 INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/caio/Desenvolvimento/food-guru-inova-ufrpe/app/src/main/AndroidManifest.xml
@@ -408,6 +415,8 @@ MERGED from [com.android.support:multidex:1.0.2] /home/caio/.gradle/caches/trans
 MERGED from [com.android.support:multidex:1.0.2] /home/caio/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/74cd6056d26fc24b1aef0ce377a4b0f6/AndroidManifest.xml:20:5-43
 MERGED from [com.firebaseui:firebase-ui-database:0.5.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-ui-database-0.5.1.aar/59adac03522e097696eeb381c2550cbf/AndroidManifest.xml:7:5-9:41
 MERGED from [com.firebaseui:firebase-ui-database:0.5.1] /home/caio/.gradle/caches/transforms-1/files-1.1/firebase-ui-database-0.5.1.aar/59adac03522e097696eeb381c2550cbf/AndroidManifest.xml:7:5-9:41
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/caio/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/9f623d86a941dfbb6cb8f1f12554153a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/caio/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/9f623d86a941dfbb6cb8f1f12554153a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/ba65e755f5f9ac69e9b1a5f02c8a8395/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/caio/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/088e70ecd93fb31dda807fffe3078ae0/AndroidManifest.xml:20:5-44

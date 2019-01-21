@@ -31,4 +31,14 @@
         android:background="@drawable/borda_redonda_bt_roxo"
         android:text="Escanear"
         android:textColor="@color/Branco" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_qrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="168dp"
+        android:progressDrawable="@color/VerdeFoodGuru" />
 </RelativeLayout>

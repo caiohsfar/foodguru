@@ -57,6 +57,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <service android:name="br.com.ufrpe.foodguru.infraestrutura.utils.ContaService" />
+        <service android:name="br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaService" />
 
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

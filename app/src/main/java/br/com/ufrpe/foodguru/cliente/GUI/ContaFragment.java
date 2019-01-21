@@ -37,6 +37,7 @@ import br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
 import br.com.ufrpe.foodguru.infraestrutura.utils.SPUtil;
 import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaService;
 import br.com.ufrpe.foodguru.pagseguro.PagSeguroCheckout;
 import br.com.ufrpe.foodguru.pagseguro.PagSeguroFactory;
 import br.com.ufrpe.foodguru.pagseguro.PagSeguroItem;
@@ -117,7 +118,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
                 Helper.criarToast(getActivity(), "Sem conexão com a internet");
                 return;
             }
-            //Deixar o codigo de altorização setado para quando ele resolva fechar a conta com pag seguro;
             iniciarPagSeguro();
             return;
         }
@@ -178,20 +178,18 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
     }
 
     public void exibirTelaHomeCliente(){
-        addSingleValueEventStatus();
+        //addSingleValueEventStatus();
         SharedPreferences sharedPreferences = SPUtil.getSharedPreferences(inflatedLayout.getContext());
         SPUtil.putString(sharedPreferences, getString(R.string.consumo_atual), null);
         Intent intent = new Intent(getContext(), HomeClienteActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        pararServiceStatusMesa();
         startActivity(intent);
     }
-
-    /*
-    private void idConsumoAtualNull() {
-        MesaServices mesaServices = new MesaServices();
-        mesaServices.mudarIdConsumoAtual(mesa, "ND");
+    public void pararServiceStatusMesa(){
+        Intent statusMesaServiceIntent = new Intent(getActivity(), StatusMesaService.class);
+        getActivity().stopService(statusMesaServiceIntent);
     }
-    */
     public void iniciarPagSeguro(){
         final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
         List<PagSeguroItem> shoppingCart = itemConsListToPagSegList(consumoAtual.getListaItens());
@@ -273,7 +271,6 @@ public class ContaFragment extends android.support.v4.app.Fragment implements Vi
         }
     }
     public void zerarSessao(){
-        //idConsumoAtualNull();
         SessaoConsumo.getInstance().reset();
         Helper.criarToast(inflatedLayout.getContext(),"Transação concluída com sucesso. Conta finalizada.");
         exibirTelaHomeCliente();

@@ -107,7 +107,7 @@ public class HomeEstabelecimentoActivity extends AppCompatActivity {
             return;
         }
         this.doubleBackToExitPressedOnce = true;
-        Helper.criarToast (this, "Pressione VOLTAR denovo para sair");
+        Helper.criarToast (this, "Pressione VOLTAR de novo para sair");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

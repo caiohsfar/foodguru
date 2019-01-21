@@ -97,7 +97,7 @@ public class CardapioFragment extends Fragment{
 
     @Override
     public void onResume() {
-        setStatusOcupada();
+        //setStatusOcupada();
         super.onResume();
     }
 

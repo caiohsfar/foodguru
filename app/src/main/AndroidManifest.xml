@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service android:name=".infraestrutura.utils.ContaService"></service>
+        <service android:name=".infraestrutura.utils.StatusMesaService"></service>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"

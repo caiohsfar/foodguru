@@ -60,5 +60,8 @@ dependencies {
     //implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
     api 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
     implementation 'com.blankj:utilcode:1.22.0'
+    implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

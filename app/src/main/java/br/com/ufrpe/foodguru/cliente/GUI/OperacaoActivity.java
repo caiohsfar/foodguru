@@ -19,6 +19,7 @@ import br.com.ufrpe.foodguru.Consumo.dominio.SessaoConsumo;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.utils.ContaService;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaService;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 
@@ -34,8 +35,12 @@ public class OperacaoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operacao);
-        Intent serviceIntent = new Intent(this, ContaService.class);
-        startService(serviceIntent);
+        //Inicia o serviço da conta para saber quando o cliente finaliza o app antes de finalizar a conta;
+        Intent contaServiceIntent = new Intent(this, ContaService.class);
+        startService(contaServiceIntent);
+        //Inicia o Serviço do status (manter mesa cupada quando no firebase mudar pra vazia);
+        Intent statusMesaServiceIntent = new Intent(this, StatusMesaService.class);
+        startService(statusMesaServiceIntent);
 
         toolbar = (Toolbar)findViewById(R.id.toolbarOperacao);
         setSupportActionBar(toolbar);
@@ -97,23 +102,19 @@ public class OperacaoActivity extends AppCompatActivity {
         setBtnNegativoSair(msgBox);
         msgBox.show();
     }
+    public void pararServiceStatusMesa(){
+        Intent statusMesaServiceIntent = new Intent(this, StatusMesaService.class);
+        stopService(statusMesaServiceIntent);
+    }
 
     public void setBtnPositivoSair(AlertDialog.Builder msgBox){
         msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //idConsumoAtualNull();
                 exibirTelaHomeCliente();
             }
         });
     }
-    /*
-    private void idConsumoAtualNull() {
-        MesaServices mesaServices = new MesaServices();
-        mesaServices.mudarIdConsumoAtual(SessaoConsumo.getInstance().getConsumo().getMesa(), "ND");
-    }
-    */
-
     public void setBtnNegativoSair(AlertDialog.Builder msgBox){
         msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
             @Override
@@ -125,6 +126,7 @@ public class OperacaoActivity extends AppCompatActivity {
     public void exibirTelaHomeCliente(){
         Intent intent = new Intent(this, HomeClienteActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        pararServiceStatusMesa();
         startActivity(intent);
     }
 

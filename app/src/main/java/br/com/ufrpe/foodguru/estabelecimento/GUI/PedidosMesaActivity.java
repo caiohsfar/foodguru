@@ -22,6 +22,7 @@ import br.com.ufrpe.foodguru.Mesa.dominio.Mesa;
 import br.com.ufrpe.foodguru.Mesa.negocio.MesaServices;
 import br.com.ufrpe.foodguru.R;
 import br.com.ufrpe.foodguru.infraestrutura.utils.Helper;
+import br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum;
 
 import static br.com.ufrpe.foodguru.infraestrutura.persistencia.FirebaseHelper.*;
 import static br.com.ufrpe.foodguru.infraestrutura.utils.StatusMesaEnum.*;
@@ -49,7 +50,7 @@ public class PedidosMesaActivity extends AppCompatActivity {
                 listaPedidos = ConsumoServices.getPedidos(dataSnapshot);
                 if (listaPedidos.isEmpty()){
                     if (mesa.getStatus() == PENDENTE.getTipo()){
-                        mesaServices.mudarStatus(mesa, OCUPADA.getTipo());
+                        mesaServices.mudarStatus(mesa, StatusMesaEnum.VAZIA.getTipo());
                     }
                 }
                 adapter.updateData(listaPedidos);
